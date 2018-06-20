@@ -1,0 +1,230 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.12
+ */
+
+var app = require('../app');
+var debug = require('debug')('rms_web:server');
+var http = require('http');
+var my_conn = require("../routes/pgconn");
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+// var port = normalizePort(process.env.PORT || '9021');
+var port = normalizePort(process.env.PORT || '80');
+app.set('port', port);
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+var io = require('socket.io')(server);
+server.listen(port,'0.0.0.0',function(){
+    console.log("Express server listening on port " + app.get('port'));
+});
+
+/**
+ * Define PVs
+ */
+
+var pvs={ai:[{pvname:"hanlfHost:ai1"},{pvname:"hanlfHost:ai2"},{pvname:"hanlfHost:ai3"},{pvname:"hanlfHost:compressExample"}],
+         ao:[{pvname:"hanlfHost:ao1"}, {pvname:"hanlfHost:ao2"}, {pvname:"hanlfHost:ao3"}]
+        }
+
+// console.log("test"+pvs.ai[0].pvname);
+
+/**
+ * Socket Events for change of value  or severity
+ * 监听变量值的变化或报警状态的变化
+ *  */
+io.on('connection', function (socket) {
+  console.log('Connection from remote ip addr:'+socket.handshake.address);
+  
+  var myDate = new Date();
+  var loginTime = myDate.toLocaleString();
+  
+  sql_record = 'insert into login_record(ip_addr,login_time) values (\''+socket.handshake.address+'\',\''+loginTime+'\')';
+  my_conn.query(sql_record,function(result){
+    //req.session.user = req.body.username;
+    //console.log(req.session.user);
+    // console.log('good');
+    })
+
+
+  // console.log(pvs);
+  connect_pvs(pvs.ai,function(err,results){
+      async.map(results,function(item,callback){
+        item.on("value", function(data) {
+        // console.log('Value:',item.pvName,data);
+        socket.emit(item.pvName, data);
+        console.log(item.pvName+" value change socket evnet emit")
+        });  
+      })
+  });
+
+  connect_pvs_SEVR(pvs.ai,function(err,results){
+      async.map(results,function(item,callback){
+        item.on("value", function(data) {
+        // console.log('Value:',item.pvName,data);
+        socket.emit(item.pvName, data);
+        // console.log(item.pvName+" severity change socket evnet emit")
+        });  
+      })
+  });
+
+
+  connect_pvs(pvs.ao,function(err,results){
+    async.map(results,function(item,callback){
+      item.on("value", function(data) {
+      // console.log('Value:',item.pvName,data);
+      socket.emit(item.pvName, data);
+      // console.log(item.pvName+" value change socket evnet emit")
+       });  
+      })
+  });
+
+    connect_pvs_SEVR(pvs.ao,function(err,results){
+    async.map(results,function(item,callback){
+      item.on("value", function(data) {
+      // console.log('Value:',item.pvName,data);
+      socket.emit(item.pvName, data);
+      // console.log(item.pvName+" value change socket evnet emit")
+       });  
+      })
+ });
+
+/**
+ *  监测AO :客户端的变量设定
+ *  Monitor AO : configure from the web client;
+ */
+
+  connect_pvs(pvs.ao,function(err,results){
+    async.map(results,function(item,callback){
+      socket.on(item.pvName, function(data) {
+      // console.log('Value:',item.pvName,data);
+      item.put(item.pvName, data);
+      // console.log(item.pvName+"Set pv value from web client  ")
+       });  
+      })
+  });
+
+
+ });
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+
+
+var epics = require('epics');
+var pv_ai=new Array();
+
+
+
+/**
+ * PV创建并监听异步回调 
+ */
+
+
+
+async= require('async');
+
+function connect_pvs(pvs,callback){
+    async.map(pvs, function(item, callback) {
+        // console.log(item.pvname+" is connect*");
+       var pv = new epics.Channel(item.pvname);
+       pv.connect(function(err) {
+       if(pv.state()){
+          pv.monitor()};
+          callback(null,pv);
+          console.log(item.pvname+" is connected*");
+      });
+    }, function(err,results){
+         callback(err,results); 
+  });
+};
+
+function connect_pvs_SEVR(pvs,callback){
+    async.map(pvs, function(item, callback) {
+        // console.log(item.pvname+" is connect*");
+       var pv = new epics.Channel(item.pvname+".SEVR");
+       pv.connect(function(err) {
+       if(pv.state()){
+          pv.monitor()};
+          callback(null,pv);
+          console.log(item.pvname+"alarm severity is monitored*");
+      });
+    }, function(err,results){
+         callback(err,results); 
+  });
+};
