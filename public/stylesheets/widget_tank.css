@@ -8,3 +8,8 @@
    .vertical {
      box-shadow: inset 0px 4px 6px #ccc;
    }
+
+div.barContainer {
+    width: 100%;
+    height: 100px;
+}

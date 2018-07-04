@@ -12,7 +12,7 @@
 
 	<meta charset="utf-8" />
 
-	<title>小韩 | EPICS - <%= title %></title>
+	<title>TMSR | EPICS - <%= title %></title>
 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -78,10 +78,10 @@
 	    $scope.manual = response;
 		// console.log("when");
 	//     console.log(response);
- 
 		});		
-
-
+	});
+	app.controller('barCtrl', function($scope) {   
+	
 	});
 </script>
 <script>
@@ -160,7 +160,7 @@
 
 						<img alt="" src="media/image/avatar1_small.jpg" />
 
-						<span class="username">韩 利峰</span>
+						<span class="username">user</span>
 
 						<i class="icon-angle-down"></i>
 
@@ -668,7 +668,27 @@
 				</div>
 		
 				<!-- END PAGE HEADER-->
-		
+
+
+				<div class="row-fluid">
+					<div class="span9">
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="icon-cogs"></i>
+									Properties
+								</div>
+							</div>
+							
+							<div class="portlet-body">
+								<table class="table table-bordered table-striped"></table>
+							</div>
+						</div>
+					</div>
+					<div class="span3">
+					</div>
+				</div>
+
 				<!-- BEGIN PAGE CONTENT-->
 		
 				<div class="row-fluid ">
@@ -682,6 +702,16 @@
 							</div>
 
 							<h3>Basic</h3>
+							<div class="barContainer" ng-controller="barCtrl">
+								<svg width="100%" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background:lightgray">
+									<rect x="0" y="0" width="{{barHeight}}%" height="20px" cx="10px" cy="10px" style="fill:{{barColor}}; stroke-width:0; stroke:none">
+								</svg>
+								<label style="position:relative; top:0.5em; left:3%; font-size:1.5em; color:gray">液位：
+									<input type="text" ng-model="barHeight" placeholder="输入液位，输入50即“液位50%”" style="position:absolute; top:-0.5em; left:7%; width:33%">
+									<label style="position:absolute; top:0em; left:50%; font-size:1em; color:gray">颜色：</label>
+									<input type="text" ng-model="barColor" placeholder="输入颜色，如red，#123，#123456" style="position:absolute; top:-0.5em; left:57%; width:33%">
+								</label>
+							</div>
 
 							<div class="progress">
 
