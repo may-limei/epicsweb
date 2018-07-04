@@ -80,8 +80,10 @@
 	//     console.log(response);
 		});		
 	});
-	app.controller('barCtrl', function($scope) {   
-	
+	app.controller('barCtrl', function($scope) {  
+		$scope.barWidth=50; 
+		$scope.barHeight=50;
+		$scope.barColor="orange";
 	});
 </script>
 <script>
@@ -670,8 +672,19 @@
 				<!-- END PAGE HEADER-->
 
 
-				<div class="row-fluid">
+				<div class="row-fluid barContainer" ng-controller="barCtrl">
 					<div class="span9">
+						<svg width="1250px" height="1250px" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue;">
+							<svg x="100" y="100" width="50px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background-color:gray;">
+								<rect x="0" y="0" width="50px" height="{{barHeight}}%" cx="10px" cy="10px" style="fill:{{barColor}}; stroke-width:0; stroke:none">
+							</svg>
+						</svg>
+						<svg width="100%" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background-color:lightgray">
+							<rect x="0" y="0" width="{{barHeight}}%" height="20px" cx="10px" cy="10px" style="fill:{{barColor}}; stroke-width:0; stroke:none">
+						</svg>
+					</div>
+
+					<div class="span3">
 						<div class="portlet box blue">
 							<div class="portlet-title">
 								<div class="caption">
@@ -680,12 +693,21 @@
 								</div>
 							</div>
 							
-							<div class="portlet-body">
-								<table class="table table-bordered table-striped"></table>
+							<div class="portlet-body" style="background-color:aliceblue;">
+								<table class="table table-bordered table-striped">
+									<tbody>
+										<tr>
+											pvName
+											<input type="text"/><br />
+										</tr>
+										<tr>
+											pvValue
+											<input type="text" ng-model="barHeight" placeholder="输入液位，输入50即“液位50%”" /><br />
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
-					</div>
-					<div class="span3">
 					</div>
 				</div>
 
@@ -703,7 +725,7 @@
 
 							<h3>Basic</h3>
 							<div class="barContainer" ng-controller="barCtrl">
-								<svg width="100%" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background:lightgray">
+								<svg width="100%" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background-color:lightgray">
 									<rect x="0" y="0" width="{{barHeight}}%" height="20px" cx="10px" cy="10px" style="fill:{{barColor}}; stroke-width:0; stroke:none">
 								</svg>
 								<label style="position:relative; top:0.5em; left:3%; font-size:1.5em; color:gray">液位：
