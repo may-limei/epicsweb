@@ -666,22 +666,39 @@
 								</div>
 							</div>
 							
-							<div class="portlet-body" style="background-color:aliceblue;">
-								<table class="table table-bordered table-striped">
+							<div class="portlet-body" style="position:relative; background-color:aliceblue; height:1250px">
+								<table class="table table-bordered table-striped" style="border: 0px solid #ddd;">
 									<tbody>
 										<tr>
-											pvName
-											<input type="text"/><br />
+											<label style="position:absolute; top:0.5em; left:0.5em; width:6em; height:1em; font-size:1.75em; color:#333"><strong>widgetName:</strong></label>
+											<label style="position:absolute; top:0.5em; left:6.5em; width:8em; height:1em; font-size:1.75em; color:gray"> <strong>{{widgetName}}</strong></label>
+											<br />
 										</tr>
 										<tr>
-											pvValue
-											<input type="text" ng-model="tankHeight" placeholder="输入数值，液位=数值/tank最大值" /><br />
+											<label style="position:absolute; top:2.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvName:</label>
+											<input type="text" ng-model="tankName"  placeholder="pv变量名"  style="position:absolute; top:2.75em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:4.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvValue:</label>
+											<input type="text" ng-model="tankHeight" placeholder="输入数值，液位=数值/tank最大值" style="position:absolute; top:5.25em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:6.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvName:</label>
+											<input type="text" ng-model="tankMax"  placeholder="刻度最大值"  style="position:absolute; top:7.75em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:8.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvValue:</label>
+											<input type="text" ng-model="tankMin" placeholder="刻度最小值" style="position:absolute; top:10.25em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
 										</tr>
 									</tbody>
 								</table>
 							</div>
-						</div>
 					</div>
+						</div>
 				</div>
 
 				<!-- BEGIN PAGE CONTENT-->
@@ -906,10 +923,14 @@
 				//     console.log(response);
 			});		
 		});
-		app.controller('tankCtrl', function($scope) {  
+		app.controller('tankCtrl', function($scope) { 
+			$scope.widgetName="tank"; 
+			$scope.tankName="pv0";
 			$scope.tankWidth=50; 
 			$scope.tankHeight=50;
 			$scope.tankColor="orange";
+			$scope.tankMax="200";
+			$scope.tankMin="0";
 			
 			// if ($scope.tankHeight < 0){
 			// 	$scope.tankHeight = 0;
