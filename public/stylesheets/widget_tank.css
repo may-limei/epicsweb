@@ -4,8 +4,6 @@
   height: 40px;
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
-}
-.vertical {
   box-shadow: inset 0px 4px 6px #ccc;
 }
 
