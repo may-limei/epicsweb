@@ -643,16 +643,21 @@
 				<div class="row-fluid tankContainer" ng-controller="tankCtrl">
 					<div class="span9">
 						<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow:scroll;">
-							<svg x="0" y="10" width="80px" height="200px" viewBox="0 0 80 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-							<symbol id="testuse">
-								<!--svg x="0" y="0" width="80px" height="200px" viewBox="0 0 80 200" version="1.1" xmlns="http://www.w3.org/2000/svg"-->
-									<rect x="30" y="0" width="50px" height="200px" style="fill:gray; stroke-width:0; stroke:none" />
-									<path style="fill: none; stroke:black; stroke-width: 1;" d="M20 1 h10 M20 40 h10 M20 80 h10 M20 120 h10 M20 160 h10 M20 199 h10"/>
-									<circle cx="30" cy="30" r="10" />
-								<!--/svg-->
-								<rect x="30" y="0" width="50px" height="{{tankHeight}}px" cx="10px" cy="10px" style="fill:{{tankColor}}; stroke-width:0; stroke:none" />	
-							</symbol>
-							<use x="0" y="-200"  xlink:href="#testuse" transform="scale(1, -1)"></use>	
+							<svg x="{{tankXpos}}px" y="{{tankYpos}}px" width="100px" height="200px" viewBox="0 0 100 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<symbol id="testuse">
+									<rect x="50" y="0" width="50px" height="200px" style="fill:gray; stroke-width:0; stroke:none" />
+									<path style="fill: none; stroke:black; stroke-width: 1;" d="M40 1 h10 M40 40 h10 M40 80 h10 M40 120 h10 M40 160 h10 M40 199 h10"/>
+									<path style="fill: none; stroke:#333; stroke-width: 1;" d="M44 8 h6 M44 16 h6 M44 24 h6 M44 32 h6 M44 48 h6 M44 56 h6 M44 64 h6 M44 72 h6
+										 M44 88 h6 M44 96 h6 M44 104 h6 M44 112 h6 M44 128 h6 M44 136 h6 M44 144 h6 M44 152 h6 M44 168 h6 M44 176 h6 M44 184 h6 M44 192 h6"/>
+									<rect x="50" y="0" width="50px" height="{{tankValue/(tankMax-tankMin)*100}}%" cx="10px" cy="10px" style="fill:{{tankColor}}; stroke-width:0; stroke:none" />									
+								</symbol>
+								<use x="0" y="-200"  xlink:href="#testuse" transform="scale(1, -1)"></use>	
+								<text x="7" y="8" style="font-size:1em; text-anchor:start">{{tankMax}}</text>
+								<text x="7" y="44" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*4}}</text>
+								<text x="7" y="84" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*3}}</text>
+								<text x="7" y="124" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*2}}</text>
+								<text x="7" y="164" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*1}}</text>
+								<text x="7" y="200" style="font-size:1em; text-anchor:start">{{tankMin}}</text>	
 							</svg>							
 						</svg>
 					</div>
@@ -676,22 +681,47 @@
 										</tr>
 										<tr>
 											<label style="position:absolute; top:2.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvName:</label>
-											<input type="text" ng-model="tankName"  placeholder="pv变量名"  style="position:absolute; top:2.75em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<input type="text" ng-model="tankName"  placeholder="pv变量名"  style="position:absolute; top:2.75em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
 											<br />
 										</tr>
 										<tr>
 											<label style="position:absolute; top:4.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvValue:</label>
-											<input type="text" ng-model="tankHeight" placeholder="输入数值，液位=数值/tank最大值" style="position:absolute; top:5.25em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<input type="text" ng-model="tankValue" placeholder="注：液位=pvValue/(pvMax-pvMin)" style="position:absolute; top:5.25em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
 											<br />
 										</tr>
 										<tr>
-											<label style="position:absolute; top:6.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvName:</label>
-											<input type="text" ng-model="tankMax"  placeholder="刻度最大值"  style="position:absolute; top:7.75em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<label style="position:absolute; top:6.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvMax:</label>
+											<input type="text" ng-model="tankMax"  placeholder="刻度最大值"  style="position:absolute; top:7.75em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
 											<br />
 										</tr>
 										<tr>
-											<label style="position:absolute; top:8.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvValue:</label>
-											<input type="text" ng-model="tankMin" placeholder="刻度最小值" style="position:absolute; top:10.25em; left:6em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<label style="position:absolute; top:8.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvMin:</label>
+											<input type="text" ng-model="tankMin" placeholder="刻度最小值" style="position:absolute; top:10.25em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:10.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankColor:</label>
+											<input type="text" ng-model="tankColor" placeholder="输入颜色，如red，#123，#123456" style="position:absolute; top:12.75em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:12.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankWidth:</label>
+											<input type="text" ng-model="tankWidth" placeholder="控件宽度(px)" style="position:absolute; top:15.25em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:14.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankHeight:</label>
+											<input type="text" ng-model="tankHeight" placeholder="控件高度(px)" style="position:absolute; top:17.75em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:16.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankXpos:</label>
+											<input type="text" ng-model="tankXpos" placeholder="在画布X轴的坐标(左上角为(0,0)px)" style="position:absolute; top:20.25em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:18.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankYpos:</label>
+											<input type="text" ng-model="tankYpos" placeholder="在画布Y轴的坐标(左上角为(0,0)px)" style="position:absolute; top:22.75em; left:6.5em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
 											<br />
 										</tr>
 									</tbody>
@@ -926,8 +956,11 @@
 		app.controller('tankCtrl', function($scope) { 
 			$scope.widgetName="tank"; 
 			$scope.tankName="pv0";
+			$scope.tankValue=80;
 			$scope.tankWidth=50; 
 			$scope.tankHeight=50;
+			$scope.tankXpos="30";
+			$scope.tankYpos="30";
 			$scope.tankColor="orange";
 			$scope.tankMax="200";
 			$scope.tankMin="0";
