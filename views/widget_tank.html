@@ -642,7 +642,7 @@
 
 				<div class="row-fluid tankContainer" ng-controller="tankCtrl">
 					<div class="span9">
-						<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow:scroll;">
+						<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow:scroll; border: 1px solid #b4cef8;">
 							<defs>
 								<linearGradient id="tankGradient">
 									<stop offset="0%" style="stop-color:{{tankColor}};" />
@@ -651,12 +651,18 @@
 								</linearGradient>
 							</defs>
 							<symbol id="tank">
-								<svg x="{{tankXpos}}px" y="{{tankYpos}}px" width="100px" height="200px" viewBox="0 0 100 200" preserveAspectRatio="xMidYMid meet" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<svg x="{{tankXpos}}px" y="{{tankYpos}}px" width="160px" height="200px" viewBox="0 0 160 200" preserveAspectRatio="xMidYMid meet" version="1.1" xmlns="http://www.w3.org/2000/svg">
 									<symbol id="testuse">
 										<rect x="50" y="0" width="50px" height="200px" style="fill:gray; stroke-width:0; stroke:none" />
+
+										<!-- 刻度 -->
 										<path style="fill: none; stroke:black; stroke-width: 1;" d="M40 1 h10 M40 40 h10 M40 80 h10 M40 120 h10 M40 160 h10 M40 199 h10"/>
 										<path style="fill: none; stroke:#333; stroke-width: 1;" d="M44 8 h6 M44 16 h6 M44 24 h6 M44 32 h6 M44 48 h6 M44 56 h6 M44 64 h6 M44 72 h6
 											M44 88 h6 M44 96 h6 M44 104 h6 M44 112 h6 M44 128 h6 M44 136 h6 M44 144 h6 M44 152 h6 M44 168 h6 M44 176 h6 M44 184 h6 M44 192 h6"/>
+
+										<!-- 低报高报 -->
+										<path style="fill: none; stroke:#e02222; stroke-width: 2.4;" d="M100 {{tankHIHI}} h16 M100 {{tankLOLO}} h16"/>	
+										<path style="fill: none; stroke:coral; stroke-width: 2.4;" d="M100 {{tankHI}} h16 M100 {{tankLO}} h16"/>											
 										<rect id="tankRect" x="50" y="0" width="50px" height="{{tankValue/(tankMax-tankMin)*100}}%" style="fill:url(#tankGradient); stroke-width:0; stroke:none" />									
 									</symbol>
 									<use x="0" y="-200"  xlink:href="#testuse" transform="scale(1,-1)"></use>	
@@ -666,9 +672,14 @@
 									<text x="7" y="124" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*2}}</text>
 									<text x="7" y="164" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*1}}</text>
 									<text x="7" y="200" style="font-size:1em; text-anchor:start">{{tankMin}}</text>	
+
+									<text x="120" y="{{200-tankHIHI+5}}" style="font-size:1em; text-anchor:start; stroke:#e02222; stroke-width:0.4; fill:#e02222;">HIHI</text>	
+									<text x="120" y="{{200-tankLOLO+5}}" style="font-size:1em; text-anchor:start; stroke:#e02222; stroke-width:0.4; fill:#e02222;">LOLO</text>	
+									<text x="120" y="{{200-tankHI+5}}" style="font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;">HI</text>	
+									<text x="120" y="{{200-tankLO+5}}" style="font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;">LO</text>										
 								</svg>	
 							</symbol>
-							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/100}}, {{tankHeight/200}})"></use>
+							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
 						</svg>
 					</div>
 
@@ -681,7 +692,7 @@
 								</div>
 							</div>
 							
-							<div class="portlet-body" style="position:relative; background-color:aliceblue; height:1250px">
+							<div class="portlet-body" style="position:relative; background-color:aliceblue; height:1192px">
 								<table class="table table-bordered table-striped" style="border: 0px solid #ddd;">
 									<tbody>
 										<tr>
@@ -732,6 +743,26 @@
 										<tr>
 											<label style="position:absolute; top:18.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankYpos:</label>
 											<input type="text" ng-model="tankYpos" placeholder="在画布Y轴的坐标(左上角为(0,0)px)" style="position:absolute; top:22.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:20.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level HIHI:</label>
+											<input type="text" ng-model="tankHIHI" placeholder="level HIHI" style="position:absolute; top:25.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:22.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level HI:</label>
+											<input type="text" ng-model="tankHI" placeholder="level HIHI" style="position:absolute; top:27.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:24.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level LO:</label>
+											<input type="text" ng-model="tankLO" placeholder="level HIHI" style="position:absolute; top:30.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
+											<br />
+										</tr>
+										<tr>
+											<label style="position:absolute; top:26.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level LOLO:</label>
+											<input type="text" ng-model="tankLOLO" placeholder="level HIHI" style="position:absolute; top:32.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
 											<br />
 										</tr>
 									</tbody>
@@ -967,13 +998,17 @@
 			$scope.widgetName="tank"; 
 			$scope.tankName="pv0";
 			$scope.tankValue=80;
-			$scope.tankWidth=100; 
+			$scope.tankWidth=160; 
 			$scope.tankHeight=200;
 			$scope.tankXpos="30";
 			$scope.tankYpos="30";
 			$scope.tankColor="orange";
 			$scope.tankMax="200";
 			$scope.tankMin="0";
+			$scope.tankHIHI=180;
+			$scope.tankHI=170;
+			$scope.tankLO=30;
+			$scope.tankLOLO=20;
 			
 			// if ($scope.tankHeight < 0){
 			// 	$scope.tankHeight = 0;
