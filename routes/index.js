@@ -10,6 +10,10 @@ router.get('/widget_tank', function(req, res, next) {
   res.render('widget_tank', { title: 'Widget tank' });
 });
 
+router.get('/widget_led', function(req, res, next) {
+  res.render('widget_led', { title: 'Widget led' });
+});
+
 
 
 module.exports = router;
