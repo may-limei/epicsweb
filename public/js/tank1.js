@@ -1,5 +1,4 @@
 var tankv="";
-
 tankv="<svg x=\"{{tankXpos}}px\" y=\"{{tankYpos}}px\" width=\"160px\" height=\"200px\" viewBox=\"0 0 160 200\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">"
 +"<symbol id=\"testuse\">"
 +"	<rect x=\"50\" y=\"0\" width=\"50px\" height=\"200px\" style=\"fill:gray; stroke-width:0; stroke:none\" />"
@@ -296,3 +295,30 @@ tankv10="<svg x=\"0px\" y=\"0px\" width=\"160px\" height=\"200px\" viewBox=\"0 0
 	+"<text x=\"120\" y=\"175\" style=\"font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;\">LO</text>"									
 	+"</svg>";
 $('#tank10').append(tankv10);
+
+var tankv11="";
+tankv11="<svg x=\"780px\" y=\"76px\" width=\"160px\" height=\"200px\" viewBox=\"0 0 160 200\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">"
+	+"<symbol id=\"testuse11\">"
+	+"<rect x=\"50\" y=\"0\" width=\"50px\" height=\"200px\" style=\"fill:gray; stroke-width:0; stroke:none\" />"
+	+"<!-- 刻度 -->"
+	+"<path style=\"fill: none; stroke:black; stroke-width: 1;\" d=\"M40 1 h10 M40 40 h10 M40 80 h10 M40 120 h10 M40 160 h10 M40 199 h10\"/>"
+	+"<path style=\"fill: none; stroke:#333; stroke-width: 1;\" d=\"M44 8 h6 M44 16 h6 M44 24 h6 M44 32 h6 M44 48 h6 M44 56 h6 M44 64 h6 M44 72 h6"
+	+"M44 88 h6 M44 96 h6 M44 104 h6 M44 112 h6 M44 128 h6 M44 136 h6 M44 144 h6 M44 152 h6 M44 168 h6 M44 176 h6 M44 184 h6 M44 192 h6\"/>"
+	+"<!-- 低报高报 -->"
+	+"<path style=\"fill: none; stroke:#e02222; stroke-width: 2.4;\" d=\"M100 190 h16 M100 10 h16\"/>"
+	+"<path style=\"fill: none; stroke:coral; stroke-width: 2.4;\" d=\"M100 170 h16 M100 30 h16\"/>"										
+	+"<rect id=\"tankRect\" x=\"50\" y=\"0\" width=\"50px\" height=\"{{tankValue11/200*100}}%\" style=\"fill:url(#tankGradient); stroke-width:0; stroke:none\" />"
+	+"</symbol>"
+	+"<use x=\"0\" y=\"-200\"  xlink:href=\"#testuse11\" transform=\"scale(1,-1)\"></use>"
+	+"<text x=\"7\" y=\"9\" style=\"font-size:1em; text-anchor:start\">200</text>"
+	+"<text x=\"7\" y=\"44\" style=\"font-size:1em; text-anchor:start\">160</text>"
+	+"<text x=\"7\" y=\"84\" style=\"font-size:1em; text-anchor:start\">120</text>"
+	+"<text x=\"7\" y=\"124\" style=\"font-size:1em; text-anchor:start\">80</text>"
+	+"<text x=\"7\" y=\"164\" style=\"font-size:1em; text-anchor:start\">40</text>"
+	+"<text x=\"7\" y=\"200\" style=\"font-size:1em; text-anchor:start\">0</text>"
+	+"<text x=\"120\" y=\"15\" style=\"font-size:1em; text-anchor:start; stroke:#e02222; stroke-width:0.4; fill:#e02222;\">HIHI</text>"
+	+"<text x=\"120\" y=\"195\" style=\"font-size:1em; text-anchor:start; stroke:#e02222; stroke-width:0.4; fill:#e02222;\">LOLO</text>"
+	+"<text x=\"120\" y=\"35\" style=\"font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;\">HI</text>"
+	+"<text x=\"120\" y=\"175\" style=\"font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;\">LO</text>"									
+	+"</svg>";
+$('#tank11').append(tankv11);

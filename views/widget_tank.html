@@ -45,7 +45,9 @@
 
 	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
 	
-	<script src="js/angular.min.js"></script> 
+	<script src="js/angular.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="bower_components/async/dist/async.js"></script> 
 <!-- 
 <script>
 		var serverIP="210.72.8.90";
@@ -655,8 +657,12 @@
 							<symbol id="tank">
 							</symbol>
 
-							<text x="25" y="35" style="font-size:1.5em; text-anchor:start;">属性测试:</text>
+							<text x="225" y="45" style="font-size:1.5em; text-anchor:start;">属性测试:</text>
 							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
+
+							<text x="725" y="30" style="font-size:1.5em; text-anchor:start;"> &nbsp&nbsp EPICS连接测试:</text>
+							<text x="725" y="56" style="font-size:1.5em; text-anchor:start;">（tankValue = Host:ai1 * 15 + 10）</text>
+							<g id="tank11"></g>
 
 							<text x="25" y="360" style="font-size:1.5em; text-anchor:start;">pvValue,HIHI,HI,LO,LOLO 测试:</text>
 							<g id="tank1"></g>
@@ -863,7 +869,15 @@
 
 	<!-- END CORE PLUGINS -->
 
-	<script>		
+
+
+	<script>
+		var serverIP="10.10.33.102";
+		var socket = io.connect(serverIP+':80');
+		var pvs={ai:[{pvname:"may:ai1"},{pvname:"may:ai2"},{pvname:"may:ai3"},{pvname:"may:compressExample"}],
+		    ao:[{pvname:"may:ao1"}, {pvname:"may:ao2"}, {pvname:"may:ao3"}]
+		}
+
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function($scope, $http) {   
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
@@ -879,8 +893,8 @@
 			$scope.tankValue=80;
 			$scope.tankWidth=160; 
 			$scope.tankHeight=200;
-			$scope.tankXpos="30";
-			$scope.tankYpos="60";
+			$scope.tankXpos="260";
+			$scope.tankYpos="75";
 			$scope.tankColor="orange";
 			$scope.tankMax="200";
 			$scope.tankMin="0";
@@ -889,26 +903,31 @@
 			$scope.tankLO=30;
 			$scope.tankLOLO=20;
 
+			$scope.tankValue11=10;
 
-			$scope.tankValue1=20;
 			
-			// if ($scope.tankHeight < 0){
-			// 	$scope.tankHeight = 0;
-			// }
-			// else if ($scope.tankHeight > 200){
-			// 	$scope.tankHeight=200;
-			// }
-			// else{
-			// 	;
-			// }
+		async.map(pvs.ai,function(item,callback){ 
+			socket.on(item.pvname, function (data) {
+				if(item.pvname == "may:ai1"){
+					$scope.$apply(function(){  //手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.tankValue发生变化了。详见腾讯课堂教程《$scope》节
+						$scope.tankValue11=data*15+10;
+					})
+				}
+				// console.log(item.pvname); 
+				// console.log("data is "+data);
+				// console.log("$scope.tankValue11 is "+$scope.tankValue11);
+			 });
+				
+		  }, function(err,results){
+		    callback(err,results); 
+		   //  console.log(results);
+		  });
 		});
 	</script>
 
 
 <script src="js/jquery.min.js"></script>
 <script src="js/tank1.js"></script>
-
-
 
 	<script>
 		function load(){
@@ -940,13 +959,6 @@
 		});
 
 	</script>
-
-
-
-
-
-
-
 
 	<!-- END JAVASCRIPTS -->
 
