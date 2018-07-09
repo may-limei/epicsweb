@@ -639,7 +639,9 @@
 		
 				<!-- END PAGE HEADER-->
 
-
+				<div class="alert">
+						Tank 或 Bar 控件可以用来显示液位，进度等。
+				</div>
 				<div class="row-fluid tankContainer" ng-controller="tankCtrl">
 					<div class="span9">
 						<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow:scroll; border: 1px solid #b4cef8;">
@@ -651,37 +653,53 @@
 								</linearGradient>
 							</defs>
 							<symbol id="tank">
-								<svg x="{{tankXpos}}px" y="{{tankYpos}}px" width="160px" height="200px" viewBox="0 0 160 200" preserveAspectRatio="xMidYMid meet" version="1.1" xmlns="http://www.w3.org/2000/svg">
-									<symbol id="testuse">
-										<rect x="50" y="0" width="50px" height="200px" style="fill:gray; stroke-width:0; stroke:none" />
-
-										<!-- 刻度 -->
-										<path style="fill: none; stroke:black; stroke-width: 1;" d="M40 1 h10 M40 40 h10 M40 80 h10 M40 120 h10 M40 160 h10 M40 199 h10"/>
-										<path style="fill: none; stroke:#333; stroke-width: 1;" d="M44 8 h6 M44 16 h6 M44 24 h6 M44 32 h6 M44 48 h6 M44 56 h6 M44 64 h6 M44 72 h6
-											M44 88 h6 M44 96 h6 M44 104 h6 M44 112 h6 M44 128 h6 M44 136 h6 M44 144 h6 M44 152 h6 M44 168 h6 M44 176 h6 M44 184 h6 M44 192 h6"/>
-
-										<!-- 低报高报 -->
-										<path style="fill: none; stroke:#e02222; stroke-width: 2.4;" d="M100 {{tankHIHI}} h16 M100 {{tankLOLO}} h16"/>	
-										<path style="fill: none; stroke:coral; stroke-width: 2.4;" d="M100 {{tankHI}} h16 M100 {{tankLO}} h16"/>											
-										<rect id="tankRect" x="50" y="0" width="50px" height="{{tankValue/(tankMax-tankMin)*100}}%" style="fill:url(#tankGradient); stroke-width:0; stroke:none" />									
-									</symbol>
-									<use x="0" y="-200"  xlink:href="#testuse" transform="scale(1,-1)"></use>	
-									<text x="7" y="9" style="font-size:1em; text-anchor:start">{{tankMax}}</text>
-									<text x="7" y="44" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*4}}</text>
-									<text x="7" y="84" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*3}}</text>
-									<text x="7" y="124" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*2}}</text>
-									<text x="7" y="164" style="font-size:1em; text-anchor:start">{{(tankMax-tankMin)/5*1}}</text>
-									<text x="7" y="200" style="font-size:1em; text-anchor:start">{{tankMin}}</text>	
-
-									<text x="120" y="{{200-tankHIHI+5}}" style="font-size:1em; text-anchor:start; stroke:#e02222; stroke-width:0.4; fill:#e02222;">HIHI</text>	
-									<text x="120" y="{{200-tankLOLO+5}}" style="font-size:1em; text-anchor:start; stroke:#e02222; stroke-width:0.4; fill:#e02222;">LOLO</text>	
-									<text x="120" y="{{200-tankHI+5}}" style="font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;">HI</text>	
-									<text x="120" y="{{200-tankLO+5}}" style="font-size:1em; text-anchor:start; stroke:coral; stroke-width:0.4; fill:coral;">LO</text>										
-								</svg>	
 							</symbol>
+
+							<text x="25" y="35" style="font-size:1.5em; text-anchor:start;">属性测试:</text>
 							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
 
-							<use x="10" y="300" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
+							<text x="25" y="360" style="font-size:1.5em; text-anchor:start;">pvValue,HIHI,HI,LO,LOLO:</text>
+							<g id="tank1"></g>
+							<g id="tank2"></g>
+							<g id="tank3"></g>
+							<g id="tank4"></g>
+							<g id="tank5"></g>
+							<g id="tank6"></g>
+
+							<text x="25" y="680" style="font-size:1.5em; text-anchor:start;">tankWidth,tankHeight,pvMax,pvMin,tankColor:</text>
+							<symbol id="tank7"></symbol>
+							<use x="30" y="470" xlink:href="#tank7" transform="scale({{240/160}}, {{300/200}})"></use>
+
+							<defs>
+								<linearGradient id="tankGradient8">
+									<stop offset="0%" style="stop-color:blue;" />
+									<stop offset="50%" style="stop-color:#ddd;" />
+									<stop offset="100%" style="stop-color:blue;" />
+								</linearGradient>
+							</defs>
+							<symbol id="tank8"></symbol>
+							<use x="130" y="560" xlink:href="#tank8" transform="scale({{400/160}}, {{260/200}})"></use>
+							
+							<defs>
+								<linearGradient id="tankGradient9">
+									<stop offset="0%" style="stop-color:cadetblue" />
+									<stop offset="50%" style="stop-color:#ddd;" />
+									<stop offset="100%" style="stop-color:cadetblue;" />
+								</linearGradient>
+							</defs>
+							<symbol id="tank9"></symbol>
+							<use x="630" y="615" xlink:href="#tank9" transform="scale(1.2,1.2)"></use>
+
+							<defs>
+								<linearGradient id="tankGradient10">
+									<stop offset="0%" style="stop-color:firebrick" />
+									<stop offset="50%" style="stop-color:#ddd;" />
+									<stop offset="100%" style="stop-color:firebrick;" />
+								</linearGradient>
+							</defs>
+							<symbol id="tank10"></symbol>
+							<use x="1300" y="965" xlink:href="#tank10" transform="scale(0.8, 0.8)"></use>
+
 						</svg>
 					</div>
 
@@ -770,150 +788,10 @@
 									</tbody>
 								</table>
 							</div>
-					</div>
 						</div>
+					</div>
 				</div>
 
-				<!-- BEGIN PAGE CONTENT-->
-		
-				<div class="row-fluid ">
-
-					<div class="span6">
-						<div class="portlet-body">
-
-							<div class="alert">
-
-								Tank 或 Bar 控件可以用来显示液位，进度等。
-							</div>
-
-							<h3>Basic</h3>
-							<div class="tankContainer" ng-controller="tankCtrl">
-								<svg width="100%" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background-color:lightgray">
-									<rect x="0" y="0" width="{{tankHeight}}%" height="20px" cx="10px" cy="10px" style="fill:{{btankColor}}; stroke-width:0; stroke:none">
-								</svg>
-								<label style="position:relative; top:0.5em; left:3%; font-size:1.5em; color:gray">液位：
-									<input type="text" ng-model="tankHeight" placeholder="输入液位，输入50即“液位50%”" style="position:absolute; top:-0.5em; left:7%; width:33%">
-									<label style="position:absolute; top:0em; left:50%; font-size:1em; color:gray">颜色：</label>
-									<input type="text" ng-model="tankColor" placeholder="输入颜色，如red，#123，#123456" style="position:absolute; top:-0.5em; left:57%; width:33%">
-								</label>
-							</div>
-
-							<div class="progress">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-success">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-warning">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-danger">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<h3>Striped</h3>
-
-							<div class="progress progress-striped">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-striped progress-success">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-							bar
-							<div class="progress progress-striped progress-warning">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-striped progress-danger">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<h3>Animated</h3>
-
-							<div class="progress progress-striped active">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-striped progress-success active">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-striped progress-warning active">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress progress-striped progress-danger active">
-
-								<div style="width: 60%;" class="bar"></div>
-
-							</div>
-
-
-
-						</div>
-					</div>
-					<div class="span6">
-						<div class="portlet-body">
-
-
-
-							<h3>Basic</h3>
-
-							<div class="progress vertical">
-
-								<div style="width: 20%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress vertical progress-success">
-
-								<div style="width: 30%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress vertical progress-warning">
-
-								<div style="width: 50%;" class="bar"></div>
-
-							</div>
-
-							<div class="progress vertical progress-danger">
-
-								<div style="width: 80%;" class="bar"></div>
-
-							</div>
-
-							
-
-						</div>
-					</div>
-				<!-- END PAGE CONTENT-->
 		
 				</div>
 	
@@ -985,7 +863,6 @@
 
 	<!-- END CORE PLUGINS -->
 
-
 	<script>		
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function($scope, $http) {   
@@ -997,53 +874,13 @@
 			});		
 		});
 		app.controller('tankCtrl', function($scope) { 
-			$scope.propjson={
-				 [
-					{"id": 0,
-					"properties": {
-						"widgetName": "tank",
-						"tankName": "pv0",
-						"tankValue": 80,
-						"tankWidth": 160, 
-						"tankHeight": 200,
-						"tankXpos": 30,
-						"tankYpos": 30,
-						"tankColor": orange,
-						"tankMax": 200,
-						"tankMin": 0,
-						"tankHIHI": 180,
-						"tankHI": 170,
-						"tankLO": 30,
-						"tankLOLO": 20
-					}},
-					{"id": 1,
-					"properties": {
-						"widgetName": "tank",
-						"tankName": "pv0",
-						"tankValue": 80,
-						"tankWidth": 160, 
-						"tankHeight": 200,
-						"tankXpos": 30,
-						"tankYpos": 30,
-						"tankColor": orange,
-						"tankMax": 200,
-						"tankMin": 0,
-						"tankHIHI": 180,
-						"tankHI": 170,
-						"tankLO": 30,
-						"tankLOLO": 20
-					}}
-				]
-			};
-
-
 			$scope.widgetName="tank"; 
 			$scope.tankName="pv0";
 			$scope.tankValue=80;
 			$scope.tankWidth=160; 
 			$scope.tankHeight=200;
 			$scope.tankXpos="30";
-			$scope.tankYpos="30";
+			$scope.tankYpos="60";
 			$scope.tankColor="orange";
 			$scope.tankMax="200";
 			$scope.tankMin="0";
@@ -1051,6 +888,9 @@
 			$scope.tankHI=170;
 			$scope.tankLO=30;
 			$scope.tankLOLO=20;
+
+
+			$scope.tankValue1=20;
 			
 			// if ($scope.tankHeight < 0){
 			// 	$scope.tankHeight = 0;
@@ -1063,6 +903,13 @@
 			// }
 		});
 	</script>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/tank1.js"></script>
+
+
+
 	<script>
 		function load(){
 			$(".manual").each(function () {
