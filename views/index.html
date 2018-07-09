@@ -950,9 +950,9 @@
 	<script src="media/js/app.js"></script>   
 	<script>
 			// var serverIP="192.168.2.105";
-			var serverIP="127.0.0.1";
+			var serverIP="10.10.33.102";
 			// var socket = io.connect(serverIP+':9021');
-			var socket = io.connect(serverIP+':5064');
+			var socket = io.connect(serverIP+':80');
 			var pvs={ai:[{pvname:"may:ai1"},{pvname:"may:ai2"},{pvname:"may:ai3"},{pvname:"may:compressExample"}],
 		    ao:[{pvname:"may:ao1"}, {pvname:"may:ao2"}, {pvname:"may:ao3"}]
 			}
@@ -961,7 +961,7 @@
 		  async.map(pvs.ai,function(item,callback){
 		 
 			socket.on(item.pvname, function (data) {
-				//  console.log(item.pvname); 
+				 console.log(item.pvname); 
 				 if(item.pvname == "may:compressExample"){
 					//   xAxisData= linspace(1,data.length,data.length);
 					//   option2.xAxis.data = xAxisData;
