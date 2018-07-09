@@ -680,6 +680,8 @@
 								</svg>	
 							</symbol>
 							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
+
+							<use x="10" y="300" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
 						</svg>
 					</div>
 
@@ -995,6 +997,46 @@
 			});		
 		});
 		app.controller('tankCtrl', function($scope) { 
+			$scope.propjson={
+				 [
+					{"id": 0,
+					"properties": {
+						"widgetName": "tank",
+						"tankName": "pv0",
+						"tankValue": 80,
+						"tankWidth": 160, 
+						"tankHeight": 200,
+						"tankXpos": 30,
+						"tankYpos": 30,
+						"tankColor": orange,
+						"tankMax": 200,
+						"tankMin": 0,
+						"tankHIHI": 180,
+						"tankHI": 170,
+						"tankLO": 30,
+						"tankLOLO": 20
+					}},
+					{"id": 1,
+					"properties": {
+						"widgetName": "tank",
+						"tankName": "pv0",
+						"tankValue": 80,
+						"tankWidth": 160, 
+						"tankHeight": 200,
+						"tankXpos": 30,
+						"tankYpos": 30,
+						"tankColor": orange,
+						"tankMax": 200,
+						"tankMin": 0,
+						"tankHIHI": 180,
+						"tankHI": 170,
+						"tankLO": 30,
+						"tankLOLO": 20
+					}}
+				]
+			};
+
+
 			$scope.widgetName="tank"; 
 			$scope.tankName="pv0";
 			$scope.tankValue=80;
