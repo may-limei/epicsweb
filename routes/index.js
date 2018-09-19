@@ -14,7 +14,7 @@ router.get('/widget_led', function(req, res, next) {
   res.render('widget_led', { title: 'Widget led' });
 });
 
-router.get('/system0.html', function(req, res, next) {
+router.get('/system0', function(req, res, next) {
   res.render('system0', { title: 'system-0' });
 });
 
