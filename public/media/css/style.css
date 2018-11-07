@@ -851,7 +851,7 @@ Sidebar toggler(show/hide)
 }
 
 /* 2rd level sub menu*/
-.page-sidebar-closed ul.page-sidebar-menu > li:hover > .subimportant-menu > li > a {
+.page-sidebar-closed ul.page-sidebar-menu > li:hover > .sub-menu > li > a {
   padding-left: 15px !important;
 }
 
