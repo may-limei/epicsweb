@@ -851,7 +851,7 @@ Sidebar toggler(show/hide)
 }
 
 /* 2rd level sub menu*/
-.page-sidebar-closed ul.page-sidebar-menu > li:hover > .sub-menu > li > a {
+.page-sidebar-closed ul.page-sidebar-menu > li:hover > .subimportant-menu > li > a {
   padding-left: 15px !important;
 }
 
@@ -1043,7 +1043,7 @@ Footer
 }
 
 .page-footer-fixed .page-container {
-  /* margin-bottom: 33px; */
+  margin-bottom: 33px;
 }
 
 .page-footer-fixed.page-sidebar-fixed .footer {
