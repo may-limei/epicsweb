@@ -1043,7 +1043,7 @@ Footer
 }
 
 .page-footer-fixed .page-container {
-  margin-bottom: 33px;
+  /* margin-bottom: 33px; */
 }
 
 .page-footer-fixed.page-sidebar-fixed .footer {

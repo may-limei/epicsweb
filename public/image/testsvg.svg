@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="200" height="400" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+    <title> 综合实验平台 </title>
+    <desc>综合实验平台</desc>
+    <path d="m 0 0 h 200 0" style="stroke:black" /><text x="10" y="0">y=0</text>
+    <path d="m 0 50 h 200 0" style="stroke:black" /><text x="10" y="50">y=50</text>
+    <path d="m 0 100 h 200 0" style="stroke:black" /><text x="10" y="100">y=100</text>
+    <path d="m 0 150 h 200 0" style="stroke:black" /><text x="10" y="150">y=150</text>
+    <circle cx="100" cy="100" r="60" style="fill:green; stroke:black;" />
+    <circle cx="100" cy="200" r="60" />
+</svg>
