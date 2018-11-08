@@ -451,10 +451,11 @@
 					<!-- <div style="overflow:hidden; margin-left:0px; margin-right:0px; border-color:purple;height:830px; width:{{innerWid}}px; display:inline"> -->
 						<!-- <img id="screenSVG" src="image/testsvg.svg" width="800" height="600" /> -->
 					<div id="screenContainer" style="background-color:#3d3d3d; display:flex">
-						<div id="leftContainer" style="position:relative ;background-color:forestgreen">
+						<div id="leftContainer" style="position:relative ;background-color:#3d3d3d">
 							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
 								<title>加热棒径向功率和状态</title>
 								<desc>综合实验平台 - 加热棒径向功率和状态</desc>
+								<path d="m3 0 v3 {{innerHeight}}" style="stroke:#b9cde5; stroke-width:3;" />
 								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/10}}" style="font-size:1.1em; font-weight:bold;">加热棒径向功率</text>
 								<!-- 堆芯边缘 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2}}" style="stroke:#b9cde5; stroke-width:5; fill:none;" />
 								<!-- 正中间的加热棒 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6}}" style="stroke:none; fill:#d99694;" />
@@ -544,10 +545,24 @@
 							</svg>
 							<!-- <img id="leftSVG" src="image/testsvg.svg" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:auto; height:auto; max-width:100%; max-height:100%;"/> -->
 						</div>
-						<div id="middleContainer" style="background-color:yellow; display:flex">
+						<!-- <div id="middleContainer" style="background-color:yellow; display:flex">
 						</div>
 						<div id="rightContainer" style="background-color:lightblue; display:flex">
-						</div>	
+						</div> -->
+						<div id="middleContainer" style="background-color:#3d3d3d; display:flex">
+							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+								<title>堆芯温度分布</title>
+								<desc>综合实验平台 - 堆芯温度分布</desc>
+								<path d="m3 0 v3 {{innerHeight}}" style="stroke:#b9cde5; stroke-width:3;" />
+							</svg>
+						</div>
+						<div id="rightContainer" style="background-color:#3d3d3d; display:flex">
+							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+								<title>装置图</title>
+								<desc>综合实验平台 - 装置图</desc>
+								<path d="m3 0 v3 {{innerHeight}}" style="stroke:#b9cde5; stroke-width:3;" />
+							</svg>
+						</div>
 					</div>
 
 				</div>
