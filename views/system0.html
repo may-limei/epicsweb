@@ -617,8 +617,8 @@
 								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerWidth/4.3)/10*8}}" width="{{innerWidth/6/32*30-innerWidth/6/2.7}}" height="{{innerWidth/6/12}}" style="stroke:none; fill:#f888d8;" />
 								<!--1--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerWidth/4.3)/10*9}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{innerWidth/6/12}}" style="stroke:none; fill:#254061;" />
 								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerWidth/4.3)/10*9}}" width="{{innerWidth/6/32*30-innerWidth/6/4.1}}" height="{{innerWidth/6/12}}" style="stroke:none; fill:#f888d8;" />
-								<!--X--><path d="m{{innerWidth/6/32+innerWidth/6/24}} {{innerWidth/6+innerWidth/6/9+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/8}} h{{innerWidth/6/32*30-innerWidth/6/12}} 0" style="stroke:#222222; stroke-width:2;" />
-								<!--Y--><path d="m{{innerWidth/6/32+innerWidth/6/24}} {{innerWidth/6+innerWidth/6/9+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/8}} v0 {{-innerWidth/4.05}}" style="stroke:#222222; stroke-width:2;" />
+								<!--X--><path d="m{{innerWidth/6/32+innerWidth/6/24}} {{innerWidth/6+innerWidth/6/9+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/8}} h{{innerWidth/6/32*30-innerWidth/6/12}}" style="stroke:#222222; stroke-width:2;" />
+								<!--Y--><path d="m{{innerWidth/6/32+innerWidth/6/24}} {{innerWidth/6+innerWidth/6/9+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/8}} v{{-innerWidth/4.05}}" style="stroke:#222222; stroke-width:2;" />
 								<path d="m{{innerWidth/6/32*30-innerWidth/6/40}} {{innerWidth/6+innerWidth/3.84}} L{{innerWidth/6/32*30+innerWidth/6/100}} {{innerWidth/6+innerWidth/3.875}} L{{innerWidth/6/32*30-innerWidth/6/40}} {{innerWidth/6+innerWidth/3.92}}" style="stroke:#222222; stroke-width:2;" />
 								<path d="m{{innerWidth/6/16+innerWidth/6/64-innerWidth/6/45}} {{innerWidth/6+innerWidth/6/8-innerWidth/6/32}} L{{innerWidth/6/16+innerWidth/6/64+innerWidth/6/100}} {{innerWidth/6+innerWidth/6/8-innerWidth/6/30}} L{{innerWidth/6/16+innerWidth/6/110}} {{innerWidth/6+innerWidth/6/8-innerWidth/6/14}}" style="stroke:#222222; stroke-width:2;" />
 								<text x="{{innerWidth/6-innerWidth/6/10}}" y="{{innerWidth/6+innerWidth/3.72}}" style="font-size:1.1em; text-anchor:end;">温度</text>
@@ -626,18 +626,26 @@
 							</svg>
 						</div>
 						<div id="rightContainer" style="background-color:#254061; border:3px solid #b9cde5; border-left:none; display:flex">
-							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+							<svg width="{{innerWidth/3*2}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
 								<title>装置图</title>
 								<desc>综合实验平台 - 装置图</desc>
+								<!-- 虚线框橙 --><rect x="{{innerWidth/3*2/9*1.1}}" y="{{innerWidth/6/2/40*3.15}}" width="{{innerWidth/3*2/9*2}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#cc5600; stroke-width:2; stroke-dasharray:5,3;" />
+								<!-- 虚线框绿 --><rect x="{{innerWidth/3*2/9*3.9}}" y="{{innerWidth/6/2/40*3}}" width="{{innerWidth/3*2/9*2}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#00cc00; stroke-width:2; stroke-dasharray:5,3;" />
+								<!-- 虚线框蓝 --><rect x="{{innerWidth/3*2/9*6.2}}" y="{{innerWidth/6/2/40*3}}" width="{{innerWidth/3*2/9*2.7}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#2167ff; stroke-width:2; stroke-dasharray:5,3;" />
+								<path d="m{{innerWidth/30}} {{innerHeight/8}}h{{innerWidth/75}}Q{{innerWidth/25}} {{innerHeight/6.7}}, {{innerWidth/20}} {{innerHeight/5.6}}h{{-innerWidth/60}}" style="stroke:#00cc00;fill:none;" />
+								<path d="m0 {{innerHeight/4}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
+								<path d="m0 {{innerHeight/2}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
+								<path d="m0 {{innerHeight/4*3}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
 							</svg>
 						</div>
 						<div id="topContainer" width="{{innerWidth/3}}"; height="{{innerWidth/6/5}}"; style="position:absolute; top:0; left:0; background-color:#254061; border:3px solid #b9cde5;">
 							<svg width="{{innerWidth/3}}" height="{{innerWidth/6/5}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
 								<title>总体参数</title>
 								<desc>综合实验平台 - 总体参数</desc>
+								<text x="{{innerWidth/6/16/2*12}}" y="{{innerWidth/6/20}}" style="font-size:1.2em; font-weight:bold; fill:#d9d9d9;">反应堆温度控制和监测（标题这样可以？？）</text>
 								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/20}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9;">总体参数</text>
-								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/20+innerWidth/6/5/3}}" style="font-size:1.1em;">总功率</text>
-								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/20+innerWidth/6/5/3*2}}" style="font-size:1.1em;">硼浓度</text>
+								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/20+innerWidth/6/5/3}}" style="font-size:1.1em;">总功率 - 【这块布局待改】</text>
+								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/20+innerWidth/6/5/3*2}}" style="font-size:1.1em;">硼浓度 - 【这块布局待改】</text>
 							</svg>
 						</div>
 					</div>
