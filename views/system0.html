@@ -434,39 +434,31 @@
 						<!-- <img id="screenSVG" src="image/testsvg.svg" width="800" height="600" /> -->
 					<div id="screenContainer" style="position:relative; background-color:#254061; display:flex;">
 						<div id="leftContainer" style="background-color:#254061; border:3px solid #b9cde5; border-right:none; overflow:visible;">
-							<!-- <svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"> -->
-								<!-- <svg x="66%" y="10%" width="34%" height="3.25%" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
-									<title>加热棒径向功率和状态</title>
-									<desc>综合实验平台 - 加热棒径向功率和状态</desc>
-									<rect x="100%" y="100%" width="100%" height="3.25%" style="stroke:none; fill:#254000;" />
-									<text x="67%" y="2.5%" style="font-size:1.5em; font-weight:bold; fill:#d9d9d9">反应堆温度</text>
-								</svg> -->
-								<svg width="100%" height="100%" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+							<svg width="100%" height="100%" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
 								<title>加热棒径向功率和状态</title>
 								<desc>综合实验平台 - 加热棒径向功率和状态</desc>
-								<rect x="66%" y="0%" width="34%" height="3.25%" style="stroke:none; fill:#254000;" />
-								<text x="67%" y="2.5%" style="font-size:1.5em; font-weight:bold; fill:#d9d9d9">反应堆温度</text>
-								<text x="6.25%" y="6%" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9">加热棒径向功率</text>
-								<!-- 堆芯边缘 --><circle cx="{{innerWidth/6/2+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2*0.85}}" style="stroke:#b9cde5; stroke-width:3; fill:none;" />
-								<!-- 正中间的加热棒 --><circle cx="{{innerWidth/6/2+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d99694;" />
-								<!-- 从内至外第二圈加热棒 --><circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d9cde5;" transform="rotate(0, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d9cde5;" transform="rotate(60, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d9cde5;" transform="rotate(120, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d9cde5;" transform="rotate(180, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d9cde5;" transform="rotate(240, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#d9cde5;" transform="rotate(300, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!-- 从内至外第三圈加热棒 --><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(15, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(45, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(75, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(105, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(135, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(165, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(195, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(225, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(255, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(285, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(315, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.9}}" style="stroke:none; fill:#c00000;" transform="rotate(345, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<text x="50%" y="6%" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle">加热棒径向功率</text>
+								<svg x="0%" y="7%" width="100%" height="25%" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
+									<!-- 堆芯边缘 --><circle cx="50%" cy="50%" r="35%" style="stroke:#b9cde5; stroke-width:3; fill:none;" />
+								<!-- 正中间的加热棒 --><!--1--><circle cx="50%" cy="50%" r="6%" style="stroke:none; fill:#d99694;" />
+								<!-- 从内至外第二圈加热棒 --><!--2--><circle cx="61.5%" cy="50%" r="6%" style="stroke:none; fill:#d9cde5;" />
+								<!--3--><circle cx="55.75%" cy="40.04%" r="6%" style="stroke:none; fill:#d9cde5;" />
+								<!--4--><circle cx="44.25%" cy="40.04%" r="6%" style="stroke:none; fill:#d9cde5;" />
+								<!--5--><circle cx="38.5%" cy="50%" r="6%" style="stroke:none; fill:#d9cde5;" />
+								<!--6--><circle cx="44.25%" cy="55.75%" r="6%" style="stroke:none; fill:#d9cde5;" />
+								<!--7--><circle cx="55.75%" cy="55.75%" r="6%" style="stroke:none; fill:#d9cde5;" />
+								<!-- 从内至外第三圈加热棒 --><circle cx="27%" cy="50%" r="6%" style="stroke:none; fill:#c000ff;" transform="rotate(0, 50%, 50%)" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(45, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(75, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(105, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(135, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(165, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(195, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(225, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(255, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(285, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(315, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/22+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="2.5%" style="stroke:none; fill:#c00000;" transform="rotate(345, {{innerWidth/6/2+innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
 								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/20+innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/20}}" style="font-size:1em; font-weight:bold; fill:#333333;">1</text>
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/3.8+innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/20}}" style="font-size:1em; font-weight:bold; fill:#333333;">2</text>
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/10+innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9-innerWidth/6*0.7/2/4.2}}" style="font-size:1em; font-weight:bold; fill:#333333;">3</text>
@@ -486,7 +478,9 @@
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/15+innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/1.5}}" style="font-size:1em; font-weight:bold; fill:#222222;">17</text>
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.8+innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/2}}" style="font-size:1em; font-weight:bold; fill:#222222;">18</text>
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.9+innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/4.8}}" style="font-size:1em; font-weight:bold; fill:#222222;">19</text>
-								<!-- state --><text x="{{innerWidth/6/16}}" y="{{innerWidth/6-innerWidth/6/34}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9">加热棒状态</text>
+								</svg>
+								
+								<!-- state --><text x="50%" y="{{innerWidth/6-innerWidth/6/34}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">加热棒状态</text>
 								<rect x="{{innerWidth/6/32}}" y="{{innerWidth/6+innerWidth/6/24-innerWidth/6/32}}" width="{{innerWidth/6/32*30}}" height="{{innerHeight-innerWidth/6*1.1+innerWidth/6/32}}" style="stroke:none; fill:#f888d8;" />
 								<text x="{{innerWidth/6/16+innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">加热棒</text>
 								<text x="{{innerWidth/6/16+innerWidth/6/4}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">开/关</text>
@@ -647,7 +641,7 @@
 								<path d="m0 {{innerHeight/4*3}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
 							</svg>
 						</div>
-						<div id="topContainer" style="position:absolute; top:0.8%; left:10%; width:14%; height:2.5%; background-color:#254061; border:3px solid #254061;">
+						<div id="topContainer" style="position:absolute; top:0.8%; left:11.6%; width:14%; height:2.5%; background-color:#254061; border:3px solid #254061;">
 							<p style="font-size:1.4em; font-weight:bold; color:#d9d9d9; background-color:#254061">
 								反应堆温度控制和监测
 							</p>
@@ -660,12 +654,12 @@
 								<text x="5%" y="50%" style="font-size:1.1em;">硼浓度 - 【这块布局待改】</text>
 							</svg> -->
 						</div>
-						<div id="topMarker" style="position:absolute; top:4%; left:12.8%; width:8%; height:7%; background-color:green; border:none; display:flex;">
+						<div id="topMarker" style="position:absolute; top:4%; left:13.7%; width:6%; height:7%; background-color:green; border:none; display:flex;">
 							<div style="width:50%; height:100%; background-color:green;">
-								<p style="font-size:1em; color:#222222; font-weight:bold; margin:2% 0 5% 0; padding:0 5% 0 15%;">
+								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:5% 0 5% 0; padding:0 5% 0 15%;">
 									总功率
 								</p>
-								<p style="font-size:1em; color:#222222; font-weight:bold; margin:26% 0 1% 0; padding:0 5% 0 15%;">
+								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:26.5% 0 1% 0; padding:0 5% 0 15%;">
 									硼浓度
 								</p>
 							</div>
