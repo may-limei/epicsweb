@@ -478,7 +478,7 @@
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/6}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.48}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">17</text>
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.2}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">18</text>
 								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.6}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/4.8}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">19</text>
-								<!-- state --><text x="{{innerWidth/6/16}}" y="{{innerWidth/6-innerWidth/6/34}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9">加热棒状态</text>
+								<!-- state --><text x="{{innerWidth/6/2}}" y="{{innerWidth/6-innerWidth/6/33}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9">加热棒状态</text>
 								<rect x="{{innerWidth/6/32}}" y="{{innerWidth/6+innerWidth/6/24-innerWidth/6/32}}" width="{{innerWidth/6/32*30}}" height="{{innerHeight-innerWidth/6*1.1+innerWidth/6/32}}" style="stroke:none; fill:#f888d8;" />
 								<text x="{{innerWidth/6/16+innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">加热棒</text>
 								<text x="{{innerWidth/6/16+innerWidth/6/4}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">开/关</text>
@@ -541,60 +541,59 @@
 								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/32}}" style="font-size:1em;">开</text>
 								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/32}}" style="font-size:1.1em;">0.934</text>
 							</svg>
-							<!-- <img id="leftSVG" src="image/testsvg.svg" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:auto; height:auto; max-width:100%; max-height:100%;"/> -->
 						</div>
 						<div id="middleContainer" style="background-color:#254061; border:3px solid #b9cde5; display:flex">
 							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
 								<title>堆芯温度分布</title>
 								<desc>综合实验平台 - 堆芯温度分布</desc>
-								<text x="{{innerWidth/12}}" y="{{innerHeight/50*3}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">径向温度分布</text>
-								<!-- 堆芯边缘 --><circle cx="{{innerWidth/6/2-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2*0.83}}" style="stroke:#b9cde5; stroke-width:3; fill:none;" />
-								<!-- 堆芯正中心 --><circle cx="{{innerWidth/6/2-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.15}}" style="fill:#b9cde5;" />
-								<!-- 正中间的加热棒 --><circle cx="{{innerWidth/6/2-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" />
-								<!-- 从内至外第二圈加热棒 --><circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(0, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(60, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(120, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(180, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(240, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(300, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!-- 从内至外第三圈加热棒 --><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(15, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(45, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(75, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(105, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(135, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(165, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(195, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(225, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(255, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(285, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(315, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(345, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!-- temperature --><!--1--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(120, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--2--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(120, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--3--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/6.42-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(90, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--4--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(30, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--5--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(30, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--6--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(300, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--7--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/60-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(300, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--8--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(300, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--9--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/6.42-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(270, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--6--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(210, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--7--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/60-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(210, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<!--8--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20-innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(210, {{innerWidth/6/2-innerWidth/6/12}},{{innerWidth/6/2+innerWidth/6/9}})" />
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/4.2-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9-innerWidth/6*0.7/2/2.3}}" style="font-size:1em; font-weight:bold; fill:#222222;">1</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.4-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9-innerWidth/6*0.7/2/1.35}}" style="font-size:1em; font-weight:bold; fill:#222222;">2</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/40-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9-innerWidth/6*0.7/2/3.52}}" style="font-size:1em; font-weight:bold; fill:#222222;">3</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.95-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9-innerWidth/6*0.7/2/4.25}}" style="font-size:1em; font-weight:bold; fill:#222222;">4</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.23-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9-innerWidth/6*0.7/2/2.47}}" style="font-size:1em; font-weight:bold; fill:#222222;">5</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/4.6-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/1.92}}" style="font-size:1em; font-weight:bold; fill:#222222;">6</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/3.75-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/1.52}}" style="font-size:1em; font-weight:bold; fill:#222222;">7</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/2.95-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/1.21}}" style="font-size:1em; font-weight:bold; fill:#222222;">8</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/40-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/2.85}}" style="font-size:1em; font-weight:bold; fill:#222222;">9</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.43-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/3.2}}" style="font-size:1em; font-weight:bold; fill:#222222;">10</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.8-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/2.52}}" style="font-size:1em; font-weight:bold; fill:#222222;">11</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.4-innerWidth/6/12}}" y="{{innerWidth/6/2+innerWidth/6/9+innerWidth/6*0.7/2/2.05}}" style="font-size:1em; font-weight:bold; fill:#222222;">12</text>
+								<text x="{{innerWidth/12}}" y="{{innerWidth/6-innerWidth/6/33}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">径向温度分布</text>
+								<!-- 堆芯边缘 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2*0.83}}" style="stroke:#b9cde5; stroke-width:3; fill:none;" />
+								<!-- 堆芯正中心 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.15}}" style="fill:#b9cde5;" />
+								<!-- 正中间的加热棒 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" />
+								<!-- 从内至外第二圈加热棒 --><circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(0, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(60, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(180, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(240, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!-- 从内至外第三圈加热棒 --><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(15, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(45, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(75, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(105, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(135, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(165, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(195, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(225, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(255, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(285, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(315, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(345, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!-- temperature --><!--1--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--2--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--3--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/6.42}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(90, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--4--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(30, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--5--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(30, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--6--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--7--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/60}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--8--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--9--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/6.42}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(270, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--6--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(210, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--7--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/60}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(210, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<!--8--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(210, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
+								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/4.2}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/2.3}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">1</text>
+								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.4}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/1.35}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">2</text>
+								<text x="{{innerWidth/6/2-innerWidth/2/6/40}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/3.52}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">3</text>
+								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.95}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/4.25}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">4</text>
+								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.23}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/2.47}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">5</text>
+								<text x="{{innerWidth/6/2-innerWidth/2/6/4.6}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.92}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">6</text>
+								<text x="{{innerWidth/6/2-innerWidth/2/6/3.75}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.52}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">7</text>
+								<text x="{{innerWidth/6/2-innerWidth/2/6/2.95}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.21}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">8</text>
+								<text x="{{innerWidth/6/2-innerWidth/2/6/40}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.85}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">9</text>
+								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.43}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/3.2}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">10</text>
+								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.8}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.52}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">11</text>
+								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.4}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.05}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">12</text>
 
-								<!-- kong state --><text x="{{innerWidth/6-innerWidth/6/16}}" y="{{innerWidth/6-innerWidth/6/34}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:end;">轴向温度分布</text>
+								<!-- kong state --><text x="{{innerWidth/6/2}}" y="{{innerHeight/50*3}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">轴向温度分布</text>
 								<rect x="{{innerWidth/6/32}}" y="{{innerWidth/6+innerWidth/6/24-innerWidth/6/32}}" width="{{innerWidth/6/32*30}}" height="{{innerHeight-innerWidth/6*1.1+innerWidth/6/32}}" style="stroke:none; fill:#b7dee8;" />
 								<text x="{{innerWidth/6/32+innerWidth/6/32*15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.05}}" style="fill:#333333; font-size:1.2em; font-weight:bold; text-anchor:middle;">【温度测量孔1】</text>
 								<text x="{{innerWidth/6/5}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.95}}" style="font-size:1.1em; text-anchor:end;">深度</text>
@@ -649,28 +648,28 @@
 								<text x="{{innerWidth/6/16}}" y="{{innerWidth/6/20+innerWidth/6/5/3*2}}" style="font-size:1.1em;">硼浓度 - 【这块布局待改】</text>
 							</svg>
 						</div> -->
-						<div id="topContainer" style="position:absolute; top:0.8%; left:11.6%; width:14%; height:2.5%; background-color:#254061; border:3px solid #254061;">
-							<p style="font-size:1.4em; font-weight:bold; color:#d9d9d9; background-color:#254061">
+						<div id="topContainer" style="position:absolute; top:0.8%; left:9.65%; width:14%; height:2.5%; background-color:#254061; border:3px solid #254061;">
+							<p style="font-size:1.4em; font-weight:bold; color:#d9d9d9; background-color:#254061; white-space:nowrap; text-align:center;">
 								反应堆温度控制和监测
 							</p>
 						</div>
 						<div id="topMarker" style="position:absolute; top:4%; left:13.7%; width:6%; height:7%; background-color:green; border:none; display:flex;">
 							<div style="width:50%; height:100%; background-color:green;">
-								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:5% 0 5% 0; padding:0 5% 0 15%;">
+								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:5% 0 5% 0; padding:0 5% 0 15%; white-space: nowrap;">
 									总功率
 								</p>
-								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:26.5% 0 1% 0; padding:0 5% 0 15%;">
+								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:26.5% 0 1% 0; padding:0 5% 0 15%; white-space: nowrap;">
 									硼浓度
 								</p>
 							</div>
 							<div style="width:50%; height:100%; background-color:yellow;">
-								<p style="font-size:1em; color:#222222; margin:0 0 0 0; padding:0 5% 0 15%;">
+								<p style="font-size:1em; color:#222222; margin:0 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
 									1002.35
 								</p>
-								<p style="font-size:1em; color:#222222; margin:-9% 0 0 0; padding:0 5% 0 15%;">
+								<p style="font-size:1em; color:#222222; margin:-9% 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
 									1.05
 								</p>
-								<p style="font-size:1em; color:#222222; margin:1.5% 0 1% 0; padding:0 5% 0 15%;">
+								<p style="font-size:1em; color:#222222; margin:1.5% 0 1% 0; padding:0 5% 0 15%; white-space: nowrap;">
 									24.45
 								</p>
 							</div>
