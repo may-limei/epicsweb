@@ -629,14 +629,20 @@
 							<svg width="{{innerWidth/3*2}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
 								<title>装置图</title>
 								<desc>综合实验平台 - 装置图</desc>
-								<!-- 虚线框橙 --><rect x="{{innerWidth/3*2/9*1.1+innerWidth/25}}" y="{{innerWidth/6/2/40*3.15}}" width="{{innerWidth/3*2/9*2}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#cc5600; stroke-width:1; stroke-dasharray:5,3;" />
+								<!-- 虚线框橙 --><rect x="{{innerWidth/3*2/9*1.1+innerWidth/100}}" y="{{innerWidth/6/2/40*3.15}}" width="{{innerWidth/3*2/9*2+innerWidth/20}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#cc5600; stroke-width:1; stroke-dasharray:5,3;" />
 								<!-- 虚线框绿 --><rect x="{{innerWidth/3*2/9*3.9+innerWidth/45}}" y="{{innerWidth/6/2/40*3}}" width="{{innerWidth/3*2/9*1.7}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#00cc00; stroke-width:1; stroke-dasharray:5,3;" />
 								<!-- 虚线框蓝 --><rect x="{{innerWidth/3*2/9*6.2}}" y="{{innerWidth/6/2/40*3}}" width="{{innerWidth/3*2/9*2.7}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#2167ff; stroke-width:1; stroke-dasharray:5,3;" />
 								
 								<!-- <path d="m0 {{innerHeight/4}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
 								<path d="m0 {{innerHeight/2}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
 								<path d="m0 {{innerHeight/4*3}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" /> -->
-								<svg id="steam generator1" x="{{innerWidth/30-innerWidth*0.006+innerWidth/30}}" y="{{innerHeight/18}}" width="{{innerWidth/36}}" height="{{innerWidth/18}}" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+
+								<text x="{{innerWidth/16}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">余排</text>
+								<text x="{{innerWidth/5.1}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">堆本体</text>
+								<text x="{{innerWidth/2.7}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">一回路</text>
+								<text x="{{innerWidth/1.8}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">二回路</text>
+								 
+								<svg id="steam generator1" x="{{innerWidth/30-innerWidth*0.006+innerWidth/30-innerWidth/40}}" y="{{innerHeight/18}}" width="{{innerWidth/36}}" height="{{innerWidth/18}}" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
 									<title>蒸汽发生器1</title>
 									<desc>蒸汽发生器1</desc>
 									<path d="m90 45h20v25 M110 70A50 50 0 0 1 150 120v70L135 210v80h-70v-80L50 190v-70 M50 120A50 50 0 0 1 90 70L90 45" style="stroke:cadetblue; stroke-width:4px; fill:none;" />
@@ -674,7 +680,7 @@
 									<path d="m66 212v80 M134 212v80 M81 290v-88 M81 202A19 19 0 0 1 120 201v88 M66 288h70 M91 71v-25h18v25" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
 									<path d="M75.25 314.75l-30 30 M124.75 314.75l30 30" style="stroke:cadetblue; stroke-width:10px; fill:none;" />
 								</svg>
-								<svg id="cooler1" x="{{innerWidth/110-innerWidth*0.01+innerWidth/40}}" y="{{innerHeight/4}}" width="{{innerWidth/20}}" height="{{innerWidth/40}}" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+								<svg id="cooler1" x="{{innerWidth/110-innerWidth*0.01+innerWidth/40-innerWidth/40}}" y="{{innerHeight/4}}" width="{{innerWidth/20}}" height="{{innerWidth/40}}" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
 									<title>冷却器1</title>
 									<desc>冷却器1</desc>
 									<rect x="50" y="30" width="100" height="40" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
@@ -688,7 +694,7 @@
 									<path d="M20 50h30 M150 50h30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
 									<path d="M20 50L50 50l6.25 -12.5l12.5 25l12.5 -25l12.5 25l12.5 -25l12.5 25l12.5 -25l12.5 25l6.25 -12.5h30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
 								</svg>
-								<svg id="heat exchanger1" x="{{innerWidth/20+innerWidth*0.006+innerWidth/30}}" y="{{innerHeight/2}}" width="{{innerWidth/40}}" height="{{innerWidth/20}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+								<svg id="heat exchanger1" x="{{innerWidth/20+innerWidth*0.006+innerWidth/30-innerWidth/40}}" y="{{innerHeight/2}}" width="{{innerWidth/40}}" height="{{innerWidth/20}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
 									<title>换热器1</title>
 									<desc>换热器1</desc>
 									<rect x="2" y="50" width="96" height="100" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
@@ -745,10 +751,9 @@
 									<rect x="115" y="100" width="5" height="290" style="stroke:#222222; stroke-width:3px; fill:#222222;" />
 									<path d="M20 381h-20 M180 381h20" style="stroke:cadetblue; stroke-width:5px; fill:cadetblue;" />
 								</svg>
-
-								<!--余排hot--><path d="M{{innerWidth/30+innerWidth*0.0158+innerWidth/30}} {{innerHeight/18+innerWidth*0.048}}v{{innerHeight/40}}h{{innerWidth*0.0134}}L{{innerWidth/20+innerWidth*0.0125+innerWidth/30}} {{innerHeight/2+innerWidth/200}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--余排cold--><path d="M{{innerWidth/110-innerWidth*0.01+innerWidth/200*9+innerWidth/40}} {{innerHeight/4+innerWidth*0.0125}}H{{innerWidth/20+innerWidth*0.001+innerWidth/35}}V{{innerHeight/2+innerWidth/15}}H{{innerWidth/20+innerWidth*0.0125+innerWidth/30}}V{{innerHeight/2+innerWidth/200*9}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
-								<!--一回路hot--><path d="M{{innerWidth/6.05}} {{innerHeight/2.0015}}H{{innerWidth/6.7}}V{{innerHeight/4}}H{{innerWidth/3.9}}V{{innerHeight/2.4}}H{{innerWidth/3.1}}H{{innerWidth/3.1}}V{{innerHeight/3.465}}H{{innerWidth/2.85}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
+								<!--余排hot--><path d="M{{innerWidth/30+innerWidth*0.0158+innerWidth/30-innerWidth/40}} {{innerHeight/18+innerWidth*0.048}}v{{innerHeight/40}}h{{innerWidth*0.0134}}L{{innerWidth/20+innerWidth*0.0125+innerWidth/30-innerWidth/40}} {{innerHeight/2+innerWidth/200}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
+								<!--余排cold--><path d="M{{innerWidth/110-innerWidth*0.01+innerWidth/200*9}} {{innerHeight/4+innerWidth*0.0125}}H{{innerWidth/20+innerWidth*0.001+innerWidth/35-innerWidth/40}}V{{innerHeight/2+innerWidth/15}}H{{innerWidth/20+innerWidth*0.0125+innerWidth/30-innerWidth/40}}V{{innerHeight/2+innerWidth/200*9}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
+								<!--一回路hot--><path d="M{{innerWidth/6.05}} {{innerHeight/2.0015}}H{{innerWidth/9.7}}V{{innerHeight/4}}H{{innerWidth/3.9}}V{{innerHeight/2.4}}H{{innerWidth/3.1}}H{{innerWidth/3.1}}V{{innerHeight/3.465}}H{{innerWidth/2.85}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
 								<!--本体、一回路hot--><path d="M{{innerWidth/2.625}} {{innerHeight/3.465}}H{{innerWidth/2.46}}V{{innerHeight/2.52}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
 								<!--本体、一回路cold--><path d="M{{innerWidth/2.46}} {{innerHeight/2.07}}V{{innerHeight/1.5}}H{{innerWidth/3.1}}V{{innerHeight/2.0015}}H{{innerWidth/4.345}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
 								<!--一、二回路hot--><path d="M{{innerWidth/2.395}} {{innerHeight/2.54}}H{{innerWidth/2.24}}V{{innerHeight/3.465}}H{{innerWidth/2.099}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
@@ -757,6 +762,26 @@
 								<!--一、二回路cold--><path d="M{{innerWidth/2.393}} {{innerHeight/2.07}}H{{innerWidth/2.24}}V{{innerHeight/2.07}}H{{innerWidth/2.24}}V{{innerHeight/1.5}}H{{innerWidth/1.857}}V{{innerHeight/2.07}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
 								<!--二回路cold--><path d="M{{innerWidth/1.816}} {{innerHeight/2.07}}V{{innerHeight/1.716}}H{{innerWidth/1.725}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
 								
+								<svg id="meter1" x="{{innerWidth/7}}" y="{{innerHeight/2.23}}" width="{{innerWidth/60}}" height="{{innerWidth/30}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+									<title>就地安装仪表1</title>
+									<desc>就地安装仪表1</desc>
+									<polygon points="20,20 50,7.574 80,20 92.426,50 80,80 50,92.426 20,80 7.574,50" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
+									<path d="M80 20L20 80 M50 92.426v50" style="stroke:cadetblue; stroke-width:3px; fill:none" />
+									<path d="M50 92.426v50" style="stroke:cadetblue; stroke-width:9px; fill:none" />
+									<path d="M20 80L32 59.215L41 70" style="stroke:cadetblue; stroke-width:3px; fill:cadetblue" />
+								</svg>
+								<text x="{{innerWidth/6.6}}" y="{{innerHeight/2.27}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">590 &nbsp C</text>
+								<text x="{{innerWidth/6.42}}" y="{{innerHeight/2.3}}" style="font-size:0.6em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">o</text>
+
+								<svg id="meter1" x="{{innerWidth/7-innerWidth/33}}" y="{{innerHeight/2.23}}" width="{{innerWidth/60}}" height="{{innerWidth/30}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+									<title>就地安装仪表2</title>
+									<desc>就地安装仪表2</desc>
+									<polygon points="20,20 50,7.574 80,20 92.426,50 80,80 50,92.426 20,80 7.574,50" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
+									<path d="M80 20L20 80 M50 92.426v50" style="stroke:cadetblue; stroke-width:3px; fill:none" />
+									<path d="M50 92.426v50" style="stroke:cadetblue; stroke-width:9px; fill:none" />
+									<path d="M20 80L32 59.215L41 70" style="stroke:cadetblue; stroke-width:3px; fill:cadetblue" />
+								</svg>
+								<text x="{{innerWidth/6.6-innerWidth/33}}" y="{{innerHeight/2.27}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">8.31 MPa</text>
 							</svg>
 						</div>
 						<div id="topContainer" style="position:absolute; top:0.8%; left:9.65%; width:14%; height:2.5%; background-color:#254061; border:3px solid #254061;">
