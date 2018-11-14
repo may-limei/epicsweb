@@ -71,52 +71,6 @@
        });
 
 </script> -->
-<style>
-	.screen18 {
-		Font-size:95%;
-	}
-	.screen17 {
-		Font-size:90%;
-	}
-	.screen16 {
-		Font-size:85%;
-	}
-	.screen15 {
-		Font-size:80%;
-	}
-	.screen14 {
-		Font-size:75%;
-	}
-	.screen13 {
-		Font-size:70%;
-	}
-	.screen12 {
-		Font-size:65%;
-	}
-	.screen11 {
-		Font-size:60%;
-	}
-</style>
-<script>
-	if(window.innerWidth<1900 && window.innerWidth>=1800){
-		document.getElementById("screenContainer").className="screen18";
-	} else if(window.innerWidth<1800 && window.innerWidth>=1700){
-		document.getElementById("screenContainer").className="screen17";
-	} else if(window.innerWidth<1700 && window.innerWidth>=1600){
-		document.getElementById("screenContainer").className="screen16";
-	} else if(window.innerWidth<1600 && window.innerWidth>=1500){
-		document.getElementById("screenContainer").className="screen15";
-	} else if(window.innerWidth<1500 && window.innerWidth>=1400){
-		document.getElementById("screenContainer").className="screen14";
-	} else if(window.innerWidth<1400 && window.innerWidth>=1300){
-		document.getElementById("screenContainer").className="screen13";
-	} else if(window.innerWidth<1300 && window.innerWidth>=1200){
-		document.getElementById("screenContainer").className="screen12";
-	} else if(window.innerWidth<1200){
-		document.getElementById("screenContainer").className="screen11";
-	}
-				
-</script>
 
 </head>
 
@@ -830,12 +784,15 @@
 								<text x="{{innerWidth/6.6-innerWidth/33}}" y="{{innerHeight/2.27}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">8.31 MPa</text>
 							</svg>
 						</div>
-						<div id="topContainer" style="position:absolute; top:0.8%; left:9.65%; width:14%; height:2.5%; background-color:#254061; border:3px solid #254061;">
-							<p style="font-size:1.4em; font-weight:bold; color:#d9d9d9; background-color:#254061; white-space:nowrap; text-align:center;">
+						<div id="topContainer" style="position:absolute; top:0.8%; left:15%; width:4%; height:2.5%; background-color:#254061; border:none;">
+							&nbsp
+						</div>
+						<div id="topContainer" style="position:absolute; top:0.8%; left:9.65%; width:14%; height:2.5%; background-color:none; border:none;">
+							<p style="font-size:1.4em; font-weight:bold; color:#d9d9d9; background-color:none; white-space:nowrap; text-align:center;">
 								反应堆温度控制和监测
 							</p>
 						</div>
-						<div id="topMarker" style="position:absolute; top:4%; left:13.7%; width:6%; height:7%; background-color:green; border:none; display:flex;">
+						<div id="topMarker" style="position:absolute; top:4%; left:13.88%; width:6%; height:7%; background-color:green; border:none; display:flex;">
 							<div style="width:50%; height:100%; background-color:green;">
 								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:5% 0 5% 0; padding:0 5% 0 15%; white-space: nowrap;">
 									总功率
@@ -848,7 +805,7 @@
 								<p style="font-size:1em; color:#222222; margin:0 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
 									1002.35
 								</p>
-								<p style="font-size:1em; color:#222222; margin:-9% 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
+								<p style="font-size:1em; color:#222222; margin:-10% 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
 									1.05
 								</p>
 								<p style="font-size:1em; color:#222222; margin:1.5% 0 1% 0; padding:0 5% 0 15%; white-space: nowrap;">
@@ -923,6 +880,34 @@
 
 	<!-- END CORE PLUGINS -->
 
+<script>
+		if(window.innerWidth<1900 && window.innerWidth>=1800){
+			document.getElementById("screenContainer").className="screen18";
+		} else if(window.innerWidth<1800 && window.innerWidth>=1700){
+			document.getElementById("screenContainer").className="screen17";
+		} else if(window.innerWidth<1700 && window.innerWidth>=1600){
+			document.getElementById("screenContainer").className="screen16";
+		} else if(window.innerWidth<1600 && window.innerWidth>=1500){
+			document.getElementById("screenContainer").className="screen15";
+		} else if(window.innerWidth<1500 && window.innerWidth>=1400){
+			document.getElementById("screenContainer").className="screen14";
+		} else if(window.innerWidth<1400 && window.innerWidth>=1300){
+			document.getElementById("screenContainer").className="screen13";
+		} else if(window.innerWidth<1300 && window.innerWidth>=1200){
+			document.getElementById("screenContainer").className="screen12";
+		} else if(window.innerWidth<1200 && window.innerWidth>=1100){
+			document.getElementById("screenContainer").className="screen11";
+		} else if(window.innerWidth<1100 && window.innerWidth>=1000){
+			document.getElementById("screenContainer").className="screen10";
+		} else if(window.innerWidth<1000 && window.innerWidth>=900){
+			document.getElementById("screenContainer").className="screen9";
+		} else if(window.innerWidth<900 && window.innerWidth>=800){
+			document.getElementById("screenContainer").className="screen8";
+		} else if(window.innerWidth<800){
+			document.getElementById("screenContainer").className="screen7";
+		}		
+	</script>
+
 
 	<script>
 		var serverIP="10.10.33.102";
@@ -937,9 +922,7 @@
 			$http.jsonp(myUrl).success(function(response) {
 				$scope.manual = response;
 				// console.log("when");
-
-				document.getElementById("screenContainer").className="screen";
-				//     console.log(response);
+				// console.log(response);
 			});		
 		});
 		app.controller('holeCtrl', function($scope, $window) { 
