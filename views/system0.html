@@ -397,9 +397,13 @@
 		<!-- END BEGIN HORIZONTAL MENU PAGE SIDEBAR -->
 
 		<!-- BEGIN PAGE -->
-		<div class="page-content row-fluid tankContainer" style="min-height:860px; min-width:1920px;" ng-controller="holeCtrl">
+		<div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl">
+			<div id="timer" style="position:fixed; top:90%; right:10%">
+			</div>
+
+			
 			<div id="screenContainer" style="background-color:green; overflow:hidden; display:flex;">
-				<svg width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<svg width="1920" height="860" transform="matrix(1,0,0,1,0,0)" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<rect x="0" y="0" width="1920" height="860" fill="yellow" stroke="#254061" />
 					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
@@ -411,6 +415,7 @@
 					<rect x="1180" y="5" width="290" height="850" fill="none" fill-opacity="0" stroke="#00CC00" stroke-dasharray="2,2" />
 					<!--辅助线蓝-->
 					<rect x="1510" y="5" width="403" height="850" fill="none" fill-opacity="0" stroke="#2167FF" stroke-dasharray="2,2" />
+
 					<!--空冷塔1-->
 					<path d="M62 227L60.99999 226.3333L106 227L104 235L103 240L102 244L101 250L101 255L101 260L101 265L102 271L103 277L105 283L108 291L112 301L116 307L120 313L48 313L54 305L58 299L61 293L64 286L66 281L68 275L69 268L70 259L70 252L69 246L68 241L66 235L64 231Z"
 					 fill="#0099FF" stroke="none" stroke-width="0.25" id="kongLengTa1" transform="matrix(0.75,0,0,0.75,651,-30.583)" />
@@ -674,46 +679,47 @@
 						径向温度分布
 					</text>
 
-					<g id="leftCircle">
-						<circle cx="150" cy="185" r="101" fill="none" stroke="#666666" stroke-width="4" />
+
+					<circle cx="150" cy="185" r="101" fill="none" stroke="#666666" stroke-width="4" />
+					<g id="leftCircle" transform="matrix(0.95,0,0,0.95,7.5,9.25)">
 						<!--1-->
-						<circle cx="150" cy="185" r="17" fill="#C00000" stroke="none" />
+						<circle cx="150" cy="185" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--2-->
-						<circle cx="190" cy="185" r="17" fill="#D99694" stroke="none" />
+						<circle cx="190" cy="185" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--3-->
-						<circle cx="170" cy="150.359" r="17" fill="#D99694" stroke="none" />
+						<circle cx="170" cy="150.359" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--4-->
-						<circle cx="130" cy="150.359" r="17" fill="#D99694" stroke="none" />
+						<circle cx="130" cy="150.359" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--5-->
-						<circle cx="110" cy="185" r="17" fill="#D99694" stroke="none" />
+						<circle cx="110" cy="185" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--6-->
-						<circle cx="130" cy="219.641" r="17" fill="#D99694" stroke="none" />
+						<circle cx="130" cy="219.641" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--7-->
-						<circle cx="170" cy="219.641" r="17" fill="#D99694" stroke="none" />
+						<circle cx="170" cy="219.641" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--8-->
-						<circle cx="227.2741" cy="164.2945" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="227.2741" cy="164.2945" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--9-->
-						<circle cx="206.5685" cy="128.4315" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="206.5685" cy="128.4315" r="17" fill="#88D1EA" stroke="none" stroke-width="2.5" />
 						<!--10-->
-						<circle cx="170.7055" cy="112.7259" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="170.7055" cy="112.7259" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--11-->
-						<circle cx="129.2945" cy="112.7259" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="129.2945" cy="112.7259" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--12-->
-						<circle cx="93.4315" cy="128.4315" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="93.4315" cy="128.4315" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--13-->
-						<circle cx="72.7259" cy="164.2945" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="72.7259" cy="164.2945" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--14-->
-						<circle cx="72.7259" cy="205.7055" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="72.7259" cy="205.7055" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--15-->
-						<circle cx="93.4315" cy="241.5685" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="93.4315" cy="241.5685" r="17" fill="#88D1EA" stroke="none" stroke-width="2.5" />
 						<!--16-->
-						<circle cx="129.2945" cy="257.2741" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="129.2945" cy="257.2741" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--17-->
-						<circle cx="170.7055" cy="257.2741" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="170.7055" cy="257.2741" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--18-->
-						<circle cx="206.5685" cy="241.5685" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="206.5685" cy="241.5685" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 						<!--19-->
-						<circle cx="227.2741" cy="205.7055" r="17" fill="#D9CDE5" stroke="none" />
+						<circle cx="227.2741" cy="205.7055" r="17" fill="none" stroke="#AAAAAA" stroke-width="2.5" />
 
 						<text x="135" y="190" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
@@ -739,7 +745,7 @@
 						<text x="213" y="170" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 							8</text>
-						<text x="192" y="134" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="190" y="134" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 							9</text>
 						<text x="156" y="118" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
@@ -757,7 +763,7 @@
 						<text x="58" y="211" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 							14</text>
-						<text x="79" y="247" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="76" y="247" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 							15</text>
 						<text x="115" y="262" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
@@ -858,13 +864,13 @@
 						<text x="165" y="563" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							2.001</text>
-						<text x="15" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="15" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#3AA1FF" stroke="#3AA1FF" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							9</text>
-						<text x="88" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="88" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#3AA1FF" stroke="#3AA1FF" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							关</text>
-						<text x="165" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="165" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#3AA1FF" stroke="#3AA1FF" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							0</text>
 						<text x="9" y="615" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
@@ -912,13 +918,13 @@
 						<text x="165" y="719" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							1.721</text>
-						<text x="9" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="9" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#3AA1FF" stroke="#3AA1FF" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							15</text>
-						<text x="88" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="88" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#3AA1FF" stroke="#3AA1FF" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							关</text>
-						<text x="165" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						<text x="165" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#3AA1FF" stroke="#3AA1FF" stroke-width="0.75"
 						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							0</text>
 						<text x="9" y="771" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
@@ -974,25 +980,25 @@
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 							【 温度测量孔 1 】</text>
 
-						<rect x="350" y="405" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="405" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="405" width="170" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="445" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="445" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="445" width="190" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="485" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="485" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="485" width="167" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="525" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="525" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="525" width="190" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="565" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="565" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="565" width="140" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="605" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="605" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="605" width="100" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="645" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="645" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="645" width="70" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="685" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="685" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="685" width="120" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="725" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="725" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="725" width="210" height="32" fill="#F888D8" stroke="none" />
-						<rect x="350" y="765" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="765" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
 						<rect x="350" y="765" width="110" height="32" fill="#F888D8" stroke="none" />
 					</g>
 
@@ -1099,9 +1105,7 @@
 						 baseline-shift="baseline">
 							12</text>
 					</g>
-
 				</svg>
-
 			</div>
 
 		</div>
@@ -1109,52 +1113,20 @@
 	</div>
 	<!-- END CONTAINER -->
 
-	<!-- BEGIN FOOTER -->
-	<!-- <div class="footer">	
-		<div class="footer-inner"> -->
-	<!-- 2017 &copy; TMSR 钍基熔盐堆核能系统. -->
-	<!-- &nbsp
-		</div>
-		<div class="footer-tools"> -->
-	<!-- <span class="go-top">	 -->
-	<!-- <i class="icon-angle-up"></i> -->
-	<!-- <span>
-				&nbsp
-			</span>
-		</div>
-	</div>	
-	&nbsp -->
-	<!-- END FOOTER -->
-
-
-	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 	<!-- BEGIN CORE PLUGINS -->
-
 	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-
 	<script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-
 	<script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-
 	<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
-
 	<!-- [if lt IE 9]>
-
 	<script src="media/js/excanvas.min.js"></script>
-
 	<script src="media/js/respond.min.js"></script>  
-
 	<![endif]    -->
-
 	<script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
-
 	<script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>
 	<script src="media/js/jquery.cookie.min.js" type="text/javascript"></script>
-
 	<script src="media/js/jquery.uniform.min.js" type="text/javascript"></script>
-
 	<!-- END CORE PLUGINS -->
 
 	<script>
@@ -1193,7 +1165,6 @@
 			ai: [{ pvname: "may:ai1" }, { pvname: "may:ai2" }, { pvname: "may:ai3" }, { pvname: "may:compressExample" }],
 			ao: [{ pvname: "may:ao1" }, { pvname: "may:ao2" }, { pvname: "may:ao3" }]
 		}
-
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function ($scope, $http) {
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
@@ -1204,24 +1175,8 @@
 			});
 		});
 		app.controller('holeCtrl', function ($scope, $window) {
-			$scope.holeXpos = "10";
-			$scope.holeYpos = "20";
-			$scope.holeWidth = 240;
-			$scope.holeHeight = 240;
-			$scope.heatHoleColor = "red";
-
-
-			$scope.widgetName = "tank";
-			$scope.tankName = "pv0";
-			$scope.tankValue = 80;
-			$scope.tankMax = "200";
-			$scope.tankMin = "0";
-
-			$scope.tankValue11 = 10;
-
 			$scope.innerWidth = $window.innerWidth;
 			$scope.innerHeight = $window.innerHeight;
-
 
 			async.map(pvs.ai, function (item, callback) {
 				socket.on(item.pvname, function (data) {
@@ -1243,23 +1198,12 @@
 	</script>
 
 	<script>
-		document.getElementById("screenContainer").style.width = (document.body.clientWidth).toString() + "px";
-		document.getElementById("screenContainer").style.height = (document.body.clientHeight).toString() + "px";
-
-		document.getElementById("leftContainer").style.width = (document.body.clientWidth / 6).toString() + "px";
-		document.getElementById("leftContainer").style.height = (document.body.clientHeight).toString() + "px";
-
-		// document.getElementById("leftSVG").style.width=(document.body.clientWidth/6-5).toString()+"px";
-		// document.getElementById("leftSVG").style.height=(document.body.clientHeight-5).toString()+"px";
-
-		document.getElementById("rightContainer").style.width = (document.body.clientWidth / 6).toString() + "px";
-		document.getElementById("rightContainer").style.height = (document.body.clientHeight).toString() + "px";
-
-		document.getElementById("middleContainer").style.width = (document.body.clientWidth / 6).toString() + "px";
-		document.getElementById("middleContainer").style.height = (document.body.clientHeight).toString() + "px";
-
-		document.getElementById("rightContainer").style.width = (document.body.clientWidth * 2 / 3).toString() + "px";
-		document.getElementById("rightContainer").style.height = (document.body.clientHeight).toString() + "px";
+		// document.getElementById("screenContainer").style.width = (document.body.clientWidth).toString() + "px";
+		// document.getElementById("screenContainer").style.height = (document.body.clientHeight).toString() + "px";
+		setInterval("timer.innerHTML=new Date().toLocaleString()"); 
+        window.onload = function (){
+  			setInterval("timer.innerHTML=new Date().toLocaleString()",1000); 
+  		}
 	</script>
 
 
