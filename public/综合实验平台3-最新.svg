@@ -280,7 +280,7 @@
 
 	<rect x="10" y="335" width="300" height="520" fill="#F888D8" stroke="none" />
 	<rect x="330" y="335" width="300" height="520" fill="#B7DEE8" stroke="none" />
-
+<g id="leftReact">
 	<text x="20" y="355" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 	加热棒</text>
 	<text x="100" y="355" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
@@ -401,7 +401,8 @@
 	开</text>
 	<text x="185" y="849" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 	1.021</text>
-
+</g>
+<g id="rightReact">
 	<path d="M340 805H620 M340 805V380" fill="none" stroke="#333333" stroke-width="2" />
 	<path d="M615 801V809L623 805L615 801 M340 380L344 388L336 388L340 380" fill="#333333" stroke="#333333" stroke-width="2" />
 	<text x="342" y="395" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
@@ -433,7 +434,8 @@
 	<rect x="350" y="725" width="210" height="32" fill="#F888D8" stroke="none" />
 	<rect x="350" y="765" width="260" height="32" fill="#254061" stroke="none" />
 	<rect x="350" y="765" width="110" height="32" fill="#F888D8" stroke="none" />
-	
+</g>
+
 <g id="rightCircle">
 	<circle cx="150" cy="185" r="101" fill="none" stroke="#666666" stroke-width="4" transform="matrix(1,0,0,1,340,0)" />
 	<circle cx="490" cy="185" r="2" fill="#999999" stroke="#999999" stroke-width="1" />
@@ -476,7 +478,7 @@
 		<circle cx="206.5685" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
 		<!--19-->
 		<circle cx="227.2741" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-</g>
+	</g>
 <!--1--><circle cx="524" cy="126.1103" r="7.5" fill="#F888D8" stroke="none" />
 <!--2--><circle cx="545" cy="89.7372" r="7.5" fill="#F888D8" stroke="none" />
 <!--3--><circle cx="490" cy="145" r="7.5" fill="#F888D8" stroke="none" />

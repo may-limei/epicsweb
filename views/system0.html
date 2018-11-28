@@ -4,7 +4,9 @@
 
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
@@ -12,7 +14,9 @@
 
 	<meta charset="utf-8" />
 
-	<title>TMSR | EPICS - <%= title %></title>
+	<title>TMSR | EPICS -
+		<%= title %>
+	</title>
 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -21,35 +25,35 @@
 	<meta content="" name="author" />
 
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
-	<link href="stylesheets/system0.css" rel="stylesheet" type="text/css"/>
+	<link href="stylesheets/system0.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/style-metro.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/style.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/style-responsive.css" rel="stylesheet" type="text/css" />
 
-	<link href="media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="media/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
 
-	<link href="media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/uniform.default.css" rel="stylesheet" type="text/css" />
 
 	<!-- END GLOBAL MANDATORY STYLES -->
 
 	<link rel="shortcut icon" href="media/image/favicon.ico" />
 
 	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-	
+
 	<script src="js/angular.min.js"></script>
 	<script src="socket.io/socket.io.js"></script>
-	<script src="bower_components/async/dist/async.js"></script> 
+	<script src="bower_components/async/dist/async.js"></script>
 
-<!-- 
+	<!-- 
 <script>
 		var serverIP="210.72.8.90";
 		var socket = io.connect(serverIP+':80');
@@ -80,12 +84,11 @@
 
 <body class="page-header-fixed ng-scope page-sidebar-closed" ng-app="myApp" ng-controller="myCtrl" onload="load()">
 
-	<!-- BEGIN CONTAINER -->   
+	<!-- BEGIN CONTAINER -->
 
-	<div class="page-container row-fluid" style="margin-top:0;" >
+	<div class="page-container row-fluid" style="margin-top:0;">
 
 		<!-- BEGIN HORIZONTAL MENU PAGE SIDEBAR1 -->
-
 		<div class="page-sidebar nav-collapse collapse">
 
 			<ul class="page-sidebar-menu hidden-phone hidden-tablet">
@@ -110,7 +113,7 @@
 
 							<a href="javascript:;" class="remove"></a>
 
-							<input type="text" placeholder="Search..." />            
+							<input type="text" placeholder="Search..." />
 
 							<input type="button" class="submit" value=" " />
 
@@ -122,7 +125,7 @@
 
 				</li>
 
-				<li  >
+				<li>
 
 					<a href="javascript:;">
 					<i class="icon-cogs"></i> 
@@ -135,14 +138,14 @@
 							<a href="/system_structure">
 							 	系统结构  </a>
 						</li>
-			
-						<li >
-												
+
+						<li>
+
 							<a href="/control_system">
 												
 								控制系统 </a>
 
-								<!-- <ul class="sub-menu">
+							<!-- <ul class="sub-menu">
 
 									<li >
 			
@@ -151,15 +154,15 @@
 											信号变量</a>
 			
 									</li>
-								</ul> -->					
+								</ul> -->
 						</li>
-						
-						<li >
-						
+
+						<li>
+
 							<a href="/epics_manual">
 						
 								安装配置 </a>
-						
+
 						</li>
 
 
@@ -189,48 +192,48 @@
 
 						</li>
 
-						<li >
+						<li>
 
 							<a href="portlet_draggable.html">
 
 							   Process Bar </a>
 
 						</li>
-						
+
 						<li>
 							<a href="widget_led.html">
 												
 						    	LED</a>
-												
+
 						</li>
-												
+
 						<li>
-												
+
 							<a href="portlet_draggable.html">
 												
 								Text Update </a>
-												
+
 						</li>
 						<li>
-						
+
 							<a href="portlet_draggable.html">
 						
 								Meter </a>
-						
+
 						</li>
 						<li>
-												
+
 							<a href="portlet_draggable.html">
 												
 						 		Guage </a>
-												
-							</li>
+
+						</li>
 
 					</ul>
 
 				</li>
 
-				<li >
+				<li>
 
 					<a href="javascript:;">
 
@@ -244,7 +247,7 @@
 
 					<ul class="sub-menu">
 
-						<li >
+						<li>
 
 							<a href="TextInput.html">
 
@@ -252,7 +255,7 @@
 
 						</li>
 
-						<li >
+						<li>
 
 							<a href="maps_vector.html">
 
@@ -264,7 +267,7 @@
 
 				</li>
 
-				<li >
+				<li>
 
 					<a href="charts.html">
 
@@ -290,7 +293,7 @@
 
 					<ul class="sub-menu">
 
-						<li >
+						<li>
 
 							<a href="TextInput.html">
 
@@ -298,25 +301,25 @@
 
 						</li>
 
-						<li >
+						<li>
 
 							<a href="maps_vector.html">
 
 							辐射监测                   </a>
 
 						</li>
-						<li class="active">							
+						<li class="active">
 							<a href="system0">
 							
 							综合实验平台               </a>
-							
+
 						</li>
 
 					</ul>
 
 				</li>
 				<li>
-				
+
 					<a href="/comment">
 					
 						<i class="icon-comment"></i>
@@ -325,7 +328,7 @@
 						<span class="badge" style="background-color: #e02222;padding: 2px 6px 2px 6px;-webkit-border-radius: 12px !important; -moz-border-radius: 12px !important; border-radius: 12px !important; text-shadow: none !important" >new</span>
 
 					</a>
-				
+
 				</li>
 			</ul>
 
@@ -346,8 +349,8 @@
 
 					</a>
 
-                         <ul class="sub-menu">
-						<li >
+					<ul class="sub-menu">
+						<li>
 
 							<a href="/system_structure">
 
@@ -371,10 +374,10 @@
 								<span class="arrow open"></span>
 		
 							</a>
-		
+
 						</li>
 						<li>
-						
+
 							<a href="/epics_manual">
 
 								<i class="icon-wrench"></i> 
@@ -384,469 +387,743 @@
 								<span class="arrow open"></span>
 							
 							</a>
-						
+
 						</li>
 					</ul>
-                    </li>
+				</li>
 			</ul>
 
 		</div>
-
 		<!-- END BEGIN HORIZONTAL MENU PAGE SIDEBAR -->
 
 		<!-- BEGIN PAGE -->
+		<div class="page-content row-fluid tankContainer" style="min-height:860px; min-width:1920px;" ng-controller="holeCtrl">
+			<div id="screenContainer" style="background-color:green; overflow:hidden; display:flex;">
+				<svg width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<rect x="0" y="0" width="1920" height="860" fill="yellow" stroke="#254061" />
+					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
+					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
+					<rect x="640" y="0" width="1280" height="860" fill="white" stroke="#254061" />
+					<rect x="310" y="6" width="20" height="40" fill="white" stroke="white" />
+					<!--辅助线红-->
+					<rect x="800" y="5" width="310" height="850" fill="none" fill-opacity="0" stroke="#FF0000" stroke-dasharray="2,2" />
+					<!--辅助线绿-->
+					<rect x="1180" y="5" width="290" height="850" fill="none" fill-opacity="0" stroke="#00CC00" stroke-dasharray="2,2" />
+					<!--辅助线蓝-->
+					<rect x="1510" y="5" width="403" height="850" fill="none" fill-opacity="0" stroke="#2167FF" stroke-dasharray="2,2" />
+					<!--空冷塔1-->
+					<path d="M62 227L60.99999 226.3333L106 227L104 235L103 240L102 244L101 250L101 255L101 260L101 265L102 271L103 277L105 283L108 291L112 301L116 307L120 313L48 313L54 305L58 299L61 293L64 286L66 281L68 275L69 268L70 259L70 252L69 246L68 241L66 235L64 231Z"
+					 fill="#0099FF" stroke="none" stroke-width="0.25" id="kongLengTa1" transform="matrix(0.75,0,0,0.75,651,-30.583)" />
+					<!--风机1-->
+					<g id="fengJi1" transform="matrix(0.893,0,0,0.893,641.528,-43.838)">
+						<rect x="11.33" y="364.67" width="68.34" height="69.65997" fill="#FFCC33" stroke="#333333" stroke-opacity="1" stroke-width="1.25"
+						 id="fengJi1-1" />
+						<path d="M38 374L53 426L52 428L49 430L46 431L44 431L41 430L39 428L38 426L53 373L52 371L51 370L49 369L47 368L44 368L41 369L39 370L38 372C38 373 38 374 38 374Z"
+						 fill="none" stroke="#333333" stroke-opacity="1" stroke-width="0.75" id="fengJi1-2" />
+					</g>
+					<!--散热器1-->
+					<g id="sanReQi1" transform="matrix(0.9419999,0,0,0.803,600.1929,15.836)">
+						<path d="M142 531L143 528L145 525L148 522L150 520L153 518L156 517L159 516L163 515L168 514L177 514L181 514L184 515L187 516L190 517L194 519L197 521L200 523L202 525L203 528L203 532L203 684L201 688L199 690L196 693L193 695L189 697L183 699L178 700L167 700L159 698L152 695L146 690L143 685L142 531Z"
+						 fill="#00CCFF" fill-opacity="1" stroke="#333333" id="sanReQi1-1" />
+						<path d="M165 515L165 512L166 510C168 510 178 510 178 510L181 511C181 512 181 513 181 513L181 515L175 514L170 514L165 515ZM203 530L206 532L206 535L206 538L206 543L206 545C204 546 203 546 203 546L203 530ZM203 669L203 669.3332L203 684C206 684 206 683 206 683L207 672L206 670Z"
+						 fill="#333333" fill-opacity="1" stroke="#333333" stroke-width="0.25" id="sanReQi1-2" />
+						<path d="M205 536L163 536L161 537L160 538L158 540L157 542L157 544L157 545L158 547L159 548L160 549L161 550C162 551 163 551 163 551L190 551L192 552L192 553L192 554L191 556L190 557L164 557L161 558L160 559L159 560L158 562L158 564L158 566L158 568L159 569L160 570L161 571L162 572L164 573L190 573C191 573 192 575 192 575L192 576L191 577C190 578 189 578 189 578L164 578L162 579L160 580L158 582L158 583L157 585L157 587L158 589L159 591L160 592L162 593L164 594L166 594L190 594L192 595L192 596L192 598L191 599C189 600 165 599 165 599L163 600L161 601L159 603L158 605L158 607L158 609L159 611L160 612L161 613L162 614L163 615L190 615L192 616L193 618L192 620C190 621 189 621 189 621L164 621L161 622L160 623L158 625L157 627L157 628L157 630L158 632L159 633L160 634L161 635L163 636L165 637L190 637C192 638 192 639 192 639L192 640L191 642L188 642L164 642L161 643L160 644C159 645 158 647 158 647L157 650L157 652L158 654C159 655 160 656 160 656L162 657C163 657 164 658 164 658L168 658L190 658C192 659 192 661 192 661L191 663C190 663 164 663 164 663L162 664L160 665L158 668L158 670L158 673L159 675L160 677C161 678 163 679 163 679C165 680 205 680 205 680L205 674L165 674L163 673L163 671L164 669C165 669 192 669 192 669L194 668L196 666L197 664L198 661L198 658L197 656L196 655L194 653L191 653L166 653C165 653 164 652 164 652L163 651L163 649L164 648L166 647L191 647C192 647 194 646 194 646L196 644L197 642L198 640L198 638L197 636L196 634L194 632C193 631 191 631 191 631L165 631C164 631 163 629 163 629L163 628L164 627L165 626C166 626 191 626 191 626C192 626 194 625 194 625C195 624 196 623 196 623L197 622L198 620L198 618L198 617L198 615L197 614L195 612L194 611C192 610 165 610 165 610L164 609L163 608L163 606L164 605C165 605 191 605 191 605L194 604L195 603L197 601L198 598L198 597L198 594L197 593L196 591L195 590L193 589C192 588 165 588 165 588L163 587L163 586L163 585L164 584L190 584L193 583L194 582L196 580L197 578L198 576L198 574C198 573 197 571 197 571L195 569C194 568 192 567 192 567L190 567L164 567C164 566 163 566 163 566L163 565L164 563L165 562L190 562C192 562 193 561 193 561L195 560L197 558L198 556L198 553L197 551L196 549L194 547L191 546L164 546L163 544L163 543L164 541L205 541L205 536Z"
+						 fill="#CCCC33" stroke="#333333" stroke-opacity="1" id="sanReQi1-3" />
+					</g>
+					<!--散热器2-->
+					<g id="sanReQi2" transform="matrix(0.799,0,0,0.799,507.6838,15.93383)">
+						<path d="M1068 450L1071 444L1076 439L1081 435L1087 432L1094 429L1101 428L1111 427L1116 427L1121 427L1127 428C1130 428 1132 429 1132 429L1135 430L1139 432L1143 434L1148 437L1153 441L1156 445L1158 449L1158 451L1158 680L1155 684L1151 688L1145 692L1139 695L1133 697L1129 698L1122 699L1116 699L1106 699L1098 698L1090 696L1084 693L1078 689L1072 684L1068 677L1068 450Z"
+						 fill="#CCFF00" fill-opacity="1" stroke="#333333" id="sanReQi2-1" />
+						<path d="M1102 428L1102 426L1103 424C1105 424 1121 424 1121 424C1123 424 1124 425 1124 425L1125 427L1102 428ZM1158 451L1158.333 450.9999L1160 453L1160 466L1159 468L1158 470L1158 456L1157 453Z M1158 671L1160 672L1160 682L1156 682.7L1158 680Z"
+						 fill="#333333" fill-opacity="1" stroke="#333333" stroke-width="0.25" id="sanReQi2-2" />
+						<path d="M1159 457L1089 457L1086 458L1083 461L1081 464L1080 468L1080 471L1081 473L1083 476L1086 478L1090 480L1136 480C1138 481 1138 481 1139 482C1140 482 1140 484 1140 484L1140 487C1139 488 1138 489 1138 489C1136 490 1090 490 1090 490C1088 491 1086 491 1086 491C1085 492 1083 494 1083 494L1082 496L1081 498L1080 500L1080 502L1080 505L1082 508L1084 510L1086 512C1088 513 1090 513 1090 513L1136 513L1139 514L1140 516L1140 518C1140 518 1140 519 1140 520C1141 520 1139 522 1139 522C1138 523 1136 524 1136 524L1090 524C1088 525 1086 525 1086 525L1083 528L1082 530L1081 532L1080 535L1080 537L1081 540L1083 542L1084 544C1086 545 1089 546 1089 546C1092 546 1135 546 1135 546L1138 547L1139 549C1140 550 1140 552 1140 552C1140 553 1140 555 1140 555C1138 556 1137 557 1137 557C1135 558 1090 558 1090 558C1089 558 1085 560 1085 560L1083 562L1081 565L1080 568L1080 570L1081 573L1082 575L1085 578C1087 579 1089 580 1089 580L1136 580C1138 581 1139 583 1139 583L1140 586L1139 588L1138 590C1136 591 1089 591 1089 591C1087 592 1084 594 1084 594L1082 597L1080 601L1080 604L1081 608L1083 610L1085 612C1087 614 1089 614 1089 614L1135 614C1138 614 1139 616 1139 616L1140 619L1140 621L1138 623L1135 625L1090 625L1087 626L1085 628C1082 629 1081 632 1081 632L1081 635L1081 639L1083 642L1085 645C1088 646 1089 647 1089 647C1091 648 1135 648 1135 648C1137 648 1139 650 1139 650L1140 652L1139 655L1137 658C1135 659 1090 658 1090 658C1088 659 1086 659 1086 659L1084 661C1082 662 1082 665 1082 665L1081 667C1081 669 1081 670 1081 671C1081 672 1081 674 1081 674C1081 675 1083 677 1083 677L1086 679C1088 680 1090 681 1090 681L1159 681L1159 675L1090 675C1088 674 1086 672 1086 672L1086 669L1086 666L1088 664C1089 664 1136 664 1136 664L1140 663C1142 662 1144 660 1144 660L1146 657L1146 653L1146 650L1145 647L1142 644L1138 642C1136 642 1091 641 1091 641C1089 641 1087 640 1087 640L1086 637L1086 634L1087 631C1089 630 1090 630 1090 630L1136 630L1139 629L1142 628L1144 625L1145 622L1146 619L1145 614L1142 611L1140 609C1138 608 1136 608 1136 608L1090 608L1088 606L1087 604L1086 602L1086 600L1088 598L1091 597L1136 597C1138 596 1140 595 1140 595L1143 593L1145 589L1146 586L1146 583L1144 580L1142 578L1140 576L1137 574C1134 574 1090 574 1090 574C1088 573 1087 572 1087 572L1086 570L1086 567L1088 565L1091 564C1092 564 1136 564 1136 564C1138 563 1141 561 1141 561L1144 557L1145 553L1145 550L1143 546L1141 544L1137 542L1133 541L1090 541C1089 540 1087 538 1087 538L1086 536L1086 532L1088 530L1136 530C1138 530 1140 528 1140 528L1142 526L1144 524L1145 522L1146 519L1146 515L1144 512L1143 510L1140 509C1137 508 1135 507 1135 507L1090 507C1088 506 1087 504 1087 504L1086 501L1087 499L1088 497L1135 497C1137 496 1139 495 1139 495L1143 492L1146 488L1146 484L1145 481L1143 477L1140 475L1136 474L1130 474L1091 474C1089 474 1087 472 1087 472L1086 469L1086 467L1087 464C1089 463 1092 462 1092 462L1159 463L1159 457Z"
+						 fill="#FF6633" fill-opacity="1" stroke="#333333" id="sanReQi2-3" />
+					</g>
+					<!--散热器3-->
+					<g id="sanReQi3" transform="matrix(0.7629999,0,0,0.7629999,814.4023,38.33868)">
+						<path d="M1068 450L1071 444L1076 439L1081 435L1087 432L1094 429L1101 428L1111 427L1116 427L1121 427L1127 428C1130 428 1132 429 1132 429L1135 430L1139 432L1143 434L1148 437L1153 441L1156 445L1158 449L1158 451L1158 680L1155 684L1151 688L1145 692L1139 695L1133 697L1129 698L1122 699L1116 699L1106 699L1098 698L1090 696L1084 693L1078 689L1072 684L1068 677L1068 450Z"
+						 fill="#FF6600" fill-opacity="1" stroke="#333333" id="sanReQi3-1" />
+						<path d="M1102 428L1102 426L1103 424C1105 424 1121 424 1121 424C1123 424 1124 425 1124 425L1125 427L1102 428ZM1158 451L1158.333 450.9999L1160 453L1160 466L1159 468L1158 470L1158 456L1157 453Z M1158 671L1160 672L1160 682L1156 682.7L1158 680Z"
+						 fill="#333333" fill-opacity="1" stroke="#333333" stroke-width="0.25" id="sanReQi3-2" />
+						<path d="M1159 457L1089 457L1086 458L1083 461L1081 464L1080 468L1080 471L1081 473L1083 476L1086 478L1090 480L1136 480C1138 481 1138 481 1139 482C1140 482 1140 484 1140 484L1140 487C1139 488 1138 489 1138 489C1136 490 1090 490 1090 490C1088 491 1086 491 1086 491C1085 492 1083 494 1083 494L1082 496L1081 498L1080 500L1080 502L1080 505L1082 508L1084 510L1086 512C1088 513 1090 513 1090 513L1136 513L1139 514L1140 516L1140 518C1140 518 1140 519 1140 520C1141 520 1139 522 1139 522C1138 523 1136 524 1136 524L1090 524C1088 525 1086 525 1086 525L1083 528L1082 530L1081 532L1080 535L1080 537L1081 540L1083 542L1084 544C1086 545 1089 546 1089 546C1092 546 1135 546 1135 546L1138 547L1139 549C1140 550 1140 552 1140 552C1140 553 1140 555 1140 555C1138 556 1137 557 1137 557C1135 558 1090 558 1090 558C1089 558 1085 560 1085 560L1083 562L1081 565L1080 568L1080 570L1081 573L1082 575L1085 578C1087 579 1089 580 1089 580L1136 580C1138 581 1139 583 1139 583L1140 586L1139 588L1138 590C1136 591 1089 591 1089 591C1087 592 1084 594 1084 594L1082 597L1080 601L1080 604L1081 608L1083 610L1085 612C1087 614 1089 614 1089 614L1135 614C1138 614 1139 616 1139 616L1140 619L1140 621L1138 623L1135 625L1090 625L1087 626L1085 628C1082 629 1081 632 1081 632L1081 635L1081 639L1083 642L1085 645C1088 646 1089 647 1089 647C1091 648 1135 648 1135 648C1137 648 1139 650 1139 650L1140 652L1139 655L1137 658C1135 659 1090 658 1090 658C1088 659 1086 659 1086 659L1084 661C1082 662 1082 665 1082 665L1081 667C1081 669 1081 670 1081 671C1081 672 1081 674 1081 674C1081 675 1083 677 1083 677L1086 679C1088 680 1090 681 1090 681L1159 681L1159 675L1090 675C1088 674 1086 672 1086 672L1086 669L1086 666L1088 664C1089 664 1136 664 1136 664L1140 663C1142 662 1144 660 1144 660L1146 657L1146 653L1146 650L1145 647L1142 644L1138 642C1136 642 1091 641 1091 641C1089 641 1087 640 1087 640L1086 637L1086 634L1087 631C1089 630 1090 630 1090 630L1136 630L1139 629L1142 628L1144 625L1145 622L1146 619L1145 614L1142 611L1140 609C1138 608 1136 608 1136 608L1090 608L1088 606L1087 604L1086 602L1086 600L1088 598L1091 597L1136 597C1138 596 1140 595 1140 595L1143 593L1145 589L1146 586L1146 583L1144 580L1142 578L1140 576L1137 574C1134 574 1090 574 1090 574C1088 573 1087 572 1087 572L1086 570L1086 567L1088 565L1091 564C1092 564 1136 564 1136 564C1138 563 1141 561 1141 561L1144 557L1145 553L1145 550L1143 546L1141 544L1137 542L1133 541L1090 541C1089 540 1087 538 1087 538L1086 536L1086 532L1088 530L1136 530C1138 530 1140 528 1140 528L1142 526L1144 524L1145 522L1146 519L1146 515L1144 512L1143 510L1140 509C1137 508 1135 507 1135 507L1090 507C1088 506 1087 504 1087 504L1086 501L1087 499L1088 497L1135 497C1137 496 1139 495 1139 495L1143 492L1146 488L1146 484L1145 481L1143 477L1140 475L1136 474L1130 474L1091 474C1089 474 1087 472 1087 472L1086 469L1086 467L1087 464C1089 463 1092 462 1092 462L1159 463L1159 457Z"
+						 fill="#65CCB2" fill-opacity="1" stroke="#333333" id="sanReQi3-3" />
+					</g>
+					<!--泵1-->
+					<g id="beng1" transform="matrix(0.7399999,0,0,0.7399999,295.7633,1.192947)">
+						<circle cx="1348" cy="262" r="34" fill="none" stroke="#333333" stroke-opacity="1" stroke-width="1.50" transform="matrix(0.9999999,0,0,0.9999999,-5.333515,-2.000024)"
+						/>
+						<path d="M1343 180L1343 226" fill="none" stroke="#333333" stroke-opacity="1" stroke-width="1.50" />
+						<path d="M1336 226L1342 240L1349 226L1345 225L1342 225L1339 225C1336 225 1336 226 1336 226Z" fill="#333333" fill-opacity="1"
+						 stroke="#333333" transform="matrix(0.9999999,0,0,0.9999999,0.3331811,0.3333218)" />
+						<path d="M1342 293L1342 342" fill="none" fill-opacity="0" stroke="#333333" stroke-width="1.5" />
+					</g>
+					<!--泵2-->
+					<g id="beng2" transform="matrix(0.7699999,0,0,0.7699999,527.7925,-7.639997)">
+						<circle cx="1348" cy="262" r="34" fill="none" stroke="#333333" stroke-opacity="1" stroke-width="1.50" transform="matrix(0.9999999,0,0,0.9999999,-5.333515,-2.000024)"
+						/>
+						<path d="M1343 180L1343 226" fill="none" stroke="#333333" stroke-opacity="1" stroke-width="1.50" />
+						<path d="M1336 226L1342 240L1349 226L1345 225L1342 225L1339 225C1336 225 1336 226 1336 226Z" fill="#333333" fill-opacity="1"
+						 stroke="#333333" transform="matrix(0.9999999,0,0,0.9999999,0.3331811,0.3333218)" />
+						<path d="M1342 293L1342 342" fill="none" fill-opacity="0" stroke="#333333" stroke-width="1.5" />
+					</g>
+					<!--空冷塔2-->
+					<path d="M62 227L60.99999 226.3333L106 227L104 235L103 240L102 244L101 250L101 255L101 260L101 265L102 271L103 277L105 283L108 291L112 301L116 307L120 313L48 313L54 305L58 299L61 293L64 286L66 281L68 275L69 268L70 259L70 252L69 246L68 241L66 235L64 231Z"
+					 fill="#0099FF" stroke="none" stroke-width="0.25" id="kongLengTa2" transform="matrix(0.939,0,0,0.939,1715.772,-43.07462)"
+					/>
+					<!--风机2-->
+					<g id="fengJi2" transform="matrix(1.111,0,0,1.111,1796.754,111.5229)">
+						<rect x="11.33" y="364.67" width="68.34" height="69.65997" fill="#FFCC33" stroke="#333333" stroke-opacity="1" stroke-width="1.25"
+						 id="fengJi2-1" />
+						<path d="M38 374L53 426L52 428L49 430L46 431L44 431L41 430L39 428L38 426L53 373L52 371L51 370L49 369L47 368L44 368L41 369L39 370L38 372C38 373 38 374 38 374Z"
+						 fill="none" stroke="#333333" stroke-opacity="1" stroke-width="0.75" id="fengJi2-2" />
+					</g>
+					<!--堆芯-->
+					<g id="duiXin">
+						<rect x="846" y="342" width="216" height="212" fill="#0000CC" fill-opacity="1" stroke="#333333" stroke-dasharray="none" />
+						<rect x="854.5" y="422.67" width="200" height="109.33" fill="#666666" stroke="#333333" stroke-opacity="1" transform="matrix(0.9999999,0,0,1.813,-7.635882E-06,-423.9901)"
+						/>
+						<path d="M842 420.67h3v109.33h200v-109.33h3v112.33h-206v-112.33" stroke="#333333" stroke-opacity="1" fill="#99FF66" transform="matrix(0.9999999,0,0,1.777,8.999916,-407.0251)"
+						/>
+						<rect x="846.67" y="325" width="216.66" height="16.67001" fill="#99FF66" stroke="none" />
+						<rect x="834.17" y="265" width="240.83" height="13.32999" fill="#99FF66" stroke="none" />
+						<rect x="847" y="281" width="218" height="46" fill="#996600" fill-opacity="1" stroke="none" stroke-width="4" transform="matrix(1,0,0,1,-1,-0.5)"
+						/>
+						<rect x="846" y="280" width="220" height="48" fill="none" fill-opacity="1" stroke="#333333" transform="matrix(1,0,0,1,-1,-0.5)"
+						/>
+						<rect x="833.33" y="264.17" width="242.4999" height="14.15997" fill="#99FF33" stroke="none" transform="matrix(0.99,0,0,1.28,9.737,-75.95)"
+						/>
+						<path d="M997 536L997 352L915 352L915 535L997 535Z" fill="#FFC0CB" stroke="#FFC0CB" />
+						<path d="M997 536L997 352L915 352L915 535" fill="none" stroke="#333333" transform="matrix(1,0,0,1.04,0,-17.893)" />
+						<rect x="915.33" y="350.67" width="82" height="188" fill="url(#up)" stroke="none" stroke-opacity="0" transform="matrix(0.9999999,0,0,1.043,-0.000104951,-15.3121)"/>
+						<path d="M835 255L840 255L840 262 M1076 255L1072 255L1072 262 M835 262L1076 262 M835 280L1076 280 M835 289L843 290 M1070 290L1076 290 M835 307L843 307 M1070 324L1076 324 M835 324L843 324 M1070 307L1076 307 M997 366L1076 366 M997 370L1076 370 M1062 433L1076 433 M1062 429L1076 429 M1069 549L1076 549 M1069 555L1076 555 M835 549L843 549 M835 555L843 555"
+						 fill="none" stroke="#333333" stroke-opacity="1" />
+						<rect x="915" y="343.33" width="83.33002" height="6.670013" fill="#00FFFF" stroke="#333333" stroke-dasharray="none" />
+						<rect x="938" y="230" width="8" height="262" fill="#000000" stroke="#000000" stroke-dasharray="none" />
+						<rect x="965" y="230" width="8" height="262" fill="#000000" stroke="#000000" />
+						<rect x="914.67" y="377.33" width="3.330017" height="10" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="926.67" y="377.33" width="4" height="10" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="946.67" y="377.33" width="4" height="10.67001" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="957.33" y="377.33" width="4.669983" height="10.67001" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="978.67" y="377.33" width="4" height="10.67001" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="990.67" y="378" width="4" height="10" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="914.67" y="509.33" width="4" height="9.339996" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="925.33" y="508.67" width="5.339966" height="9.999969" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="938.67" y="509.33" width="4" height="9.339996" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="950.67" y="509.33" width="4" height="9.339996" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="962" y="509.33" width="3.330017" height="10.00003" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="974.67" y="510" width="2.660034" height="8.669983" fill="#FFFFCC" stroke="#333333" stroke-width="2" transform="matrix(1.2,0,0,1,-195.2,0)"/>
+						<rect x="985.33" y="510" width="4" height="8.669983" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="916" y="528" width="2.669983" height="8" fill="#FFFFCC" stroke="#333333" stroke-width="2" transform="matrix(0.9999999,0,0,0.9999999,-1.108646E-05,-0.6666888)"/>
+						<rect x="926.67" y="526.67" width="4" height="9.330017" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="938.67" y="526.67" width="4" height="8.660034" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="950.67" y="528" width="4.660034" height="8" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="962" y="527.33" width="4.669983" height="8.669983" fill="#FFFFCC" stroke="#333333" stroke-width="2" />
+						<rect x="974" y="528" width="3.330017" height="8" fill="#FFFFCC" stroke="#333333" stroke-width="2" transform="matrix(0.9999999,0,0,0.9999999,-1.108646E-05,-0.6666888)"/>
+						<rect x="985.33" y="528" width="4.669983" height="8.669983" fill="#FFFFCC" stroke="#333333" stroke-width="2" transform="matrix(0.9999999,0,0,0.9999999,-1.108646E-05,-0.6666888)"/>
+						<rect x="1069.5" y="307.5" width="6.5" height="16" fill="#996600" stroke="none" stroke-opacity="0" transform="matrix(1,0,0,1,0,0.5)"/>
+						<rect x="834.5" y="308.5" width="6" height="15.5" fill="#996600" stroke="none" stroke-opacity="0" transform="matrix(1,0,0,1,0.5,-0.5)"/>
+						<path d="M545 82M861 215L869 215L869 229L861 230Z" fill="#99FF33" stroke="#333333" transform="matrix(1,0,0,1,0,1.5)" />
+						<path d="M866 231L866 373L863 373L863 231Z" fill="#99FF33" stroke="#333333" stroke-opacity="1" />
+						<rect x="854.67" y="205.33" width="18.66003" height="24" fill="none" stroke="#333333" stroke-width="1.50" transform="matrix(1,0,0,1,0.8328,2)"/>
+						<rect x="834.5" y="256.5" width="5" height="6" fill="#99FF33" stroke="none" stroke-opacity="0" stroke-dasharray="2,2" transform="matrix(1,0,0,1,0,-1)"/>
+						<rect x="1073" y="255.5" width="3" height="6" fill="#99FF33" stroke="none" stroke-opacity="0" stroke-dasharray="2,2" transform="matrix(1,0,0,1,-0.5,0)"/>
+						<rect x="1069" y="281" width="6" height="9" fill="#99FF33" stroke="none" stroke-opacity="0" stroke-dasharray="2,2" transform="matrix(1,0,0,1,0.5,0)"/>
+						<rect x="834.5" y="281" width="5.5" height="8.5" fill="#99FF33" stroke="none" stroke-opacity="0" transform="matrix(1,0,0,1,1,0)"/>
+						<rect x="1060.5" y="429.5" width="15.5" height="3" fill="#0000FF" stroke="none" stroke-opacity="0" />
+						<rect x="1068" y="549.5" width="7" height="5" fill="#99FF33" stroke="none" stroke-opacity="0" transform="matrix(1,0,0,1,1,0)"/>
+						<linearGradient id="two_stops">
+							<stop offset="0%" stop-color="#FF0000" />
+							<stop offset="100%" stop-color="#0000CC" />
+						</linearGradient>
+						<linearGradient id="up" xlink:href="#two_stops" x1="0%" y1="0%" x2="0%" y2="100%" />
+						<rect x="835.5" y="550" width="6.5" height="4.5" fill="#99FF33" stroke="none" stroke-opacity="0" />
+						<path d="M841 279L842 562L844 567L848 573L852 580L858 585L867 592L875 597L884 601C884 601 891 604 892 605L902 608L912 611L924 612L940 615L957 615L972 614L987 612L997 611L1011 607L1025 603L1037 596L1049 587L1059 579L1065 569L1067 566L1068 557C1069 555 1069 280 1069 280L1062 281L1062 556L1061 561L1057 569L1053 576L1041 587L1025 596L1009 602L991 606L965 609L944 609L924 607L911 604L895 600L885 595L872 588L855 575L849 563L847 556L847 551L847 280C847 280 841 280 841 279Z"
+						 fill="#99FF33" fill-opacity="1" stroke="#333333" transform="matrix(1,0,0,1,0,0.5)" />
+						<path d="M847 343L856 343" fill="none" fill-opacity="0" stroke="#333333" stroke-width="2" transform="matrix(1,0,0,1,0,-0.5)"/>
+						<path d="M1053 342L1062 342" fill="none" fill-opacity="0" stroke="#333333" stroke-width="2" transform="matrix(1,0,0,1,0,0.5)"/>
+						<rect x="997.5" y="367" width="78" height="2.85" fill="#FF0000" stroke="none" stroke-opacity="0" transform="matrix(0.9999999,0,0,1.138,-1.648068E-05,-51.297)"/>
+					</g>
+					<!--热管道（红色）-->
+					<g id="hotLine">
+						<path d="M762 425L761 227L713 227L713 204" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
+						<path d="M1074 367L1190 367L1190 195L1264 195" fill="none" stroke="#FF0000" stroke-opacity="1" stroke-width="4" transform="matrix(0.9999999,0,0,0.9999999,-3.218651E-05,0.8333271)"
+						 xmlns="http://www.w3.org/2000/svg" />
+						<path d="M1397 355L1397 195L1313.5 195" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
+						<path d="M1433 384L1501 384L1501 195L1536 195" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
+						<path d="M1663 363L1663 195L1587 195" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
+						<path d="M1698 389L1796 389L1796 250.5" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
+					</g>
+					<!--冷管道（蓝色）-->
+					<g id="coldLine">
+						<path d="M712 314L725 314L725 616L763 616L763 578" fill="none" fill-opacity="0" stroke="#003399" stroke-width="4" />
+						<path d="M1075 431L1190 431L1190 727L1397 727L1397 574" fill="none" fill-opacity="0" stroke="#003399" stroke-width="4" />
+						<path d="M1433 557L1501 557L1501 727L1663 727L1663 571" fill="none" fill-opacity="0" stroke="#003399" stroke-width="4" />
+						<path d="M1698 555L1810 555" fill="none" fill-opacity="0" stroke="#003399" stroke-width="4" />
+					</g>
+					<!--标题（装置）-->
+					<g id="text1">
+						<text x="708" y="70" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							余排
+						</text>
+						<text x="947" y="70" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							堆本体
+						</text>
+						<text x="1319" y="70" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							一回路
+						</text>
+						<text x="1706" y="70" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							二回路
+						</text>
+					</g>
+					<g id="measureValue">
+						<rect x="1105" y="337" width="11" height="28" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg"
+						/>
+						<rect x="1106" y="389" width="8" height="22" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" transform="matrix(1,0,0,2.543,0,-617.28)"
+						 xmlns="http://www.w3.org/2000/svg" />
+						<rect x="1104" y="435" width="12" height="22" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" transform="matrix(0.9999999,0,0,1.27,-4.849751E-05,-118.42)"
+						 xmlns="http://www.w3.org/2000/svg" />
+						<rect x="1467" y="361" width="7" height="20" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg"
+						/>
+						<rect x="1465" y="445" width="10" height="20" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" transform="matrix(8.339995,0,0,1.28,-10777.8,-119.4)"
+						 xmlns="http://www.w3.org/2000/svg" />
+						<rect x="1466" y="530" width="9" height="23" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" xmlns="http://www.w3.org/2000/svg"
+						/>
+						<text x="1035" y="358" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							603 °C</text>
+						<text x="1035" y="452" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" transform="matrix(1,0,0,1,0,0)" xmlns="http://www.w3.org/2000/svg">
+							569 °C</text>
+						<text x="1034" y="406" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							压差: 8.31 MPa</text>
+						<text x="1180" y="718" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							流量: 2.63 m3/h</text>
+						<text x="1391" y="376" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							559 °C</text>
+						<text x="1396" y="471" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							压差: 6.27 MPa</text>
+						<text x="1396" y="546" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							477 °C</text>
+						<text x="1665" y="379" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							499 °C</text>
+						<text x="1663" y="471" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							压差: 6.11 MPa</text>
+						<text x="1665" y="546" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							389 °C</text>
+						<text x="1275" y="187" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							压差: 3.41 MPa</text>
+						<text x="1550" y="187" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+						 stroke-width="0.75">
+							压差: 2.86 MPa</text>
+					</g>
 
-		<div class="page-content">
-		
-			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-		
-			<div id="portlet-config" class="modal hide">
-		
-				<div class="modal-header">
-		
-					<button data-dismiss="modal" class="close" type="button"></button>
-		
-					<h3>portlet Settings</h3>
-		
-				</div>
-		
-				<div class="modal-body">
-		
-					<p>Here will be a configuration form</p>
-		
-				</div>
-		
+					<text x="320" y="32" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="26" fill="#333333" stroke="#333333"
+					 stroke-width="1" text-anchor="middle">
+						反应堆温度控制和监测
+					</text>
+					<rect x="250" y="44" width="140" height="75" fill="#FFFFFF" stroke="none" />
+					<rect x="250" y="44" width="70" height="75" fill="green" stroke="none" />
+					<rect x="320" y="44" width="70" height="75" fill="yellow" stroke="none" />
+					<text x="345" y="66" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="17" fill="#333333" stroke="#333333"
+					 stroke-width="1" text-anchor="end">
+						总功率:
+					</text>
+					<text x="345" y="108" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="17" fill="#333333" stroke="#333333"
+					 stroke-width="1" text-anchor="end">
+						硼浓度:
+					</text>
+					<text x="300" y="63" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+					 stroke-width="1" text-anchor="start">
+						1002.35
+					</text>
+					<text x="300" y="83" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+					 stroke-width="1" text-anchor="start">
+						1.05
+					</text>
+					<text x="300" y="109" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+					 stroke-width="1" text-anchor="start">
+						24.79
+					</text>
+					<text x="150" y="69" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+					 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+						轴向功率分布
+					</text>
+					<text x="490" y="69" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+					 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+						轴向温度分布
+					</text>
+					<text x="150" y="325" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+					 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+						加热棒状态
+					</text>
+					<text x="490" y="325" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
+					 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+						径向温度分布
+					</text>
+
+					<g id="leftCircle">
+						<circle cx="150" cy="185" r="101" fill="none" stroke="#666666" stroke-width="4" />
+						<!--1-->
+						<circle cx="150" cy="185" r="17" fill="#C00000" stroke="none" />
+						<!--2-->
+						<circle cx="190" cy="185" r="17" fill="#D99694" stroke="none" />
+						<!--3-->
+						<circle cx="170" cy="150.359" r="17" fill="#D99694" stroke="none" />
+						<!--4-->
+						<circle cx="130" cy="150.359" r="17" fill="#D99694" stroke="none" />
+						<!--5-->
+						<circle cx="110" cy="185" r="17" fill="#D99694" stroke="none" />
+						<!--6-->
+						<circle cx="130" cy="219.641" r="17" fill="#D99694" stroke="none" />
+						<!--7-->
+						<circle cx="170" cy="219.641" r="17" fill="#D99694" stroke="none" />
+						<!--8-->
+						<circle cx="227.2741" cy="164.2945" r="17" fill="#D9CDE5" stroke="none" />
+						<!--9-->
+						<circle cx="206.5685" cy="128.4315" r="17" fill="#D9CDE5" stroke="none" />
+						<!--10-->
+						<circle cx="170.7055" cy="112.7259" r="17" fill="#D9CDE5" stroke="none" />
+						<!--11-->
+						<circle cx="129.2945" cy="112.7259" r="17" fill="#D9CDE5" stroke="none" />
+						<!--12-->
+						<circle cx="93.4315" cy="128.4315" r="17" fill="#D9CDE5" stroke="none" />
+						<!--13-->
+						<circle cx="72.7259" cy="164.2945" r="17" fill="#D9CDE5" stroke="none" />
+						<!--14-->
+						<circle cx="72.7259" cy="205.7055" r="17" fill="#D9CDE5" stroke="none" />
+						<!--15-->
+						<circle cx="93.4315" cy="241.5685" r="17" fill="#D9CDE5" stroke="none" />
+						<!--16-->
+						<circle cx="129.2945" cy="257.2741" r="17" fill="#D9CDE5" stroke="none" />
+						<!--17-->
+						<circle cx="170.7055" cy="257.2741" r="17" fill="#D9CDE5" stroke="none" />
+						<!--18-->
+						<circle cx="206.5685" cy="241.5685" r="17" fill="#D9CDE5" stroke="none" />
+						<!--19-->
+						<circle cx="227.2741" cy="205.7055" r="17" fill="#D9CDE5" stroke="none" />
+
+						<text x="135" y="190" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							1</text>
+						<text x="175" y="190" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							2</text>
+						<text x="155" y="155" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							3</text>
+						<text x="115" y="155" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							4</text>
+						<text x="95" y="190" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							5</text>
+						<text x="115" y="225" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							6</text>
+						<text x="155" y="225" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							7</text>
+						<text x="213" y="170" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							8</text>
+						<text x="192" y="134" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							9</text>
+						<text x="156" y="118" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							10</text>
+						<text x="115" y="118" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							11</text>
+						<text x="79" y="134" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							12</text>
+						<text x="58" y="170" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							13</text>
+						<text x="58" y="211" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							14</text>
+						<text x="79" y="247" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							15</text>
+						<text x="115" y="262" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							16</text>
+						<text x="156" y="262" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							17</text>
+						<text x="192" y="247" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							18</text>
+						<text x="213" y="211" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							19</text>
+					</g>
+
+					<!-- <rect x="10" y="335" width="300" height="520" fill="#F888D8" stroke="none" />
+					<rect x="330" y="335" width="300" height="520" fill="#B7DEE8" stroke="none" /> -->
+					<g id="leftReact">
+						<text x="0" y="355" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							加热棒</text>
+						<text x="80" y="355" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开/关</text>
+						<text x="160" y="355" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							功率(kW)</text>
+						<text x="15" y="381" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1</text>
+						<text x="88" y="381" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="381" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.234</text>
+						<text x="15" y="407" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							2</text>
+						<text x="88" y="407" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="407" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.924</text>
+						<text x="15" y="433" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							3</text>
+						<text x="88" y="433" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="433" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.021</text>
+						<text x="15" y="459" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							4</text>
+						<text x="88" y="459" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="459" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.017</text>
+						<text x="15" y="485" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							5</text>
+						<text x="88" y="485" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="485" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							0.921</text>
+						<text x="15" y="511" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							6</text>
+						<text x="88" y="511" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="511" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.111</text>
+						<text x="15" y="537" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							7</text>
+						<text x="88" y="537" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="537" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.200</text>
+						<text x="15" y="563" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							8</text>
+						<text x="88" y="563" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="563" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							2.001</text>
+						<text x="15" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							9</text>
+						<text x="88" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							关</text>
+						<text x="165" y="589" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							0</text>
+						<text x="9" y="615" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							10</text>
+						<text x="88" y="615" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="615" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							0.997</text>
+						<text x="9" y="641" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							11</text>
+						<text x="88" y="641" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="641" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.032</text>
+						<text x="9" y="667" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							12</text>
+						<text x="88" y="667" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="667" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.241</text>
+						<text x="9" y="693" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							13</text>
+						<text x="88" y="693" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="693" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							2.028</text>
+						<text x="9" y="719" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							14</text>
+						<text x="88" y="719" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="719" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.721</text>
+						<text x="9" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							15</text>
+						<text x="88" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							关</text>
+						<text x="165" y="745" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="16" fill="blue" stroke="blue" stroke-width="0.75"
+						 xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							0</text>
+						<text x="9" y="771" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							16</text>
+						<text x="88" y="771" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="771" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.319</text>
+						<text x="9" y="797" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							17</text>
+						<text x="88" y="797" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="797" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.138</text>
+						<text x="9" y="823" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							18</text>
+						<text x="88" y="823" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="823" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.061</text>
+						<text x="9" y="849" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							19</text>
+						<text x="88" y="849" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							开</text>
+						<text x="165" y="849" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							1.021</text>
+					</g>
+					<g id="rightReact">
+						<path d="M340 805H620 M340 805V380" fill="none" stroke="#333333" stroke-width="2" />
+						<path d="M615 801V809L623 805L615 801 M340 380L344 388L336 388L340 380" fill="#333333" stroke="#333333" stroke-width="2"/>
+						<text x="310" y="395" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							深度</text>
+						<text x="300" y="830" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							最低点</text>
+						<text x="555" y="830" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
+							温度</text>
+						<text x="480" y="370" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="17" fill="#333333" stroke="#333333"
+						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
+							【 温度测量孔 1 】</text>
+
+						<rect x="350" y="405" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="405" width="170" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="445" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="445" width="190" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="485" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="485" width="167" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="525" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="525" width="190" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="565" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="565" width="140" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="605" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="605" width="100" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="645" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="645" width="70" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="685" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="685" width="120" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="725" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="725" width="210" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="765" width="260" height="32" fill="#254061" stroke="none" />
+						<rect x="350" y="765" width="110" height="32" fill="#F888D8" stroke="none" />
+					</g>
+
+					<g id="rightCircle">
+						<circle cx="150" cy="185" r="101" fill="none" stroke="#666666" stroke-width="4" transform="matrix(1,0,0,1,340,0)" />
+						<circle cx="490" cy="185" r="2" fill="#999999" stroke="#999999" stroke-width="1" />
+						<g transform="matrix(0.738,0,0,0.738,379.21,48.356)" xmlns="http://www.w3.org/2000/svg">
+							<!--1-->
+							<circle cx="150" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--2-->
+							<circle cx="190" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--3-->
+							<circle cx="170" cy="150.359" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--4-->
+							<circle cx="130" cy="150.359" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--5-->
+							<circle cx="110" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--6-->
+							<circle cx="130" cy="219.641" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--7-->
+							<circle cx="170" cy="219.641" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--8-->
+							<circle cx="227.2741" cy="164.2945" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--9-->
+							<circle cx="206.5685" cy="128.4315" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--10-->
+							<circle cx="170.7055" cy="112.7259" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--11-->
+							<circle cx="129.2945" cy="112.7259" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--12-->
+							<circle cx="93.4315" cy="128.4315" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--13-->
+							<circle cx="72.7259" cy="164.2945" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--14-->
+							<circle cx="72.7259" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--15-->
+							<circle cx="93.4315" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--16-->
+							<circle cx="129.2945" cy="257.2741" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--17-->
+							<circle cx="170.7055" cy="257.2741" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--18-->
+							<circle cx="206.5685" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+							<!--19-->
+							<circle cx="227.2741" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+						</g>
+						<!--1-->
+						<circle cx="524" cy="126.1103" r="7.5" fill="#F888D8" stroke="none" />
+						<!--2-->
+						<circle cx="545" cy="89.7372" r="7.5" fill="#F888D8" stroke="none" />
+						<!--3-->
+						<circle cx="490" cy="145" r="7.5" fill="#F888D8" stroke="none" />
+						<!--4-->
+						<circle cx="429.3782" cy="150" r="7.5" fill="#F888D8" stroke="none" />
+						<!--5-->
+						<circle cx="394.7372" cy="130" r="7.5" fill="#F888D8" stroke="none" />
+						<!--6-->
+						<circle cx="456" cy="243.8897" r="7.5" fill="#F888D8" stroke="none" />
+						<!--7-->
+						<circle cx="445.5" cy="262.07626" r="7.5" fill="#F888D8" stroke="none" />
+						<!--8-->
+						<circle cx="435" cy="280.2628" r="7.5" fill="#F888D8" stroke="none" />
+						<!--9-->
+						<circle cx="490" cy="225" r="7.5" fill="#F888D8" stroke="none" />
+						<!--10-->
+						<circle cx="550.6218" cy="220" r="7.5" fill="#F888D8" stroke="none" />
+						<!--11-->
+						<circle cx="567.9423" cy="230" r="7.5" fill="#F888D8" stroke="none" />
+						<!--12-->
+						<circle cx="585.2628" cy="240" r="7.5" fill="#F888D8" stroke="none" />
+						<text x="487" y="130" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000">
+							1</text>
+						<text x="508" y="94" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							2</text>
+						<text x="453" y="149" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							3</text>
+						<text x="392" y="154" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							4</text>
+						<text x="357" y="134" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							5</text>
+						<text x="418" y="248" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							6</text>
+						<text x="409" y="267" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							7</text>
+						<text x="398" y="285" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							8</text>
+						<text x="453" y="229" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							9</text>
+						<text x="510" y="224" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							10</text>
+						<text x="528" y="235" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							11</text>
+						<text x="544" y="244" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000"
+						 baseline-shift="baseline">
+							12</text>
+					</g>
+
+				</svg>
+
 			</div>
-		
-			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-		
-			<!-- BEGIN PAGE CONTAINER-->
-		
-			<div class="">
-		
-				<!-- BEGIN PAGE HEADER-->
-		
-				<div class="row-fluid">
-		
-					<div class="span12" style="margin:0px">
-				<div class="row-fluid tankContainer" ng-controller="holeCtrl">
-					<!-- <div style="overflow:hidden; margin-left:0px; margin-right:0px; border-color:purple;height:830px; width:{{innerWid}}px; display:inline"> -->
-						<!-- <img id="screenSVG" src="image/testsvg.svg" width="800" height="600" /> -->
-					<div id="screenContainer" style="position:relative; background-color:#254061; display:flex">
-						<div id="leftContainer" style="background-color:#254061; border:3px solid #b9cde5; border-right:none;">
-							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
-								<title>加热棒径向功率和状态</title>
-								<desc>综合实验平台 - 加热棒径向功率和状态</desc>
-								<text x="{{innerWidth/6/2}}" y="{{innerHeight/50*3}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">加热棒径向功率</text>
-								<!-- 堆芯边缘 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2*0.85}}" style="stroke:#b9cde5; stroke-width:3; fill:none;" />
-								<!-- <circle cx="{{innerWidth/6/2+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2*0.85}}" style="stroke:#b9cde5; stroke-width:3; fill:none;" /> -->
-								<!-- 正中间的加热棒 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d99694;" />
-								<!-- 从内至外第二圈加热棒 --><circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d9cde5;" transform="rotate(0, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d9cde5;" transform="rotate(60, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d9cde5;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d9cde5;" transform="rotate(180, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d9cde5;" transform="rotate(240, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/55+innerWidth/6/12}}" cy="{{innerWidth/6/2+innerWidth/6/9}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#d9cde5;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!-- 从内至外第三圈加热棒 --><circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(15, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(45, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(75, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(105, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(135, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(165, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(195, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(225, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(255, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(285, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(315, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.45+innerWidth/6/22}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.88}}" style="stroke:none; fill:#c00000;" transform="rotate(345, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<text x="{{innerWidth/6/2}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/30}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">1</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/3.2}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/20}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">2</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/15}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/3.6}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">3</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/4}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/5.2}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">4</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/3.1}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/8.5}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">5</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/10.5}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.8}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">6</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/4.2}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/3.8}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#333333;">7</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.6}}" y="{{innerWidth/6/2-innerWidth/6*0.7/17}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">8</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.2}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/2.35}}" style="font-size:1.2em; font-weight:bold; text-anchor:middle; fill:blue;">9</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/6.2}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/1.65}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">10</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/5.5}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/1.67}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">11</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/2.1}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/2.4}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">12</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.55}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/8}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">13</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.55}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/4.8}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">14</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/2.1}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.95}}" style="font-size:1.2em; font-weight:bold; text-anchor:middle; fill:blue;">15</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/5.4}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.48}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">16</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/6}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.48}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">17</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.2}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">18</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.6}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/4.8}}" style="font-size:1em; font-weight:bold; text-anchor:middle; fill:#222222;">19</text>
-								<!-- state --><text x="{{innerWidth/6/2}}" y="{{innerWidth/6-innerWidth/6/33}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9">加热棒状态</text>
-								<rect x="{{innerWidth/6/32}}" y="{{innerWidth/6+innerWidth/6/24-innerWidth/6/32}}" width="{{innerWidth/6/32*30}}" height="{{innerHeight-innerWidth/6*1.1+innerWidth/6/32}}" style="stroke:none; fill:#f888d8;" />
-								<text x="{{innerWidth/6/16+innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">加热棒</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/4}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">开/关</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8-innerWidth/6/32}}" style="font-size:1.1em;">功率 (kW)</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20-innerWidth/6/32}}" style="font-size:1em;">1</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20-innerWidth/6/32}}" style="font-size:1.1em;">1.234</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*2-innerWidth/6/32}}" style="font-size:1em;">2</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*2-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*2-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*3-innerWidth/6/32}}" style="font-size:1em;">3</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*3-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*3-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*4-innerWidth/6/32}}" style="font-size:1em;">4</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*4-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*4-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*5-innerWidth/6/32}}" style="font-size:1em;">5</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*5-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*5-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*6-innerWidth/6/32}}" style="font-size:1em;">6</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*6-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*6-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*7-innerWidth/6/32}}" style="font-size:1em;">7</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*7-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*7-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*8-innerWidth/6/32}}" style="font-size:1em;">8</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*8-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*8-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*9-innerWidth/6/32}}" style="font-size:1.1em; font-weight:bold; fill:blue">9</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*9-innerWidth/6/32}}" style="font-size:1.1em; font-weight:bold; fill:blue">关</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*9-innerWidth/6/32}}" style="font-size:1.1em; font-weight:bold; fill:blue">0</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*10-innerWidth/6/32}}" style="font-size:1em;">10</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*10-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*10-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*11-innerWidth/6/32}}" style="font-size:1em;">11</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*11-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*11-innerWidth/6/32}}" style="font-size:1.1em;">0.959</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*12-innerWidth/6/32}}" style="font-size:1em;">12</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*12-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*12-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*13-innerWidth/6/32}}" style="font-size:1em;">13</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*13-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*13-innerWidth/6/32}}" style="font-size:1.1em;">2.001</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*14-innerWidth/6/32}}" style="font-size:1em;">14</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*14-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*14-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*15-innerWidth/6/32}}" style="font-size:1.1em; font-weight:bold; fill:blue">15</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*15-innerWidth/6/32}}" style="font-size:1.1em; font-weight:bold; fill:blue">关</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*15-innerWidth/6/32}}" style="font-size:1.1em; font-weight:bold; fill:blue">0</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*16-innerWidth/6/32}}" style="font-size:1em;">16</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*16-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*16-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*17-innerWidth/6/32}}" style="font-size:1em;">17</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*17-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*17-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*18-innerWidth/6/32}}" style="font-size:1em;">18</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*18-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*18-innerWidth/6/32}}" style="font-size:1.1em;">1.334</text>
-								<text x="{{innerWidth/6/8-innerWidth/6/64}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/32}}" style="font-size:1em;">19</text>
-								<text x="{{innerWidth/6/8+innerWidth/6/4.5}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/32}}" style="font-size:1em;">开</text>
-								<text x="{{innerWidth/6/16+innerWidth/6/2}}" y="{{innerWidth/6+innerWidth/6/8+(innerHeight-innerWidth/6*1.1)/20*19-innerWidth/6/32}}" style="font-size:1.1em;">0.934</text>
-							</svg>
-						</div>
-						<div id="middleContainer" style="background-color:#254061; border:3px solid #b9cde5; display:flex">
-							<svg width="{{innerWidth/6}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
-								<title>堆芯温度分布</title>
-								<desc>综合实验平台 - 堆芯温度分布</desc>
-								<text x="{{innerWidth/12}}" y="{{innerWidth/6-innerWidth/6/33}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">径向温度分布</text>
-								<!-- 堆芯边缘 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2*0.83}}" style="stroke:#b9cde5; stroke-width:3; fill:none;" />
-								<!-- 堆芯正中心 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.15}}" style="fill:#b9cde5;" />
-								<!-- 正中间的加热棒 --><circle cx="{{innerWidth/6/2}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" />
-								<!-- 从内至外第二圈加热棒 --><circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(0, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(60, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(180, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(240, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.74+innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!-- 从内至外第三圈加热棒 --><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(15, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(45, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(75, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(105, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(135, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(165, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(195, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(225, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(255, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(285, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(315, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<circle cx="{{innerWidth/6/2*0.47+innerWidth/6/9}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.55}}" style="stroke:#b9cde5; stroke-width:2; stroke-dasharray:5,2; fill:none;" transform="rotate(345, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!-- temperature --><!--1--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--2--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(120, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--3--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/6.42}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(90, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--4--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(30, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--5--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(30, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--6--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--7--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/60}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--8--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(300, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--9--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/6.42}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(270, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--6--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/14}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f088d8;" transform="rotate(210, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--7--><circle cx="{{innerWidth/6/2*0.47+innerWidth/6/60}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(210, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<!--8--><circle cx="{{innerWidth/6/2*0.47-innerWidth/6/20}}" cy="{{innerWidth/6/2}}" r="{{innerWidth/6*0.7/2/6*0.35}}" style="stroke:none; fill:#f888d8;" transform="rotate(210, {{innerWidth/6/2}},{{innerWidth/6/2}})" />
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/4.2}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/2.3}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">1</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.4}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/1.35}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">2</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/40}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/3.52}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">3</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.95}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/4.25}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">4</text>
-								<text x="{{innerWidth/6/2-innerWidth/6*0.7/2/1.23}}" y="{{innerWidth/6/2-innerWidth/6*0.7/2/2.47}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">5</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/4.6}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.92}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">6</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/3.75}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.52}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">7</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/2.95}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/1.21}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">8</text>
-								<text x="{{innerWidth/6/2-innerWidth/2/6/40}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.85}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">9</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/2.43}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/3.2}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">10</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.8}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.52}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">11</text>
-								<text x="{{innerWidth/6/2+innerWidth/6*0.7/2/1.4}}" y="{{innerWidth/6/2+innerWidth/6*0.7/2/2.05}}" style="font-size:0.9em; font-weight:bold; fill:#222222;">12</text>
 
-								<!-- kong state --><text x="{{innerWidth/6/2}}" y="{{innerHeight/50*3}}" style="font-size:1.1em; font-weight:bold; fill:#d9d9d9; text-anchor:middle;">轴向温度分布</text>
-								<rect x="{{innerWidth/6/32}}" y="{{innerWidth/6+innerWidth/6/24-innerWidth/6/32}}" width="{{innerWidth/6/32*30}}" height="{{innerHeight-innerWidth/6*1.1+innerWidth/6/32}}" style="stroke:none; fill:#b7dee8;" />
-								<text x="{{innerWidth/6/32+innerWidth/6/32*15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.05}}" style="fill:#333333; font-size:1.2em; font-weight:bold; text-anchor:middle;">【温度测量孔1】</text>
-								<text x="{{innerWidth/6/5}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.95}}" style="font-size:1.1em; text-anchor:end;">深度</text>
-								<!--深度(最高)--><!--10--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*1.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*1.2}}" width="{{innerWidth/6/32*30-innerWidth/6/4}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--9--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*2.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*2.2}}" width="{{innerWidth/6/32*30-innerWidth/6/1.6}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--8--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*3.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*3.2}}" width="{{innerWidth/6/32*30-innerWidth/6/2.3}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--7--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*4.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*4.2}}" width="{{innerWidth/6/32*30-innerWidth/6/1.8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--6--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*5.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*5.2}}" width="{{innerWidth/6/32*30-innerWidth/6/3.4}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--5--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*6.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*6.2}}" width="{{innerWidth/6/32*30-innerWidth/6/4.03}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--4--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*7.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*7.2}}" width="{{innerWidth/6/32*30-innerWidth/6/1.4}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--3--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*8.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*8.2}}" width="{{innerWidth/6/32*30-innerWidth/6/3}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--2--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*9.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*9.2}}" width="{{innerWidth/6/32*30-innerWidth/6/2.7}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<!--1--><rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*10.2}}" width="{{innerWidth/6/32*30-innerWidth/6/8}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#254061;" />
-								<rect x="{{innerWidth/6/32+innerWidth/6/15}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*10.2}}" width="{{innerWidth/6/32*30-innerWidth/6/4.1}}" height="{{(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.7}}" style="stroke:none; fill:#f888d8;" />
-								<path d="m{{innerWidth/6/32+innerWidth/6/30}} {{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.75}} V{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*11.1}} h{{innerWidth/6/32*30-innerWidth/6/12}}" style="stroke:#222222; stroke-width:2; fill:none;" />								
-								<path d="m{{innerWidth/6/32+innerWidth/6/26}} {{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.9}} h{{innerWidth/6/80}} L{{innerWidth/6/32+innerWidth/6/30}} {{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.77}} L{{innerWidth/6/32+innerWidth/6/55}} {{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*0.9}}Z" style="stroke:#222222; stroke-width:2; fill:#222222;" />								
-								<path d="m{{innerWidth/6/32*31+innerWidth/6/30-innerWidth/6/12}} {{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*11.03}} V{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*11.15}} L{{innerWidth/6/32*31+innerWidth/6/30-innerWidth/6/17}} {{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*11.09}} Z" style="stroke:#222222; stroke-width:2; fill:#222222;" />
-								
-								<text x="{{innerWidth/6-innerWidth/6/20}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*11.6}}" style="font-size:1.1em; text-anchor:end;">温度</text>
-								<text x="{{innerWidth/6/5}}" y="{{innerWidth*0.195+(innerHeight-innerWidth/6*1.1+innerWidth/6/32)/13*11.6}}" style="font-size:1.1em; text-anchor:end;">最低点</text>
-							</svg>
-						</div>
-						<div id="rightContainer" style="background-color:#254061; border:3px solid #b9cde5; border-left:none; display:flex">
-							<svg width="{{innerWidth/3*2}}" height="{{innerHeight}}" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
-								<title>装置图</title>
-								<desc>综合实验平台 - 装置图</desc>
-								<!-- 虚线框橙 --><rect x="{{innerWidth/3*2/9*1.1+innerWidth/100}}" y="{{innerWidth/6/2/40*3.15}}" width="{{innerWidth/3*2/9*2+innerWidth/20}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#cc5600; stroke-width:1; stroke-dasharray:5,3;" />
-								<!-- 虚线框绿 --><rect x="{{innerWidth/3*2/9*3.9+innerWidth/45}}" y="{{innerWidth/6/2/40*3}}" width="{{innerWidth/3*2/9*1.7}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#00cc00; stroke-width:1; stroke-dasharray:5,3;" />
-								<!-- 虚线框蓝 --><rect x="{{innerWidth/3*2/9*6.2}}" y="{{innerWidth/6/2/40*3}}" width="{{innerWidth/3*2/9*2.7}}" height="{{innerHeight-innerWidth/6/2/40*9}}" style="fill:none; stroke:#2167ff; stroke-width:1; stroke-dasharray:5,3;" />
-								
-								<!-- <path d="m0 {{innerHeight/4}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
-								<path d="m0 {{innerHeight/2}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" />
-								<path d="m0 {{innerHeight/4*3}}h{{innerWidth/3*2}}" style="stroke:#d9d9d9" /> -->
-
-								<text x="{{innerWidth/16}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">余排</text>
-								<text x="{{innerWidth/5.1}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">堆本体</text>
-								<text x="{{innerWidth/2.7}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">一回路</text>
-								<text x="{{innerWidth/1.8}}" y="{{innerHeight/23}}" style="font-size:1.4em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">二回路</text>
-								 
-								<svg id="steam generator1" x="{{innerWidth/30-innerWidth*0.006+innerWidth/30-innerWidth/40}}" y="{{innerHeight/18}}" width="{{innerWidth/36}}" height="{{innerWidth/18}}" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-									<title>蒸汽发生器1</title>
-									<desc>蒸汽发生器1</desc>
-									<path d="m90 45h20v25 M110 70A50 50 0 0 1 150 120v70L135 210v80h-70v-80L50 190v-70 M50 120A50 50 0 0 1 90 70L90 45" style="stroke:cadetblue; stroke-width:4px; fill:none;" />
-									<path d="m80 290v-88A20 20 0 0 1 120 202v88h15A35 35 0 0 1 65 290 M100 290v35" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="m80 290v-88A20 20 0 0 1 120 202v88h15A35 35 0 0 1 65 290 M100 290v35 M65 290h55" style="stroke:cadetblue; stroke-width:5px; fill:none;" />
-									<path d="M80 278h-15 M80 269h-15 M80 260h-15 M80 251h-15 M80 242h-15 M80 233h-15 M80 224h-15 M80 215h-15 M80 206h-19 M80 197h-25" style="stroke:cadetblue; stroke-width:5px; fill:none;" />
-									<path d="M120 278h15 M120 269h15 M120 260h15 M120 251h15 M120 242h15 M120 233h15 M120 224h15 M120 215h15 M120 206h19 M120 197h25" style="stroke:cadetblue; stroke-width:5px; fill:none;" />
-									<path d="M56 187h18 M120 187h15 M142 187h8" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M58 177h15 M81 177h15 M104 177h15 M127 177h15" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M66 165h20 M94 165h15 M117 165h21" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M55 157h16 M81 157h19 M108 157h15 M132 157h14" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M62 148h20 M94 148h15 M117 148h19" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M54 139h19 M81 139h15 M102 139h18 M129 139h15" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M63 130h25 M104 130h27" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M55 121h18 M82 121h13 M104 121h15 M127 121h17" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="m66 212v80 M134 212v80 M81 290v-88 M81 202A19 19 0 0 1 120 201v88 M66 288h70 M91 71v-25h18v25" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M75.25 314.75l-30 30 M124.75 314.75l30 30" style="stroke:cadetblue; stroke-width:10px; fill:none;" />
-								</svg>
-								<svg id="steam generator2" x="{{innerWidth/2*1.15}}" y="{{innerHeight/18}}" width="{{innerWidth/36}}" height="{{innerWidth/18}}" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-									<title>蒸汽发生器2</title>
-									<desc>蒸汽发生器2</desc>
-									<path d="m90 45h20v25 M110 70A50 50 0 0 1 150 120v70L135 210v80h-70v-80L50 190v-70 M50 120A50 50 0 0 1 90 70L90 45" style="stroke:cadetblue; stroke-width:4px; fill:none;" />
-									<path d="m80 290v-88A20 20 0 0 1 120 202v88h15A35 35 0 0 1 65 290 M100 290v35" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="m80 290v-88A20 20 0 0 1 120 202v88h15A35 35 0 0 1 65 290 M100 290v35 M65 290h55" style="stroke:cadetblue; stroke-width:5px; fill:none;" />
-									<path d="M80 278h-15 M80 269h-15 M80 260h-15 M80 251h-15 M80 242h-15 M80 233h-15 M80 224h-15 M80 215h-15 M80 206h-19 M80 197h-25" style="stroke:cadetblue; stroke-width:5px; fill:none;" />
-									<path d="M120 278h15 M120 269h15 M120 260h15 M120 251h15 M120 242h15 M120 233h15 M120 224h15 M120 215h15 M120 206h19 M120 197h25" style="stroke:cadetblue; stroke-width:5px; fill:none;" />
-									<path d="M56 187h18 M120 187h15 M142 187h8" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M58 177h15 M81 177h15 M104 177h15 M127 177h15" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M66 165h20 M94 165h15 M117 165h21" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M55 157h16 M81 157h19 M108 157h15 M132 157h14" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M62 148h20 M94 148h15 M117 148h19" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M54 139h19 M81 139h15 M102 139h18 M129 139h15" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M63 130h25 M104 130h27" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M55 121h18 M82 121h13 M104 121h15 M127 121h17" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="m66 212v80 M134 212v80 M81 290v-88 M81 202A19 19 0 0 1 120 201v88 M66 288h70 M91 71v-25h18v25" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M75.25 314.75l-30 30 M124.75 314.75l30 30" style="stroke:cadetblue; stroke-width:10px; fill:none;" />
-								</svg>
-								<svg id="cooler1" x="{{innerWidth/110-innerWidth*0.01+innerWidth/40-innerWidth/40}}" y="{{innerHeight/4}}" width="{{innerWidth/20}}" height="{{innerWidth/40}}" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-									<title>冷却器1</title>
-									<desc>冷却器1</desc>
-									<rect x="50" y="30" width="100" height="40" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M20 50h30 M150 50h30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M20 50L50 50l6.25 -12.5l12.5 25l12.5 -25l12.5 25l12.5 -25l12.5 25l12.5 -25l12.5 25l6.25 -12.5h30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="cooler2" x="{{innerWidth/2*1.15}}" y="{{innerHeight/1.8}}" width="{{innerWidth/20}}" height="{{innerWidth/40}}" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-									<title>冷却器2</title>
-									<desc>冷却器2</desc>
-									<rect x="50" y="30" width="100" height="40" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M20 50h30 M150 50h30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M20 50L50 50l6.25 -12.5l12.5 25l12.5 -25l12.5 25l12.5 -25l12.5 25l12.5 -25l12.5 25l6.25 -12.5h30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="heat exchanger1" x="{{innerWidth/20+innerWidth*0.006+innerWidth/30-innerWidth/40}}" y="{{innerHeight/2}}" width="{{innerWidth/40}}" height="{{innerWidth/20}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-									<title>换热器1</title>
-									<desc>换热器1</desc>
-									<rect x="2" y="50" width="96" height="100" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M26 20v30 M26 150v30 M74 20v30 M74 150v30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M26 20v30l12.5 6.25l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l12.5 6.25v30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M74 20v30l12.5 6.25l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l12.5 6.25v30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="heat exchanger2" x="{{innerWidth/2.5}}" y="{{innerHeight/2.6}}" width="{{innerWidth/40}}" height="{{innerWidth/20}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-									<title>换热器2</title>
-									<desc>换热器2</desc>
-									<rect x="2" y="50" width="96" height="100" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M26 20v30 M26 150v30 M74 20v30 M74 150v30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M26 20v30l12.5 6.25l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l12.5 6.25v30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M74 20v30l12.5 6.25l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l12.5 6.25v30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="heat exchanger3" x="{{innerWidth/1.88}}" y="{{innerHeight/2.6}}" width="{{innerWidth/40}}" height="{{innerWidth/20}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-									<title>换热器3</title>
-									<desc>换热器3</desc>
-									<rect x="2" y="50" width="96" height="100" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M26 20v30 M26 150v30 M74 20v30 M74 150v30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M26 20v30l12.5 6.25l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l12.5 6.25v30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M74 20v30l12.5 6.25l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l25 12.5l-25 12.5l12.5 6.25v30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="pump1" x="{{innerWidth/2.85}}" y="{{innerHeight/4}}" width="{{innerWidth/20}}" height="{{innerWidth/40}}" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-									<title>泵1</title>
-									<desc>泵1</desc>
-									<path d="M30 70h-30 M90 70h30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M30 55l60 30v-30l-60 30v-30 M30 70h-30 M90 70h30 M60 70v-28" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<rect x="40" y="15" width="40" height="30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="pump2" x="{{innerWidth/2.1}}" y="{{innerHeight/4}}" width="{{innerWidth/20}}" height="{{innerWidth/40}}" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-									<title>泵2</title>
-									<desc>泵2</desc>
-									<path d="M30 70h-30 M90 70h30" style="stroke:cadetblue; stroke-width:6px; fill:none;" />
-									<path d="M30 55l60 30v-30l-60 30v-30 M30 70h-30 M90 70h30 M60 70v-28" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<rect x="40" y="15" width="40" height="30" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-								</svg>
-								<svg id="reactor" x="{{innerWidth/8+innerWidth/25}}" y="{{innerHeight/25}}" width="{{innerWidth/15}}" height="{{innerWidth/3}}" viewBox="0 0 200 500" xmlns="http://www.w3.org/2000/svg">
-									<title>堆本体</title>
-									<desc>堆本体</desc>
-									<linearGradient id="color">
-										<stop offset="0%" style="stop-color:red;" />
-										<stop offset="100%" style="stop-color:blue;" />
-									</linearGradient>
-									<linearGradient id="upred" xlink:href="#color" x1="0%" y1="0%" x2="0%" y2="100%" />
-									<rect x="20" y="200" width="160" height="230" style="stroke:#222222; stroke-width:3px; fill:cadetblue;" />
-									<rect x="65" y="206" width="70" height="210" style="stroke:#333333; stroke-width:3px; fill:url(#upred);" />
-									<path d="M20 194A 80 60 0 0 1 180 194" style="stroke:#222222; stroke-width:3px; fill:cadetblue;" />
-									<path d="M20 430A 80 70 0 0 0 180 430" style="stroke:#222222; stroke-width:3px; fill:cadetblue;" />
-									<rect x="5" y="194" width="190" height="8" style="stroke:#222222; stroke-width:3px; fill:cadetblue;" />
-									<rect x="5" y="202" width="190" height="8" style="stroke:#222222; stroke-width:3px; fill:cadetblue;" />
-									<rect x="81" y="100" width="5" height="290" style="stroke:#222222; stroke-width:3px; fill:#222222;" />
-									<rect x="98" y="100" width="5" height="290" style="stroke:#222222; stroke-width:3px; fill:#222222;" />
-									<rect x="115" y="100" width="5" height="290" style="stroke:#222222; stroke-width:3px; fill:#222222;" />
-									<path d="M20 381h-20 M180 381h20" style="stroke:cadetblue; stroke-width:5px; fill:cadetblue;" />
-								</svg>
-								<!--余排hot--><path d="M{{innerWidth/30+innerWidth*0.0158+innerWidth/30-innerWidth/40}} {{innerHeight/18+innerWidth*0.048}}v{{innerHeight/40}}h{{innerWidth*0.0134}}L{{innerWidth/20+innerWidth*0.0125+innerWidth/30-innerWidth/40}} {{innerHeight/2+innerWidth/200}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--余排cold--><path d="M{{innerWidth/110-innerWidth*0.01+innerWidth/200*9}} {{innerHeight/4+innerWidth*0.0125}}H{{innerWidth/20+innerWidth*0.001+innerWidth/35-innerWidth/40}}V{{innerHeight/2+innerWidth/15}}H{{innerWidth/20+innerWidth*0.0125+innerWidth/30-innerWidth/40}}V{{innerHeight/2+innerWidth/200*9}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
-								<!--一回路hot--><path d="M{{innerWidth/6.05}} {{innerHeight/2.0015}}H{{innerWidth/9.7}}V{{innerHeight/4}}H{{innerWidth/3.9}}V{{innerHeight/2.4}}H{{innerWidth/3.1}}H{{innerWidth/3.1}}V{{innerHeight/3.465}}H{{innerWidth/2.85}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--本体、一回路hot--><path d="M{{innerWidth/2.625}} {{innerHeight/3.465}}H{{innerWidth/2.46}}V{{innerHeight/2.52}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--本体、一回路cold--><path d="M{{innerWidth/2.46}} {{innerHeight/2.07}}V{{innerHeight/1.5}}H{{innerWidth/3.1}}V{{innerHeight/2.0015}}H{{innerWidth/4.345}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
-								<!--一、二回路hot--><path d="M{{innerWidth/2.395}} {{innerHeight/2.54}}H{{innerWidth/2.24}}V{{innerHeight/3.465}}H{{innerWidth/2.099}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--二回路hot--><path d="M{{innerWidth/1.816}} {{innerHeight/2.525}}V{{innerHeight/3.467}}H{{innerWidth/1.719}}V{{innerHeight/6.3}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--二回路hot--><path d="M{{innerWidth/1.975}} {{innerHeight/3.465}}H{{innerWidth/1.857}}V{{innerHeight/2.525}}" style="stroke:#c00000; stroke-width:3px; fill:none;" />
-								<!--一、二回路cold--><path d="M{{innerWidth/2.393}} {{innerHeight/2.07}}H{{innerWidth/2.24}}V{{innerHeight/2.07}}H{{innerWidth/2.24}}V{{innerHeight/1.5}}H{{innerWidth/1.857}}V{{innerHeight/2.07}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
-								<!--二回路cold--><path d="M{{innerWidth/1.816}} {{innerHeight/2.07}}V{{innerHeight/1.716}}H{{innerWidth/1.725}}" style="stroke:#dddda0; stroke-width:3px; fill:none;" />
-								
-								<svg id="meter1" x="{{innerWidth/7}}" y="{{innerHeight/2.23}}" width="{{innerWidth/60}}" height="{{innerWidth/30}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-									<title>就地安装仪表1</title>
-									<desc>就地安装仪表1</desc>
-									<polygon points="20,20 50,7.574 80,20 92.426,50 80,80 50,92.426 20,80 7.574,50" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M80 20L20 80 M50 92.426v50" style="stroke:cadetblue; stroke-width:3px; fill:none" />
-									<path d="M50 92.426v50" style="stroke:cadetblue; stroke-width:9px; fill:none" />
-									<path d="M20 80L32 59.215L41 70" style="stroke:cadetblue; stroke-width:3px; fill:cadetblue" />
-								</svg>
-								<text x="{{innerWidth/6.6}}" y="{{innerHeight/2.27}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">590 &nbsp C</text>
-								<text x="{{innerWidth/6.42}}" y="{{innerHeight/2.3}}" style="font-size:0.6em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">o</text>
-
-								<svg id="meter1" x="{{innerWidth/7-innerWidth/33}}" y="{{innerHeight/2.23}}" width="{{innerWidth/60}}" height="{{innerWidth/30}}" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-									<title>就地安装仪表2</title>
-									<desc>就地安装仪表2</desc>
-									<polygon points="20,20 50,7.574 80,20 92.426,50 80,80 50,92.426 20,80 7.574,50" style="stroke:cadetblue; stroke-width:3px; fill:none;" />
-									<path d="M80 20L20 80 M50 92.426v50" style="stroke:cadetblue; stroke-width:3px; fill:none" />
-									<path d="M50 92.426v50" style="stroke:cadetblue; stroke-width:9px; fill:none" />
-									<path d="M20 80L32 59.215L41 70" style="stroke:cadetblue; stroke-width:3px; fill:cadetblue" />
-								</svg>
-								<text x="{{innerWidth/6.6-innerWidth/33}}" y="{{innerHeight/2.27}}" style="font-size:1.1em; font-weight:bold; text-anchor:middle; fill:#d9d9d9;">8.31 MPa</text>
-							</svg>
-						</div>
-						<div id="topContainer" style="position:absolute; top:0.8%; left:15%; width:4%; height:2.5%; background-color:#254061; border:none;">
-							&nbsp
-						</div>
-						<div id="topContainer" style="position:absolute; top:0.8%; left:9.65%; width:14%; height:2.5%; background-color:none; border:none;">
-							<p style="font-size:1.4em; font-weight:bold; color:#d9d9d9; background-color:none; white-space:nowrap; text-align:center;">
-								反应堆温度控制和监测
-							</p>
-						</div>
-						<div id="topMarker" style="position:absolute; top:4%; left:13.88%; width:6%; height:7%; background-color:green; border:none; display:flex;">
-							<div style="width:50%; height:100%; background-color:green;">
-								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:5% 0 5% 0; padding:0 5% 0 15%; white-space: nowrap;">
-									总功率
-								</p>
-								<p style="font-size:1.1em; color:#222222; font-weight:bold; margin:26.5% 0 1% 0; padding:0 5% 0 15%; white-space: nowrap;">
-									硼浓度
-								</p>
-							</div>
-							<div style="width:50%; height:100%; background-color:yellow;">
-								<p style="font-size:1em; color:#222222; margin:0 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
-									1002.35
-								</p>
-								<p style="font-size:1em; color:#222222; margin:-10% 0 0 0; padding:0 5% 0 15%; white-space: nowrap;">
-									1.05
-								</p>
-								<p style="font-size:1em; color:#222222; margin:1.5% 0 1% 0; padding:0 5% 0 15%; white-space: nowrap;">
-									24.45
-								</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-		
-				</div>
-	
-			<!-- END PAGE CONTAINER-->
-		
-				</div>
-
-		<!-- END PAGE -->    
-
-			</div>
 		</div>
-
+		<!-- END PAGE -->
 	</div>
 	<!-- END CONTAINER -->
 
 	<!-- BEGIN FOOTER -->
-	<div class="footer">	
-		<div class="footer-inner">
-			<!-- 2017 &copy; TMSR 钍基熔盐堆核能系统. -->
-			&nbsp
+	<!-- <div class="footer">	
+		<div class="footer-inner"> -->
+	<!-- 2017 &copy; TMSR 钍基熔盐堆核能系统. -->
+	<!-- &nbsp
 		</div>
-		<div class="footer-tools">
-			<!-- <span class="go-top">	 -->
-				<!-- <i class="icon-angle-up"></i> -->
-			<span>
+		<div class="footer-tools"> -->
+	<!-- <span class="go-top">	 -->
+	<!-- <i class="icon-angle-up"></i> -->
+	<!-- <span>
 				&nbsp
 			</span>
 		</div>
 	</div>	
-	&nbsp
+	&nbsp -->
 	<!-- END FOOTER -->
 
 
@@ -859,7 +1136,7 @@
 
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 
-	<script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 
 	<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -873,156 +1150,157 @@
 
 	<script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
 
-	<script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>
 	<script src="media/js/jquery.cookie.min.js" type="text/javascript"></script>
 
-	<script src="media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+	<script src="media/js/jquery.uniform.min.js" type="text/javascript"></script>
 
 	<!-- END CORE PLUGINS -->
 
-<script>
-		if(window.innerWidth<1900 && window.innerWidth>=1800){
-			document.getElementById("screenContainer").className="screen18";
-		} else if(window.innerWidth<1800 && window.innerWidth>=1700){
-			document.getElementById("screenContainer").className="screen17";
-		} else if(window.innerWidth<1700 && window.innerWidth>=1600){
-			document.getElementById("screenContainer").className="screen16";
-		} else if(window.innerWidth<1600 && window.innerWidth>=1500){
-			document.getElementById("screenContainer").className="screen15";
-		} else if(window.innerWidth<1500 && window.innerWidth>=1400){
-			document.getElementById("screenContainer").className="screen14";
-		} else if(window.innerWidth<1400 && window.innerWidth>=1300){
-			document.getElementById("screenContainer").className="screen13";
-		} else if(window.innerWidth<1300 && window.innerWidth>=1200){
-			document.getElementById("screenContainer").className="screen12";
-		} else if(window.innerWidth<1200 && window.innerWidth>=1100){
-			document.getElementById("screenContainer").className="screen11";
-		} else if(window.innerWidth<1100 && window.innerWidth>=1000){
-			document.getElementById("screenContainer").className="screen10";
-		} else if(window.innerWidth<1000 && window.innerWidth>=900){
-			document.getElementById("screenContainer").className="screen9";
-		} else if(window.innerWidth<900 && window.innerWidth>=800){
-			document.getElementById("screenContainer").className="screen8";
-		} else if(window.innerWidth<800){
-			document.getElementById("screenContainer").className="screen7";
-		}		
+	<script>
+		if (window.innerWidth < 1900 && window.innerWidth >= 1800) {
+			document.getElementById("screenContainer").className = "screen18";
+		} else if (window.innerWidth < 1800 && window.innerWidth >= 1700) {
+			document.getElementById("screenContainer").className = "screen17";
+		} else if (window.innerWidth < 1700 && window.innerWidth >= 1600) {
+			document.getElementById("screenContainer").className = "screen16";
+		} else if (window.innerWidth < 1600 && window.innerWidth >= 1500) {
+			document.getElementById("screenContainer").className = "screen15";
+		} else if (window.innerWidth < 1500 && window.innerWidth >= 1400) {
+			document.getElementById("screenContainer").className = "screen14";
+		} else if (window.innerWidth < 1400 && window.innerWidth >= 1300) {
+			document.getElementById("screenContainer").className = "screen13";
+		} else if (window.innerWidth < 1300 && window.innerWidth >= 1200) {
+			document.getElementById("screenContainer").className = "screen12";
+		} else if (window.innerWidth < 1200 && window.innerWidth >= 1100) {
+			document.getElementById("screenContainer").className = "screen11";
+		} else if (window.innerWidth < 1100 && window.innerWidth >= 1000) {
+			document.getElementById("screenContainer").className = "screen10";
+		} else if (window.innerWidth < 1000 && window.innerWidth >= 900) {
+			document.getElementById("screenContainer").className = "screen9";
+		} else if (window.innerWidth < 900 && window.innerWidth >= 800) {
+			document.getElementById("screenContainer").className = "screen8";
+		} else if (window.innerWidth < 800) {
+			document.getElementById("screenContainer").className = "screen7";
+		}
 	</script>
 
 
 	<script>
-		var serverIP="10.10.33.102";
-		var socket = io.connect(serverIP+':80');
-		var pvs={ai:[{pvname:"may:ai1"},{pvname:"may:ai2"},{pvname:"may:ai3"},{pvname:"may:compressExample"}],
-		    ao:[{pvname:"may:ao1"}, {pvname:"may:ao2"}, {pvname:"may:ao3"}]
+		var serverIP = "10.10.33.102";
+		var socket = io.connect(serverIP + ':80');
+		var pvs = {
+			ai: [{ pvname: "may:ai1" }, { pvname: "may:ai2" }, { pvname: "may:ai3" }, { pvname: "may:compressExample" }],
+			ao: [{ pvname: "may:ao1" }, { pvname: "may:ao2" }, { pvname: "may:ao3" }]
 		}
 
 		var app = angular.module('myApp', []);
-		app.controller('myCtrl', function($scope, $http) {   
+		app.controller('myCtrl', function ($scope, $http) {
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
-			$http.jsonp(myUrl).success(function(response) {
+			$http.jsonp(myUrl).success(function (response) {
 				$scope.manual = response;
 				// console.log("when");
 				// console.log(response);
-			});		
+			});
 		});
-		app.controller('holeCtrl', function($scope, $window) { 
-			$scope.holeXpos="10";
-			$scope.holeYpos="20";
-			$scope.holeWidth=240; 
-			$scope.holeHeight=240;
-			$scope.heatHoleColor="red";
+		app.controller('holeCtrl', function ($scope, $window) {
+			$scope.holeXpos = "10";
+			$scope.holeYpos = "20";
+			$scope.holeWidth = 240;
+			$scope.holeHeight = 240;
+			$scope.heatHoleColor = "red";
 
 
-			$scope.widgetName="tank"; 
-			$scope.tankName="pv0";
-			$scope.tankValue=80;
-			$scope.tankMax="200";
-			$scope.tankMin="0";
+			$scope.widgetName = "tank";
+			$scope.tankName = "pv0";
+			$scope.tankValue = 80;
+			$scope.tankMax = "200";
+			$scope.tankMin = "0";
 
-			$scope.tankValue11=10;
+			$scope.tankValue11 = 10;
 
-			$scope.innerWidth=$window.innerWidth;
-			$scope.innerHeight=$window.innerHeight;
+			$scope.innerWidth = $window.innerWidth;
+			$scope.innerHeight = $window.innerHeight;
 
-			
-		async.map(pvs.ai,function(item,callback){ 
-			socket.on(item.pvname, function (data) {
-				if(item.pvname == "may:ai1"){
-					$scope.$apply(function(){  //手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.tankValue发生变化了。详见腾讯课堂教程《$scope》节
-						$scope.tankValue11=data*15+10;
-					})
-				}
-				// console.log(item.pvname); 
-				// console.log("data is "+data);
-				// console.log("$scope.tankValue11 is "+$scope.tankValue11);document.getElementById("leftSVG").style.width=(document.body.clientWidth/6).toString()+"px";
-			 });
-				
-		  }, function(err,results){
-		    callback(err,results); 
-		   //  console.log(results);
-		  });
+
+			async.map(pvs.ai, function (item, callback) {
+				socket.on(item.pvname, function (data) {
+					if (item.pvname == "may:ai1") {
+						$scope.$apply(function () {  //手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.tankValue发生变化了。详见腾讯课堂教程《$scope》节
+							$scope.tankValue11 = data * 15 + 10;
+						})
+					}
+					// console.log(item.pvname); 
+					// console.log("data is "+data);
+					// console.log("$scope.tankValue11 is "+$scope.tankValue11);document.getElementById("leftSVG").style.width=(document.body.clientWidth/6).toString()+"px";
+				});
+
+			}, function (err, results) {
+				callback(err, results);
+				//  console.log(results);
+			});
 		});
 	</script>
 
 	<script>
-		document.getElementById("screenContainer").style.width=(document.body.clientWidth).toString()+"px";
-		document.getElementById("screenContainer").style.height=(document.body.clientHeight).toString()+"px";
+		document.getElementById("screenContainer").style.width = (document.body.clientWidth).toString() + "px";
+		document.getElementById("screenContainer").style.height = (document.body.clientHeight).toString() + "px";
 
-		document.getElementById("leftContainer").style.width=(document.body.clientWidth/6).toString()+"px";
-		document.getElementById("leftContainer").style.height=(document.body.clientHeight).toString()+"px";
+		document.getElementById("leftContainer").style.width = (document.body.clientWidth / 6).toString() + "px";
+		document.getElementById("leftContainer").style.height = (document.body.clientHeight).toString() + "px";
 
 		// document.getElementById("leftSVG").style.width=(document.body.clientWidth/6-5).toString()+"px";
 		// document.getElementById("leftSVG").style.height=(document.body.clientHeight-5).toString()+"px";
 
-		document.getElementById("rightContainer").style.width=(document.body.clientWidth/6).toString()+"px";
-		document.getElementById("rightContainer").style.height=(document.body.clientHeight).toString()+"px";
+		document.getElementById("rightContainer").style.width = (document.body.clientWidth / 6).toString() + "px";
+		document.getElementById("rightContainer").style.height = (document.body.clientHeight).toString() + "px";
 
-		document.getElementById("middleContainer").style.width=(document.body.clientWidth/6).toString()+"px";
-		document.getElementById("middleContainer").style.height=(document.body.clientHeight).toString()+"px";
+		document.getElementById("middleContainer").style.width = (document.body.clientWidth / 6).toString() + "px";
+		document.getElementById("middleContainer").style.height = (document.body.clientHeight).toString() + "px";
 
-		document.getElementById("rightContainer").style.width=(document.body.clientWidth*2/3).toString()+"px";
-		document.getElementById("rightContainer").style.height=(document.body.clientHeight).toString()+"px";
+		document.getElementById("rightContainer").style.width = (document.body.clientWidth * 2 / 3).toString() + "px";
+		document.getElementById("rightContainer").style.height = (document.body.clientHeight).toString() + "px";
 	</script>
 
 
-<script src="js/jquery.min.js"></script>
-<!-- <script src="js/system0.js"></script> -->
-<!-- <script src="js/system0-reactor-core.js"></script> -->
+	<script src="js/jquery.min.js"></script>
+	<!-- <script src="js/system0.js"></script> -->
+	<!-- <script src="js/system0-reactor-core.js"></script> -->
 
 	<script>
-		function load(){
+		function load() {
 			$(".manual").each(function () {
 				var content = $(this).text();
 				//  console.log(content);
 				$(this).html(content);
-				})
-				// console.log("结束");	
+			})
+			// console.log("结束");	
 			// window.status="Page is loaded"
 		}
 	</script>
 
-	<script src="media/js/app.js"></script>      
+	<script src="media/js/app.js"></script>
 	<script>
-			function jump(){
-				window.open("/comment/add",'','',true)
-			}
+		function jump() {
+			window.open("/comment/add", '', '', true)
+		}
 	</script>
-	
-	<script>
 
-		jQuery(document).ready(function() {  
+	<script>
+		jQuery(document).ready(function () {
 			// console.log("开始");
 
-			
-		   App.init();
+
+			App.init();
 
 		});
-
 	</script>
 
 	<!-- END JAVASCRIPTS -->
 
-<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-37564768-1']); _gaq.push(['_setDomainName', 'keenthemes.com']); _gaq.push(['_setAllowLinker', true]); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+	</script>
 </body>
 
 <!-- END BODY -->
