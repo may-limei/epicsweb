@@ -434,49 +434,49 @@
 	<rect x="350" y="765" width="260" height="32" fill="#254061" stroke="none" />
 	<rect x="350" y="765" width="110" height="32" fill="#F888D8" stroke="none" />
 	
-<!-- <g id="rightCircle" transform="matrix(1,0,0,1,340,0)" xmlns="http://www.w3.org/2000/svg"> -->
+<g id="rightCircle">
 	<circle cx="150" cy="185" r="101" fill="none" stroke="#666666" stroke-width="4" transform="matrix(1,0,0,1,340,0)" />
+	<circle cx="490" cy="185" r="2" fill="#999999" stroke="#999999" stroke-width="1" />
 	<g transform="matrix(0.738,0,0,0.738,379.21,48.356)" xmlns="http://www.w3.org/2000/svg">
-<!--1-->
-<circle cx="150" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--2-->
-<circle cx="190" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--3-->
-<circle cx="170" cy="150.359" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--4-->
-<circle cx="130" cy="150.359" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--5-->
-<circle cx="110" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--6-->
-<circle cx="130" cy="219.641" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--7-->
-<circle cx="170" cy="219.641" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--8-->
-<circle cx="227.2741" cy="164.2945" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--9-->
-<circle cx="206.5685" cy="128.4315" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--10-->
-<circle cx="170.7055" cy="112.7259" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--11-->
-<circle cx="129.2945" cy="112.7259" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--12-->
-<circle cx="93.4315" cy="128.4315" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--13-->
-<circle cx="72.7259" cy="164.2945" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--14-->
-<circle cx="72.7259" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--15-->
-<circle cx="93.4315" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--16-->
-<circle cx="129.2945" cy="257.2741" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--17-->
-<circle cx="170.7055" cy="257.2741" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--18-->
-<circle cx="206.5685" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
-<!--19-->
-<circle cx="227.2741" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--1-->
+		<circle cx="150" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--2-->
+		<circle cx="190" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--3-->
+		<circle cx="170" cy="150.359" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--4-->
+		<circle cx="130" cy="150.359" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--5-->
+		<circle cx="110" cy="185" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--6-->
+		<circle cx="130" cy="219.641" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--7-->
+		<circle cx="170" cy="219.641" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--8-->
+		<circle cx="227.2741" cy="164.2945" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--9-->
+		<circle cx="206.5685" cy="128.4315" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--10-->
+		<circle cx="170.7055" cy="112.7259" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--11-->
+		<circle cx="129.2945" cy="112.7259" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--12-->
+		<circle cx="93.4315" cy="128.4315" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--13-->
+		<circle cx="72.7259" cy="164.2945" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--14-->
+		<circle cx="72.7259" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--15-->
+		<circle cx="93.4315" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--16-->
+		<circle cx="129.2945" cy="257.2741" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--17-->
+		<circle cx="170.7055" cy="257.2741" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--18-->
+		<circle cx="206.5685" cy="241.5685" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
+		<!--19-->
+		<circle cx="227.2741" cy="205.7055" r="17" fill="none" stroke="#999999" stroke-width="2.5" stroke-dasharray="5 3" />
 </g>
-
 <!--1--><circle cx="524" cy="126.1103" r="7.5" fill="#F888D8" stroke="none" />
 <!--2--><circle cx="545" cy="89.7372" r="7.5" fill="#F888D8" stroke="none" />
 <!--3--><circle cx="490" cy="145" r="7.5" fill="#F888D8" stroke="none" />
@@ -489,6 +489,30 @@
 <!--10--><circle cx="550.6218" cy="220" r="7.5" fill="#F888D8" stroke="none" />
 <!--11--><circle cx="567.9423" cy="230" r="7.5" fill="#F888D8" stroke="none" />
 <!--12--><circle cx="585.2628" cy="240" r="7.5" fill="#F888D8" stroke="none" />
-<!-- </g> -->
+<text x="517" y="130" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000">
+1</text>
+<text x="538" y="94" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+2</text>
+<text x="483" y="149" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+3</text>
+<text x="422" y="154" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+4</text>
+<text x="387" y="134" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+5</text>
+<text x="448" y="248" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+6</text>
+<text x="439" y="267" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+7</text>
+<text x="428" y="285" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+8</text>
+<text x="483" y="229" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+9</text>
+<text x="540" y="224" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+10</text>
+<text x="558" y="235" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+11</text>
+<text x="574" y="244" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="12" fill="#FFFFFF" stroke="#000000" baseline-shift="baseline">
+12</text>
+</g>
 
 </svg>
