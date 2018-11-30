@@ -795,7 +795,7 @@
 						<text x="88" y="381" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							开</text>
-						<text x="165" y="381" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
+						<text x="165" y="381" id="bang1" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
 						 stroke-width="0.75" xmlns="http://www.w3.org/2000/svg" text-anchor="start">
 							{{bang[0]}}</text>
 						<text x="15" y="407" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="15" fill="#333333" stroke="#333333"
@@ -1156,14 +1156,30 @@
 		}
 	</script>
 
-
 	<script>
+		// document.getElementById("screenContainer").style.width = (document.body.clientWidth).toString() + "px";
+		// document.getElementById("screenContainer").style.height = (document.body.clientHeight).toString() + "px";
+
+		//右下角时间
+		setInterval("timer.innerHTML=new Date().toLocaleString()"); 
+        window.onload = function (){
+  			setInterval("timer.innerHTML=new Date().toLocaleString()",1000); 
+  		}
+
+		//JS数据绑定，放在JS部分，防止初始化时显示{{...}}
+		// setTimeout(function(){
+		// 	document.getElementById("bang1").innerHTML="{{bang[0]}}";
+		// },2000);
+		// document.getElementById("bang1").innerHTML="{{bang[0]}}";
+
+		//angularJS模块定义
 		var serverIP = "10.10.33.102";
 		var socket = io.connect(serverIP + ':80');
 		var pvs = {
 			ai: [{ pvname: "may:ai1" }, { pvname: "may:ai2" }, { pvname: "may:ai3" }, { pvname: "may:compressExample" }],
 			ao: [{ pvname: "may:ao1" }, { pvname: "may:ao2" }, { pvname: "may:ao3" }]
 		}
+
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function ($scope, $http) {
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
@@ -1177,23 +1193,27 @@
 			$scope.innerWidth = $window.innerWidth;
 			$scope.innerHeight = $window.innerHeight;
 
-			$scope.pv_bang1=3.12435;
-			$scope.pv_bang2=1.51;
-			$scope.pv_bang3=2.23;
-			$scope.pv_bang4=0.9994;
-			$scope.pv_bang5=1.12;
-			$scope.pv_bang6=1.35;
-			$scope.bang=[$scope.pv_bang1,$scope.pv_bang2,$scope.pv_bang3,$scope.pv_bang4,$scope.pv_bang5,$scope.pv_bang6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+			$scope.bang=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 			async.map(pvs.ai, function (item, callback) {
 				socket.on(item.pvname, function (data) {
-					if (item.pvname == "may:ai1") {
-						$scope.$apply(function () {  //手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.tankValue发生变化了。详见腾讯课堂教程《$scope》节
-							// $scope.tankValue11 = data * 15 + 10;
-						})
-					}
-					// console.log(item.pvname); 
+					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
+						switch (item.pvname){
+							case "may:ai1":
+								$scope.bang[0]=data;
+								break;
+							case "may:ai2":
+								$scope.bang[1]=data;
+								break;
+							case "may:ai3":
+								$scope.bang[2]=data;
+								break;
+							default:
+								break;
+						}
+					})
+					// console.log(data); 
 					// console.log("data is "+data);
-					// console.log("$scope.tankValue11 is "+$scope.tankValue11);document.getElementById("leftSVG").style.width=(document.body.clientWidth/6).toString()+"px";
+					// console.log($scope.pv_bang2);
 				});
 			}, function (err, results) {
 				callback(err, results);
@@ -1201,16 +1221,6 @@
 			});
 		});
 	</script>
-
-	<script>
-		// document.getElementById("screenContainer").style.width = (document.body.clientWidth).toString() + "px";
-		// document.getElementById("screenContainer").style.height = (document.body.clientHeight).toString() + "px";
-		setInterval("timer.innerHTML=new Date().toLocaleString()"); 
-        window.onload = function (){
-  			setInterval("timer.innerHTML=new Date().toLocaleString()",1000); 
-  		}
-	</script>
-
 
 	<script src="js/jquery.min.js"></script>
 	<!-- <script src="js/system0.js"></script> -->
