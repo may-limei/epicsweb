@@ -547,9 +547,21 @@
 					</g>
 					<!--热管道（红色）-->
 					<g id="hotLine">
-						<path d="M762 425L761 227L713 227L713 204" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
+						<!-- <path d="M762 425L761 227L713 227L713 204" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" /> -->
+						<!-- <path d="M1074 367L1190 367L1190 195L1264 195" fill="none" stroke="#FF0000" stroke-opacity="1" stroke-width="4" transform="matrix(0.9999999,0,0,0.9999999,-3.218651E-05,0.8333271)"
+						xmlns="http://www.w3.org/2000/svg" /> -->
+						<path d="M762 425L761 227L713 227L713 204" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" /><!--动画管道1-->
+						<!-- <path d="M762 425L761 227L713 227L713 204" class="water" id="water" fill="white" fill-opacity="0" stroke="red" stroke-width="4" /> -->
+
 						<path d="M1074 367L1190 367L1190 195L1264 195" fill="none" stroke="#FF0000" stroke-opacity="1" stroke-width="4" transform="matrix(0.9999999,0,0,0.9999999,-3.218651E-05,0.8333271)"
+						xmlns="http://www.w3.org/2000/svg" /><!--动画管道2-->
+						<path d="M1074 367L1190 367L1190 195L1264 195" class="no-water" id="water2" fill="none" stroke="#333333" stroke-opacity="1" stroke-width="4" transform="matrix(0.9999999,0,0,0.9999999,-3.218651E-05,0.8333271)"
 						 xmlns="http://www.w3.org/2000/svg" />
+
+						 <rect id="key" width="20" height="20" x="650" y="15" style="fill:gray; stroke-width:1;stroke:black;" />
+						 <text style="fill:black;" x=675 y=32 font-size="18" x="900" y="150" width="200" height="30" >点击-速度变化</text>
+
+
 						<path d="M1397 355L1397 195L1313.5 195" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
 						<path d="M1433 384L1501 384L1501 195L1536 195" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
 						<path d="M1663 363L1663 195L1587 195" fill="none" fill-opacity="0" stroke="#FF0000" stroke-width="4" />
@@ -1163,7 +1175,7 @@
 		//右下角时间
 		setInterval("timer.innerHTML=new Date().toLocaleString()"); 
         window.onload = function (){
-  			setInterval("timer.innerHTML=new Date().toLocaleString()",1000); 
+  			setInterval("timer.innerHTML=new Date().toLocaleString()",1000);
   		}
 
 		//JS数据绑定，放在JS部分，防止初始化时显示{{...}}
@@ -1180,6 +1192,7 @@
 			ao: [{ pvname: "may:ao1" }, { pvname: "may:ao2" }, { pvname: "may:ao3" }]
 		}
 
+		/* start - angularJS script */
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function ($scope, $http) {
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
@@ -1220,6 +1233,31 @@
 				//  console.log(results);
 			});
 		});
+		/* end - angularJS script */
+
+		var keybtn = document.querySelector('#key');
+		// var water1 = document.querySelector('#water');
+		var water2 = document.querySelector('#water2');
+
+		water2.className.baseVal="running1";
+
+		water2.addEventListener("webkitAnimationEnd", function(evt){
+			water2.className.baseVal=(water2.className.baseVal==="running2" ? "running2" : "running1");
+		}, false);
+
+		keybtn.addEventListener("click", function(){
+			water2.className.baseVal = (water2.className.baseVal==="running1" ? "running2" : "running1");
+			// water2.className.baseVal="running2";
+		}, false);
+
+		// water1.addEventListener("webkitAnimationEnd", function(evt){
+		// 	this.style.strokeDashoffset=0;
+		// }, false);
+
+		// keybtn.addEventListener("click", function(){
+		// 	water2.className.baseVal="first-run";
+		// }, false);
+
 	</script>
 
 	<script src="js/jquery.min.js"></script>

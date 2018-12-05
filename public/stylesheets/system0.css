@@ -53,3 +53,60 @@ div.barContainer {
 .screen7 {
   Font-size:40%;
 }
+
+
+
+
+.water {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear 1;
+}
+.no-water {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.first-run {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear 1;
+}
+.running1 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: run1 10s linear infinite;
+}
+.running2 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: run1 5s linear infinite;
+}
+.runwater {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: run 15s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes run1 {
+  0% {
+    stroke-dasharray: 10, 10;
+  }
+  100% {
+    stroke-dasharray: 10, 10;
+    stroke-dashoffset: 10;
+  }
+}
+@keyframes run2 {
+  0% {
+    stroke-dasharray: 15, 15;
+  }
+  100% {
+    stroke-dasharray: 15, 15;
+    stroke-dashoffset: 15;
+  }
+}
