@@ -38,9 +38,14 @@ server.listen(port,'0.0.0.0',function(){
  * Define PVs
  */
 
-var pvs={ai:[{pvname:"may:ai1"},{pvname:"may:ai2"},{pvname:"may:ai3"},{pvname:"may:compressExample"}],
-         ao:[{pvname:"may:ao1"}, {pvname:"may:ao2"}, {pvname:"may:ao3"}]
-        }
+var pvs={
+  ai:[
+    { pvname: "may:bang1" }, { pvname: "may:bang2" }, { pvname: "may:bang3" }, { pvname: "may:bang4" }, 
+    { pvname: "may:bang5" }, { pvname: "may:bang6" }, { pvname: "may:bang7" }, { pvname: "may:bang8" }, 
+    { pvname: "may:bang9" }, { pvname: "may:bang10" }, { pvname: "may:bang11" }, { pvname: "may:bang12" }, 
+    { pvname: "may:bang13" }, { pvname: "may:bang14" }, { pvname: "may:bang15" }, { pvname: "may:bang16" }, 
+    { pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }
+]}
 
 // console.log("test"+pvs.ai[0].pvname);
 

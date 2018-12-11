@@ -1202,9 +1202,13 @@
 		var serverIP = "10.10.33.102";
 		var socket = io.connect(serverIP + ':80');
 		var pvs = {
-			ai: [{ pvname: "may:ai1" }, { pvname: "may:ai2" }, { pvname: "may:ai3" }, { pvname: "may:compressExample" }],
-			ao: [{ pvname: "may:ao1" }, { pvname: "may:ao2" }, { pvname: "may:ao3" }]
-		}
+			ai: [
+				{ pvname: "may:bang1" }, { pvname: "may:bang2" }, { pvname: "may:bang3" }, { pvname: "may:bang4" }, 
+				{ pvname: "may:bang5" }, { pvname: "may:bang6" }, { pvname: "may:bang7" }, { pvname: "may:bang8" }, 
+				{ pvname: "may:bang9" }, { pvname: "may:bang10" }, { pvname: "may:bang11" }, { pvname: "may:bang12" }, 
+				{ pvname: "may:bang13" }, { pvname: "may:bang14" }, { pvname: "may:bang15" }, { pvname: "may:bang16" }, 
+				{ pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }
+		]}
 
 		/* start - angularJS script */
 		var app = angular.module('myApp', []);
@@ -1222,27 +1226,16 @@
 			async.map(pvs.ai, function (item, callback) {
 				socket.on(item.pvname, function (data) {
 					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
-						switch (item.pvname){
-							case "may:ai1":
-								$scope.bang[0]=data;
-								break;
-							case "may:ai2":
-								$scope.bang[1]=data;
-								break;
-							case "may:ai3":
-								$scope.bang[2]=data;
-								break;
-							default:
-								break;
-						}
+						$scope.bang[parseInt(item.pvname.slice(8))-1]=data.toFixed(3);
+						// console.log(item.pvname+", 当前bang序号为："+parseInt(item.pvname.slice(8)));
+						//由于bang的pv名称开头都是“may:bang”这8个字符，bang后面的数字是从第9个字符起，即pv名称字符串的序号为8的字符起，
+						//所以，item.pvname.slice(8)获取的是当前data对应的bang序号。例如，当前pv名称为"may:bang1"，则对应bang序号为1，即item.pvname.slice(8)的值
+						
 					})
-					// console.log(data); 
-					// console.log("data is "+data);
-					// console.log($scope.pv_bang2);
+					// console.log("bang1 data is "+$scope.bang1);
 				});
 			}, function (err, results) {
 				callback(err, results);
-				//  console.log(results);
 			});
 		});
 		/* end - angularJS script */
