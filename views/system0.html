@@ -1226,10 +1226,11 @@
 			async.map(pvs.ai, function (item, callback) {
 				socket.on(item.pvname, function (data) {
 					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
-						$scope.bang[parseInt(item.pvname.slice(8))-1]=data.toFixed(3);
+						$scope.bang[parseInt(item.pvname.slice((item.pvname.indexOf(":")+5)))-1]=data.toFixed(3);
 						// console.log(item.pvname+", 当前bang序号为："+parseInt(item.pvname.slice(8)));
 						//由于bang的pv名称开头都是“may:bang”这8个字符，bang后面的数字是从第9个字符起，即pv名称字符串的序号为8的字符起，
 						//所以，item.pvname.slice(8)获取的是当前data对应的bang序号。例如，当前pv名称为"may:bang1"，则对应bang序号为1，即item.pvname.slice(8)的值
+						// console.log(item.pvname+", 当前bang序号为："+parseInt(item.pvname.slice((item.pvname.indexOf(":")+5))));//其他主机的用户名不一定是may，所以更换找数字的方式
 						
 					})
 					// console.log("bang1 data is "+$scope.bang1);
