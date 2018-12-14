@@ -91,3 +91,25 @@ div.barContainer {
     stroke-dashoffset: 15;
   }
 }
+
+
+
+.switchon {
+  font-family: "Microsoft YaHei UI";
+  font-size: 15;
+  fill: #333333;
+  stroke: #333333;
+  stroke-width: 0.75;
+  text-anchor: "start";
+}
+
+
+
+
+
+
+
+.headerTitle {
+  fill:rgb(133,162,247);
+  stroke:none;
+}
