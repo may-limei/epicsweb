@@ -1,0 +1,39 @@
+# Example substitutions file
+
+file "db/circle.db" {
+    { user = "may" }
+}
+
+file "db/dbExample1.db" {
+    { user = "may" }
+}
+
+file "db/pvs.db" {
+    pattern { user, no, scan, initValue, expression }
+        { "may", 1, "1 second", "1.23274", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 2, "6 second", "0.99875", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
+        { "may", 3, "9 second", "1.16729", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 4, "3 second", "1.23274", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 5, "7 second", "1.19371", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
+        { "may", 6, "5 second", "1.11274", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 7, "1 second", "1.03671", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 8, "10 second", "1.39877", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
+        { "may", 9, "5 second", "1.96729", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 10, "10 second", "1.03274", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 11, "4 second", "1.04172", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
+        { "may", 12, ".5 second", "1.19739", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 13, "3 second", "1.02417", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 14, "9 second", "1.19198", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
+        { "may", 15, "5 second", "1.13167", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 16, "10 second", "1.20271", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 17, "2 second", "1.30173", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
+        { "may", 18, "5 second", "1.29712", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+        { "may", 19, "3 second", "1.12421", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+}
+
+file db/dbExample2.db {
+    pattern { user, no, scan }
+        { "may", 1, "1 second" }
+        { "may", 2, "2 second" }
+        { "may", 3, "5 second" }
+}

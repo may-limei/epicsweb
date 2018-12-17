@@ -1,0 +1,26 @@
+record(calc, "$(user):angle")
+{
+	field(DESC, "output a set of angle value; interval")
+	field(SCAN,".1 second")
+      field(INPA, "$(user):angle.VAL NPP NMS")
+      field(INPB, "90.5")
+      field(INPC, "0.09")
+      field(INPD, "89.5")
+      field(CALC, "(A<=B && A>=D)?A+C:D")
+      field(EGU, "deg")
+      field(FLNK, "$(user):bang$(no)")
+}
+
+record(calc, "$(user):bang$(no)")
+{
+	field(DESC, "the power of bang$(no)")
+	field(SCAN,"$(scan)")
+      field(INPA, "$(user):bang$(no).VAL NPP NMS")
+      field(INPB, "2.3")
+      field(INPC, "$(user):angle.VAL NPP")
+      field(INPD, "$(initValue)")
+      field(CALC, "$(expression)")
+      field(EGU, "kW")
+      field(HOPR, "2.3")
+      field(LOPR, "0")
+}
