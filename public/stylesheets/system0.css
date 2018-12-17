@@ -56,12 +56,6 @@ div.barContainer {
 
 
 
-
-.water {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 5s linear 1;
-}
 .running1 {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -91,19 +85,6 @@ div.barContainer {
     stroke-dashoffset: 15;
   }
 }
-
-
-
-.switchon {
-  font-family: "Microsoft YaHei UI";
-  font-size: 15;
-  fill: #333333;
-  stroke: #333333;
-  stroke-width: 0.75;
-  text-anchor: "start";
-}
-
-
 
 
 
