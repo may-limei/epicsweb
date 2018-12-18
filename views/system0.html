@@ -48,7 +48,7 @@
 	<!-- BEGIN CONTAINER -->
 	<div class="page-container row-fluid" style="margin-top:0;">
 		<!-- BEGIN HORIZONTAL MENU PAGE SIDEBAR1 -->
-		<div class="page-sidebar nav-collapse collapse">
+		<div id="siderbox" class="page-sidebar nav-collapse collapse">
 			<ul class="page-sidebar-menu hidden-phone hidden-tablet">
 				<li>
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
@@ -220,9 +220,10 @@
 		<!-- END BEGIN HORIZONTAL MENU PAGE SIDEBAR -->
 
 		<!-- BEGIN PAGE -->
-		<div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl">
-			<div id="screenContainer" style="background-color:green; overflow:hidden; display:flex;">
-				<svg width="1920" height="860" transform="matrix(1,0,0,1,0,0)" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<!-- <div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl"> -->
+		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:#e02222; overflow:hidden;" ng-controller="holeCtrl">
+			<div id="screenContainer" style="position:absolute; background-color:green; overflow:hidden;">
+				<svg  id="svgbox" width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="640" y="0" width="1280" height="860" fill="white" stroke="#254061" />
@@ -1053,37 +1054,34 @@
 	<!-- END CORE PLUGINS -->
 
 	<script>
-		if (window.innerWidth < 1900 && window.innerWidth >= 1800) {
-			document.getElementById("screenContainer").className = "screen18";
-		} else if (window.innerWidth < 1800 && window.innerWidth >= 1700) {
-			document.getElementById("screenContainer").className = "screen17";
-		} else if (window.innerWidth < 1700 && window.innerWidth >= 1600) {
-			document.getElementById("screenContainer").className = "screen16";
-		} else if (window.innerWidth < 1600 && window.innerWidth >= 1500) {
-			document.getElementById("screenContainer").className = "screen15";
-		} else if (window.innerWidth < 1500 && window.innerWidth >= 1400) {
-			document.getElementById("screenContainer").className = "screen14";
-		} else if (window.innerWidth < 1400 && window.innerWidth >= 1300) {
-			document.getElementById("screenContainer").className = "screen13";
-		} else if (window.innerWidth < 1300 && window.innerWidth >= 1200) {
-			document.getElementById("screenContainer").className = "screen12";
-		} else if (window.innerWidth < 1200 && window.innerWidth >= 1100) {
-			document.getElementById("screenContainer").className = "screen11";
-		} else if (window.innerWidth < 1100 && window.innerWidth >= 1000) {
-			document.getElementById("screenContainer").className = "screen10";
-		} else if (window.innerWidth < 1000 && window.innerWidth >= 900) {
-			document.getElementById("screenContainer").className = "screen9";
-		} else if (window.innerWidth < 900 && window.innerWidth >= 800) {
-			document.getElementById("screenContainer").className = "screen8";
-		} else if (window.innerWidth < 800) {
-			document.getElementById("screenContainer").className = "screen7";
+		// document.getElementById("bodybox").style.width=((window.innerWidth)-siderboxW).toString()+"px";
+		document.getElementById("bodybox").style.width=(window.innerWidth-siderboxW).toString()+"px";
+		document.getElementById("bodybox").style.height=(window.innerHeight).toString()+"px";
+		// document.getElementById("screenContainer").style.left=((window.innerWidth-bodyboxW)/2).toString()+"px";
+		// document.getElementById("screenContainer").style.top=((window.innerHeight-bodyboxH)/2).toString()+"px";
+		var siderboxW=document.getElementById("siderbox").clientWidth;
+		var bodyboxW=document.getElementById("bodybox").clientWidth;
+		var bodyboxH=document.getElementById("bodybox").clientHeight;
+		var screenContainerW=document.getElementById("screenContainer").clientWidth;
+		var screenContainerH=document.getElementById("screenContainer").clientHeight;
+		console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
+		console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
+		var svgbox=document.querySelector('#svgbox');
+		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",0,0)";  //an h suan
+		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",0,0)";  //an w suan
+		if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
+			svgbox.setAttribute('transform',matrixStrH);
+			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*1920)/2).toString()+"px";
+			console.log("an h suan: "+matrixStrH);
+		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
+			svgbox.setAttribute('transform',matrixStrW);
+			document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*860)/2).toString()+"px";
+			console.log("an w suan: "+matrixStrW);
 		}
+
 	</script>
 
 	<script>
-		// document.getElementById("screenContainer").style.width = (document.body.clientWidth).toString() + "px";
-		// document.getElementById("screenContainer").style.height = (document.body.clientHeight).toString() + "px";
-
 		//右下角时间
 		var clockT=document.getElementById("clock");
 		var y,mo,d,h,mi,s;
@@ -1120,8 +1118,8 @@
 			});
 		});
 		app.controller('holeCtrl', function ($scope, $window) {
-			$scope.innerWidth = $window.innerWidth;
-			$scope.innerHeight = $window.innerHeight;
+			$scope.windowW = $window.innerWidth;
+			$scope.windowH = $window.innerHeight;
 
 			$scope.bang=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 			async.map(pvs.ai, function (item, callback) {
