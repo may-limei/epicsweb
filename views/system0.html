@@ -221,8 +221,8 @@
 
 		<!-- BEGIN PAGE -->
 		<!-- <div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl"> -->
-		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:#e02222; overflow:hidden;" ng-controller="holeCtrl">
-			<div id="screenContainer" style="position:absolute; background-color:green; overflow:hidden;">
+		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:white; overflow:hidden;" ng-controller="holeCtrl">
+			<div id="screenContainer" style="position:absolute; background-color:white; overflow:hidden;">
 				<svg  id="svgbox" width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
@@ -452,7 +452,7 @@
 								压差: 8.31 kPa</text>
 							<text x="1180" y="718" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
-								流量: 2.63 m3/h</text>
+								流量: 2.63 m³/h</text>
 							<text x="1383" y="376" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
 								559 °C</text>
@@ -464,7 +464,7 @@
 								477 °C</text>
 							<text x="1665" y="379" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
-								499 °C</text>
+								419 °C</text>
 							<text x="1663" y="471" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
 								压差: 6.11 kPa</text>
@@ -482,10 +482,10 @@
 								366 °C</text>
 							<text x="695" y="220" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
-								366 °C</text>
+								396 °C</text>
 							<text x="600" y="648" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
-								空气流量: 3.72 m3/h</text>
+								空气流量: 3.72 m³/h</text>
 							<text x="1180" y="275" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
 								泵频: 1.2Hz</text>
@@ -494,10 +494,10 @@
 								泵频: 1.2Hz</text>
 							<text x="1458" y="718" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
-								流量: 2.51 m3/h</text>
+								流量: 2.51 m³/h</text>
 							<text x="1675" y="628" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="18" fill="#333333" stroke="#333333"
 							stroke-width="0.75">
-								空气流量: 2.99 m3/h</text>
+								空气流量: 2.99 m³/h</text>
 						</g><!--end of measureValue-->
 					</g><!--end of deviceAll-->
 
@@ -870,25 +870,35 @@
 							【 测量孔 1 】</text> -->
 
 						<rect x="350" y="406" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="406" width="170" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="406" width="{{bar[0]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="426" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[0]}}&nbsp°C</text>
 						<rect x="350" y="448" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="448" width="190" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="448" width="{{bar[1]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="468" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[1]}}&nbsp°C</text>
 						<rect x="350" y="490" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="490" width="167" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="490" width="{{bar[2]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="510" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[2]}}&nbsp°C</text>
 						<rect x="350" y="532" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="532" width="190" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="532" width="{{bar[3]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="552" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[3]}}&nbsp°C</text>
 						<rect x="350" y="574" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="574" width="140" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="574" width="{{bar[4]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="594" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[4]}}&nbsp°C</text>
 						<rect x="350" y="616" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="616" width="100" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="616" width="{{bar[5]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="636" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[5]}}&nbsp°C</text>
 						<rect x="350" y="658" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="658" width="70" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="658" width="{{bar[6]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="678" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[6]}}&nbsp°C</text>
 						<rect x="350" y="700" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="700" width="120" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="700" width="{{bar[7]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="720" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[7]}}&nbsp°C</text>
 						<rect x="350" y="742" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="742" width="210" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="742" width="{{bar[8]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="762" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[8]}}&nbsp°C</text>
 						<rect x="350" y="784" width="260" height="32" fill="none" stroke="#777777" stroke-width="2" />
-						<rect x="350" y="784" width="110" height="32" fill="#F888D8" stroke="none" />
+						<rect x="350" y="784" width="{{bar[9]-400}}" height="32" fill="#F888D8" stroke="none" />
+						<text x="370" y="804" font-size="13" font-family="Microsoft YaHei UI" fill="#777777" stroke="#777777" stroke-width="0.25">{{bar[9]}}&nbsp°C</text>
 					</g><!--end of rightReact-->
 
 					<g id="rightCircle" transform="matrix(0.93,0,0,0.93,55,7)"><!--start of rightCircle-->
@@ -1054,29 +1064,26 @@
 	<!-- END CORE PLUGINS -->
 
 	<script>
-		// document.getElementById("bodybox").style.width=((window.innerWidth)-siderboxW).toString()+"px";
 		document.getElementById("bodybox").style.width=(window.innerWidth-siderboxW).toString()+"px";
 		document.getElementById("bodybox").style.height=(window.innerHeight).toString()+"px";
-		// document.getElementById("screenContainer").style.left=((window.innerWidth-bodyboxW)/2).toString()+"px";
-		// document.getElementById("screenContainer").style.top=((window.innerHeight-bodyboxH)/2).toString()+"px";
 		var siderboxW=document.getElementById("siderbox").clientWidth;
 		var bodyboxW=document.getElementById("bodybox").clientWidth;
 		var bodyboxH=document.getElementById("bodybox").clientHeight;
 		var screenContainerW=document.getElementById("screenContainer").clientWidth;
 		var screenContainerH=document.getElementById("screenContainer").clientHeight;
-		console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
-		console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
+		// console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
+		// console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
 		var svgbox=document.querySelector('#svgbox');
 		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",0,0)";  //an h suan
 		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",0,0)";  //an w suan
 		if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
 			svgbox.setAttribute('transform',matrixStrH);
 			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*1920)/2).toString()+"px";
-			console.log("an h suan: "+matrixStrH);
+			// console.log("an h suan: "+matrixStrH);
 		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
 			svgbox.setAttribute('transform',matrixStrW);
 			document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*860)/2).toString()+"px";
-			console.log("an w suan: "+matrixStrW);
+			// console.log("an w suan: "+matrixStrW);
 		}
 
 	</script>
@@ -1101,12 +1108,15 @@
 		var serverIP = "10.10.33.102";
 		var socket = io.connect(serverIP + ':80');
 		var pvs = {
-			ai: [
+			bangs: [
 				{ pvname: "may:bang1" }, { pvname: "may:bang2" }, { pvname: "may:bang3" }, { pvname: "may:bang4" }, 
 				{ pvname: "may:bang5" }, { pvname: "may:bang6" }, { pvname: "may:bang7" }, { pvname: "may:bang8" }, 
 				{ pvname: "may:bang9" }, { pvname: "may:bang10" }, { pvname: "may:bang11" }, { pvname: "may:bang12" }, 
 				{ pvname: "may:bang13" }, { pvname: "may:bang14" }, { pvname: "may:bang15" }, { pvname: "may:bang16" }, 
-				{ pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }
+				{ pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }],
+			bars:[
+				{ pvname: "may:bar1"} , { pvname: "may:bar2"} , { pvname: "may:bar3"} , { pvname: "may:bar4"} , { pvname: "may:bar5"} ,
+				{ pvname: "may:bar6"} , { pvname: "may:bar7"} , { pvname: "may:bar8"} , { pvname: "may:bar9"} , { pvname: "may:bar10"} 
 		]}
 
 		/* start - angularJS script */
@@ -1118,11 +1128,12 @@
 			});
 		});
 		app.controller('holeCtrl', function ($scope, $window) {
-			$scope.windowW = $window.innerWidth;
-			$scope.windowH = $window.innerHeight;
+			// $scope.windowW = $window.innerWidth;
+			// $scope.windowH = $window.innerHeight;
 
 			$scope.bang=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
-			async.map(pvs.ai, function (item, callback) {
+			$scope.bar=[218,170,190,230,140,254,244,180,146,192];
+			async.map(pvs.bangs, function (item, callback) {
 				socket.on(item.pvname, function (data) {
 					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
 						$scope.bang[parseInt(item.pvname.slice((item.pvname.indexOf(":")+5)))-1]=data.toFixed(3);
@@ -1130,9 +1141,19 @@
 						//由于bang的pv名称开头都是“may:bang”这8个字符，bang后面的数字是从第9个字符起，即pv名称字符串的序号为8的字符起，
 						//所以，item.pvname.slice(8)获取的是当前data对应的bang序号。例如，当前pv名称为"may:bang1"，则对应bang序号为1，即item.pvname.slice(8)的值
 						// console.log(item.pvname+", 当前bang序号为："+parseInt(item.pvname.slice((item.pvname.indexOf(":")+5))));//其他主机的用户名不一定是may，所以更换找数字的方式
-						
 					})
-					// console.log("bang1 data is "+$scope.bang1);
+					// console.log("bang1 data is "+$scope.bang[0]);
+				});
+			}, function (err, results) {
+				callback(err, results);
+			});
+			async.map(pvs.bars, function (item, callback) {
+				socket.on(item.pvname, function (data) {
+					$scope.$apply(function () {
+						$scope.bar[parseInt(item.pvname.slice((item.pvname.indexOf(":")+4)))-1]=data.toFixed(0);
+					})
+					// console.log(item.pvname+"data is "+data);
+					console.log("$scope.bar is "+$scope.bar[0]);
 				});
 			}, function (err, results) {
 				callback(err, results);

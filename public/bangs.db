@@ -24,3 +24,4 @@ record(calc, "$(user):bang$(no)")
       field(HOPR, "2.3")
       field(LOPR, "0")
 }
+

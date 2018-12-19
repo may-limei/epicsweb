@@ -1,0 +1,26 @@
+record(calc, "$(user):angleBar")
+{
+	field(DESC, "output a set of angleBar value; interval")
+	field(SCAN,".1 second")
+      field(INPA, "$(user):angleBar.VAL NPP NMS")
+      field(INPB, "135")
+      field(INPC, "9")
+      field(INPD, "45")
+      field(CALC, "(A<=B && A>=D)?A+C:D")
+      field(EGU, "deg")
+      field(FLNK, "$(user):bar$(no)")
+}
+
+record(calc, "$(user):bar$(no)")
+{
+	field(DESC, "the tempeture of bar$(no)")
+	field(SCAN,"$(scan)")
+      field(INPA, "$(user):bar$(no).VAL NPP NMS")
+      field(INPB, "630")
+      field(INPC, "$(user):angleBar.VAL NPP")
+      field(INPD, "$(initValue)")
+      field(CALC, "$(expression)")
+      field(EGU, "deg C")
+      field(HOPR, "630")
+      field(LOPR, "0")
+}

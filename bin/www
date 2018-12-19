@@ -39,13 +39,16 @@ server.listen(port,'0.0.0.0',function(){
  */
 
 var pvs={
-  ai:[
+  bangs:[
     { pvname: "may:bang1" }, { pvname: "may:bang2" }, { pvname: "may:bang3" }, { pvname: "may:bang4" }, 
     { pvname: "may:bang5" }, { pvname: "may:bang6" }, { pvname: "may:bang7" }, { pvname: "may:bang8" }, 
     { pvname: "may:bang9" }, { pvname: "may:bang10" }, { pvname: "may:bang11" }, { pvname: "may:bang12" }, 
     { pvname: "may:bang13" }, { pvname: "may:bang14" }, { pvname: "may:bang15" }, { pvname: "may:bang16" }, 
-    { pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }
-]}
+    { pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }],
+  bars:[
+    { pvname: "may:bar1"} , { pvname: "may:bar2"} , { pvname: "may:bar3"} , { pvname: "may:bar4"} , { pvname: "may:bar5"} ,
+    { pvname: "may:bar6"} , { pvname: "may:bar7"} , { pvname: "may:bar8"} , { pvname: "may:bar9"} , { pvname: "may:bar10"}]
+}
 
 // console.log("test"+pvs.ai[0].pvname);
 
@@ -68,7 +71,7 @@ io.on('connection', function (socket) {
 
 
   // console.log(pvs);
-  connect_pvs(pvs.ai,function(err,results){
+  connect_pvs(pvs.bangs,function(err,results){
       async.map(results,function(item,callback){
         item.on("value", function(data) {
         // console.log('Value:',item.pvName,data);
@@ -79,7 +82,7 @@ io.on('connection', function (socket) {
       })
   });
 
-  connect_pvs_SEVR(pvs.ai,function(err,results){
+  connect_pvs_SEVR(pvs.bangs,function(err,results){
       async.map(results,function(item,callback){
         item.on("value", function(data) {
         console.log('Value:',item.pvName,data);
@@ -88,6 +91,27 @@ io.on('connection', function (socket) {
         });  
       })
   });
+
+  connect_pvs(pvs.bars,function(err,results){
+    async.map(results,function(item,callback){
+      item.on("value", function(data) {
+      // console.log('Value:',item.pvName,data);
+      socket.emit(item.pvName, data);
+      console.log(item.pvName+" value change socket evnet emit");
+      // console.log("now "+item.pvName+" is "+item.pvVaule);//不知道value域的属性名叫什么，这句出来undefined
+      });  
+    })
+});
+
+connect_pvs_SEVR(pvs.bars,function(err,results){
+    async.map(results,function(item,callback){
+      item.on("value", function(data) {
+      console.log('Value:',item.pvName,data);
+      socket.emit(item.pvName, data);
+      console.log(item.pvName+" severity change socket evnet emit")
+      });  
+    })
+});
 
 
   connect_pvs(pvs.ao,function(err,results){
@@ -193,7 +217,8 @@ function onListening() {
 
 
 var epics = require('epics');
-var pv_ai=new Array();
+var pv_bangs=new Array();
+var pv_bars=new Array();
 
 
 

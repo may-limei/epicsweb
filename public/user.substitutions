@@ -8,7 +8,7 @@ file "db/dbExample1.db" {
     { user = "may" }
 }
 
-file "db/pvs.db" {
+file "db/bangs.db" {
     pattern { user, no, scan, initValue, expression }
         { "may", 1, "1 second", "1.23274", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
         { "may", 2, "6 second", "0.99875", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
@@ -29,6 +29,19 @@ file "db/pvs.db" {
         { "may", 17, "2 second", "1.30173", "(A<=B && A>=D)?A+tan(C*PI/180-PI/2):D" }
         { "may", 18, "5 second", "1.29712", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
         { "may", 19, "3 second", "1.12421", "(A<=B && A>=D)?A+cos(C*PI/180):D" }
+}
+file "db/bars.db" {
+    pattern { user, no, scan, initValue, expression }
+        { "may", 1, "1 second", "611.124359", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 2, "3 second", "598.83727", "(A<=B && A>=D)?A+cos(C*PI/180)*29.73:D" }
+        { "may", 3, "4 second", "572.91024", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 4, "3 second", "601.07129", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 5, "7 second", "549.12943", "(A<=B && A>=D)?A+cos(C*PI/180)*29.73:D" }
+        { "may", 6, "5 second", "558.23951", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 7, "1 second", "592.12351", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 8, "10 second", "587.34826", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 9, "2 second", "593.00281", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
+        { "may", 10, ".5 second", "621.11729", "(A<=B && A>=D)?A+cos(C*PI/180)*31.177:D" }
 }
 
 file db/dbExample2.db {
