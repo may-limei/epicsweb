@@ -1073,19 +1073,18 @@
 		var screenContainerH=document.getElementById("screenContainer").clientHeight;
 		// console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
 		// console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
-		var svgbox=document.querySelector('#svgbox');
-		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",0,0)";  //an h suan
-		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",0,0)";  //an w suan
+		var svgboxE=document.querySelector('#svgbox');
+		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
+		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
 		if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
-			svgbox.setAttribute('transform',matrixStrH);
-			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*1920)/2).toString()+"px";
+			svgboxE.setAttribute('transform',matrixStrH);
+			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";
 			// console.log("an h suan: "+matrixStrH);
 		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
-			svgbox.setAttribute('transform',matrixStrW);
-			document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*860)/2).toString()+"px";
+			svgboxE.setAttribute('transform',matrixStrW);
+			document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
 			// console.log("an w suan: "+matrixStrW);
 		}
-
 	</script>
 
 	<script>
