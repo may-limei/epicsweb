@@ -227,7 +227,7 @@
 					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="640" y="0" width="1280" height="860" fill="white" stroke="#254061" />
-					<g id="deviceAll" transform="matrix(0.95,0,0,0.95,55,35)"><!--start of deviceAll-->
+					<g id="deviceAll" transform="matrix(0.95,0,0,0.95,65,35)"><!--start of deviceAll-->
 						<!--辅助线红-->
 						<!-- <rect x="800" y="5" width="310" height="850" fill="none" fill-opacity="0" stroke="#FF0000" stroke-dasharray="2,2" /> -->
 						<!--辅助线绿-->
@@ -378,10 +378,10 @@
 							<path d="M1663 363L1663 195L1587 195" fill="none" fill-opacity="0" stroke="#333333" stroke-width="4" />
 							<path d="M1698 389L1796 389L1796 250.5" fill="none" fill-opacity="0" stroke="#555555" stroke-width="4" />
 
-							<rect id="start" width="20" height="20" x="1750" y="65" style="fill:gray; stroke-width:1;stroke:black;" />
-							<text x=1775 y=82 font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333" >点击-启动</text>
-							<rect id="key" width="20" height="20" x="1750" y="95" style="fill:gray; stroke-width:1;stroke:black;" />
-							<text x=1775 y=112 font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333" >点击-速度变化</text>
+							<rect id="start" width="20" height="20" x="1750" y="55" style="fill:gray; stroke-width:1;stroke:black;" />
+							<text x=1775 y=72 font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333" >点击-启动</text>
+							<rect id="key" width="20" height="20" x="1750" y="85" style="fill:gray; stroke-width:1;stroke:black;" />
+							<text x=1775 y=102 font-family="Microsoft YaHei UI" font-size="20" fill="#333333" stroke="#333333" >点击-速度变化</text>
 						</g>
 						<!--冷管道（蓝色）-->
 						<g id="coldLine">
@@ -422,8 +422,8 @@
 							stroke-width="0.5" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 								一回路
 							</text>
-							<path d="m1470 80v16 M1472 88h393 M1867 80v16" fill="none" stroke="#777777" stroke-width="0.5" stroke-dashArray="3, 1.5" />
-							<text x="1666" y="110" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#777777" stroke="#777777"
+							<path d="m1470 80v16 M1472 88h403 M1877 80v16" fill="none" stroke="#777777" stroke-width="0.5" stroke-dashArray="3, 1.5" />
+							<text x="1671" y="110" xml:space="preserve" font-family="Microsoft YaHei UI" font-size="14" fill="#777777" stroke="#777777"
 							stroke-width="0.5" xmlns="http://www.w3.org/2000/svg" text-anchor="middle">
 								二回路
 							</text>
@@ -1008,8 +1008,8 @@
 						<rect x="0" y="0" width="1920" height="30" class="headerTitle"></rect>
 						<image x="10" y="4" width="20" height="20" xlink:href="image/TMSRlogo.png" />
 						<text x="35" y="21" font-size="20" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.75">TMSR缩比仿真试验装置</text>
-						<image x="1640" y="3" width="25" height="25" xlink:href="image/clock.png" />
-						<text id="clock" x="1675" y="21" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(81,84,91)" stroke="rgb(81,84,91)" stroke-width="0.5"></text>
+						<image x="1650" y="3" width="25" height="25" xlink:href="image/clock.png" />
+						<text id="clock" x="1685" y="21" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(81,84,91)" stroke="rgb(81,84,91)" stroke-width="0.5"></text>
 					</g><!--end of headerTitle-->
 					<g id="titles"><!--start of titles-->
 						<image x="5" y="30" width="30" height="25" xlink:href="image/state.png" />
@@ -1082,7 +1082,7 @@
 			// console.log("an h suan: "+matrixStrH);
 		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
 			svgboxE.setAttribute('transform',matrixStrW);
-			document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
+			// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
 			// console.log("an w suan: "+matrixStrW);
 		}
 	</script>
