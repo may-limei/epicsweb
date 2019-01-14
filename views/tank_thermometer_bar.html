@@ -12,7 +12,7 @@
 
 	<meta charset="utf-8" />
 
-	<title>TMSR | EPICS - <%= title %></title>
+	<title><%= title %></title>
 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -78,7 +78,7 @@
 
 <!-- BEGIN BODY -->
 
-<body class="page-header-fixed" ng-app="myApp" ng-controller="myCtrl" onload="load()">
+<body class="page-header-fixed ng-scope page-sidebar-closed" ng-app="myApp" ng-controller="myCtrl" onload="load()">
 
 	<!-- BEGIN HEADER -->
 
@@ -281,7 +281,7 @@
 
 					<ul class="sub-menu">
 
-						<li class="active">
+						<li>
 
 							<a href="/widget_tank">
 
@@ -304,7 +304,7 @@
 												
 						</li>
 												
-						<li>
+						<li class="active">
 												
 							<a href="tank_thermometer_bar">
 												
@@ -580,7 +580,7 @@
 									<span>Sidebar</span>
 		
 									<select class="sidebar-option m-wrap small">
-		
+										<div class="span9" style="overflow:scroll;">
 										<option value="fixed">Fixed</option>
 		
 										<option value="default" selected>Default</option>
@@ -632,91 +632,25 @@
 		
 							<li>
 		
-								<a href="/widget_tank"> Tank</a>
+								<a href="/widget_tank">Tank/Thermometer/Bar</a>
 		
 							</li>
-		
 						</ul>
-		
 						<!-- END PAGE TITLE & BREADCRUMB-->
-		
+
 					</div>
-		
 				</div>
-		
 				<!-- END PAGE HEADER-->
-
-				<div class="alert">
-						Tank 或 Bar 控件可以用来显示液位，进度等。
-				</div>
+				
 				<div class="row-fluid tankContainer" ng-controller="tankCtrl">
-					<div class="span9" style="overflow:scroll;">
-						<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow-x:scroll; overflow-y:scroll; border: 1px solid #b4cef8;">
-							<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow:scroll; border: 1px solid #b4cef8;">
-							<defs>
-								<linearGradient id="tankGradient">
-									<stop offset="0%" style="stop-color:{{tankColor}};" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:{{tankColor}};" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank">
-							</symbol>
-
-							<text x="225" y="45" style="font-size:1.5em; text-anchor:start;">属性测试:</text>
-							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
-
-							<text x="725" y="30" style="font-size:1.5em; text-anchor:start;"> &nbsp&nbsp EPICS连接测试:</text>
-							<text x="725" y="56" style="font-size:1.5em; text-anchor:start;">（tankValue = Host:ai1 * 15 + 10）</text>
-							<g id="tank11"></g>
-
-							<text x="25" y="360" style="font-size:1.5em; text-anchor:start;">pvValue,HIHI,HI,LO,LOLO 测试:</text>
-							<g id="tank1"></g>
-							<g id="tank2"></g>
-							<g id="tank3"></g>
-							<g id="tank4"></g>
-							<g id="tank5"></g>
-							<g id="tank6"></g>
-
-							<text x="25" y="680" style="font-size:1.5em; text-anchor:start;">tankWidth,tankHeight,pvMax,pvMin,tankColor 测试:</text>
-							<symbol id="tank7"></symbol>
-							<use x="30" y="470" xlink:href="#tank7" transform="scale({{240/160}}, {{300/200}})"></use>
-
-							<defs>
-								<linearGradient id="tankGradient8">
-									<stop offset="0%" style="stop-color:blue;" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:blue;" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank8"></symbol>
-							<use x="130" y="560" xlink:href="#tank8" transform="scale({{400/160}}, {{260/200}})"></use>
+					<div class="span8 thumbnail" style="overflow:hidden; background:aquamarine; height:662px;">
+						<svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow-x:scroll; overflow-y:scroll; border: 1px solid #b4cef8;">
 							
-							<defs>
-								<linearGradient id="tankGradient9">
-									<stop offset="0%" style="stop-color:cadetblue" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:cadetblue;" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank9"></symbol>
-							<use x="630" y="615" xlink:href="#tank9" transform="scale(1.2,1.2)"></use>
-
-							<defs>
-								<linearGradient id="tankGradient10">
-									<stop offset="0%" style="stop-color:firebrick" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:firebrick;" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank10"></symbol>
-							<use x="1300" y="965" xlink:href="#tank10" transform="scale(0.8, 0.8)"></use>
-
 						</svg>
 					</div>
 
-					<div class="span3">
-						<div class="portlet box blue">
+					<div class="span4 thumbnail" style="height:662px; overflow:hidden; border-color:rgb(188,208,218);">
+						<div class="portlet box blue" style="height:650px;">
 							<div class="portlet-title">
 								<div class="caption">
 									<i class="icon-cogs"></i>
@@ -875,7 +809,29 @@
 
 	<!-- END CORE PLUGINS -->
 
-
+	<script>
+		document.getElementById("bodybox").style.width=(window.innerWidth-siderboxW).toString()+"px";
+		document.getElementById("bodybox").style.height=(window.innerHeight).toString()+"px";
+		// var siderboxW=document.getElementById("siderbox").clientWidth;
+		// var bodyboxW=document.getElementById("bodybox").clientWidth;
+		// var bodyboxH=document.getElementById("bodybox").clientHeight;
+		// var screenContainerW=document.getElementById("screenContainer").clientWidth;
+		// var screenContainerH=document.getElementById("screenContainer").clientHeight;
+		// // console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
+		// // console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
+		// var svgboxE=document.querySelector('#svgbox');
+		// var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
+		// var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
+		// if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
+		// 	svgboxE.setAttribute('transform',matrixStrH);
+		// 	document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";
+		// 	// console.log("an h suan: "+matrixStrH);
+		// } else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
+		// 	svgboxE.setAttribute('transform',matrixStrW);
+		// 	// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
+		// 	// console.log("an w suan: "+matrixStrW);
+		// }
+	</script>
 
 	<script>
 		var serverIP="10.10.33.102";

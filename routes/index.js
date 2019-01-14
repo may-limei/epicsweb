@@ -18,5 +18,9 @@ router.get('/system0', function(req, res, next) {
   res.render('system0', { title: 'system-0' });
 });
 
+router.get('/tank_thermometer_bar', function(req, res, next) {
+  res.render('tank_thermometer_bar', { title: 'Tank/Thermometer/Bar' });
+});
+
 
 module.exports = router;
