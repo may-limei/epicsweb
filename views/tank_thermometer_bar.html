@@ -653,9 +653,10 @@
 								<!--小标题--><rect x="101" y="40" width="106" height="10" fill="aliceblue" stroke="none"></rect>
 								<text x="108" y="49" font-size="14" font-family="Microsoft YaHei UI" fill="#888888" stroke="#888888" stroke-width="0.3">Progress Bar</text>
 								<!--(1)left bar--><g id="bar1" transform="matrix(1,0,0,1,20,0)">
-									<path d="M70 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.5" />
-									<path d="M70 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M70 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M70 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M70 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M70 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.5" />
-									<rect x="70" y="70" width="50" height="200" fill="#CCCCCC" stroke="black" stroke-width="0.25"></rect>
+									<path d="M69.5 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.75" />
+									<path d="M69.5 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.75" />
+									<rect x="69.5" y="69.5" width="51" height="201" fill="#CCCCCC" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="50" height="120" fill="rgb(244,135,76)" stroke="none" transform="translate(70,270) scale(1,-1)"></rect>
 									<text x="35" y="75" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="40" y="115" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="40" y="155" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
@@ -664,78 +665,83 @@
 									<text x="45" y="275" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
 								</g>
 								<!--(3)middle bar--><g id="bar3" transform="matrix(1,0,0,1,160,0)">
-									<rect x="140" y="70" width="100" height="200" fill="rgb(189,220,168)" stroke="black" stroke-width="0.25"></rect>
+									<rect x="139.5" y="69.5" width="101" height="201" fill="rgb(189,220,168)" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的紫色矩柱100=>200--><rect x="0" y="0" width="100" height="150" fill="rgb(154,113,204)" stroke="none" transform="translate(140,270) scale(1,-1)"></rect>
 								</g>
 								<!--(2)right bar--><g id="bar2" transform="matrix(1,0,0,1,-60,0)">
-									<path d="M280 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="0.75" />
+									<path d="M280.5 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="1" />
 									<text x="293" y="88" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
 									<text x="293" y="261" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">LOLO</text>
-									<path d="M280 105h10 m-10 130h10" fill="none" stroke="rgb(246,136,46)" stroke-width="0.75" />
+									<path d="M280.5 105h10 m-10 130h10" fill="none" stroke="rgb(246,136,46)" stroke-width="1" />
 									<text x="293" y="110" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
 									<text x="293" y="239" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
-									<rect x="240" y="70" width="40" height="200" fill="rgb(255,232,159)" stroke="black" stroke-width="0.25"></rect>
+									<rect x="239.5" y="69.5" width="41" height="201" fill="rgb(255,232,159)" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="100" fill="#1111ff" stroke="none" transform="translate(240,270) scale(1,-1)"></rect>
 								</g>
 								<!--(4)left bar--><g id="bar4" transform="matrix(1,0,0,1,-8,0)">
-									<path d="M480 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.5" />
-									<path d="M480 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M480 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M480 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M480 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M480 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.5" />
-									<rect x="480" y="70" width="40" height="200" fill="rgb(249,211,185)" stroke="black" stroke-width="0.25"></rect>
+									<path d="M479.5 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.75" />
+									<path d="M479.5 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.75" />
+									<rect x="479.5" y="69.5" width="41" height="201" fill="rgb(249,211,185)" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="60" fill="rgb(231,101,178)" stroke="none" transform="translate(480,270) scale(1,-1)"></rect>								
 									<text x="445" y="75" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="450" y="115" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="450" y="155" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
 									<text x="450" y="195" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">40</text>
 									<text x="450" y="235" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">20</text>
 									<text x="455" y="275" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
-									<path d="M520 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="0.75" />
+									<path d="M520.5 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="1" />
 									<text x="533" y="88" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
 									<text x="533" y="261" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">LOLO</text>
-									<path d="M520 105h10 m-10 130h10" fill="none" stroke="rgb(246,136,46)" stroke-width="0.75" />
+									<path d="M520.5 105h10 m-10 130h10" fill="none" stroke="rgb(246,136,46)" stroke-width="1" />
 									<text x="533" y="110" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
 									<text x="533" y="239" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
 								</g>
 								<!--(5)top bar--><g id="bar5">
-									<rect x="600" y="70" width="550" height="90" fill="none" stroke="black" stroke-width="0.25"></rect>
-									<path d="M620 131v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6" fill="none" stroke="black" stroke-width="0.5" />
-									<path d="M640 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M740 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M840 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M940 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M1040 128v-3 m20 3v-3 m20 3v-3 m20 3v-3" fill="none" stroke="black" stroke-width="0.5" />
-									<rect x="620" y="105" width="500" height="20" fill="#dddddd" stroke="black" stroke-width="0.25"></rect>
+									<!--报警外框--><rect x="600" y="70" width="550" height="90" fill="none" stroke="black" stroke-width="0.75"></rect>
+									<path d="M620 131.5v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6" fill="none" stroke="black" stroke-width="0.75" />
+									<path d="M640 128.5v-3 m20 3v-3 m20 3v-3 m20 3v-3 M740 128.5v-3 m20 3v-3 m20 3v-3 m20 3v-3 M840 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M940 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M1040 128v-3 m20 3v-3 m20 3v-3 m20 3v-3" fill="none" stroke="black" stroke-width="0.75" />
+									<rect x="619.5" y="104.5" width="501" height="21" fill="#dddddd" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的绿色矩柱100=>500--><rect x="620" y="105" width="300" height="20" fill="green" stroke="none"></rect>
 									<text x="1108" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="1012" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="912" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
 									<text x="812" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">40</text>
 									<text x="712" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">20</text>
 									<text x="615" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
-									<path d="M655 105v-10 m430 10v-10" fill="none" stroke="rgb(255,0,0)"  stroke-width="0.75" />
+									<path d="M655 104.5v-10 m430 10v-10" fill="none" stroke="rgb(255,0,0)"  stroke-width="1" />
 									<text x="641" y="93" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
 									<text x="1068" y="93" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">LOLO</text>
-									<path d="M700 105v-10 m340 10v-10" fill="none" stroke="rgb(246,136,46)" stroke-width="0.75" />
+									<path d="M700 104.5v-10 m340 10v-10" fill="none" stroke="rgb(246,136,46)" stroke-width="1" />
 									<text x="692" y="93" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
 									<text x="1031" y="93" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
 								</g>
 								<!--(6)middle bar--><g id="bar6">
-									<rect x="620" y="180" width="500" height="20" fill="rgb(200,235,244)" stroke="black" stroke-width="0.25"></rect>
+									<rect x="619.5" y="179.5" width="501" height="21" fill="rgb(200,235,244)" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的紫色矩柱100=>500--><rect x="620" y="180" width="100" height="20" fill="rgb(107,50,128)" stroke="none"></rect>									
 								</g>
 								<!--(7)bottom bar--><g id="bar7" transform="matrix(1,0,0,1,0,125)">
-									<path d="M620 131v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6" fill="none" stroke="black" stroke-width="0.5" />
-									<path d="M640 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M740 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M840 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M940 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M1040 128v-3 m20 3v-3 m20 3v-3 m20 3v-3" fill="none" stroke="black" stroke-width="0.5" />
-									<rect x="620" y="105" width="500" height="20" fill="rgb(245,242,199)" stroke="black" stroke-width="0.25"></rect>
+									<path d="M620 131.5v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6" fill="none" stroke="black" stroke-width="0.75" />
+									<path d="M640 128.5v-3 m20 3v-3 m20 3v-3 m20 3v-3 M740 128.5v-3 m20 3v-3 m20 3v-3 m20 3v-3 M840 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M940 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M1040 128v-3 m20 3v-3 m20 3v-3 m20 3v-3" fill="none" stroke="black" stroke-width="0.75" />
+									<rect x="620" y="105" width="500" height="20" fill="rgb(245,242,199)" stroke="black" stroke-width="0.75"></rect>
 									<text x="1108" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="1012" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="912" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
 									<text x="812" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">40</text>
 									<text x="712" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">20</text>
 									<text x="615" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
-									<polyline points="620 105, 626 115, 620 125, 614 115" fill="rgb(157,245,178)" stroke="#777777" stroke-width="0.25" transform="matrix(1,0,0,1,10,0)" />
+									<!--显示值的游标100=>500--><polyline points="620 105, 626 115, 620 125, 614 115" fill="rgb(157,245,178)" stroke="#777777" stroke-width="0.5" transform="matrix(1,0,0,1,100,0)" />
 								</g>
 							</g>
 
 							<g id="thermometers">
-								<rect x="21" y="333" width="1160" height="300" rx="10" ry="10" fill="none" stroke="rgb(188,208,218)" stroke-width="0.8" stroke-dasharray="3 1.2"></rect>
+								<rect x="21" y="333" width="530" height="300" rx="10" ry="10" fill="none" stroke="rgb(188,208,218)" stroke-width="0.8" stroke-dasharray="3 1.2"></rect>
 								<!--小标题--><rect x="101" y="328" width="106" height="10" fill="aliceblue" stroke="none"></rect>
 								<text x="106" y="337" font-size="14" font-family="Microsoft YaHei UI" fill="#888888" stroke="#888888" stroke-width="0.3">Thermometer</text>
-								<!--(1)left thermometer--><g id="thermometer1" transform="matrix(1,0,0,1,0,0)">
+								<!--(1)left thermometer--><g id="thermometer1" transform="matrix(1,0,0,1,-10,0)">
 									<circle cx="120" cy="575" r="21" fill="rgb(255,0,0)" stroke="black" stroke-width="1"></circle>
-									<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(51,241,237)" stroke="black" stroke-width="1"></rect>
-									<rect x="112" y="550.5835" width="16" height="5" fill="rgb(51,241,237)" stroke="black" stroke-width="1"></rect>
-									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(51,241,237)" stroke="none" stroke-width="1"></rect>
+									<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(91,241,237)" stroke="black" stroke-width="1"></rect>
+									<rect x="112" y="550.5835" width="16" height="5" fill="rgb(91,241,237)" stroke="black" stroke-width="1"></rect>
+									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(91,241,237)" stroke="none" stroke-width="1"></rect>
 									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,0,0)" stroke="none"></rect>
 									<g transform="translate(112.5,556.0835) scale(1,-1)">
 										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="100" fill="rgb(255,0,0)" stroke="none"></rect>
@@ -744,41 +750,67 @@
 									<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
 									<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
 									<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
-									<text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">100</text>
+									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">100</text>
 									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">°C</text>
-									
+									<path d="M128 544h10 m-10 -116h10" fill="none" stroke="rgb(255,0,0)" stroke-width="0.75"/>
+									<text x="141" y="431" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
+									<text x="141" y="550" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">LOLO</text>
+									<path d="M128 535h10 m-10 -98h10" fill="none" stroke="rgb(246,136,46)" stroke-width="0.75" />
+									<text x="141" y="444" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
+									<text x="141" y="537" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
 								</g>
-								<!--(2) thermometer--><g id="thermometer2" transform="matrix(1,0,0,1,140,0)">
-									<circle cx="120" cy="575" r="21" fill="rgb(255,0,0)" stroke="black" stroke-width="1"></circle>
+								<!--(2) thermometer--><g id="thermometer2" transform="matrix(1,0,0,1,130,0)">
+									<circle cx="120" cy="575" r="21" fill="rgb(255,56,56)" stroke="black" stroke-width="1"></circle>
 									<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(230,230,230)" stroke="black" stroke-width="1"></rect>
 									<rect x="112" y="550.5835" width="16" height="5" fill="rgb(230,230,230)" stroke="black" stroke-width="1"></rect>
 									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(230,230,230)" stroke="none" stroke-width="1"></rect>
-									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,0,0)" stroke="none"></rect>
+									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,56,56)" stroke="none"></rect>
+									<!--刻度位置的坐标计算参考下述注释内容--><g>
+										<!--K值（圆圈中显示的值）对应的SVG纵坐标为：【556.0835-140/3*logK】 logK是以10为底的对数.刻度0.1,1,10,100这么算.-->
+										<!--备注：556.0835是刻度最低点在SVG中的纵坐标，140是刻度总长度在SVG中占的纵坐标总长度，K是圆圈中显示的数值-->
+										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="78" fill="rgb(255,56,56)" stroke="none" transform="translate(112.5,556.0835) scale(1,-1)"></rect>
+										<path d="M112 556.0835h-7 M112 509.4168h-7 M112 462.7502h-7 M112 416.0835h-7" fill="none" stroke="black" stroke-width="0.75" />
+										<path d="M112 556.0835h-4 M112 542.03543h-4 M112 533.81788h-4 M112 527.98735h-4 M112 523.46488h-4 M112 519.76981h-4 M112 516.64547h-4 M112 513.93927h-4 M112 511.55227h-4" fill="none" stroke="black" stroke-width="0.75" />
+										<path transform="translate(0,-46.6667)" d="M112 556.0835h-4 M112 542.03543h-4 M112 533.81788h-4 M112 527.98735h-4 M112 523.46488h-4 M112 519.76981h-4 M112 516.64547h-4 M112 513.93927h-4 M112 511.55227h-4" fill="none" stroke="black" stroke-width="0.75" />
+										<path transform="translate(0,-93.3333)" d="M112 556.0835h-4 M112 542.03543h-4 M112 533.81788h-4 M112 527.98735h-4 M112 523.46488h-4 M112 519.76981h-4 M112 516.64547h-4 M112 513.93927h-4 M112 511.55227h-4" fill="none" stroke="black" stroke-width="0.75" />
+									</g>
+									<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
+									<text x="94" y="464" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">10</text>
+									<text x="95" y="511" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">1</text>
+									<text x="92" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0.1</text>
+									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ddffff" stroke="#ddffff" stroke-width="0.25" text-anchor="middle">100</text>
+									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">K</text>
+								</g>
+								<!--(3) thermometer--><g id="thermometer3" transform="matrix(1,0,0,1,240,0)">
+									<circle cx="120" cy="575" r="21" fill="rgb(130,222,139)" stroke="black" stroke-width="1"></circle>
+									<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(250,246,179)" stroke="black" stroke-width="1"></rect>
+									<rect x="112" y="550.5835" width="16" height="5" fill="rgb(250,246,179)" stroke="black" stroke-width="1"></rect>
+									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(250,246,179)" stroke="none" stroke-width="1"></rect>
+									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(130,222,139)" stroke="none"></rect>
 									<g transform="translate(112.5,556.0835) scale(1,-1)">
-										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="78" fill="rgb(255,0,0)" stroke="none"></rect>
+										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="78" fill="rgb(130,222,139)" stroke="none"></rect>
 										<path d="M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4" fill="none" stroke="black" stroke-width="0.75" />
 									</g>
 									<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
 									<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
 									<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
-									<text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">100</text>
-									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">k</text>
+									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="rgb(22,41,168)" stroke="rgb(22,41,168)" stroke-width="0.25" text-anchor="middle">100</text>
+									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">℉</text>
 								</g>
-								<!--(2) thermometer--><g id="thermometer2" transform="matrix(1,0,0,1,230,0)">
-									<circle cx="120" cy="575" r="21" fill="rgb(255,0,0)" stroke="black" stroke-width="1"></circle>
-									<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(230,230,230)" stroke="black" stroke-width="1"></rect>
-									<rect x="112" y="550.5835" width="16" height="5" fill="rgb(230,230,230)" stroke="black" stroke-width="1"></rect>
-									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(230,230,230)" stroke="none" stroke-width="1"></rect>
-									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,0,0)" stroke="none"></rect>
-									<g transform="translate(112.5,556.0835) scale(1,-1)">
-										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="78" fill="rgb(255,0,0)" stroke="none"></rect>
-										<path d="M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4" fill="none" stroke="black" stroke-width="0.75" />
+								<!--(4) thermometer--><g id="thermometer4" transform="matrix(1,0,0,1,-25,5)">
+									<rect x="499.5" y="404.5" rx="4" ry="4" width="16" height="181" fill="rgb(255,254,184)" stroke="black" stroke-width="1"></rect>
+									<g transform="translate(500,585) scale(1,-1)">
+										<!--显示值的红色矩柱100=>180--><rect x="0" y="0" rx="4" ry="4" width="15" height="78" fill="rgb(255,56,56)" stroke="none"></rect>
+										<path d="M0 0.5h-7 m7 36h-7 m7 36h-7 m7 36h-7 m7 36h-7 m7 35.5h-7 
+										M0 7.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 M0 43.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 
+										M0 79.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 M0 115.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 M0 151.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4" fill="none" stroke="black" stroke-width="0.75" />
 									</g>
-									<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
-									<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
-									<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
-									<text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">100</text>
-									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">k</text>
+									<text x="479" y="410" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
+									<text x="482" y="446" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">80</text>
+									<text x="482" y="482" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">60</text>
+									<text x="482" y="518" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">40</text>
+									<text x="482" y="554" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">20</text>
+									<text x="482" y="589" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
 								</g>
 							</g>
 						</svg>
