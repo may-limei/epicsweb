@@ -1103,7 +1103,7 @@
 			}
 		},1000);
 		
-		//angularJS模块定义
+		//socket模块和epics变量模块定义
 		var serverIP = "10.10.33.102";
 		var socket = io.connect(serverIP + ':80');
 		var pvs = {
@@ -1115,8 +1115,8 @@
 				{ pvname: "may:bang17" }, { pvname: "may:bang18" }, { pvname: "may:bang19" }],
 			bars:[
 				{ pvname: "may:bar1"} , { pvname: "may:bar2"} , { pvname: "may:bar3"} , { pvname: "may:bar4"} , { pvname: "may:bar5"} ,
-				{ pvname: "may:bar6"} , { pvname: "may:bar7"} , { pvname: "may:bar8"} , { pvname: "may:bar9"} , { pvname: "may:bar10"} 
-		]}
+				{ pvname: "may:bar6"} , { pvname: "may:bar7"} , { pvname: "may:bar8"} , { pvname: "may:bar9"} , { pvname: "may:bar10"}]
+		}
 
 		/* start - angularJS script */
 		var app = angular.module('myApp', []);
@@ -1157,6 +1157,7 @@
 			}, function (err, results) {
 				callback(err, results);
 			});
+			
 		});
 		/* end - angularJS script */
 

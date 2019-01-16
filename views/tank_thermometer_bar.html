@@ -642,7 +642,7 @@
 				</div>
 				<!-- END PAGE HEADER-->
 				
-				<div class="row-fluid tankContainer" ng-controller="tankCtrl">
+				<div class="row-fluid tankContainer" ng-controller="tankBarsCtrl">
 					<div class="span8 thumbnail" style="overflow:hidden; height:662px; background-color:aliceblue;">
 						<!-- <svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow-x:scroll; overflow-y:scroll; border: 1px solid #b4cef8;"> -->
 							<!-- <svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #b4cef8;"> -->
@@ -656,7 +656,7 @@
 									<path d="M69.5 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.75" />
 									<path d="M69.5 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M69.5 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.75" />
 									<rect x="69.5" y="69.5" width="51" height="201" fill="#CCCCCC" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="50" height="120" fill="rgb(244,135,76)" stroke="none" transform="translate(70,270) scale(1,-1)"></rect>
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="50" height="{{calcTo100*2}}" fill="rgb(244,135,76)" stroke="none" transform="translate(70,270) scale(1,-1)"></rect>
 									<text x="35" y="75" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="40" y="115" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="40" y="155" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
@@ -666,7 +666,7 @@
 								</g>
 								<!--(3)middle bar--><g id="bar3" transform="matrix(1,0,0,1,160,0)">
 									<rect x="139.5" y="69.5" width="101" height="201" fill="rgb(197,236,217)" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的紫色矩柱100=>200--><rect x="0" y="0" width="100" height="150" fill="rgb(154,113,204)" stroke="none" transform="translate(140,270) scale(1,-1)"></rect>
+									<!--显示值的紫色矩柱100=>200--><rect x="0" y="0" width="100" height="{{calcTo100*2}}" fill="rgb(154,113,204)" stroke="none" transform="translate(140,270) scale(1,-1)"></rect>
 								</g>
 								<!--(2)right bar--><g id="bar2" transform="matrix(1,0,0,1,-60,0)">
 									<path d="M280.5 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="1" />
@@ -676,13 +676,13 @@
 									<text x="293" y="110" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
 									<text x="293" y="239" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
 									<rect x="239.5" y="69.5" width="41" height="201" fill="rgb(255,232,199)" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="100" fill="#1111ff" stroke="none" transform="translate(240,270) scale(1,-1)"></rect>
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="{{calcTo100*2}}" fill="#1111ff" stroke="none" transform="translate(240,270) scale(1,-1)"></rect>
 								</g>
 								<!--(4)left bar--><g id="bar4" transform="matrix(1,0,0,1,-8,0)">
 									<path d="M479.5 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.75" />
 									<path d="M479.5 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.75" />
 									<rect x="479.5" y="69.5" width="41" height="201" fill="rgb(248,236,204)" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="60" fill="rgb(231,181,248)" stroke="none" transform="translate(480,270) scale(1,-1)"></rect>								
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="{{calcTo100*2}}" fill="rgb(231,181,248)" stroke="none" transform="translate(480,270) scale(1,-1)"></rect>								
 									<text x="445" y="75" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="450" y="115" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="450" y="155" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
@@ -701,7 +701,7 @@
 									<path d="M620 131.5v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6" fill="none" stroke="black" stroke-width="0.75" />
 									<path d="M640 128.5v-3 m20 3v-3 m20 3v-3 m20 3v-3 M740 128.5v-3 m20 3v-3 m20 3v-3 m20 3v-3 M840 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M940 128v-3 m20 3v-3 m20 3v-3 m20 3v-3 M1040 128v-3 m20 3v-3 m20 3v-3 m20 3v-3" fill="none" stroke="black" stroke-width="0.75" />
 									<rect x="619.5" y="104.5" width="501" height="21" fill="#dddddd" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的绿色矩柱100=>500--><rect x="620" y="105" width="300" height="20" fill="green" stroke="none"></rect>
+									<!--显示值的绿色矩柱100=>500--><rect x="620" y="105" width="{{calcTo100*5}}" height="20" fill="green" stroke="none"></rect>
 									<text x="1108" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
 									<text x="1012" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
 									<text x="912" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
@@ -717,7 +717,7 @@
 								</g>
 								<!--(6)middle bar--><g id="bar6">
 									<rect x="619.5" y="179.5" width="501" height="21" fill="rgb(200,235,244)" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的紫色矩柱100=>500--><rect x="620" y="180" width="100" height="20" fill="rgb(107,50,128)" stroke="none"></rect>									
+									<!--显示值的紫色矩柱100=>500--><rect x="620" y="180" width="{{calcTo100*5}}" height="20" fill="rgb(107,50,128)" stroke="none"></rect>									
 								</g>
 								<!--(7)bottom bar--><g id="bar7" transform="matrix(1,0,0,1,0,125)">
 									<path d="M620 131.5v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6 m100 6v-6" fill="none" stroke="black" stroke-width="0.75" />
@@ -729,7 +729,7 @@
 									<text x="812" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">40</text>
 									<text x="712" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">20</text>
 									<text x="615" y="145" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
-									<!--显示值的游标100=>500--><polyline points="620 105, 626 115, 620 125, 614 115" fill="rgb(157,245,178)" stroke="#777777" stroke-width="0.5" transform="matrix(1,0,0,1,100,0)" />
+									<!--显示值的游标100=>500--><polyline transform="matrix(1,0,0,1,{{calcTo100*5}},0)" points="620 105, 626 115, 620 125, 614 115" fill="rgb(157,245,178)" stroke="#777777" stroke-width="0.5" />
 								</g>
 							</g>
 
@@ -744,13 +744,13 @@
 									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(91,241,237)" stroke="none"></rect>
 									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,0,0)" stroke="none"></rect>
 									<g transform="translate(112.5,556.0835) scale(1,-1)">
-										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="100" fill="rgb(255,0,0)" stroke="none"></rect>
+										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="{{calcTo100*1.4}}" fill="rgb(255,0,0)" stroke="none"></rect>
 										<path d="M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4" fill="none" stroke="black" stroke-width="0.75" />
 									</g>
 									<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
 									<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
 									<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
-									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">100</text>
+									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">{{calcTo100}}</text>
 									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">°C</text>
 									<path d="M128 544h10 m-10 -116h10" fill="none" stroke="rgb(255,0,0)" stroke-width="0.75"/>
 									<text x="141" y="431" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
@@ -788,19 +788,19 @@
 									<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(250,246,179)" stroke="none" stroke-width="1"></rect>
 									<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(130,222,139)" stroke="none"></rect>
 									<g transform="translate(112.5,556.0835) scale(1,-1)">
-										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="78" fill="rgb(130,222,139)" stroke="none"></rect>
+										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="{{calcTo100*1.4}}" fill="rgb(130,222,139)" stroke="none"></rect>
 										<path d="M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4" fill="none" stroke="black" stroke-width="0.75" />
 									</g>
 									<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
 									<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
 									<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
-									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="rgb(22,41,168)" stroke="rgb(22,41,168)" stroke-width="0.25" text-anchor="middle">100</text>
+									<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="rgb(22,41,168)" stroke="rgb(22,41,168)" stroke-width="0.25" text-anchor="middle">{{calcTo100}}</text>
 									<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">℉</text>
 								</g>
 								<!--(4) thermometer--><g id="thermometer4" transform="matrix(1,0,0,1,-25,5)">
 									<rect x="499.5" y="404.5" rx="4" ry="4" width="16" height="181" fill="rgb(255,254,184)" stroke="black" stroke-width="1"></rect>
 									<g transform="translate(500,585) scale(1,-1)">
-										<!--显示值的红色矩柱100=>180--><rect x="0" y="0" rx="4" ry="4" width="15" height="78" fill="rgb(255,56,56)" stroke="none"></rect>
+										<!--显示值的红色矩柱100=>180--><rect x="0" y="0" rx="4" ry="4" width="15" height="{{calcTo100*1.8}}" fill="rgb(255,56,56)" stroke="none"></rect>
 										<path d="M0 0.5h-7 m7 36h-7 m7 36h-7 m7 36h-7 m7 36h-7 m7 35.5h-7 
 										M0 7.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 M0 43.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 
 										M0 79.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 M0 115.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4 M0 151.2h-4 m4 7.2h-4 m4 7.2h-4 m4 7.2h-4" fill="none" stroke="black" stroke-width="0.75" />
@@ -823,7 +823,7 @@
 									<rect x="92" y="385.5835" rx="4" ry="4" width="56" height="200" fill="rgb(191,241,237)" stroke="black" stroke-width="1"></rect>
 									<rect x="92.5" y="529.5835" width="55" height="2" fill="rgb(91,241,237)" stroke="none"></rect>
 									<g transform="translate(92.5,586.0835) scale(1,-1)">
-										<!--显示值的红色矩柱100=>200--><rect x="0" y="0" rx="4" ry="4" width="55" height="100" fill="rgb(211,54,47)" stroke="none"></rect>
+										<!--显示值的红色矩柱100=>200--><rect x="0" y="0" rx="4" ry="4" width="55" height="{{calcTo100*2}}" fill="rgb(211,54,47)" stroke="none"></rect>
 										<path d="M1.5 1h-9 m7 99h-7 m9 100h-9 M-0.5 20h-4 m4 20h-4 m4 20h-4 m4 20h-4 M-0.5 120h-4 m4 20h-4 m4 20h-4 m4 20h-4" fill="none" stroke="black" stroke-width="0.75" />
 									</g>
 									<text x="72" y="391" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
@@ -841,7 +841,7 @@
 									<!--刻度位置的坐标计算参考下述注释内容--><g>
 										<!--K值（圆圈中显示的值）对应的SVG纵坐标为：【556.0835-140/3*logK】 logK是以10为底的对数.刻度0.1,1,10,100这么算.-->
 										<!--备注：556.0835是刻度最低点在SVG中的纵坐标，140是刻度总长度在SVG中占的纵坐标总长度，K是圆圈中显示的数值-->
-										<!--显示值的红色矩柱100=>140--><rect x="0" y="0" rx="4" ry="4" width="55" height="78" fill="rgb(55,56,230)" stroke="none" transform="translate(112.5,556.0835) scale(1,-1)"></rect>
+										<!--显示值的红色矩柱100=>200--><rect x="0" y="0" rx="4" ry="4" width="55" height="{{calcTo100*2}}" fill="rgb(55,56,230)" stroke="none" transform="translate(112.5,556.0835) scale(1,-1)"></rect>
 										<path d="M114 555.0835h-8 M112 509.4168h-7 M112 462.7502h-7 M112 416.0835h-7 M112 369.4168h-7" fill="none" stroke="black" stroke-width="0.75" />
 										<path d="M112 542.03543h-4 M112 533.81788h-4 M112 527.98735h-4 M112 523.46488h-4 M112 519.76981h-4 M112 516.64547h-4 M112 513.93927h-4 M112 511.55227h-4" fill="none" stroke="black" stroke-width="0.75" />
 										<path transform="translate(0,-46.6667)" d="M112 542.03543h-4 M112 533.81788h-4 M112 527.98735h-4 M112 523.46488h-4 M112 519.76981h-4 M112 516.64547h-4 M112 513.93927h-4 M112 511.55227h-4" fill="none" stroke="black" stroke-width="0.75" />
@@ -857,7 +857,7 @@
 								<!--(3) tankControl--><g id="tankControl3" transform="matrix(1,0,0,1,-50,-20)">
 									<rect x="499.5" y="404.5" rx="4" ry="4" width="56" height="201" fill="rgb(255,254,184)" stroke="black" stroke-width="1"></rect>
 									<g transform="translate(500,605) scale(1,-1)">
-										<!--显示值的红色矩柱100=>200--><rect x="0" y="0" rx="4" ry="4" width="55" height="78" fill="rgb(255,56,56)" stroke="none"></rect>
+										<!--显示值的红色矩柱100=>200--><rect x="0" y="0" rx="4" ry="4" width="55" height="{{calcTo100*2}}" fill="rgb(255,56,56)" stroke="none"></rect>
 										<path d="M2 0h-9 m7 40h-7 m7 40h-7 m7 40h-7 m7 40h-7 m9 40h-9 
 										M0 8h-4 m4 8h-4 m4 8h-4 m4 8h-4 M0 48h-4 m4 8h-4 m4 8h-4 m4 8h-4 
 										M0 88h-4 m4 8h-4 m4 8h-4 m4 8h-4 M0 128h-4 m4 8h-4 m4 8h-4 m4 8h-4 M0 168h-4 m4 8h-4 m4 8h-4 m4 8h-4" fill="none" stroke="black" stroke-width="0.75" />
@@ -873,92 +873,10 @@
 						</svg>
 					</div>
 
-					<div class="span4 thumbnail" style="height:662px; overflow:hidden; border-color:rgb(188,208,218);">
-						<div class="portlet box blue" style="height:650px;">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="icon-cogs"></i>
-									Properties
-								</div>
-							</div>
-							
-							<div class="portlet-body" style="position:relative; background-color:aliceblue; height:1192px">
-								<table class="table table-bordered table-striped" style="border: 0px solid #ddd;">
-									<tbody>
-										<tr>
-											<label style="position:absolute; top:0.5em; left:0.5em; width:6em; height:1em; font-size:1.75em; color:#333"><strong>widgetName:</strong></label>
-											<label style="position:absolute; top:0.5em; left:6.5em; width:8em; height:1em; font-size:1.75em; color:gray"> <strong>{{widgetName}}</strong></label>
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:2.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvName:</label>
-											<input type="text" ng-model="tankName"  placeholder="pv变量名"  style="position:absolute; top:2.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:4.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvValue:</label>
-											<input type="text" ng-model="tankValue" placeholder="注：液位=pvValue/(pvMax-pvMin)" style="position:absolute; top:5.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:6.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvMax:</label>
-											<input type="text" ng-model="tankMax"  placeholder="刻度最大值"  style="position:absolute; top:7.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:8.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvMin:</label>
-											<input type="text" ng-model="tankMin" placeholder="刻度最小值" style="position:absolute; top:10.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:10.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankColor:</label>
-											<input type="text" ng-model="tankColor" placeholder="输入颜色，如red，#123，#123456" style="position:absolute; top:12.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:12.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankWidth:</label>
-											<input type="text" ng-model="tankWidth" placeholder="控件宽度(px)" style="position:absolute; top:15.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:14.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankHeight:</label>
-											<input type="text" ng-model="tankHeight" placeholder="控件高度(px)" style="position:absolute; top:17.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:16.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankXpos:</label>
-											<input type="text" ng-model="tankXpos" placeholder="在画布X轴的坐标(左上角为(0,0)px)" style="position:absolute; top:20.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:18.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankYpos:</label>
-											<input type="text" ng-model="tankYpos" placeholder="在画布Y轴的坐标(左上角为(0,0)px)" style="position:absolute; top:22.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:20.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level HIHI:</label>
-											<input type="text" ng-model="tankHIHI" placeholder="level HIHI" style="position:absolute; top:25.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:22.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level HI:</label>
-											<input type="text" ng-model="tankHI" placeholder="level HIHI" style="position:absolute; top:27.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:24.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level LO:</label>
-											<input type="text" ng-model="tankLO" placeholder="level HIHI" style="position:absolute; top:30.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:26.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level LOLO:</label>
-											<input type="text" ng-model="tankLOLO" placeholder="level HIHI" style="position:absolute; top:32.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
+					<div class="span4 thumbnail" style="height:662px; overflow:scroll; background-color:aliceblue;">
+						
+						
+
 					</div>
 				</div>
 
@@ -1048,57 +966,37 @@
 	</script>
 
 	<script>
+		//socket模块和epics变量模块定义
 		var serverIP="10.10.33.102";
 		var socket = io.connect(serverIP+':80');
-		var pvs={ai:[{pvname:"may:ai1"},{pvname:"may:ai2"},{pvname:"may:ai3"},{pvname:"may:compressExample"}],
-		    ao:[{pvname:"may:ao1"}, {pvname:"may:ao2"}, {pvname:"may:ao3"}]
+		var pvs = {
+			tankBars:[
+				{ pvname: "may:calcTo100"}]
 		}
 
+		/* start - angularJS script */
 		var app = angular.module('myApp', []);
-		app.controller('myCtrl', function($scope, $http) {   
+		app.controller('myCtrl', function ($scope, $http) {
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
-			$http.jsonp(myUrl).success(function(response) {
+			$http.jsonp(myUrl).success(function (response) {
 				$scope.manual = response;
-				// console.log("when");
-				//     console.log(response);
-			});		
+			});
 		});
-		app.controller('tankCtrl', function($scope) { 
-			$scope.widgetName="tank"; 
-			$scope.tankName="pv0";
-			$scope.tankValue=80;
-			$scope.tankWidth=160; 
-			$scope.tankHeight=200;
-			$scope.tankXpos="260";
-			$scope.tankYpos="75";
-			$scope.tankColor="orange";
-			$scope.tankMax="200";
-			$scope.tankMin="0";
-			$scope.tankHIHI=180;
-			$scope.tankHI=170;
-			$scope.tankLO=30;
-			$scope.tankLOLO=20;
+		app.controller('tankBarsCtrl', function ($scope, $window) {
+			$scope.calcTo100=10;
 
-			$scope.tankValue11=10;
-
-			
-		async.map(pvs.ai,function(item,callback){ 
-			socket.on(item.pvname, function (data) {
-				if(item.pvname == "may:ai1"){
-					$scope.$apply(function(){  //手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.tankValue发生变化了。详见腾讯课堂教程《$scope》节
-						$scope.tankValue11=data*15+10;
+			async.map(pvs.tankBars, function (item, callback) {
+				socket.on(item.pvname, function (data) {
+					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
+						$scope.calcTo100=data;
 					})
-				}
-				// console.log(item.pvname); 
-				// console.log("data is "+data);
-				// console.log("$scope.tankValue11 is "+$scope.tankValue11);
-			 });
-				
-		  }, function(err,results){
-		    callback(err,results); 
-		   //  console.log(results);
-		  });
+					console.log("calcTo100 data is "+$scope.calcTo100);
+				});
+			}, function (err, results) {
+				callback(err, results);
+			});
 		});
+		/* end - angularJS script */
 	</script>
 
 
