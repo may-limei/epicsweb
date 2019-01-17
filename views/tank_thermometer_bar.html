@@ -986,21 +986,6 @@
 		});
 
 		/* start - 自定义服务Service => 计算以10为底x的对数:MathCalc.log(x) */
-		// app.value("InputValue",9);  //input
-		//-------------------------------------------
-		// app.factory('MathLogService', function(){
-		// 	var factory = {};
-		// 	factory.log = function(a){
-		// 		return Math.log(a)/Math.log(10);
-		// 	};
-		// 	return factory;
-		// });
-		//--------------------------------------------
-		// app.service('MathCalc', function(MathLogService){
-		// 	this.log = function(a){
-		// 		return MathLogService.log(a);
-		// 	};
-		// });
 		app.service('MathCalc', function(){
 			this.log = function(a){
 				return Math.log(a)/Math.log(10);
