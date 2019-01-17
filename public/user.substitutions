@@ -50,3 +50,7 @@ file db/dbExample2.db {
         { "may", 2, "2 second" }
         { "may", 3, "5 second" }
 }
+
+file "db/tankBars.db" {
+    { user = "may" }
+}
