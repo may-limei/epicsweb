@@ -49,7 +49,7 @@ var pvs={
     { pvname: "may:bar1"} , { pvname: "may:bar2"} , { pvname: "may:bar3"} , { pvname: "may:bar4"} , { pvname: "may:bar5"} ,
     { pvname: "may:bar6"} , { pvname: "may:bar7"} , { pvname: "may:bar8"} , { pvname: "may:bar9"} , { pvname: "may:bar10"}],
   tankBars:[
-		{ pvname: "may:calcTo100"}]
+		{ pvname: "may:calcTo100"}, { pvname: "may:calcTo100P"}, { pvname: "may:calcTo1000" }]
 }
 
 // console.log("test"+pvs.ai[0].pvname);
