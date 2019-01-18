@@ -1053,8 +1053,8 @@
 
 		var barCtrlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
 		barCtrlRect1.setAttribute("id","barCtrlRect1");
-		barCtrlRect1.setAttribute("x","30");
-		barCtrlRect1.setAttribute("y","0");
+		barCtrlRect1.setAttribute("x","35");
+		barCtrlRect1.setAttribute("y","12");
 		barCtrlRect1.setAttribute("width","51");
 		barCtrlRect1.setAttribute("height","201");
 		barCtrlRect1.setAttribute("fill","rgb(250,250,230)");
@@ -1063,10 +1063,10 @@
 		barCtrl.appendChild(barCtrlRect1);
 
 		var barCtrlRect2=document.createElementNS("http://www.w3.org/2000/svg","rect");
-		barCtrlRect2.setAttribute("transform","matrix(1,0,0,-1,0,200.5)");
+		barCtrlRect2.setAttribute("transform","matrix(1,0,0,-1,0,212.5)");
 		barCtrlRect2.setAttribute("id","barCtrlRect2");
-		barCtrlRect2.setAttribute("x","30.5");
-		barCtrlRect2.setAttribute("y","0.5");
+		barCtrlRect2.setAttribute("x","35.5");
+		barCtrlRect2.setAttribute("y","0");
 		barCtrlRect2.setAttribute("width","50");
 		barCtrlRect2.setAttribute("height","124");
 		barCtrlRect2.setAttribute("fill","rgb(255,56,56)");
@@ -1074,7 +1074,7 @@
 
 		var barCtrlPath1=document.createElementNS("http://www.w3.org/2000/svg","path");
 		barCtrlPath1.setAttribute("id","barCtrlPath1");
-		barCtrlPath1.setAttribute("transform","matrix(1,0,0,-1,30,200.5)");
+		barCtrlPath1.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
 		barCtrlPath1.setAttribute("fill","none");
 		barCtrlPath1.setAttribute("stroke","black");
 		barCtrlPath1.setAttribute("stroke-width","0.75");
@@ -1083,8 +1083,8 @@
 
 		var barText1=document.createElementNS("http://www.w3.org/2000/svg","text");
 		barText1.setAttribute("id","barText1");
-		barText1.setAttribute("x","10");
-		barText1.setAttribute("y","203");
+		barText1.setAttribute("x","15");
+		barText1.setAttribute("y","215");
 		barText1.setAttribute("font-size","12");
 		barText1.setAttribute("font-family","Microsoft YaHei UI");
 		barText1.setAttribute("fill","#333333");
@@ -1095,7 +1095,7 @@
 		var barText2=document.createElementNS("http://www.w3.org/2000/svg","text");
 		barText2.setAttribute("id","barText2");
 		barText2.setAttribute("x","10");
-		barText2.setAttribute("y","163");
+		barText2.setAttribute("y","175");
 		barText2.setAttribute("font-size","12");
 		barText2.setAttribute("font-family","Microsoft YaHei UI");
 		barText2.setAttribute("fill","#333333");
@@ -1106,7 +1106,7 @@
 		var barText3=document.createElementNS("http://www.w3.org/2000/svg","text");
 		barText3.setAttribute("id","barText3");
 		barText3.setAttribute("x","10");
-		barText3.setAttribute("y","123");
+		barText3.setAttribute("y","135");
 		barText3.setAttribute("font-size","12");
 		barText3.setAttribute("font-family","Microsoft YaHei UI");
 		barText3.setAttribute("fill","#333333");
@@ -1117,7 +1117,7 @@
 		var barText4=document.createElementNS("http://www.w3.org/2000/svg","text");
 		barText4.setAttribute("id","barText4");
 		barText4.setAttribute("x","10");
-		barText4.setAttribute("y","83");
+		barText4.setAttribute("y","95");
 		barText4.setAttribute("font-size","12");
 		barText4.setAttribute("font-family","Microsoft YaHei UI");
 		barText4.setAttribute("fill","#333333");
@@ -1128,7 +1128,7 @@
 		var barText5=document.createElementNS("http://www.w3.org/2000/svg","text");
 		barText5.setAttribute("id","barText5");
 		barText5.setAttribute("x","10");
-		barText5.setAttribute("y","43");
+		barText5.setAttribute("y","55");
 		barText5.setAttribute("font-size","12");
 		barText5.setAttribute("font-family","Microsoft YaHei UI");
 		barText5.setAttribute("fill","#333333");
@@ -1138,8 +1138,8 @@
 		barCtrl.appendChild(barText5);
 		var barText6=document.createElementNS("http://www.w3.org/2000/svg","text");
 		barText6.setAttribute("id","barText6");
-		barText6.setAttribute("x","10");
-		barText6.setAttribute("y","3");
+		barText6.setAttribute("x","5");
+		barText6.setAttribute("y","15");
 		barText6.setAttribute("font-size","12");
 		barText6.setAttribute("font-family","Microsoft YaHei UI");
 		barText6.setAttribute("fill","#333333");
@@ -1147,31 +1147,83 @@
 		barText6.setAttribute("stroke-width","0.25");
 		barText6.textContent="100";
 		barCtrl.appendChild(barText6);
+
+		var barCtrlPath2=document.createElementNS("http://www.w3.org/2000/svg","path");
+		barCtrlPath2.setAttribute("id","barCtrlPath2");
+		barCtrlPath2.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
+		barCtrlPath2.setAttribute("fill","none");
+		barCtrlPath2.setAttribute("stroke","rgb(255,0,0)");
+		barCtrlPath2.setAttribute("stroke-width","2");
+		barCtrlPath2.setAttribute("d","M50.5 16h10 m-10 168h10");
+		barCtrl.appendChild(barCtrlPath2);
+		var barText7=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText7.setAttribute("id","barText7");
+		barText7.setAttribute("x","98");
+		barText7.setAttribute("y","201");
+		barText7.setAttribute("font-size","12");
+		barText7.setAttribute("font-family","Microsoft YaHei UI");
+		barText7.setAttribute("fill","rgb(255,0,0)");
+		barText7.setAttribute("stroke","rgb(255,0,0)");
+		barText7.setAttribute("stroke-width","0.25");
+		barText7.textContent="LOLO"
+		barCtrl.appendChild(barText7);
+		var barText8=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText8.setAttribute("id","barText8");
+		barText8.setAttribute("x","98");
+		barText8.setAttribute("y","33");
+		barText8.setAttribute("font-size","12");
+		barText8.setAttribute("font-family","Microsoft YaHei UI");
+		barText8.setAttribute("fill","rgb(255,0,0)");
+		barText8.setAttribute("stroke","rgb(255,0,0)");
+		barText8.setAttribute("stroke-width","0.25");
+		barText8.textContent="HIHI"
+		barCtrl.appendChild(barText8);
+
+		var barCtrlPath3=document.createElementNS("http://www.w3.org/2000/svg","path");
+		barCtrlPath3.setAttribute("id","barCtrlPath3");
+		barCtrlPath3.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
+		barCtrlPath3.setAttribute("fill","none");
+		barCtrlPath3.setAttribute("stroke","rgb(246,136,46)");
+		barCtrlPath3.setAttribute("stroke-width","2");
+		barCtrlPath3.setAttribute("d","M50.5 40h10 m-10 120h10");
+		barCtrl.appendChild(barCtrlPath3);
+		var barText9=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText9.setAttribute("id","barText9");
+		barText9.setAttribute("x","98");
+		barText9.setAttribute("y","177");
+		barText9.setAttribute("font-size","12");
+		barText9.setAttribute("font-family","Microsoft YaHei UI");
+		barText9.setAttribute("fill","rgb(246,136,46)");
+		barText9.setAttribute("stroke","rgb(246,136,46)");
+		barText9.setAttribute("stroke-width","0.25");
+		barText9.textContent="LO"
+		barCtrl.appendChild(barText9);
+		var barText10=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText10.setAttribute("id","barText10");
+		barText10.setAttribute("x","98");
+		barText10.setAttribute("y","57");
+		barText10.setAttribute("font-size","12");
+		barText10.setAttribute("font-family","Microsoft YaHei UI");
+		barText10.setAttribute("fill","rgb(246,136,46)");
+		barText10.setAttribute("stroke","rgb(246,136,46)");
+		barText10.setAttribute("stroke-width","0.25");
+		barText10.textContent="HI"
+		barCtrl.appendChild(barText10);
+
+		var barCtrlRect3=document.createElementNS("http://www.w3.org/2000/svg","rect");
+		barCtrlRect3.setAttribute("id","barCtrlRect3");
+		barCtrlRect3.setAttribute("x","0");
+		barCtrlRect3.setAttribute("y","0");
+		barCtrlRect3.setAttribute("width","137");
+		barCtrlRect3.setAttribute("height","220");
+		barCtrlRect3.setAttribute("fill","none");
+		barCtrlRect3.setAttribute("stroke","rgb(246,136,46)");
+		barCtrlRect3.setAttribute("stroke-width","3");
+		barCtrl.appendChild(barCtrlRect3);
+		
+
 		/* end - creatSVG */
 
-
-		/*
-		
-		<!--(4)left bar--><g id="bar4" transform="matrix(1,0,0,1,-8,0)">
-									<path d="M479.5 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.75" />
-									<path d="M479.5 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.75" />
-									<rect x="479.5" y="69.5" width="41" height="201" fill="rgb(248,236,204)" stroke="black" stroke-width="0.75"></rect>
-									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="{{calcTo100*2}}" fill="rgb(231,181,248)" stroke="none" transform="translate(480,270) scale(1,-1)"></rect>								
-									<text x="445" y="75" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
-									<text x="450" y="115" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
-									<text x="450" y="155" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
-									<text x="450" y="195" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">40</text>
-									<text x="450" y="235" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">20</text>
-									<text x="455" y="275" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
-									<path d="M520.5 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="2" />
-									<text x="533" y="88" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
-									<text x="533" y="261" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">LOLO</text>
-									<path d="M520.5 105h10 m-10 130h10" fill="none" stroke="rgb(246,136,46)" stroke-width="2" />
-									<text x="533" y="110" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
-									<text x="533" y="239" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
-								</g>
-		
-		*/
 	</script>
 
 <script src="js/jquery.min.js"></script>
