@@ -884,13 +884,19 @@
 							<option value="Tank">Tank</option>
 						</select>
 						<label style="position:absolute; top:60px; left:248px; font-weight:bold; color:#666666;">属性</label>
-						<select style="position:absolute; top:55px; left:280px; color:#666666; height:28px; width:90px;">
-							<option value="Progress Bar">width</option>
-							<option value="Thermometer">height</option>
+						<select style="position:absolute; top:55px; left:280px; color:#666666; height:28px; width:90px;" ng-model="attrName">
+							<option value="Progress Bar">maxVal</option>
+							<option value="Thermometer">minVal</option>
+							<option value="Tank">size</option>
+							<option value="Thermometer">backColor</option>
 							<option value="Tank">color</option>
+							<option value="Thermometer">hihi</option>
+							<option value="Tank">lolo</option>
+							<option value="Thermometer">hi</option>
+							<option value="Tank">lo</option>
 						</select>
 						<label style="position:absolute; top:60px; left:390px; font-weight:bold; color:#666666;">属性值</label>
-						<input type="text" value="0" placeholder="输入属性值" style="position:absolute; top:55px; left:438px; color:#666666; height:20px; width:100px;" />
+						<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:438px; color:#666666; height:20px; width:100px;" />
 						<!-- </div> -->
 						<svg id="editArea" width="560px" height="550px" xmlns="http://www.w3.org/2000/svg">
 							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>
@@ -1220,8 +1226,6 @@
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
 
-
-
 		
 		/* start - tankBarsCtrl */
 		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService) {
@@ -1231,6 +1235,8 @@
 			$scope.calcTo100LOG=1;
 			$scope.calcTo1000LOG=1;
 			$scope.log=MathCalc.log(100);
+			$scope.attrName="size";
+			$scope.attrVal="1";
 
 			//maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo
 			$scope.maxVal=100;
@@ -1274,7 +1280,6 @@
 							SvgAttr.attr("tankbox1","stroke","none");
 						}
 
-
 					//判断pv数值以改变编辑区的控件的报警框颜色
 					if($scope.calcTo100<=$scope.lolo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hihi*($scope.maxVal-$scope.minVal)){
 						CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
@@ -1284,12 +1289,83 @@
 						CtrlService.changeAttr("barCtrlRect3","stroke","none");
 					}
 						CtrlService.changeAttr("barCtrlRect2","height",$scope.calcTo100*200/($scope.maxVal-$scope.minVal));
-					})//***end of $scope.$apply***//
+					})
+
+					switch($scope.attrName){
+						case "maxVal" :
+							$scope.attrVal=$scope.maxVal;
+							break;
+						case "minVal" :
+							$scope.attrVal=$scope.minVal;
+							break;
+						case "size" :
+							$scope.attrVal=$scope.size;
+							break;
+						case "backColor" :
+							$scope.attrVal=$scope.backColor;
+							break;
+						case "color" :
+							$scope.attrVal=$scope.color;
+							break;
+						case "hihi" :
+							$scope.attrVal=$scope.hihi;
+							break;
+						case "lolo" :
+							$scope.attrVal=$scope.lolo;
+							break;
+						case "hi" :
+							$scope.attrVal=$scope.hi;
+							break;
+						case "lo" :
+							$scope.attrVal=$scope.lo;
+							break;
+						default :
+							break;
+					}
 				});
+				//***end of $scope.$apply***//
+			});
+			//***end of async.map***//
+			//需要绑定$scope但不需要脏检查的程序写在这里
+
+
+// switch($scope.attrName){
+// 						case "maxVal" :
+// 							$scope.attrVal=$scope.maxVal;
+// 							break;
+// 						case "minVal" :
+// 							$scope.attrVal=$scope.minVal;
+// 							break;
+// 						case "size" :
+// 							$scope.attrVal=$scope.size;
+// 							break;
+// 						case "backColor" :
+// 							$scope.attrVal=$scope.backColor;
+// 							break;
+// 						case "color" :
+// 							$scope.attrVal=$scope.color;
+// 							break;
+// 						case "hihi" :
+// 							$scope.attrVal=$scope.hihi;
+// 							break;
+// 						case "lolo" :
+// 							$scope.attrVal=$scope.lolo;
+// 							break;
+// 						case "hi" :
+// 							$scope.attrVal=$scope.hi;
+// 							break;
+// 						case "lo" :
+// 							$scope.attrVal=$scope.lo;
+// 							break;
+// 						default :
+// 							break;
+// 					}
+
+
+
 			}, function (err, results) {
 				callback(err, results);
-			}); //***end of async.map***//
-		});
+			});
 		/* end - tankBarsCtrl */
 
 	/* end - angularJS script */
