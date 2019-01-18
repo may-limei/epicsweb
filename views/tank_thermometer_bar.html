@@ -884,7 +884,7 @@
 							<option value="Tank">Tank</option>
 						</select>
 						<label style="position:absolute; top:60px; left:248px; font-weight:bold; color:#666666;">属性</label>
-						<select style="position:absolute; top:55px; left:280px; color:#666666; height:28px; width:90px;" ng-model="attrName">
+						<!-- <select style="position:absolute; top:55px; left:280px; color:#666666; height:28px; width:90px;" ng-model="attrName">
 							<option value="Progress Bar">maxVal</option>
 							<option value="Thermometer">minVal</option>
 							<option value="Tank">size</option>
@@ -894,9 +894,10 @@
 							<option value="Tank">lolo</option>
 							<option value="Thermometer">hi</option>
 							<option value="Tank">lo</option>
-						</select>
+						</select> -->
+						<input type="text" value="0" ng-model="attrName" placeholder="输入属性" style="position:absolute; top:55px; left:280px; color:#666666; height:20px; width:78px;" />
 						<label style="position:absolute; top:60px; left:390px; font-weight:bold; color:#666666;">属性值</label>
-						<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:438px; color:#666666; height:20px; width:100px;" />
+						<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:438px; color:#666666; height:20px; width:78px;" />
 						<!-- </div> -->
 						<svg id="editArea" width="560px" height="550px" xmlns="http://www.w3.org/2000/svg">
 							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>
@@ -1293,31 +1294,31 @@
 
 					switch($scope.attrName){
 						case "maxVal" :
-							$scope.attrVal=$scope.maxVal;
+							$scope.maxVal=$scope.attrVal;
 							break;
 						case "minVal" :
-							$scope.attrVal=$scope.minVal;
+							$scope.minVal=$scope.attrVal;
 							break;
 						case "size" :
-							$scope.attrVal=$scope.size;
+							$scope.size=$scope.attrVal;
 							break;
 						case "backColor" :
-							$scope.attrVal=$scope.backColor;
+							$scope.backColor=$scope.attrVal;
 							break;
 						case "color" :
-							$scope.attrVal=$scope.color;
+							$scope.color=$scope.attrVal;
 							break;
 						case "hihi" :
-							$scope.attrVal=$scope.hihi;
+							$scope.hihi=$scope.attrVal;
 							break;
 						case "lolo" :
-							$scope.attrVal=$scope.lolo;
+							$scope.lolo=$scope.attrVal;
 							break;
 						case "hi" :
-							$scope.attrVal=$scope.hi;
+							$scope.hi=$scope.attrVal;
 							break;
 						case "lo" :
-							$scope.attrVal=$scope.lo;
+							$scope.lo=$scope.attrVal;
 							break;
 						default :
 							break;
@@ -1327,41 +1328,6 @@
 			});
 			//***end of async.map***//
 			//需要绑定$scope但不需要脏检查的程序写在这里
-
-
-// switch($scope.attrName){
-// 						case "maxVal" :
-// 							$scope.attrVal=$scope.maxVal;
-// 							break;
-// 						case "minVal" :
-// 							$scope.attrVal=$scope.minVal;
-// 							break;
-// 						case "size" :
-// 							$scope.attrVal=$scope.size;
-// 							break;
-// 						case "backColor" :
-// 							$scope.attrVal=$scope.backColor;
-// 							break;
-// 						case "color" :
-// 							$scope.attrVal=$scope.color;
-// 							break;
-// 						case "hihi" :
-// 							$scope.attrVal=$scope.hihi;
-// 							break;
-// 						case "lolo" :
-// 							$scope.attrVal=$scope.lolo;
-// 							break;
-// 						case "hi" :
-// 							$scope.attrVal=$scope.hi;
-// 							break;
-// 						case "lo" :
-// 							$scope.attrVal=$scope.lo;
-// 							break;
-// 						default :
-// 							break;
-// 					}
-
-
 
 			}, function (err, results) {
 				callback(err, results);
