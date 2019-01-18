@@ -892,7 +892,7 @@
 						<label style="position:absolute; top:60px; left:390px; font-weight:bold; color:#666666;">属性值</label>
 						<input type="text" value="0" placeholder="输入属性值" style="position:absolute; top:55px; left:438px; color:#666666; height:20px; width:100px;" />
 						<!-- </div> -->
-						<svg width="560px" height="550px" xmlns="http://www.w3.org/2000/svg">
+						<svg id="editArea" width="560px" height="550px" xmlns="http://www.w3.org/2000/svg">
 							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>
 							
 							
@@ -962,30 +962,8 @@
 	<!-- END CORE PLUGINS -->
 
 	<script>
-		document.getElementById("bodybox").style.width=(window.innerWidth-siderboxW).toString()+"px";
-		document.getElementById("bodybox").style.height=(window.innerHeight).toString()+"px";
-		// var siderboxW=document.getElementById("siderbox").clientWidth;
-		// var bodyboxW=document.getElementById("bodybox").clientWidth;
-		// var bodyboxH=document.getElementById("bodybox").clientHeight;
-		// var screenContainerW=document.getElementById("screenContainer").clientWidth;
-		// var screenContainerH=document.getElementById("screenContainer").clientHeight;
-		// // console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
-		// // console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
-		// var svgboxE=document.querySelector('#svgbox');
-		// var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
-		// var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
-		// if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
-		// 	svgboxE.setAttribute('transform',matrixStrH);
-		// 	document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";
-		// 	// console.log("an h suan: "+matrixStrH);
-		// } else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
-		// 	svgboxE.setAttribute('transform',matrixStrW);
-		// 	// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
-		// 	// console.log("an w suan: "+matrixStrW);
-		// }
-	</script>
+		//缺少屏幕自适应代码
 
-	<script>
 		//socket模块和epics变量模块定义
 		var serverIP="10.10.33.102";
 		var socket = io.connect(serverIP+':80');
@@ -1063,15 +1041,138 @@
 			}, function (err, results) {
 				callback(err, results);
 			});
-
-			
-
 		});
 		/* end - angularJS script */
 
-		// document.getElementById("tankbox1").setAttribute("stroke","none");//rgb(246,136,46)
-	</script>
+		/* start - creatSVG */
+		var editArea=document.getElementById('editArea');
+		var barCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
+		barCtrl.setAttribute("id","barCtrl");
+		barCtrl.setAttribute("transform","matrix(1,0,0,1,50,100)");
+		editArea.appendChild(barCtrl);
 
+		var barCtrlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
+		barCtrlRect1.setAttribute("id","barCtrlRect1");
+		barCtrlRect1.setAttribute("x","30");
+		barCtrlRect1.setAttribute("y","0");
+		barCtrlRect1.setAttribute("width","51");
+		barCtrlRect1.setAttribute("height","201");
+		barCtrlRect1.setAttribute("fill","rgb(250,250,230)");
+		barCtrlRect1.setAttribute("stroke","black");
+		barCtrlRect1.setAttribute("stroke-width","0.75");
+		barCtrl.appendChild(barCtrlRect1);
+
+		var barCtrlRect2=document.createElementNS("http://www.w3.org/2000/svg","rect");
+		barCtrlRect2.setAttribute("transform","matrix(1,0,0,-1,0,200.5)");
+		barCtrlRect2.setAttribute("id","barCtrlRect2");
+		barCtrlRect2.setAttribute("x","30.5");
+		barCtrlRect2.setAttribute("y","0.5");
+		barCtrlRect2.setAttribute("width","50");
+		barCtrlRect2.setAttribute("height","124");
+		barCtrlRect2.setAttribute("fill","rgb(255,56,56)");
+		barCtrl.appendChild(barCtrlRect2);
+
+		var barCtrlPath1=document.createElementNS("http://www.w3.org/2000/svg","path");
+		barCtrlPath1.setAttribute("id","barCtrlPath1");
+		barCtrlPath1.setAttribute("transform","matrix(1,0,0,-1,30,200.5)");
+		barCtrlPath1.setAttribute("fill","none");
+		barCtrlPath1.setAttribute("stroke","black");
+		barCtrlPath1.setAttribute("stroke-width","0.75");
+		barCtrlPath1.setAttribute("d","M0 0h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 M0 8h-3 m3 8h-3 m3 8h-3 m3 8h-3 M0 48h-3 m3 8h-3 m3 8h-3 m3 8h-3 M0 88h-3 m3 8h-3 m3 8h-3 m3 8h-3 M0 128h-3 m3 8h-3 m3 8h-3 m3 8h-3 M0 168h-3 m3 8h-3 m3 8h-3 m3 8h-3");
+		barCtrl.appendChild(barCtrlPath1);
+
+		var barText1=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText1.setAttribute("id","barText1");
+		barText1.setAttribute("x","10");
+		barText1.setAttribute("y","203");
+		barText1.setAttribute("font-size","12");
+		barText1.setAttribute("font-family","Microsoft YaHei UI");
+		barText1.setAttribute("fill","#333333");
+		barText1.setAttribute("stroke","#333333");
+		barText1.setAttribute("stroke-width","0.25");
+		barText1.textContent="0";
+		barCtrl.appendChild(barText1);
+		var barText2=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText2.setAttribute("id","barText2");
+		barText2.setAttribute("x","10");
+		barText2.setAttribute("y","163");
+		barText2.setAttribute("font-size","12");
+		barText2.setAttribute("font-family","Microsoft YaHei UI");
+		barText2.setAttribute("fill","#333333");
+		barText2.setAttribute("stroke","#333333");
+		barText2.setAttribute("stroke-width","0.25");
+		barText2.textContent="20";
+		barCtrl.appendChild(barText2);
+		var barText3=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText3.setAttribute("id","barText3");
+		barText3.setAttribute("x","10");
+		barText3.setAttribute("y","123");
+		barText3.setAttribute("font-size","12");
+		barText3.setAttribute("font-family","Microsoft YaHei UI");
+		barText3.setAttribute("fill","#333333");
+		barText3.setAttribute("stroke","#333333");
+		barText3.setAttribute("stroke-width","0.25");
+		barText3.textContent="40";
+		barCtrl.appendChild(barText3);
+		var barText4=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText4.setAttribute("id","barText4");
+		barText4.setAttribute("x","10");
+		barText4.setAttribute("y","83");
+		barText4.setAttribute("font-size","12");
+		barText4.setAttribute("font-family","Microsoft YaHei UI");
+		barText4.setAttribute("fill","#333333");
+		barText4.setAttribute("stroke","#333333");
+		barText4.setAttribute("stroke-width","0.25");
+		barText4.textContent="60";
+		barCtrl.appendChild(barText4);
+		var barText5=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText5.setAttribute("id","barText5");
+		barText5.setAttribute("x","10");
+		barText5.setAttribute("y","43");
+		barText5.setAttribute("font-size","12");
+		barText5.setAttribute("font-family","Microsoft YaHei UI");
+		barText5.setAttribute("fill","#333333");
+		barText5.setAttribute("stroke","#333333");
+		barText5.setAttribute("stroke-width","0.25");
+		barText5.textContent="80";
+		barCtrl.appendChild(barText5);
+		var barText6=document.createElementNS("http://www.w3.org/2000/svg","text");
+		barText6.setAttribute("id","barText6");
+		barText6.setAttribute("x","10");
+		barText6.setAttribute("y","3");
+		barText6.setAttribute("font-size","12");
+		barText6.setAttribute("font-family","Microsoft YaHei UI");
+		barText6.setAttribute("fill","#333333");
+		barText6.setAttribute("stroke","#333333");
+		barText6.setAttribute("stroke-width","0.25");
+		barText6.textContent="100";
+		barCtrl.appendChild(barText6);
+		/* end - creatSVG */
+
+
+		/*
+		
+		<!--(4)left bar--><g id="bar4" transform="matrix(1,0,0,1,-8,0)">
+									<path d="M479.5 70h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6 m6 40h-6" fill="none" stroke="black" stroke-width="0.75" />
+									<path d="M479.5 78h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 118h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 158h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 198h-3 m3 8h-3 m3 8h-3 m3 8h-3 M479.5 238h-3 m3 8h-3 m3 8h-3 m3 8h-3" fill="none" stroke="black" stroke-width="0.75" />
+									<rect x="479.5" y="69.5" width="41" height="201" fill="rgb(248,236,204)" stroke="black" stroke-width="0.75"></rect>
+									<!--显示值的蓝色矩柱100=>200--><rect x="0" y="0" width="40" height="{{calcTo100*2}}" fill="rgb(231,181,248)" stroke="none" transform="translate(480,270) scale(1,-1)"></rect>								
+									<text x="445" y="75" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">100</text>
+									<text x="450" y="115" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">80</text>
+									<text x="450" y="155" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">60</text>
+									<text x="450" y="195" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">40</text>
+									<text x="450" y="235" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">20</text>
+									<text x="455" y="275" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25">0</text>
+									<path d="M520.5 85h10 m-10 170h10" fill="none" stroke="rgb(255,0,0)" stroke-width="2" />
+									<text x="533" y="88" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">HIHI</text>
+									<text x="533" y="261" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="0.25">LOLO</text>
+									<path d="M520.5 105h10 m-10 130h10" fill="none" stroke="rgb(246,136,46)" stroke-width="2" />
+									<text x="533" y="110" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">HI</text>
+									<text x="533" y="239" font-size="12" font-family="Microsoft YaHei UI" fill="rgb(246,136,46)" stroke="rgb(246,136,46)" stroke-width="0.25">LO</text>
+								</g>
+		
+		*/
+	</script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/tank1.js"></script>
