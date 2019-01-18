@@ -996,7 +996,7 @@
 		});
 		/* end - 自定义服务Service => 计算以10为底x的对数:MathCalc.log(x) */
 
-		/* start - 自定义服务Service =>  修改指定id的svg元素的指定属性attr值val*/
+		/* start - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
 		app.factory('SvgAttr', function(){
 			var factory = {};
 			factory.attr = function(id,attr,val){
@@ -1005,7 +1005,16 @@
 			};
 			return factory;
 		});
-		/* end - 自定义服务Service =>  修改指定id的svg元素的指定属性attr值val*/
+		/* end - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
+
+		/* start - 自定义服务Service =>  修改指定id的text元素的值val*/
+		app.service('TextCont', function(){
+			this.textCont = function(id,text){
+				document.getElementById(id).textContent=text;//rgb(246,136,46)
+				return 0;
+			};
+		});
+		/* end - 自定义服务Service =>  修改指定id的text元素的值val*/
 
 		/* start - factory - AddCtrl */
 		app.factory('AddCtrl', function(){
@@ -1229,7 +1238,7 @@
 
 		
 		/* start - tankBarsCtrl */
-		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService) {
+		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont) {
 			$scope.calcTo100=100;
 			$scope.calcTo100P=51.2;
 			$scope.calcTo1000=1000;
@@ -1293,11 +1302,21 @@
 					})
 
 					switch($scope.attrName){
-						case "maxVal" :
+						case "maxVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改=================================================================
 							$scope.maxVal=$scope.attrVal;
+							TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toString());
+							TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toString());
+							TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toString());
+							TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toString());
+							TextCont.textCont("barText6",$scope.maxVal);
 							break;
-						case "minVal" :
+						case "minVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改==================================================================
 							$scope.minVal=$scope.attrVal;
+							TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toString());
+							TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toString());
+							TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toString());
+							TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toString());
+							TextCont.textCont("barText1",$scope.minVal);
 							break;
 						case "size" :
 							$scope.size=$scope.attrVal;
@@ -1323,6 +1342,7 @@
 						default :
 							break;
 					}
+	console.log("minVal is : "+$scope.minVal);
 				});
 				//***end of $scope.$apply***//
 			});
