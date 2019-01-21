@@ -852,7 +852,7 @@
 									</g>
 									<text x="88" y="374" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">1000</text>
 									<text x="90" y="421" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
-									<text x="90" y="467" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">{{calcTo1000}}</text>
+									<text x="90" y="467" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">10</text>
 									<text x="89" y="514" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">1</text>
 									<text x="90" y="559" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0.1</text>
 								</g>
@@ -899,6 +899,7 @@
 						<label style="position:absolute; top:60px; left:390px; font-weight:bold; color:#666666;">属性值</label>
 						<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:438px; color:#666666; height:20px; width:78px;" />
 						<!-- </div> -->
+						<button ng-click="updateEdit()" style="position:absolute; top:160px; left:390px; font-weight:bold; color:#666666;">Edit</button>
 						<svg id="editArea" width="560px" height="550px" xmlns="http://www.w3.org/2000/svg">
 							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>
 							
@@ -906,64 +907,42 @@
 						</svg>
 					</div>
 				</div>
-
-		
-				</div>
 	
+			</div>	
 			<!-- END PAGE CONTAINER-->
 		
-				</div>
-
+		</div>
 		<!-- END PAGE -->    
 
 			</div>
 		</div>
 	</div>
 	<!-- END CONTAINER -->
-			
-		
+					
 	<!-- BEGIN FOOTER -->
-
 	<div class="footer">
-
 		<div class="footer-inner">
-
 			2017 &copy; TMSR 钍基熔盐堆核能系统.
-
 		</div>
-
 	</div>
-
 	<!-- END FOOTER -->
 
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-
 	<!-- BEGIN CORE PLUGINS -->
-
 	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-
 	<!-- <script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> -->
-
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-
 	<!-- <script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>       -->
-
 	<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--[if lt IE 9]>
-
 	<script src="media/js/excanvas.min.js"></script>
-
 	<script src="media/js/respond.min.js"></script>  
-
 	<![endif]-->   
 
 	<!-- <script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script> -->
-
 	<!-- <script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>   -->
-
 	<!-- <script src="media/js/jquery.cookie.min.js" type="text/javascript"></script> -->
-
 	<!-- <script src="media/js/jquery.uniform.min.js" type="text/javascript" ></script> -->
 
 	<!-- END CORE PLUGINS -->
@@ -1146,21 +1125,21 @@
 				barText6.textContent=maxVal;
 				barCtrl.appendChild(barText6);
 
-				lolo=lolo*200;
-				hihi=hihi*200;
-				lo=lo*200;
-				hi=hi*200;
-				var lolotextY=217-lolo;
-				var hihitextY=217-hihi;
-				var lotextY=217-lo;
-				var hitextY=217-hi;
+				// lolo=lolo*200;
+				// hihi=hihi*200;
+				// lo=lo*200;
+				// hi=hi*200;
+				var lolotextY=217-lolo*2;
+				var hihitextY=217-hihi*2;
+				var lotextY=217-lo*2;
+				var hitextY=217-hi*2;
 				var barCtrlPath2=document.createElementNS("http://www.w3.org/2000/svg","path");
 				barCtrlPath2.setAttribute("id","barCtrlPath2");
 				barCtrlPath2.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
 				barCtrlPath2.setAttribute("fill","none");
 				barCtrlPath2.setAttribute("stroke","rgb(255,0,0)");
 				barCtrlPath2.setAttribute("stroke-width","2");
-				barCtrlPath2.setAttribute("d","M50.5 "+lolo+"h10 M50.5 "+hihi+"h10");
+				barCtrlPath2.setAttribute("d","M50.5 "+lolo*2+"h10 M50.5 "+hihi*2+"h10");
 				barCtrl.appendChild(barCtrlPath2);
 				var barText7=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText7.setAttribute("id","barText7");
@@ -1191,7 +1170,7 @@
 				barCtrlPath3.setAttribute("fill","none");
 				barCtrlPath3.setAttribute("stroke","rgb(246,136,46)");
 				barCtrlPath3.setAttribute("stroke-width","2");
-				barCtrlPath3.setAttribute("d","M50.5 "+lo+"h10 M50.5 "+hi+"h10");
+				barCtrlPath3.setAttribute("d","M50.5 "+lo*2+"h10 M50.5 "+hi*2+"h10");
 				barCtrl.appendChild(barCtrlPath3);
 				var barText9=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText9.setAttribute("id","barText9");
@@ -1236,6 +1215,15 @@
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
 
+		/* start - 自定义服务Service =>  创建和修改svg元素*/
+		// app.service('ToStringService',function(){
+		// 	this.changeAttr=function(id,attr,val){
+		// 		return SvgAttr.attr(id,attr,val);
+		// 	};
+			
+		// });
+		/* end - 自定义服务Service =>  创建和修改svg元素*/
+
 		
 		/* start - tankBarsCtrl */
 		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont) {
@@ -1254,15 +1242,15 @@
 			$scope.size=1;
 			$scope.backColor="rgb(250,250,230)";
 			$scope.color="rgb(255,56,56)";
-			$scope.hihi=0.9;
-			$scope.lolo=0.1;
-			$scope.hi=0.8;
-			$scope.lo=0.3;
+			$scope.hihi=90;
+			$scope.lolo=10;
+			$scope.hi=80;
+			$scope.lo=30;
 
 			CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 			async.map(pvs.tankBars, function (item, callback) {
 				socket.on(item.pvname, function (data) {
-					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
+					$scope.$applyAsync(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
 						switch (item.pvname) {
 							case "may:calcTo100":
 								$scope.calcTo100=data;
@@ -1291,60 +1279,82 @@
 						}
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
-					if($scope.calcTo100<=$scope.lolo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hihi*($scope.maxVal-$scope.minVal)){
+					// if($scope.calcTo100<=$scope.lolo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hihi*($scope.maxVal-$scope.minVal)){
+					// 	CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
+					// } else if($scope.calcTo100<=$scope.lo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hi*($scope.maxVal-$scope.minVal)){
+					// 	CtrlService.changeAttr("barCtrlRect3","stroke","rgb(246,136,46)");
+					// } else {
+					// 	CtrlService.changeAttr("barCtrlRect3","stroke","none");
+					// }
+					if($scope.calcTo100<=parseInt($scope.lolo)+parseInt($scope.minVal) || $scope.calcTo100>=parseInt($scope.hihi)+parseInt($scope.minVal)){
 						CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
-					} else if($scope.calcTo100<=$scope.lo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hi*($scope.maxVal-$scope.minVal)){
+					} else if($scope.calcTo100<=parseInt($scope.lo)+parseInt($scope.minVal) || $scope.calcTo100>=parseInt($scope.hi)+parseInt($scope.minVal)){
 						CtrlService.changeAttr("barCtrlRect3","stroke","rgb(246,136,46)");
 					} else {
 						CtrlService.changeAttr("barCtrlRect3","stroke","none");
 					}
-						CtrlService.changeAttr("barCtrlRect2","height",$scope.calcTo100*200/($scope.maxVal-$scope.minVal));
-					})
+					//编辑区柱体填充更新
+					CtrlService.changeAttr("barCtrlRect2","height",$scope.calcTo100*200/($scope.maxVal-$scope.minVal));				
+				})
+					//***end of $scope.$apply***//
 
-					switch($scope.attrName){
-						case "maxVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改=================================================================
-							$scope.maxVal=$scope.attrVal;
-							TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toString());
-							TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toString());
-							TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toString());
-							TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toString());
-							TextCont.textCont("barText6",$scope.maxVal);
-							break;
-						case "minVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改==================================================================
-							$scope.minVal=$scope.attrVal;
-							TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toString());
-							TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toString());
-							TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toString());
-							TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toString());
-							TextCont.textCont("barText1",$scope.minVal);
-							break;
-						case "size" :
-							$scope.size=$scope.attrVal;
-							break;
-						case "backColor" :
-							$scope.backColor=$scope.attrVal;
-							break;
-						case "color" :
-							$scope.color=$scope.attrVal;
-							break;
-						case "hihi" :
-							$scope.hihi=$scope.attrVal;
-							break;
-						case "lolo" :
-							$scope.lolo=$scope.attrVal;
-							break;
-						case "hi" :
-							$scope.hi=$scope.attrVal;
-							break;
-						case "lo" :
-							$scope.lo=$scope.attrVal;
-							break;
-						default :
-							break;
+
+					$scope.updateEdit=function(){
+						switch($scope.attrName){
+							case "maxVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改=================================================================
+								$scope.maxVal=$scope.attrVal;
+								TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toString());
+								TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toString());
+								TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toString());
+								TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toString());
+								TextCont.textCont("barText6",$scope.maxVal);
+								break;
+							case "minVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改==================================================================
+								$scope.minVal=$scope.attrVal;
+								TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toString());
+								TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toString());
+								TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toString());
+								TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toString());
+								TextCont.textCont("barText1",$scope.minVal);
+								break;
+							case "size" :
+								$scope.size=$scope.attrVal;
+								CtrlService.changeAttr("barCtrl","transform","matrix("+$scope.size+",0,0,"+$scope.size+",50,100)");
+								break;
+							case "backColor" :
+								$scope.backColor=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlRect1","fill",$scope.backColor);
+								break;
+							case "color" :
+								$scope.color=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlRect2","fill",$scope.color);
+								break;
+							case "hihi" :
+								$scope.hihi=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+$scope.lolo*2+"h10 M50.5 "+$scope.hihi*2+"h10");
+								CtrlService.changeAttr("barText8","y",217-$scope.hihi*2);
+								break;
+							case "lolo" :
+								$scope.lolo=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+$scope.lolo*2+"h10 M50.5 "+$scope.hihi*2+"h10");
+								CtrlService.changeAttr("barText7","y",217-$scope.lolo*2);
+								break;
+							case "hi" :
+								$scope.hi=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+$scope.lo*2+"h10 M50.5 "+$scope.hi*2+"h10");
+								CtrlService.changeAttr("barText10","y",217-$scope.hi*2);
+								break;
+							case "lo" :
+								$scope.lo=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+$scope.lo*2+"h10 M50.5 "+$scope.hi*2+"h10");
+								CtrlService.changeAttr("barText9","y",217-$scope.lo*2);
+								break;
+							default :
+								break;
+						}
 					}
-	console.log("minVal is : "+$scope.minVal);
 				});
-				//***end of $scope.$apply***//
+				//***end of socket.on***//
 			});
 			//***end of async.map***//
 			//需要绑定$scope但不需要脏检查的程序写在这里
