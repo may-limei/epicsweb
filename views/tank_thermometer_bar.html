@@ -1115,10 +1115,6 @@
 				barText6.textContent=maxVal;
 				barCtrl.appendChild(barText6);
 
-				// lolo=lolo*200;
-				// hihi=hihi*200;
-				// lo=lo*200;
-				// hi=hi*200;
 				var lolotextY=217-lolo*2;
 				var hihitextY=217-hihi*2;
 				var lotextY=217-lo*2;
@@ -1204,16 +1200,6 @@
 			
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
-
-		/* start - 自定义服务Service =>  创建和修改svg元素*/
-		// app.service('ToStringService',function(){
-		// 	this.changeAttr=function(id,attr,val){
-		// 		return SvgAttr.attr(id,attr,val);
-		// 	};
-			
-		// });
-		/* end - 自定义服务Service =>  创建和修改svg元素*/
-
 		
 		/* start - tankBarsCtrl */
 		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont) {
@@ -1226,7 +1212,6 @@
 			$scope.attrName="size";
 			$scope.attrVal="1";
 
-			//maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo
 			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
 			$scope.maxVal=100;
 			$scope.minVal=0;
@@ -1270,21 +1255,6 @@
 						}
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
-					// if($scope.calcTo100<=$scope.lolo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hihi*($scope.maxVal-$scope.minVal)){
-					// 	CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
-					// } else if($scope.calcTo100<=$scope.lo*($scope.maxVal-$scope.minVal) || $scope.calcTo100>=$scope.hi*($scope.maxVal-$scope.minVal)){
-					// 	CtrlService.changeAttr("barCtrlRect3","stroke","rgb(246,136,46)");
-					// } else {
-					// 	CtrlService.changeAttr("barCtrlRect3","stroke","none");
-					// }
-
-					// if($scope.calcTo100<=parseInt($scope.lolo)+parseInt($scope.minVal) || $scope.calcTo100>=parseInt($scope.hihi)+parseInt($scope.minVal)){
-					// 	CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
-					// } else if($scope.calcTo100<=parseInt($scope.lo)+parseInt($scope.minVal) || $scope.calcTo100>=parseInt($scope.hi)+parseInt($scope.minVal)){
-					// 	CtrlService.changeAttr("barCtrlRect3","stroke","rgb(246,136,46)");
-					// } else {
-					// 	CtrlService.changeAttr("barCtrlRect3","stroke","none");
-					// }
 					if($scope.calcTo100<=parseInt($scope.lolo) || $scope.calcTo100>=parseInt($scope.hihi)){
 						CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
 					} else if($scope.calcTo100<=parseInt($scope.lo) || $scope.calcTo100>=parseInt($scope.hi)){
@@ -1293,7 +1263,6 @@
 						CtrlService.changeAttr("barCtrlRect3","stroke","none");
 					}
 					//编辑区柱体填充更新
-					// CtrlService.changeAttr("barCtrlRect2","height",$scope.calcTo100*200/($scope.maxVal-$scope.minVal));
 					CtrlService.changeAttr("barCtrlRect2","height",(parseInt($scope.calcTo100)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
 				})
 					//***end of $scope.$apply***//
@@ -1301,19 +1270,8 @@
 
 					$scope.updateEdit=function(){
 						switch($scope.attrName){
-							case "maxVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改=================================================================
+							case "maxVal" :
 								$scope.maxVal=$scope.attrVal;
-								// TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1).toString());
-								// TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1).toString());
-								// TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1).toString());
-								// TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1).toString());
-								// TextCont.textCont("barText6",($scope.maxVal-0).toFixed(1).toString());   //不写上【减0（即-0）】会出错
-								// CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+(parseInt($scope.lolo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10 M50.5 "+(parseInt($scope.hihi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10");
-								// CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+(parseInt($scope.lo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10 M50.5 "+(parseInt($scope.hi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10");
-								// CtrlService.changeAttr("barText8","y",217-(parseInt($scope.hihi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-								// CtrlService.changeAttr("barText7","y",217-(parseInt($scope.lolo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-								// CtrlService.changeAttr("barText10","y",217-(parseInt($scope.hi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-								// CtrlService.changeAttr("barText9","y",217-(parseInt($scope.lo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
 								TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
 								TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
 								TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
@@ -1326,19 +1284,8 @@
 								CtrlService.changeAttr("barText10","y",217-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								CtrlService.changeAttr("barText9","y",217-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
-							case "minVal" ://改变最大/小刻度时，柱子的高度跟数值的对应关系应该也变化的，这里需要修改==================================================================
+							case "minVal" :
 								$scope.minVal=$scope.attrVal;
-								// TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1).toString());
-								// TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1).toString());
-								// TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1).toString());
-								// TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1).toString());
-								// TextCont.textCont("barText1",($scope.minVal-0).toFixed(1).toString());   //不写上【减0（即-0）】会出错
-								// CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+(parseInt($scope.lolo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10 M50.5 "+(parseInt($scope.hihi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10");
-								// CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+(parseInt($scope.lo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10 M50.5 "+(parseInt($scope.hi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal))+"h10");
-								// CtrlService.changeAttr("barText8","y",217-(parseInt($scope.hihi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-								// CtrlService.changeAttr("barText7","y",217-(parseInt($scope.lolo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-								// CtrlService.changeAttr("barText10","y",217-(parseInt($scope.hi)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-								// CtrlService.changeAttr("barText9","y",217-(parseInt($scope.lo)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
 								TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
 								TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
 								TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
