@@ -875,34 +875,48 @@
 						</svg>
 					</div>
 
-					<div class="span4 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
-						<!-- <div style="position:absolute; top:35px; left:30px; display:flex"> -->
-						<label style="position:absolute; top:60px; left:35px; font-weight:bold; color:#666666;">控件</label>
-						<select style="position:absolute; top:55px; left:68px; color:#666666; height:28px; width:114px;">
-							<option value="Progress Bar">Progress Bar</option>
-							<option value="Thermometer">Thermometer</option>
-							<option value="Tank">Tank</option>
-						</select>
-						<label style="position:absolute; top:60px; left:204px; font-weight:bold; color:#666666;">属性</label>
-						<select ng-model="attrName" ng-options="attr for attr in attrs" style="position:absolute; top:55px; left:236px; color:#666666; height:30px; width:100px;" ></select>
-						<!-- <input type="text" value="0" ng-model="attrName" placeholder="输入属性" style="position:absolute; top:55px; left:237px; color:#666666; height:20px; width:55px;" /> -->
-						<label style="position:absolute; top:60px; left:358px; font-weight:bold; color:#666666;">属性值</label>
-						<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:405px; color:#666666; height:20px; width:90px;" />
-						<!-- </div> -->
-						<button ng-click="updateEdit()" class="btn" style="position:absolute; top:53px; left:515px; color:none; background-color:aliceblue;"><i class="icon-save"></i></button>
-						<svg id="editArea" width="560px" height="550px" xmlns="http://www.w3.org/2000/svg">
-							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>
-							
-							
+					<div id="idContainer" class="span4 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
+						<svg width="560px" height="50px" xmlns="http://www.w3.org/2000/svg">
+							<text x="15" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>											
 						</svg>
+						<div id="idDrag" style="position: absolute;">
+							<svg id="editArea" width="560px" height="550px" style="cursor:move;" xmlns="http://www.w3.org/2000/svg">
+									
+							</svg>
+						</div>
+						<div style="position: absolute; width:560px; top:-5px; left:0px;">
+							<label style="position:absolute; top:60px; left:20px; font-weight:bold; color:#666666;">控件</label>
+							<select style="position:absolute; top:55px; left:51px; color:#666666; height:28px; width:118px;">
+								<option value="Progress Bar">Progress Bar</option>
+								<option value="Thermometer">Thermometer</option>
+								<option value="Tank">Tank</option>
+							</select>
+							<button ng-click="createCtl()" class="btn" style="position:absolute; top:53px; left:170px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
+							<label style="position:absolute; top:60px; left:226px; font-weight:bold; color:#666666;">属性</label>
+							<select ng-model="attrName" ng-options="attr for attr in attrs" style="position:absolute; top:55px; left:258px; color:#666666; height:30px; width:100px;" ></select>
+							<label style="position:absolute; top:60px; left:373px; font-weight:bold; color:#666666;">属性值</label>
+							<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:419px; color:#666666; height:20px; width:90px;" />
+							<button ng-click="updateEdit()" class="btn" style="position:absolute; top:53px; left:524px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
+						</div>
+						<div style="position:absolute; bottom:-5px; right:10px;" >
+							<!-- <input id="idReset" type="button" value="复位" />
+							<input id="idLock" type="button" value="锁定" />
+							<input id="idLockX" type="button" value="锁定水平" />
+							<input id="idLockY" type="button" value="锁定垂直" />
+							<input id="idLimit" type="button" value="范围锁定" />
+							<input id="idLimitOff" type="button" value="取消范围锁定" />
+							<br> -->
+							<p>绝对坐标：&nbsp&nbsp<span id="idShow">left:0;&nbsp top:0</span></p>
+						</div>
 					</div>
 				</div>
+				</div>
 	
-			</div>	
-			<!-- END PAGE CONTAINER-->
+		</div>	
+		<!-- END PAGE CONTAINER-->
 		
-		</div>
-		<!-- END PAGE -->    
+	</div>
+	<!-- END PAGE -->    
 
 			</div>
 		</div>
@@ -937,7 +951,7 @@
 
 	<!-- END CORE PLUGINS -->
 
-
+<script src="js/drag-tank.js"></script>
 <script src="js/tank_thermometer_bar.js"></script>
 <script src="js/jquery.min.js"></script>
 
@@ -963,9 +977,7 @@
 	<script>
 
 		jQuery(document).ready(function() {  
-			// console.log("开始");
-
-			
+			// console.log("开始");			
 		   App.init();
 
 		});
