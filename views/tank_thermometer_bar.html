@@ -886,11 +886,12 @@
 						</div>
 						<div style="position: absolute; width:560px; top:-5px; left:0px;">
 							<label style="position:absolute; top:60px; left:20px; font-weight:bold; color:#666666;">控件</label>
-							<select style="position:absolute; top:55px; left:51px; color:#666666; height:28px; width:118px;">
+							<!-- <select style="position:absolute; top:55px; left:51px; color:#666666; height:28px; width:118px;">
 								<option value="Progress Bar">Progress Bar</option>
 								<option value="Thermometer">Thermometer</option>
 								<option value="Tank">Tank</option>
-							</select>
+							</select> -->
+							<select ng-model="ctrlName" ng-options="ctrl for ctrl in ctrls" style="position:absolute; top:55px; left:51px; color:#666666; height:30px; width:118px;" ></select>
 							<button ng-click="createCtl()" class="btn" style="position:absolute; top:53px; left:170px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
 							<label style="position:absolute; top:60px; left:226px; font-weight:bold; color:#666666;">属性</label>
 							<select ng-model="attrName" ng-options="attr for attr in attrs" style="position:absolute; top:55px; left:258px; color:#666666; height:30px; width:100px;" ></select>

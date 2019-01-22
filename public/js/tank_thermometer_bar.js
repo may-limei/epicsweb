@@ -45,7 +45,7 @@
 		});
 		/* end - 自定义服务Service =>  修改指定id的text元素的值val*/
 
-		/* start - factory - AddCtrl */
+		/* start - factory - AddCtrl      <Vertical Bar> */
 		app.factory('AddCtrl', function(){
 			var factory = {};
 			/* start - creatSVG */
@@ -247,7 +247,147 @@
 			/* end - creatSVG */
 			return factory;
 		});
-		/* end - factory - AddCtrl */
+		/* end - factory - AddCtrl      <Vertical Bar> */
+
+//start-BarH-此处的控件本该动态创建并可修改的=====
+		app.service('BarHCtl', function(){
+			this.BarHCtl = function(Xpos){
+				var editArea=document.getElementById('editArea');
+				var BarHCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				BarHCtl.setAttribute("id","BarHCtl");
+				editArea.appendChild(BarHCtl);
+				
+				var BarHCtlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				BarHCtlRect1.setAttribute("id","BarHCtlRect1");
+				BarHCtlRect1.setAttribute("x","49.5");
+				BarHCtlRect1.setAttribute("y","149.5");
+				BarHCtlRect1.setAttribute("width","401");
+				BarHCtlRect1.setAttribute("height","26");
+				BarHCtlRect1.setAttribute("fill","rgb(200,245,242)");
+				BarHCtlRect1.setAttribute("stroke","black");
+				BarHCtlRect1.setAttribute("stroke-width","0.75");
+				BarHCtl.appendChild(BarHCtlRect1);
+
+				var BarHCtlPath1=document.createElementNS("http://www.w3.org/2000/svg","path");
+				BarHCtlPath1.setAttribute("id","BarHCtlPath1");
+				BarHCtlPath1.setAttribute("fill","none");
+				BarHCtlPath1.setAttribute("stroke","black");
+				BarHCtlPath1.setAttribute("stroke-width","0.75");
+				BarHCtlPath1.setAttribute("d","M50 176v6 m80 -6v6 m80 -6v6 m80 -6v6 m80 -6v6 m80 -6v6 M66 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M146 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M226 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M306 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M386 176v3 m16 -3v3 m16 -3v3 m16.5 -3v3");
+				BarHCtl.appendChild(BarHCtlPath1);
+
+				var BarHCtlText1=document.createElementNS("http://www.w3.org/2000/svg","text");
+				BarHCtlText1.setAttribute("id","BarHCtlText1");
+				BarHCtlText1.setAttribute("x","46");
+				BarHCtlText1.setAttribute("y","194");
+				BarHCtlText1.setAttribute("font-size","12");
+				BarHCtlText1.setAttribute("font-family","Microsoft YaHei UI");
+				BarHCtlText1.setAttribute("fill","#333333");
+				BarHCtlText1.setAttribute("stroke","#333333");
+				BarHCtlText1.setAttribute("stroke-width","0.25");
+				BarHCtlText1.textContent="0";
+				BarHCtl.appendChild(BarHCtlText1);
+
+				var BarHCtlText2=document.createElementNS("http://www.w3.org/2000/svg","text");
+				BarHCtlText2.setAttribute("id","BarHCtlText2");
+				BarHCtlText2.setAttribute("x","122");
+				BarHCtlText2.setAttribute("y","194");
+				BarHCtlText2.setAttribute("font-size","12");
+				BarHCtlText2.setAttribute("font-family","Microsoft YaHei UI");
+				BarHCtlText2.setAttribute("fill","#333333");
+				BarHCtlText2.setAttribute("stroke","#333333");
+				BarHCtlText2.setAttribute("stroke-width","0.25");
+				BarHCtlText2.textContent="20";
+				BarHCtl.appendChild(BarHCtlText2);
+
+				var BarHCtlText3=document.createElementNS("http://www.w3.org/2000/svg","text");
+				BarHCtlText3.setAttribute("id","BarHCtlText3");
+				BarHCtlText3.setAttribute("x","202");
+				BarHCtlText3.setAttribute("y","194");
+				BarHCtlText3.setAttribute("font-size","12");
+				BarHCtlText3.setAttribute("font-family","Microsoft YaHei UI");
+				BarHCtlText3.setAttribute("fill","#333333");
+				BarHCtlText3.setAttribute("stroke","#333333");
+				BarHCtlText3.setAttribute("stroke-width","0.25");
+				BarHCtlText3.textContent="40";
+				BarHCtl.appendChild(BarHCtlText3);
+
+				var BarHCtlText4=document.createElementNS("http://www.w3.org/2000/svg","text");
+				BarHCtlText4.setAttribute("id","BarHCtlText4");
+				BarHCtlText4.setAttribute("x","282");
+				BarHCtlText4.setAttribute("y","194");
+				BarHCtlText4.setAttribute("font-size","12");
+				BarHCtlText4.setAttribute("font-family","Microsoft YaHei UI");
+				BarHCtlText4.setAttribute("fill","#333333");
+				BarHCtlText4.setAttribute("stroke","#333333");
+				BarHCtlText4.setAttribute("stroke-width","0.25");
+				BarHCtlText4.textContent="60";
+				BarHCtl.appendChild(BarHCtlText4);
+
+				var BarHCtlText5=document.createElementNS("http://www.w3.org/2000/svg","text");
+				BarHCtlText5.setAttribute("id","BarHCtlText5");
+				BarHCtlText5.setAttribute("x","362");
+				BarHCtlText5.setAttribute("y","194");
+				BarHCtlText5.setAttribute("font-size","12");
+				BarHCtlText5.setAttribute("font-family","Microsoft YaHei UI");
+				BarHCtlText5.setAttribute("fill","#333333");
+				BarHCtlText5.setAttribute("stroke","#333333");
+				BarHCtlText5.setAttribute("stroke-width","0.25");
+				BarHCtlText5.textContent="80";
+				BarHCtl.appendChild(BarHCtlText5);
+
+				var BarHCtlText6=document.createElementNS("http://www.w3.org/2000/svg","text");
+				BarHCtlText6.setAttribute("id","BarHCtlText6");
+				BarHCtlText6.setAttribute("x","438");
+				BarHCtlText6.setAttribute("y","194");
+				BarHCtlText6.setAttribute("font-size","12");
+				BarHCtlText6.setAttribute("font-family","Microsoft YaHei UI");
+				BarHCtlText6.setAttribute("fill","#333333");
+				BarHCtlText6.setAttribute("stroke","#333333");
+				BarHCtlText6.setAttribute("stroke-width","0.25");
+				BarHCtlText6.textContent="100";
+				BarHCtl.appendChild(BarHCtlText6);
+
+				var BarHCtlPoly1=document.createElementNS("http://www.w3.org/2000/svg","polyline");
+				BarHCtlPoly1.setAttribute("id","BarHCtlPoly1");
+				BarHCtlPoly1.setAttribute("transform","matrix(1,0,0,1,"+Xpos+",0)");
+				BarHCtlPoly1.setAttribute("stroke","#666666");
+				BarHCtlPoly1.setAttribute("stroke-width","0.5");
+				BarHCtlPoly1.setAttribute("fill","rgb(197,125,204)");
+				BarHCtlPoly1.setAttribute("points","50 150, 56 162.5, 50 175, 44 162.5");
+				BarHCtl.appendChild(BarHCtlPoly1);
+
+				return 0;
+			};
+		});
+//end-BarH-此处的控件本该动态创建并可修改的=====
+//start-Thermometer-此处的控件本该动态创建并可修改的=====
+		app.service('ThermometerCtl', function(){
+			this.ThermometerCtl = function(){
+				var editArea=document.getElementById('editArea');
+				var ThermometerCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				ThermometerCtl.setAttribute("id","ThermometerCtl");
+				editArea.appendChild(ThermometerCtl);
+
+
+
+				return 0;
+			};
+		});
+//end-Thermometer-此处的控件本该动态创建并可修改的=====
+//start-Tank-此处的控件本该动态创建并可修改的=====
+		app.service('TankCtl', function(){
+			this.TankCtl = function(){
+				var editArea=document.getElementById('editArea');
+				var TankCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				TankCtl.setAttribute("id","TankCtl");
+				editArea.appendChild(TankCtl);
+
+				
+				return 0;
+			};
+		});
+//end-Tank-此处的控件本该动态创建并可修改的=====
 
 		/* start - 自定义服务Service =>  创建和修改svg元素*/
 		app.service('CtrlService',function(AddCtrl,SvgAttr){
@@ -260,9 +400,21 @@
 			
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
+
+		/* start - 自定义服务Service =>  检测ID为id的元素是否存在*/
+		app.service('isEleExit',function(){
+			this.isEleExit=function(id){
+				if(document.getElementById(id)!=="undefined"){
+					return 1;
+				} else {
+					return 0;
+				}
+			};
+		});
+		/* start - 自定义服务Service =>  检测ID为id的元素是否存在*/
 		
 		/* start - tankBarsCtrl */
-		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont) {
+		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont, BarHCtl, ThermometerCtl, TankCtl, isEleExit) {
 			$scope.calcTo100=100;
 			$scope.calcTo100P=51.2;
 			$scope.calcTo1000=1000;
@@ -271,7 +423,8 @@
 			$scope.log=MathCalc.log(100);
 			$scope.attrName="size";
 			$scope.attrVal="1";
-
+			$scope.ctrlName="Vertical Bar";
+			$scope.ctrls=["Vertical Bar", "Horizontal Bar", "Thermometer", "Tank"];
 			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
 			$scope.maxVal=100;
 			$scope.minVal=0;
@@ -283,7 +436,7 @@
 			$scope.hi=80;
 			$scope.lo=30;
 
-			CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
+			// CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 			async.map(pvs.tankBars, function (item, callback) {
 				socket.on(item.pvname, function (data) {
 					$scope.$applyAsync(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
@@ -315,18 +468,43 @@
 						}
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
-					if($scope.calcTo100<=parseInt($scope.lolo) || $scope.calcTo100>=parseInt($scope.hihi)){
-						CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
-					} else if($scope.calcTo100<=parseInt($scope.lo) || $scope.calcTo100>=parseInt($scope.hi)){
-						CtrlService.changeAttr("barCtrlRect3","stroke","rgb(246,136,46)");
-					} else {
-						CtrlService.changeAttr("barCtrlRect3","stroke","none");
-					}
-					//编辑区柱体填充更新
-					CtrlService.changeAttr("barCtrlRect2","height",(parseInt($scope.calcTo100)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
+					// console.log(isEleExit.isEleExit("barCtrl"));
+					// if(isEleExit.isEleExit("barCtrl")==="1"){
+						if($scope.calcTo100<=parseInt($scope.lolo) || $scope.calcTo100>=parseInt($scope.hihi)){
+							CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
+						} else if($scope.calcTo100<=parseInt($scope.lo) || $scope.calcTo100>=parseInt($scope.hi)){
+							CtrlService.changeAttr("barCtrlRect3","stroke","rgb(246,136,46)");
+						} else {
+							CtrlService.changeAttr("barCtrlRect3","stroke","none");
+						}
+						//编辑区柱体填充更新
+						CtrlService.changeAttr("barCtrlRect2","height",(parseInt($scope.calcTo100)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
+					// }
+					// if(isEleExit.isEleExit("BarHCtl")){
+					// 	SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100+",0)");
+					// }	
 				})
 					//***end of $scope.$apply***//
 
+					$scope.createCtl=function(){
+						switch($scope.ctrlName){//不同控件创建时变量以数组表示控件名，同一控件创建了多个时也是用数组表示rect、text等元素名。此工作待完成。=====
+							case "Tank" :
+								;
+								break;
+							case "Vertical Bar" :
+								CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
+								break;
+							case "Horizontal Bar" :
+								BarHCtl.BarHCtl($scope.calcTo100);
+								// SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100+",0)");
+								break;
+							case "Thermometer" :
+								;
+								break;
+							default :
+								break;
+						}
+					}
 
 					$scope.updateEdit=function(){
 						switch($scope.attrName){
