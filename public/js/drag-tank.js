@@ -235,7 +235,8 @@ var drag = new Drag("idDrag", {
     Handle: "barCtrl",
     Limit: false,
     onStart: function() {
-        document.getElementById("idShow").innerHTML="开始拖放";
+        // document.getElementById("idShow").innerHTML="开始拖放";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
     },
     onMove: function() {
         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
@@ -245,27 +246,3 @@ var drag = new Drag("idDrag", {
         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
     }
 });
-
-// $("idReset").onclick = function() {
-//     drag.Limit = true;
-//     drag.mxLeft = drag.mxTop = 0;
-//     drag.mxRight = drag.mxBottom = 9999;
-//     drag.LockX = drag.LockY = drag.Lock = false;
-// }
-
-// $("idLock").onclick = function() {
-//     drag.Lock = true;
-// }
-// $("idLockX").onclick = function() {
-//     drag.LockX = true;
-// }
-// $("idLockY").onclick = function() {
-//     drag.LockY = true;
-// }
-// $("idLimit").onclick = function() {
-//     drag.mxRight = drag.mxBottom = 200;
-//     drag.Limit = true;
-// }
-// $("idLimitOff").onclick = function() {
-//     drag.Limit = false;
-// }

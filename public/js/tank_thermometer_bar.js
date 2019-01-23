@@ -58,13 +58,14 @@
 				var editArea=document.getElementById('editArea');
 				var barCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				barCtrl.setAttribute("id","barCtrl");
-				barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",50,100)");
+				// barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",50,100)");
+				barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
 				editArea.appendChild(barCtrl);
 
 				var barCtrlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
 				barCtrlRect1.setAttribute("id","barCtrlRect1");
-				barCtrlRect1.setAttribute("x","35");
-				barCtrlRect1.setAttribute("y","12");
+				barCtrlRect1.setAttribute("x","65");
+				barCtrlRect1.setAttribute("y","17");
 				barCtrlRect1.setAttribute("width","51");
 				barCtrlRect1.setAttribute("height","201");
 				barCtrlRect1.setAttribute("fill",backColor);
@@ -73,9 +74,9 @@
 				barCtrl.appendChild(barCtrlRect1);
 
 				var barCtrlRect2=document.createElementNS("http://www.w3.org/2000/svg","rect");
-				barCtrlRect2.setAttribute("transform","matrix(1,0,0,-1,0,212.5)");
+				barCtrlRect2.setAttribute("transform","matrix(1,0,0,-1,0,217.5)");
 				barCtrlRect2.setAttribute("id","barCtrlRect2");
-				barCtrlRect2.setAttribute("x","35.5");
+				barCtrlRect2.setAttribute("x","65.5");
 				barCtrlRect2.setAttribute("y","0");
 				barCtrlRect2.setAttribute("width","50");
 				barCtrlRect2.setAttribute("height","87");
@@ -84,8 +85,8 @@
 
 				var barCtrlRect3=document.createElementNS("http://www.w3.org/2000/svg","rect");
 				barCtrlRect3.setAttribute("id","barCtrlRect3");
-				barCtrlRect3.setAttribute("x","-20");
-				barCtrlRect3.setAttribute("y","0");
+				barCtrlRect3.setAttribute("x","10");
+				barCtrlRect3.setAttribute("y","5");
 				barCtrlRect3.setAttribute("width","157");
 				barCtrlRect3.setAttribute("height","220");
 				barCtrlRect3.setAttribute("fill","none");
@@ -95,7 +96,7 @@
 
 				var barCtrlPath1=document.createElementNS("http://www.w3.org/2000/svg","path");
 				barCtrlPath1.setAttribute("id","barCtrlPath1");
-				barCtrlPath1.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
+				barCtrlPath1.setAttribute("transform","matrix(1,0,0,-1,65,217.5)");
 				barCtrlPath1.setAttribute("fill","none");
 				barCtrlPath1.setAttribute("stroke","black");
 				barCtrlPath1.setAttribute("stroke-width","0.75");
@@ -104,8 +105,8 @@
 
 				var barText1=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText1.setAttribute("id","barText1");
-				barText1.setAttribute("x","26");
-				barText1.setAttribute("y","215");
+				barText1.setAttribute("x","56");
+				barText1.setAttribute("y","220");
 				barText1.setAttribute("font-size","12");
 				barText1.setAttribute("font-family","Microsoft YaHei UI");
 				barText1.setAttribute("fill","#333333");
@@ -116,8 +117,8 @@
 				barCtrl.appendChild(barText1);
 				var barText2=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText2.setAttribute("id","barText2");
-				barText2.setAttribute("x","26");
-				barText2.setAttribute("y","175");
+				barText2.setAttribute("x","56");
+				barText2.setAttribute("y","180");
 				barText2.setAttribute("font-size","12");
 				barText2.setAttribute("font-family","Microsoft YaHei UI");
 				barText2.setAttribute("fill","#333333");
@@ -128,8 +129,8 @@
 				barCtrl.appendChild(barText2);
 				var barText3=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText3.setAttribute("id","barText3");
-				barText3.setAttribute("x","26");
-				barText3.setAttribute("y","135");
+				barText3.setAttribute("x","56");
+				barText3.setAttribute("y","140");
 				barText3.setAttribute("font-size","12");
 				barText3.setAttribute("font-family","Microsoft YaHei UI");
 				barText3.setAttribute("fill","#333333");
@@ -140,8 +141,8 @@
 				barCtrl.appendChild(barText3);
 				var barText4=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText4.setAttribute("id","barText4");
-				barText4.setAttribute("x","26");
-				barText4.setAttribute("y","95");
+				barText4.setAttribute("x","56");
+				barText4.setAttribute("y","100");
 				barText4.setAttribute("font-size","12");
 				barText4.setAttribute("font-family","Microsoft YaHei UI");
 				barText4.setAttribute("fill","#333333");
@@ -152,8 +153,8 @@
 				barCtrl.appendChild(barText4);
 				var barText5=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText5.setAttribute("id","barText5");
-				barText5.setAttribute("x","26");
-				barText5.setAttribute("y","55");
+				barText5.setAttribute("x","56");
+				barText5.setAttribute("y","60");
 				barText5.setAttribute("font-size","12");
 				barText5.setAttribute("font-family","Microsoft YaHei UI");
 				barText5.setAttribute("fill","#333333");
@@ -164,8 +165,8 @@
 				barCtrl.appendChild(barText5);
 				var barText6=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText6.setAttribute("id","barText6");
-				barText6.setAttribute("x","26");
-				barText6.setAttribute("y","15");
+				barText6.setAttribute("x","56");
+				barText6.setAttribute("y","20");
 				barText6.setAttribute("font-size","12");
 				barText6.setAttribute("font-family","Microsoft YaHei UI");
 				barText6.setAttribute("fill","#333333");
@@ -175,13 +176,13 @@
 				barText6.textContent=maxVal;
 				barCtrl.appendChild(barText6);
 
-				var lolotextY=217-lolo*2;
-				var hihitextY=217-hihi*2;
-				var lotextY=217-lo*2;
-				var hitextY=217-hi*2;
+				var lolotextY=222-lolo*2;
+				var hihitextY=222-hihi*2;
+				var lotextY=222-lo*2;
+				var hitextY=222-hi*2;
 				var barCtrlPath2=document.createElementNS("http://www.w3.org/2000/svg","path");
 				barCtrlPath2.setAttribute("id","barCtrlPath2");
-				barCtrlPath2.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
+				barCtrlPath2.setAttribute("transform","matrix(1,0,0,-1,65,217.5)");
 				barCtrlPath2.setAttribute("fill","none");
 				barCtrlPath2.setAttribute("stroke","rgb(255,0,0)");
 				barCtrlPath2.setAttribute("stroke-width","2");
@@ -189,7 +190,7 @@
 				barCtrl.appendChild(barCtrlPath2);
 				var barText7=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText7.setAttribute("id","barText7");
-				barText7.setAttribute("x","98");
+				barText7.setAttribute("x","128");
 				barText7.setAttribute("y",lolotextY);
 				barText7.setAttribute("font-size","12");
 				barText7.setAttribute("font-family","Microsoft YaHei UI");
@@ -200,7 +201,7 @@
 				barCtrl.appendChild(barText7);
 				var barText8=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText8.setAttribute("id","barText8");
-				barText8.setAttribute("x","98");
+				barText8.setAttribute("x","128");
 				barText8.setAttribute("y",hihitextY);
 				barText8.setAttribute("font-size","12");
 				barText8.setAttribute("font-family","Microsoft YaHei UI");
@@ -212,7 +213,7 @@
 
 				var barCtrlPath3=document.createElementNS("http://www.w3.org/2000/svg","path");
 				barCtrlPath3.setAttribute("id","barCtrlPath3");
-				barCtrlPath3.setAttribute("transform","matrix(1,0,0,-1,35,212.5)");
+				barCtrlPath3.setAttribute("transform","matrix(1,0,0,-1,65,217.5)");
 				barCtrlPath3.setAttribute("fill","none");
 				barCtrlPath3.setAttribute("stroke","rgb(246,136,46)");
 				barCtrlPath3.setAttribute("stroke-width","2");
@@ -220,7 +221,7 @@
 				barCtrl.appendChild(barCtrlPath3);
 				var barText9=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText9.setAttribute("id","barText9");
-				barText9.setAttribute("x","98");
+				barText9.setAttribute("x","128");
 				barText9.setAttribute("y",lotextY);
 				barText9.setAttribute("font-size","12");
 				barText9.setAttribute("font-family","Microsoft YaHei UI");
@@ -231,7 +232,7 @@
 				barCtrl.appendChild(barText9);
 				var barText10=document.createElementNS("http://www.w3.org/2000/svg","text");
 				barText10.setAttribute("id","barText10");
-				barText10.setAttribute("x","98");
+				barText10.setAttribute("x","128");
 				barText10.setAttribute("y",hitextY);
 				barText10.setAttribute("font-size","12");
 				barText10.setAttribute("font-family","Microsoft YaHei UI");
@@ -252,10 +253,24 @@
 //start-BarH-此处的控件本该动态创建并可修改的=====
 		app.service('BarHCtl', function(){
 			this.BarHCtl = function(Xpos){
-				var editArea=document.getElementById('editArea');
+				var Container=document.getElementById('idContainer');
+				var divDragBH=document.createElement("div");
+				divDragBH.setAttribute("id","divDragBH");
+				divDragBH.setAttribute("style","position:absolute");
+				Container.appendChild(divDragBH);
+				
+				var svgDragBH=document.createElementNS("http://www.w3.org/2000/svg","svg");
+				svgDragBH.setAttribute("id","svgDragBH");
+				svgDragBH.setAttribute("width","560px");
+				svgDragBH.setAttribute("height","550px");
+				svgDragBH.setAttribute("style","cursor:move");
+				svgDragBH.setAttribute("xmlns","http://www.w3.org/2000/svg");
+				divDragBH.appendChild(svgDragBH);
+
+				// var editArea=document.getElementById('editArea');
 				var BarHCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				BarHCtl.setAttribute("id","BarHCtl");
-				editArea.appendChild(BarHCtl);
+				svgDragBH.appendChild(BarHCtl);
 				
 				var BarHCtlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
 				BarHCtlRect1.setAttribute("id","BarHCtlRect1");
@@ -436,6 +451,10 @@
 			$scope.hi=80;
 			$scope.lo=30;
 
+			//表示控件是否被创建的标志位
+			$scope.bCtlFlag=false;
+			$scope.HbCtlFlag=false;
+
 			// CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 			async.map(pvs.tankBars, function (item, callback) {
 				socket.on(item.pvname, function (data) {
@@ -469,7 +488,7 @@
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
 					// console.log(isEleExit.isEleExit("barCtrl"));
-					// if(isEleExit.isEleExit("barCtrl")==="1"){
+					if($scope.bCtlFlag){
 						if($scope.calcTo100<=parseInt($scope.lolo) || $scope.calcTo100>=parseInt($scope.hihi)){
 							CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
 						} else if($scope.calcTo100<=parseInt($scope.lo) || $scope.calcTo100>=parseInt($scope.hi)){
@@ -479,10 +498,10 @@
 						}
 						//编辑区柱体填充更新
 						CtrlService.changeAttr("barCtrlRect2","height",(parseInt($scope.calcTo100)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
-					// }
-					// if(isEleExit.isEleExit("BarHCtl")){
-					// 	SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100+",0)");
-					// }	
+					}
+					if($scope.HbCtlFlag){
+						SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100*4+",0)");
+					}	
 				})
 					//***end of $scope.$apply***//
 
@@ -493,9 +512,11 @@
 								break;
 							case "Vertical Bar" :
 								CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
+								$scope.bCtlFlag=true;
 								break;
 							case "Horizontal Bar" :
 								BarHCtl.BarHCtl($scope.calcTo100);
+								$scope.HbCtlFlag=true;
 								// SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100+",0)");
 								break;
 							case "Thermometer" :
@@ -517,10 +538,10 @@
 								TextCont.textCont("barText6",($scope.maxVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
 								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
 								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
-								CtrlService.changeAttr("barText8","y",217-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
-								CtrlService.changeAttr("barText7","y",217-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
-								CtrlService.changeAttr("barText10","y",217-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
-								CtrlService.changeAttr("barText9","y",217-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText7","y",222-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText10","y",222-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText9","y",222-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
 							case "minVal" :
 								$scope.minVal=$scope.attrVal;
@@ -531,10 +552,10 @@
 								TextCont.textCont("barText1",($scope.minVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
 								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
 								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
-								CtrlService.changeAttr("barText8","y",217-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
-								CtrlService.changeAttr("barText7","y",217-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
-								CtrlService.changeAttr("barText10","y",217-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
-								CtrlService.changeAttr("barText9","y",217-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText7","y",222-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText10","y",222-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText9","y",222-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
 							case "size" :
 								$scope.size=$scope.attrVal;
@@ -551,22 +572,22 @@
 							case "HIHI" :
 								$scope.hihi=$scope.attrVal;
 								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
-								CtrlService.changeAttr("barText8","y",217-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
 							case "LOLO" :
 								$scope.lolo=$scope.attrVal;
 								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
-								CtrlService.changeAttr("barText7","y",217-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText7","y",222-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
 							case "HI" :
 								$scope.hi=$scope.attrVal;
 								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
-								CtrlService.changeAttr("barText10","y",217-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText10","y",222-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
 							case "LO" :
 								$scope.lo=$scope.attrVal;
 								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
-								CtrlService.changeAttr("barText9","y",217-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText9","y",222-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
 								break;
 							default :
 								break;
