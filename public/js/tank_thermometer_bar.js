@@ -32,18 +32,13 @@
 				document.getElementById(id).setAttribute(attr,val);//rgb(246,136,46)
 				return 0;
 			};
-			return factory;
-		});
-		/* end - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
-
-		/* start - 自定义服务Service =>  修改指定id的text元素的值val*/
-		app.service('TextCont', function(){
-			this.textCont = function(id,text){
+			factory.textCont = function(id,text){
 				document.getElementById(id).textContent=text;//rgb(246,136,46)
 				return 0;
 			};
+			return factory;
 		});
-		/* end - 自定义服务Service =>  修改指定id的text元素的值val*/
+		/* end - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
 
 		/* start - factory - AddCtrl      <Vertical Bar> */
 		app.factory('AddCtrl', function(){
@@ -61,7 +56,7 @@
 				// divDragBV.setAttribute("id","divDragBV");
 				// divDragBV.setAttribute("style","position:absolute");
 				// svgArea.appendChild(divDragBV);
-var divDragBV=document.getElementById("svgDragBV");
+				var divDragBV=document.getElementById("svgDragBV");
 				// var svgDragBV=document.createElementNS("http://www.w3.org/2000/svg","svg");
 				// svgDragBV.setAttribute("id","svgDragBV");
 				// svgDragBV.setAttribute("width","170px");
@@ -259,15 +254,9 @@ var divDragBV=document.getElementById("svgDragBV");
 				
 				// barCtrl.removeChild(barCtrlRect1);
 				return "create a bar control successfully"
-			}
-			/* end - creatSVG */
-			return factory;
-		});
-		/* end - factory - AddCtrl      <Vertical Bar> */
+			};
 
-//start-BarH-此处的控件本该动态创建并可修改的=====
-		app.service('BarHCtl', function(){
-			this.BarHCtl = function(Xpos){
+			factory.addBarHCtl = function(Xpos){//BarH-此处的控件本该动态创建并可修改的=====
 				var svgArea=document.getElementById('svgArea');
 				var divDragBH=document.createElement("div");
 				divDragBH.setAttribute("id","divDragBH");
@@ -389,50 +378,46 @@ var divDragBV=document.getElementById("svgDragBV");
 
 				return 0;
 			};
+			/* end - creatSVG */
+			return factory;
 		});
-//end-BarH-此处的控件本该动态创建并可修改的=====
-//start-Thermometer-此处的控件本该动态创建并可修改的=====
-		app.service('ThermometerCtl', function(){
-			this.ThermometerCtl = function(){
-				// var editArea=document.getElementById('editArea');
-				var ThermometerCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
-				ThermometerCtl.setAttribute("id","ThermometerCtl");
-				// editArea.appendChild(ThermometerCtl);
-
-
-
-				return 0;
-			};
-		});
-//end-Thermometer-此处的控件本该动态创建并可修改的=====
-//start-Tank-此处的控件本该动态创建并可修改的=====
-		app.service('TankCtl', function(){
-			this.TankCtl = function(){
-				// var editArea=document.getElementById('editArea');
-				var TankCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
-				TankCtl.setAttribute("id","TankCtl");
-				// editArea.appendChild(TankCtl);
-
-				
-				return 0;
-			};
-		});
-//end-Tank-此处的控件本该动态创建并可修改的=====
+		/* end - factory - AddCtrl      <Vertical Bar> */
 
 		/* start - 自定义服务Service =>  创建和修改svg元素*/
 		app.service('CtrlService',function(AddCtrl,SvgAttr){
 			this.addBarCtrl=function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
 				return AddCtrl.addBarCtrl( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo );
 			}
+			this.addBarHCtl=function(Xpos){
+				return AddCtrl.addBarHCtl(Xpos);
+			}
+
 			this.changeAttr=function(id,attr,val){
 				return SvgAttr.attr(id,attr,val);
+			};
+			this.addVBarDrag=function(divDragBV, svgArea, svgDragBV){
+				var drag = new Drag(divDragBV, {
+					mxContainer: svgArea,
+					Handle: svgDragBV,
+					Limit: false,
+					onStart: function() {
+						document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+					},
+					onMove: function() {
+						document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+					},
+					onStop: function() {
+						document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+					}
+				});
+				return "add vertical bar drag";
 			};
 			
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
 		
 		/* start - tankBarsCtrl */
-		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont, BarHCtl, ThermometerCtl, TankCtl) {
+		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService) {
 			$scope.calcTo100=100;
 			$scope.calcTo100P=51.2;
 			$scope.calcTo1000=1000;
@@ -457,6 +442,10 @@ var divDragBV=document.getElementById("svgDragBV");
 			//表示控件是否被创建的标志位
 			$scope.bCtlFlag=false;
 			$scope.HbCtlFlag=false;
+			$scope.sizeWidth=170;
+			$scope.sizeHeight=230;
+			$scope.idsvgDrag="svgDragBV";
+			$scope.idctrlDrag="barCtrl";
 
 			// CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 			async.map(pvs.tankBars, function (item, callback) {
@@ -515,10 +504,15 @@ var divDragBV=document.getElementById("svgDragBV");
 							case "Vertical Bar" :
 								CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 								$scope.bCtlFlag=true;
+								CtrlService.addVBarDrag("divDragBV", "svgArea", "svgDragBV");
 								break;
 							case "Horizontal Bar" :
-								BarHCtl.BarHCtl($scope.calcTo100);
+								CtrlService.addBarHCtl($scope.calcTo100);
 								$scope.HbCtlFlag=true;
+								$scope.sizeWidth=170;
+								$scope.sizeHeight=230;
+								$scope.idsvgDrag="svgDragBH";
+								$scope.idctrlDrag="BarHCtl";
 								// SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100+",0)");
 								break;
 							case "Thermometer" :
@@ -533,11 +527,11 @@ var divDragBV=document.getElementById("svgDragBV");
 						switch($scope.attrName){
 							case "maxVal" :
 								$scope.maxVal=$scope.attrVal;
-								TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
-								TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
-								TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
-								TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1));
-								TextCont.textCont("barText6",($scope.maxVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
+								SvgAttr.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
+								SvgAttr.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
+								SvgAttr.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
+								SvgAttr.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1));
+								SvgAttr.textCont("barText6",($scope.maxVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
 								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
 								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
 								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
@@ -547,11 +541,11 @@ var divDragBV=document.getElementById("svgDragBV");
 								break;
 							case "minVal" :
 								$scope.minVal=$scope.attrVal;
-								TextCont.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
-								TextCont.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
-								TextCont.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
-								TextCont.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1));
-								TextCont.textCont("barText1",($scope.minVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
+								SvgAttr.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
+								SvgAttr.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
+								SvgAttr.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
+								SvgAttr.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1));
+								SvgAttr.textCont("barText1",($scope.minVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
 								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
 								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
 								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
@@ -561,9 +555,9 @@ var divDragBV=document.getElementById("svgDragBV");
 								break;
 							case "size" :
 								$scope.size=$scope.attrVal;
-								SvgAttr.attr("svgDragBV","width",170*$scope.size);
-								SvgAttr.attr("svgDragBV","height",230*$scope.size);
-								CtrlService.changeAttr("barCtrl","transform","matrix("+$scope.size+",0,0,"+$scope.size+",0,0)");
+								SvgAttr.attr($scope.idsvgDrag,"width",$scope.sizeWidth*$scope.size);
+								SvgAttr.attr($scope.idsvgDrag,"height",$scope.sizeHeight*$scope.size);
+								CtrlService.changeAttr($scope.idctrlDrag,"transform","matrix("+$scope.size+",0,0,"+$scope.size+",0,0)");
 								break;
 							case "backColor" :
 								$scope.backColor=$scope.attrVal;
