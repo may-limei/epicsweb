@@ -230,19 +230,36 @@ Drag.prototype = {
 };
 
 //以下是调用以上插件实现拖动
-// var drag = new Drag("divDragBV", {
-//     mxContainer: "svgArea",
-//     Handle: "svgDragBV",
-//     Limit: false,
-//     onStart: function() {
-//         // document.getElementById("idShow").innerHTML="开始拖放";
-//         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
-//     },
-//     onMove: function() {
-//         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
-//     },
-//     onStop: function() {
-//         // document.getElementById("idShow").innerHTML = "结束移动";
-//         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
-//     }
-// });
+var drag = new Drag("divDragBV", {
+    mxContainer: "svgArea",
+    Handle: "svgDragBV",
+    Limit: false,
+    onStart: function() {
+        // document.getElementById("idShow").innerHTML="开始拖放";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onMove: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onStop: function() {
+        // document.getElementById("idShow").innerHTML = "结束移动";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    }
+});
+
+var drag = new Drag("divDragBH", {
+    mxContainer: "svgArea",
+    Handle: "svgDragBH",
+    Limit: false,
+    onStart: function() {
+        // document.getElementById("idShow").innerHTML="开始拖放";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onMove: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onStop: function() {
+        // document.getElementById("idShow").innerHTML = "结束移动";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    }
+});

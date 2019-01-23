@@ -257,19 +257,20 @@
 			};
 
 			factory.addBarHCtl = function(Xpos){//BarH-此处的控件本该动态创建并可修改的=====
-				var svgArea=document.getElementById('svgArea');
-				var divDragBH=document.createElement("div");
-				divDragBH.setAttribute("id","divDragBH");
-				divDragBH.setAttribute("style","position:absolute");
-				svgArea.appendChild(divDragBH);
+				// var svgArea=document.getElementById('svgArea');
+				// var divDragBH=document.createElement("div");
+				// divDragBH.setAttribute("id","divDragBH");
+				// divDragBH.setAttribute("style","position:absolute");
+				// svgArea.appendChild(divDragBH);
 				
-				var svgDragBH=document.createElementNS("http://www.w3.org/2000/svg","svg");
-				svgDragBH.setAttribute("id","svgDragBH");
-				svgDragBH.setAttribute("width","560px");
-				svgDragBH.setAttribute("height","550px");
-				svgDragBH.setAttribute("style","cursor:move");
-				svgDragBH.setAttribute("xmlns","http://www.w3.org/2000/svg");
-				divDragBH.appendChild(svgDragBH);
+				// var svgDragBH=document.createElementNS("http://www.w3.org/2000/svg","svg");
+				// svgDragBH.setAttribute("id","svgDragBH");
+				// svgDragBH.setAttribute("width","420px");
+				// svgDragBH.setAttribute("height","60px");
+				// svgDragBH.setAttribute("style","cursor:move");
+				// svgDragBH.setAttribute("xmlns","http://www.w3.org/2000/svg");
+				// divDragBH.appendChild(svgDragBH);
+				var svgDragBH=document.getElementById("svgDragBH");
 
 				// var editArea=document.getElementById('editArea');
 				var BarHCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
@@ -394,25 +395,7 @@
 
 			this.changeAttr=function(id,attr,val){
 				return SvgAttr.attr(id,attr,val);
-			};
-			this.addVBarDrag=function(divDragBV, svgArea, svgDragBV){
-				var drag = new Drag(divDragBV, {
-					mxContainer: svgArea,
-					Handle: svgDragBV,
-					Limit: false,
-					onStart: function() {
-						document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
-					},
-					onMove: function() {
-						document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
-					},
-					onStop: function() {
-						document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
-					}
-				});
-				return "add vertical bar drag";
-			};
-			
+			};			
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
 		
@@ -504,7 +487,6 @@
 							case "Vertical Bar" :
 								CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 								$scope.bCtlFlag=true;
-								CtrlService.addVBarDrag("divDragBV", "svgArea", "svgDragBV");
 								break;
 							case "Horizontal Bar" :
 								CtrlService.addBarHCtl($scope.calcTo100);
