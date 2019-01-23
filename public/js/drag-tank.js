@@ -243,7 +243,7 @@ var drag = new Drag("divDragBV", {
     },
     onStop: function() {
         // document.getElementById("idShow").innerHTML = "结束移动";
-        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;  
     }
 });
 
@@ -252,14 +252,12 @@ var drag = new Drag("divDragBH", {
     Handle: "svgDragBH",
     Limit: false,
     onStart: function() {
-        // document.getElementById("idShow").innerHTML="开始拖放";
         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
     },
     onMove: function() {
         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
     },
     onStop: function() {
-        // document.getElementById("idShow").innerHTML = "结束移动";
         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
     }
 });

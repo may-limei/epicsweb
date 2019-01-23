@@ -50,25 +50,9 @@
 			//表示颜色的单词:参考<HTML颜色名> http://www.runoob.com/tags/html-colorname.html
 			//hihi,lolo,hi,lo: 取值范围：0-1。其中0表示0%，1表示100%.
 			factory.addBarCtrl = function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
-				// var editArea=document.getElementById('editArea');
-				// var svgArea=document.getElementById('svgArea');
-				// var divDragBV=document.createElement("div");
-				// divDragBV.setAttribute("id","divDragBV");
-				// divDragBV.setAttribute("style","position:absolute");
-				// svgArea.appendChild(divDragBV);
 				var divDragBV=document.getElementById("svgDragBV");
-				// var svgDragBV=document.createElementNS("http://www.w3.org/2000/svg","svg");
-				// svgDragBV.setAttribute("id","svgDragBV");
-				// svgDragBV.setAttribute("width","170px");
-				// svgDragBV.setAttribute("height","230px");
-				// svgDragBV.setAttribute("style","cursor:move");
-				// svgDragBV.setAttribute("xmlns","http://www.w3.org/2000/svg");
-				// divDragBV.appendChild(svgDragBV);
-
-
 				var barCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				barCtrl.setAttribute("id","barCtrl");
-				// barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",50,100)");
 				barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
 				svgDragBV.appendChild(barCtrl);
 
@@ -252,27 +236,11 @@
 				barText10.textContent="HI"
 				barCtrl.appendChild(barText10);
 				
-				// barCtrl.removeChild(barCtrlRect1);
 				return "create a bar control successfully"
 			};
 
 			factory.addBarHCtl = function(Xpos){//BarH-此处的控件本该动态创建并可修改的=====
-				// var svgArea=document.getElementById('svgArea');
-				// var divDragBH=document.createElement("div");
-				// divDragBH.setAttribute("id","divDragBH");
-				// divDragBH.setAttribute("style","position:absolute");
-				// svgArea.appendChild(divDragBH);
-				
-				// var svgDragBH=document.createElementNS("http://www.w3.org/2000/svg","svg");
-				// svgDragBH.setAttribute("id","svgDragBH");
-				// svgDragBH.setAttribute("width","420px");
-				// svgDragBH.setAttribute("height","60px");
-				// svgDragBH.setAttribute("style","cursor:move");
-				// svgDragBH.setAttribute("xmlns","http://www.w3.org/2000/svg");
-				// divDragBH.appendChild(svgDragBH);
 				var svgDragBH=document.getElementById("svgDragBH");
-
-				// var editArea=document.getElementById('editArea');
 				var BarHCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				BarHCtl.setAttribute("id","BarHCtl");
 				svgDragBH.appendChild(BarHCtl);
@@ -392,10 +360,9 @@
 			this.addBarHCtl=function(Xpos){
 				return AddCtrl.addBarHCtl(Xpos);
 			}
-
 			this.changeAttr=function(id,attr,val){
 				return SvgAttr.attr(id,attr,val);
-			};			
+			};		
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
 		
@@ -425,10 +392,6 @@
 			//表示控件是否被创建的标志位
 			$scope.bCtlFlag=false;
 			$scope.HbCtlFlag=false;
-			$scope.sizeWidth=170;
-			$scope.sizeHeight=230;
-			$scope.idsvgDrag="svgDragBV";
-			$scope.idctrlDrag="barCtrl";
 
 			// CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 			async.map(pvs.tankBars, function (item, callback) {
@@ -475,9 +438,9 @@
 					}
 					if($scope.HbCtlFlag){
 						SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100*4+",0)");
-					}	
+					}
 				})
-					//***end of $scope.$apply***//
+				//***end of $scope.$apply***//
 
 					$scope.createCtl=function(){
 						switch($scope.ctrlName){//不同控件创建时变量以数组表示控件名，同一控件创建了多个时也是用数组表示rect、text等元素名。此工作待完成。=====
@@ -491,11 +454,6 @@
 							case "Horizontal Bar" :
 								CtrlService.addBarHCtl($scope.calcTo100);
 								$scope.HbCtlFlag=true;
-								$scope.sizeWidth=170;
-								$scope.sizeHeight=230;
-								$scope.idsvgDrag="svgDragBH";
-								$scope.idctrlDrag="BarHCtl";
-								// SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100+",0)");
 								break;
 							case "Thermometer" :
 								;
@@ -537,9 +495,9 @@
 								break;
 							case "size" :
 								$scope.size=$scope.attrVal;
-								SvgAttr.attr($scope.idsvgDrag,"width",$scope.sizeWidth*$scope.size);
-								SvgAttr.attr($scope.idsvgDrag,"height",$scope.sizeHeight*$scope.size);
-								CtrlService.changeAttr($scope.idctrlDrag,"transform","matrix("+$scope.size+",0,0,"+$scope.size+",0,0)");
+								SvgAttr.attr("svgDragBV","width",170*$scope.size);
+								SvgAttr.attr("svgDragBV","height",230*$scope.size);
+								CtrlService.changeAttr("barCtrl","transform","matrix("+$scope.size+",0,0,"+$scope.size+",0,0)");
 								break;
 							case "backColor" :
 								$scope.backColor=$scope.attrVal;
