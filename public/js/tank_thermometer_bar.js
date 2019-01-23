@@ -278,8 +278,8 @@
 				
 				var BarHCtlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
 				BarHCtlRect1.setAttribute("id","BarHCtlRect1");
-				BarHCtlRect1.setAttribute("x","49.5");
-				BarHCtlRect1.setAttribute("y","149.5");
+				BarHCtlRect1.setAttribute("x","9.5");
+				BarHCtlRect1.setAttribute("y","9.5");
 				BarHCtlRect1.setAttribute("width","401");
 				BarHCtlRect1.setAttribute("height","26");
 				BarHCtlRect1.setAttribute("fill","rgb(200,245,242)");
@@ -292,13 +292,13 @@
 				BarHCtlPath1.setAttribute("fill","none");
 				BarHCtlPath1.setAttribute("stroke","black");
 				BarHCtlPath1.setAttribute("stroke-width","0.75");
-				BarHCtlPath1.setAttribute("d","M50 176v6 m80 -6v6 m80 -6v6 m80 -6v6 m80 -6v6 m80 -6v6 M66 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M146 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M226 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M306 176v3 m16 -3v3 m16 -3v3 m16 -3v3 M386 176v3 m16 -3v3 m16 -3v3 m16.5 -3v3");
+				BarHCtlPath1.setAttribute("d","M10 36v6 m80 -6v6 m80 -6v6 m80 -6v6 m80 -6v6 m80 -6v6 M26 36v3 m16 -3v3 m16 -3v3 m16 -3v3 M106 36v3 m16 -3v3 m16 -3v3 m16 -3v3 M186 36v3 m16 -3v3 m16 -3v3 m16 -3v3 M266 36v3 m16 -3v3 m16 -3v3 m16 -3v3 M346 36v3 m16 -3v3 m16 -3v3 m16.5 -3v3");
 				BarHCtl.appendChild(BarHCtlPath1);
 
 				var BarHCtlText1=document.createElementNS("http://www.w3.org/2000/svg","text");
 				BarHCtlText1.setAttribute("id","BarHCtlText1");
-				BarHCtlText1.setAttribute("x","46");
-				BarHCtlText1.setAttribute("y","194");
+				BarHCtlText1.setAttribute("x","6");
+				BarHCtlText1.setAttribute("y","54");
 				BarHCtlText1.setAttribute("font-size","12");
 				BarHCtlText1.setAttribute("font-family","Microsoft YaHei UI");
 				BarHCtlText1.setAttribute("fill","#333333");
@@ -309,8 +309,8 @@
 
 				var BarHCtlText2=document.createElementNS("http://www.w3.org/2000/svg","text");
 				BarHCtlText2.setAttribute("id","BarHCtlText2");
-				BarHCtlText2.setAttribute("x","122");
-				BarHCtlText2.setAttribute("y","194");
+				BarHCtlText2.setAttribute("x","82");
+				BarHCtlText2.setAttribute("y","54");
 				BarHCtlText2.setAttribute("font-size","12");
 				BarHCtlText2.setAttribute("font-family","Microsoft YaHei UI");
 				BarHCtlText2.setAttribute("fill","#333333");
@@ -321,8 +321,8 @@
 
 				var BarHCtlText3=document.createElementNS("http://www.w3.org/2000/svg","text");
 				BarHCtlText3.setAttribute("id","BarHCtlText3");
-				BarHCtlText3.setAttribute("x","202");
-				BarHCtlText3.setAttribute("y","194");
+				BarHCtlText3.setAttribute("x","162");
+				BarHCtlText3.setAttribute("y","54");
 				BarHCtlText3.setAttribute("font-size","12");
 				BarHCtlText3.setAttribute("font-family","Microsoft YaHei UI");
 				BarHCtlText3.setAttribute("fill","#333333");
@@ -333,8 +333,8 @@
 
 				var BarHCtlText4=document.createElementNS("http://www.w3.org/2000/svg","text");
 				BarHCtlText4.setAttribute("id","BarHCtlText4");
-				BarHCtlText4.setAttribute("x","282");
-				BarHCtlText4.setAttribute("y","194");
+				BarHCtlText4.setAttribute("x","242");
+				BarHCtlText4.setAttribute("y","54");
 				BarHCtlText4.setAttribute("font-size","12");
 				BarHCtlText4.setAttribute("font-family","Microsoft YaHei UI");
 				BarHCtlText4.setAttribute("fill","#333333");
@@ -345,8 +345,8 @@
 
 				var BarHCtlText5=document.createElementNS("http://www.w3.org/2000/svg","text");
 				BarHCtlText5.setAttribute("id","BarHCtlText5");
-				BarHCtlText5.setAttribute("x","362");
-				BarHCtlText5.setAttribute("y","194");
+				BarHCtlText5.setAttribute("x","322");
+				BarHCtlText5.setAttribute("y","54");
 				BarHCtlText5.setAttribute("font-size","12");
 				BarHCtlText5.setAttribute("font-family","Microsoft YaHei UI");
 				BarHCtlText5.setAttribute("fill","#333333");
@@ -357,8 +357,8 @@
 
 				var BarHCtlText6=document.createElementNS("http://www.w3.org/2000/svg","text");
 				BarHCtlText6.setAttribute("id","BarHCtlText6");
-				BarHCtlText6.setAttribute("x","438");
-				BarHCtlText6.setAttribute("y","194");
+				BarHCtlText6.setAttribute("x","398");
+				BarHCtlText6.setAttribute("y","54");
 				BarHCtlText6.setAttribute("font-size","12");
 				BarHCtlText6.setAttribute("font-family","Microsoft YaHei UI");
 				BarHCtlText6.setAttribute("fill","#333333");
@@ -373,7 +373,7 @@
 				BarHCtlPoly1.setAttribute("stroke","#666666");
 				BarHCtlPoly1.setAttribute("stroke-width","0.5");
 				BarHCtlPoly1.setAttribute("fill","rgb(197,125,204)");
-				BarHCtlPoly1.setAttribute("points","50 150, 56 162.5, 50 175, 44 162.5");
+				BarHCtlPoly1.setAttribute("points","10 10, 16 22.5, 10 35, 4 22.5");
 				BarHCtl.appendChild(BarHCtlPoly1);
 
 				return 0;
