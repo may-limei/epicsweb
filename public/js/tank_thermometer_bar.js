@@ -347,6 +347,97 @@
 
 				return 0;
 			};
+
+			factory.addThermometerCtl = function(Ypos){//BarH-此处的控件本该动态创建并可修改的=====
+				var svgDragTh=document.getElementById("svgDragTh");
+				var thermometerCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				thermometerCtl.setAttribute("id","thermometerCtl");
+				svgDragTh.appendChild(thermometerCtl);
+				
+				var thermometerCircle1=document.createElementNS("http://www.w3.org/2000/svg","circle");
+				thermometerCircle1.setAttribute("id","thermometerCircle1");
+				thermometerCircle1.setAttribute("cx","43.5");
+				thermometerCircle1.setAttribute("cy","209.4165");
+				thermometerCircle1.setAttribute("r","21");
+				thermometerCircle1.setAttribute("fill","rgb(255,30,32)");
+				thermometerCircle1.setAttribute("stroke","black");
+				thermometerCircle1.setAttribute("stroke-width","1");
+				thermometerCtl.appendChild(thermometerCircle1);
+
+				var thermometerCtlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect1.setAttribute("id","thermometerCtlRect1");
+				thermometerCtlRect1.setAttribute("x","35.5");
+				thermometerCtlRect1.setAttribute("y","40");
+				thermometerCtlRect1.setAttribute("width","16");
+				thermometerCtlRect1.setAttribute("height","150");
+				thermometerCtlRect1.setAttribute("rx","4");
+				thermometerCtlRect1.setAttribute("ry","4");
+				thermometerCtlRect1.setAttribute("fill","rgb(84,230,226)");
+				thermometerCtlRect1.setAttribute("stroke","black");
+				thermometerCtlRect1.setAttribute("stroke-width","1");
+				thermometerCtl.appendChild(thermometerCtlRect1);
+
+				var thermometerCtlRect2=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect2.setAttribute("id","thermometerCtlRect2");
+				thermometerCtlRect2.setAttribute("x","35.5");
+				thermometerCtlRect2.setAttribute("y","187.5");
+				thermometerCtlRect2.setAttribute("width","16");
+				thermometerCtlRect2.setAttribute("height","2.5");
+				thermometerCtlRect2.setAttribute("fill","rgb(84,230,226)");
+				thermometerCtlRect2.setAttribute("stroke","black");
+				thermometerCtlRect2.setAttribute("stroke-width","1");
+				thermometerCtl.appendChild(thermometerCtlRect2);
+
+				var thermometerCtlRect3=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect3.setAttribute("id","thermometerCtlRect3");
+				thermometerCtlRect3.setAttribute("x","36");
+				thermometerCtlRect3.setAttribute("y","187");
+				thermometerCtlRect3.setAttribute("width","15");
+				thermometerCtlRect3.setAttribute("height","4");
+				thermometerCtlRect3.setAttribute("fill","rgb(255,30,32)");
+				thermometerCtlRect3.setAttribute("stroke","none");
+				thermometerCtl.appendChild(thermometerCtlRect3);
+
+				var thermometerCtlRect4=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect4.setAttribute("id","thermometerCtlRect4");
+				thermometerCtlRect4.setAttribute("transform","matrix(1,0,0,-1,0,190)")
+				thermometerCtlRect4.setAttribute("x","36");
+				thermometerCtlRect4.setAttribute("y","0");
+				thermometerCtlRect4.setAttribute("width","15");
+				thermometerCtlRect4.setAttribute("height",Ypos*1.4);//显示值的红色矩柱100=>140
+				thermometerCtlRect4.setAttribute("fill","rgb(255,30,32)");
+				thermometerCtlRect4.setAttribute("stroke","none");
+				thermometerCtl.appendChild(thermometerCtlRect4);
+
+
+
+
+
+
+
+			// 	<g id="thermometer1" transform="matrix(1,0,0,1,-10,0)">
+			// 	<circle cx="120" cy="575" r="21" fill="rgb(255,0,0)" stroke="black" stroke-width="1"></circle>
+			// 	<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(91,241,237)" stroke="black" stroke-width="1"></rect>
+			// 	
+			//<rect x="112" y="550.5835" width="16" height="5" fill="rgb(91,241,237)" stroke="black" stroke-width="1"></rect>
+			// 	<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(91,241,237)" stroke="none"></rect>
+			// 	<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,0,0)" stroke="none"></rect>
+			// 	<g transform="translate(112.5,556.0835) scale(1,-1)">
+			// 		<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="{{calcTo100*1.4}}" fill="rgb(255,0,0)" stroke="none"></rect>
+			// 		<path d="M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4" fill="none" stroke="black" stroke-width="0.75" />
+			// 	</g>
+			// 	<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
+			// 	<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
+			// 	<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
+			// 	<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">{{calcTo100}}</text>
+			// 	<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">°C</text>
+			// </g>
+
+
+
+
+				return 0;
+			};
 			/* end - creatSVG */
 			return factory;
 		});
@@ -356,10 +447,13 @@
 		app.service('CtrlService',function(AddCtrl,SvgAttr){
 			this.addBarCtrl=function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
 				return AddCtrl.addBarCtrl( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo );
-			}
+			};
 			this.addBarHCtl=function(Xpos){
 				return AddCtrl.addBarHCtl(Xpos);
-			}
+			};
+			this.addThermometerCtl=function(Ypos){
+				return AddCtrl.addThermometerCtl(Ypos);
+			};
 			this.changeAttr=function(id,attr,val){
 				return SvgAttr.attr(id,attr,val);
 			};		
@@ -376,7 +470,7 @@
 			$scope.log=MathCalc.log(100);
 			$scope.attrName="size";
 			$scope.attrVal="1";
-			$scope.ctrlName="Vertical Bar";
+			$scope.ctrlName="Thermometer";
 			$scope.ctrls=["Vertical Bar", "Horizontal Bar", "Thermometer", "Tank"];
 			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
 			$scope.maxVal=100;
@@ -390,8 +484,9 @@
 			$scope.lo=30;
 
 			//表示控件是否被创建的标志位
-			$scope.bCtlFlag=false;
-			$scope.HbCtlFlag=false;
+			$scope.bCtrlFlag=false;
+			$scope.HbCtrlFlag=false;
+			$scope.ThCtrlFlag=false;
 
 			// CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
 			async.map(pvs.tankBars, function (item, callback) {
@@ -425,7 +520,7 @@
 						}
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
-					if($scope.bCtlFlag){
+					if($scope.bCtrlFlag){
 						if($scope.calcTo100<=parseInt($scope.lolo) || $scope.calcTo100>=parseInt($scope.hihi)){
 							CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
 						} else if($scope.calcTo100<=parseInt($scope.lo) || $scope.calcTo100>=parseInt($scope.hi)){
@@ -436,8 +531,11 @@
 						//编辑区柱体填充更新
 						CtrlService.changeAttr("barCtrlRect2","height",(parseInt($scope.calcTo100)-parseInt($scope.minVal))*200/(parseInt($scope.maxVal)-parseInt($scope.minVal)));
 					}
-					if($scope.HbCtlFlag){
+					if($scope.HbCtrlFlag){
 						SvgAttr.attr("BarHCtlPoly1","transform","matrix(1,0,0,1,"+$scope.calcTo100*4+",0)");
+					}
+					if($scope.ThCtrlFlag){
+						SvgAttr.attr("thermometerCtlRect4","height",$scope.calcTo100*1.4);
 					}
 				})
 				//***end of $scope.$apply***//
@@ -449,14 +547,15 @@
 								break;
 							case "Vertical Bar" :
 								CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
-								$scope.bCtlFlag=true;
+								$scope.bCtrlFlag=true;
 								break;
 							case "Horizontal Bar" :
 								CtrlService.addBarHCtl($scope.calcTo100);
-								$scope.HbCtlFlag=true;
+								$scope.HbCtrlFlag=true;
 								break;
 							case "Thermometer" :
-								;
+								CtrlService.addThermometerCtl($scope.calcTo100);
+								$scope.ThCtrlFlag=true;
 								break;
 							default :
 								break;

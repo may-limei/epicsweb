@@ -261,3 +261,33 @@ var drag = new Drag("divDragBH", {
         document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
     }
 });
+
+var drag = new Drag("divDragTh", {
+    mxContainer: "svgArea",
+    Handle: "svgDragTh",
+    Limit: false,
+    onStart: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onMove: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onStop: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    }
+});
+
+var drag = new Drag("divDragTank", {
+    mxContainer: "svgArea",
+    Handle: "svgDragTank",
+    Limit: false,
+    onStart: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onMove: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onStop: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    }
+});
