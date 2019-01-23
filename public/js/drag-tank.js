@@ -2,7 +2,7 @@
 var isIE = (document.all) ? true: false;
 
 var $ = function(id) {
-    return "string" == typeof id ? document.getElementById(id) : id;
+    return "string" === typeof id ? document.getElementById(id) : id;
 };
 
 var Class = {
@@ -230,9 +230,9 @@ Drag.prototype = {
 };
 
 //以下是调用以上插件实现拖动
-var drag = new Drag("idDrag", {
-    mxContainer: "idContainer",
-    Handle: "barCtrl",
+var drag = new Drag("divDragBV", {
+    mxContainer: "svgArea",
+    Handle: "svgDragBV",
     Limit: false,
     onStart: function() {
         // document.getElementById("idShow").innerHTML="开始拖放";

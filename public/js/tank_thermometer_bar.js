@@ -55,12 +55,27 @@
 			//表示颜色的单词:参考<HTML颜色名> http://www.runoob.com/tags/html-colorname.html
 			//hihi,lolo,hi,lo: 取值范围：0-1。其中0表示0%，1表示100%.
 			factory.addBarCtrl = function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
-				var editArea=document.getElementById('editArea');
+				// var editArea=document.getElementById('editArea');
+				// var svgArea=document.getElementById('svgArea');
+				// var divDragBV=document.createElement("div");
+				// divDragBV.setAttribute("id","divDragBV");
+				// divDragBV.setAttribute("style","position:absolute");
+				// svgArea.appendChild(divDragBV);
+var divDragBV=document.getElementById("svgDragBV");
+				// var svgDragBV=document.createElementNS("http://www.w3.org/2000/svg","svg");
+				// svgDragBV.setAttribute("id","svgDragBV");
+				// svgDragBV.setAttribute("width","170px");
+				// svgDragBV.setAttribute("height","230px");
+				// svgDragBV.setAttribute("style","cursor:move");
+				// svgDragBV.setAttribute("xmlns","http://www.w3.org/2000/svg");
+				// divDragBV.appendChild(svgDragBV);
+
+
 				var barCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				barCtrl.setAttribute("id","barCtrl");
 				// barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",50,100)");
 				barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
-				editArea.appendChild(barCtrl);
+				svgDragBV.appendChild(barCtrl);
 
 				var barCtrlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
 				barCtrlRect1.setAttribute("id","barCtrlRect1");
@@ -253,11 +268,11 @@
 //start-BarH-此处的控件本该动态创建并可修改的=====
 		app.service('BarHCtl', function(){
 			this.BarHCtl = function(Xpos){
-				var Container=document.getElementById('idContainer');
+				var svgArea=document.getElementById('svgArea');
 				var divDragBH=document.createElement("div");
 				divDragBH.setAttribute("id","divDragBH");
 				divDragBH.setAttribute("style","position:absolute");
-				Container.appendChild(divDragBH);
+				svgArea.appendChild(divDragBH);
 				
 				var svgDragBH=document.createElementNS("http://www.w3.org/2000/svg","svg");
 				svgDragBH.setAttribute("id","svgDragBH");
@@ -379,10 +394,10 @@
 //start-Thermometer-此处的控件本该动态创建并可修改的=====
 		app.service('ThermometerCtl', function(){
 			this.ThermometerCtl = function(){
-				var editArea=document.getElementById('editArea');
+				// var editArea=document.getElementById('editArea');
 				var ThermometerCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				ThermometerCtl.setAttribute("id","ThermometerCtl");
-				editArea.appendChild(ThermometerCtl);
+				// editArea.appendChild(ThermometerCtl);
 
 
 
@@ -393,10 +408,10 @@
 //start-Tank-此处的控件本该动态创建并可修改的=====
 		app.service('TankCtl', function(){
 			this.TankCtl = function(){
-				var editArea=document.getElementById('editArea');
+				// var editArea=document.getElementById('editArea');
 				var TankCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				TankCtl.setAttribute("id","TankCtl");
-				editArea.appendChild(TankCtl);
+				// editArea.appendChild(TankCtl);
 
 				
 				return 0;
@@ -415,21 +430,9 @@
 			
 		});
 		/* end - 自定义服务Service =>  创建和修改svg元素*/
-
-		/* start - 自定义服务Service =>  检测ID为id的元素是否存在*/
-		app.service('isEleExit',function(){
-			this.isEleExit=function(id){
-				if(document.getElementById(id)!=="undefined"){
-					return 1;
-				} else {
-					return 0;
-				}
-			};
-		});
-		/* start - 自定义服务Service =>  检测ID为id的元素是否存在*/
 		
 		/* start - tankBarsCtrl */
-		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont, BarHCtl, ThermometerCtl, TankCtl, isEleExit) {
+		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService, TextCont, BarHCtl, ThermometerCtl, TankCtl) {
 			$scope.calcTo100=100;
 			$scope.calcTo100P=51.2;
 			$scope.calcTo1000=1000;
@@ -487,7 +490,6 @@
 						}
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
-					// console.log(isEleExit.isEleExit("barCtrl"));
 					if($scope.bCtlFlag){
 						if($scope.calcTo100<=parseInt($scope.lolo) || $scope.calcTo100>=parseInt($scope.hihi)){
 							CtrlService.changeAttr("barCtrlRect3","stroke","rgb(255,0,0)");
@@ -559,7 +561,9 @@
 								break;
 							case "size" :
 								$scope.size=$scope.attrVal;
-								CtrlService.changeAttr("barCtrl","transform","matrix("+$scope.size+",0,0,"+$scope.size+",50,100)");
+								SvgAttr.attr("svgDragBV","width",170*$scope.size);
+								SvgAttr.attr("svgDragBV","height",230*$scope.size);
+								CtrlService.changeAttr("barCtrl","transform","matrix("+$scope.size+",0,0,"+$scope.size+",0,0)");
 								break;
 							case "backColor" :
 								$scope.backColor=$scope.attrVal;

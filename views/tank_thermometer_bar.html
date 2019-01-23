@@ -642,7 +642,7 @@
 				</div>
 				<!-- END PAGE HEADER-->
 				
-				<div class="row-fluid tankContainer" ng-controller="tankBarsCtrl">
+				<div class="row-fluid tankContainer" ng-controller="tankBarsCtrl" style="position:relative;">
 					<div class="span8 thumbnail" style="overflow:hidden; height:662px; background-color:aliceblue;">
 						<!-- <svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow-x:scroll; overflow-y:scroll; border: 1px solid #b4cef8;"> -->
 							<!-- <svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #b4cef8;"> -->
@@ -876,12 +876,14 @@
 					</div>
 
 					<div id="idContainer" class="span4 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
-						<svg width="560px" height="85px" xmlns="http://www.w3.org/2000/svg">
+						<svg width="560px" height="80px" xmlns="http://www.w3.org/2000/svg">
 							<text x="15" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>											
 						</svg>
-						<div id="idDrag" style="position: absolute;">
-							<svg id="editArea" width="170" height="230" style="cursor:move;" xmlns="http://www.w3.org/2000/svg">									
-							</svg>
+						<div id="svgArea" style="position:relative; top:0px; left:0px;">
+							<div id="divDragBV" style="position:absolute;">
+								<svg id="svgDragBV" width="170" height="230" style="cursor:move;" xmlns="http://www.w3.org/2000/svg">									
+								</svg>
+							</div>
 						</div>
 						<div style="position: absolute; width:560px; top:-5px; left:0px;">
 							<label style="position:absolute; top:60px; left:20px; font-weight:bold; color:#666666;">控件</label>
@@ -893,9 +895,9 @@
 							<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:419px; color:#666666; height:20px; width:90px;" />
 							<button ng-click="updateEdit()" class="btn" style="position:absolute; top:53px; left:524px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
 						</div>
-						<div style="position:absolute; bottom:-5px; right:10px;" >
-							<p>绝对坐标：&nbsp&nbsp<span id="idShow">left:0;&nbsp top:0</span></p>
-						</div>
+					</div>
+					<div style="position:absolute; bottom:8px; right:23px;" >
+						<p>绝对坐标：&nbsp&nbsp<span id="idShow">left:0;&nbsp top:0</span></p>
 					</div>
 				</div>
 				</div>
