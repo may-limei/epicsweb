@@ -12,7 +12,7 @@
 
 	<meta charset="utf-8" />
 
-	<title>TMSR | EPICS - <%= title %></title>
+	<title><%= title %></title>
 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -78,7 +78,7 @@
 
 <!-- BEGIN BODY -->
 
-<body class="page-header-fixed" ng-app="myApp" ng-controller="myCtrl" onload="load()">
+<body class="page-header-fixed ng-scope page-sidebar-closed" ng-app="myApp" ng-controller="myCtrl" onload="load()">
 
 	<!-- BEGIN HEADER -->
 
@@ -281,7 +281,7 @@
 
 					<ul class="sub-menu">
 
-						<li class="active">
+						<li>
 
 							<a href="/widget_tank">
 
@@ -297,8 +297,8 @@
 
 						</li>
 						
-						<li>
-							<a href="widget_led.html">
+						<li class="active">
+							<a href="widget_led">
 												
 						    	LED</a>
 												
@@ -306,7 +306,7 @@
 												
 						<li>
 												
-							<a href="tank_thermometer_bar">
+							<a href="widget_tank_thermometer_bar">
 												
 								Tank/Thermometer/Bar</a>
 												
@@ -580,7 +580,7 @@
 									<span>Sidebar</span>
 		
 									<select class="sidebar-option m-wrap small">
-		
+										<div class="span9" style="overflow:scroll;">
 										<option value="fixed">Fixed</option>
 		
 										<option value="default" selected>Default</option>
@@ -632,307 +632,487 @@
 		
 							<li>
 		
-								<a href="/widget_tank"> Tank</a>
+								<a href="/widget_tank">Tank/Thermometer/Bar</a>
 		
 							</li>
-		
 						</ul>
-		
 						<!-- END PAGE TITLE & BREADCRUMB-->
-		
+
 					</div>
-		
 				</div>
-		
 				<!-- END PAGE HEADER-->
-
-				<div class="alert">
-						LED可显示开关量。
-				</div>
-				<div class="row-fluid tankContainer" ng-controller="tankCtrl">
-					<div class="span9">
-						<svg width="1250px" height="1250px" viewBox="0 0 1250 1250" xmlns="http://www.w3.org/2000/svg" style="background-color:aliceblue; overflow:scroll; border: 1px solid #b4cef8;">
-							<defs>
-								<linearGradient id="tankGradient">
-									<stop offset="0%" style="stop-color:{{tankColor}};" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:{{tankColor}};" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank">
-							</symbol>
-
-							<text x="225" y="45" style="font-size:1.5em; text-anchor:start;">属性测试:</text>
-							<use x="0" y="0" xlink:href="#tank" transform="scale({{tankWidth/160}}, {{tankHeight/200}})"></use>
-
-							<text x="725" y="30" style="font-size:1.5em; text-anchor:start;"> &nbsp&nbsp EPICS连接测试:</text>
-							<text x="725" y="56" style="font-size:1.5em; text-anchor:start;">（tankValue = Host:ai1 * 15 + 10）</text>
-							<g id="tank11"></g>
-
-							<text x="25" y="360" style="font-size:1.5em; text-anchor:start;">pvValue,HIHI,HI,LO,LOLO 测试:</text>
-							<g id="tank1"></g>
-							<g id="tank2"></g>
-							<g id="tank3"></g>
-							<g id="tank4"></g>
-							<g id="tank5"></g>
-							<g id="tank6"></g>
-
-							<text x="25" y="680" style="font-size:1.5em; text-anchor:start;">tankWidth,tankHeight,pvMax,pvMin,tankColor 测试:</text>
-							<symbol id="tank7"></symbol>
-							<use x="30" y="470" xlink:href="#tank7" transform="scale({{240/160}}, {{300/200}})"></use>
-
-							<defs>
-								<linearGradient id="tankGradient8">
-									<stop offset="0%" style="stop-color:blue;" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:blue;" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank8"></symbol>
-							<use x="130" y="560" xlink:href="#tank8" transform="scale({{400/160}}, {{260/200}})"></use>
+				
+				<div class="row-fluid tankContainer" ng-controller="tankBarsCtrl" style="position:relative;">
+					<div class="span8 thumbnail" style="overflow:hidden; height:662px; background-color:aliceblue;">
+							<svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg">
+							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">LED控件用开/关来显示数字量0/1。</text>
+							<circle id="led1" cx="300" cy="150" r="25" fill="rgb(0,123,12)" stroke="#9999999" stroke-width="1"/>
 							
-							<defs>
-								<linearGradient id="tankGradient9">
-									<stop offset="0%" style="stop-color:cadetblue" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:cadetblue;" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank9"></symbol>
-							<use x="630" y="615" xlink:href="#tank9" transform="scale(1.2,1.2)"></use>
-
-							<defs>
-								<linearGradient id="tankGradient10">
-									<stop offset="0%" style="stop-color:firebrick" />
-									<stop offset="50%" style="stop-color:#ddd;" />
-									<stop offset="100%" style="stop-color:firebrick;" />
-								</linearGradient>
-							</defs>
-							<symbol id="tank10"></symbol>
-							<use x="1300" y="965" xlink:href="#tank10" transform="scale(0.8, 0.8)"></use>
-
 						</svg>
 					</div>
 
-					<div class="span3">
-						<div class="portlet box blue">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="icon-cogs"></i>
-									Properties
-								</div>
-							</div>
+					<div id="idContainer" class="span4 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
+						<svg width="560px" height="80px" xmlns="http://www.w3.org/2000/svg">
+							<text x="15" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>											
+						</svg>
+						<div id="svgArea" style="position:relative; top:0px; left:0px;">
 							
-							<div class="portlet-body" style="position:relative; background-color:aliceblue; height:1192px">
-								<table class="table table-bordered table-striped" style="border: 0px solid #ddd;">
-									<tbody>
-										<tr>
-											<label style="position:absolute; top:0.5em; left:0.5em; width:6em; height:1em; font-size:1.75em; color:#333"><strong>widgetName:</strong></label>
-											<label style="position:absolute; top:0.5em; left:6.5em; width:8em; height:1em; font-size:1.75em; color:gray"> <strong>{{widgetName}}</strong></label>
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:2.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvName:</label>
-											<input type="text" ng-model="tankName"  placeholder="pv变量名"  style="position:absolute; top:2.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:4.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvValue:</label>
-											<input type="text" ng-model="tankValue" placeholder="注：液位=pvValue/(pvMax-pvMin)" style="position:absolute; top:5.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:6.5em; left:0.5em; width:4em; height:1em; font-size:1.5em; color:#333">pvMax:</label>
-											<input type="text" ng-model="tankMax"  placeholder="刻度最大值"  style="position:absolute; top:7.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:8.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">pvMin:</label>
-											<input type="text" ng-model="tankMin" placeholder="刻度最小值" style="position:absolute; top:10.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:10.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankColor:</label>
-											<input type="text" ng-model="tankColor" placeholder="输入颜色，如red，#123，#123456" style="position:absolute; top:12.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:12.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankWidth:</label>
-											<input type="text" ng-model="tankWidth" placeholder="控件宽度(px)" style="position:absolute; top:15.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:14.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankHeight:</label>
-											<input type="text" ng-model="tankHeight" placeholder="控件高度(px)" style="position:absolute; top:17.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:16.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankXpos:</label>
-											<input type="text" ng-model="tankXpos" placeholder="在画布X轴的坐标(左上角为(0,0)px)" style="position:absolute; top:20.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:18.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">tankYpos:</label>
-											<input type="text" ng-model="tankYpos" placeholder="在画布Y轴的坐标(左上角为(0,0)px)" style="position:absolute; top:22.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:20.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level HIHI:</label>
-											<input type="text" ng-model="tankHIHI" placeholder="level HIHI" style="position:absolute; top:25.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:22.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level HI:</label>
-											<input type="text" ng-model="tankHI" placeholder="level HIHI" style="position:absolute; top:27.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:24.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level LO:</label>
-											<input type="text" ng-model="tankLO" placeholder="level HIHI" style="position:absolute; top:30.25em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-										<tr>
-											<label style="position:absolute; top:26.5em; left:0.5em; width:5em; height:1em; font-size:1.5em; color:#333">level LOLO:</label>
-											<input type="text" ng-model="tankLOLO" placeholder="level HIHI" style="position:absolute; top:32.75em; left:6.8em; width:15em; height:1.3em; font-size:1.2em; color:gray" />
-											<br />
-										</tr>
-									</tbody>
-								</table>
-							</div>
+							
+						</div>
+						<div style="position: absolute; width:560px; top:-5px; left:0px;">
+							<label style="position:absolute; top:60px; left:20px; font-weight:bold; color:#666666;">控件</label>
+							<select id="ctrlName" ng-model="ctrlName" ng-options="ctrl for ctrl in ctrls" style="position:absolute; top:55px; left:51px; color:#666666; height:30px; width:118px;" ></select>
+							<button ng-click="createCtl()" class="btn" style="position:absolute; top:53px; left:170px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
+							<label style="position:absolute; top:60px; left:226px; font-weight:bold; color:#666666;">属性</label>
+							<select ng-model="attrName" ng-options="attr for attr in attrs" style="position:absolute; top:55px; left:258px; color:#666666; height:30px; width:100px;" ></select>
+							<label style="position:absolute; top:60px; left:373px; font-weight:bold; color:#666666;">属性值</label>
+							<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:419px; color:#666666; height:20px; width:90px;" />
+							<button ng-click="updateEdit()" class="btn" style="position:absolute; top:53px; left:524px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
 						</div>
 					</div>
+					<div style="position:absolute; bottom:8px; right:23px;" >
+						<p>绝对坐标：&nbsp&nbsp<span id="idShow">left:0;&nbsp top:0</span></p>
+					</div>
 				</div>
-
-		
 				</div>
 	
-			<!-- END PAGE CONTAINER-->
+		</div>	
+		<!-- END PAGE CONTAINER-->
 		
-				</div>
-
-		<!-- END PAGE -->    
+	</div>
+	<!-- END PAGE -->    
 
 			</div>
 		</div>
 	</div>
 	<!-- END CONTAINER -->
-			
-		
+					
 	<!-- BEGIN FOOTER -->
-
 	<div class="footer">
-
 		<div class="footer-inner">
-
 			2017 &copy; TMSR 钍基熔盐堆核能系统.
-
 		</div>
-
-		<div class="footer-tools">
-
-			<span class="go-top">
-
-			<i class="icon-angle-up"></i>
-
-			</span>
-
-		</div>
-
 	</div>
-
 	<!-- END FOOTER -->
 
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-
 	<!-- BEGIN CORE PLUGINS -->
-
 	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
-
 	<!-- <script src="media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script> -->
-
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-
 	<!-- <script src="media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>       -->
-
 	<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--[if lt IE 9]>
-
 	<script src="media/js/excanvas.min.js"></script>
-
 	<script src="media/js/respond.min.js"></script>  
-
 	<![endif]-->   
 
 	<!-- <script src="media/js/jquery.slimscroll.min.js" type="text/javascript"></script> -->
-
 	<!-- <script src="media/js/jquery.blockui.min.js" type="text/javascript"></script>   -->
-
 	<!-- <script src="media/js/jquery.cookie.min.js" type="text/javascript"></script> -->
-
 	<!-- <script src="media/js/jquery.uniform.min.js" type="text/javascript" ></script> -->
 
 	<!-- END CORE PLUGINS -->
 
+	<script src="js/drag-tank.js"></script>
 
 
-	<script>
+<script>
+//缺少屏幕自适应代码
+
+		//socket模块和epics变量模块定义
 		var serverIP="10.10.33.102";
 		var socket = io.connect(serverIP+':80');
-		var pvs={ai:[{pvname:"may:ai1"},{pvname:"may:ai2"},{pvname:"may:ai3"},{pvname:"may:compressExample"}],
-		    ao:[{pvname:"may:ao1"}, {pvname:"may:ao2"}, {pvname:"may:ao3"}]
+		var pvs = {
+			tankBars:[
+				{ pvname: "may:calcTo100"}, { pvname: "may:calcTo100P"}, { pvname: "may:calcTo1000" }]
 		}
 
+		/* start - angularJS script */
 		var app = angular.module('myApp', []);
-		app.controller('myCtrl', function($scope, $http) {   
+		app.controller('myCtrl', function ($scope, $http) {
 			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
-			$http.jsonp(myUrl).success(function(response) {
+			$http.jsonp(myUrl).success(function (response) {
 				$scope.manual = response;
-				// console.log("when");
-				//     console.log(response);
-			});		
+			});
 		});
-		app.controller('tankCtrl', function($scope) { 
-			$scope.widgetName="tank"; 
-			$scope.tankName="pv0";
-			$scope.tankValue=80;
-			$scope.tankWidth=160; 
-			$scope.tankHeight=200;
-			$scope.tankXpos="260";
-			$scope.tankYpos="75";
-			$scope.tankColor="orange";
-			$scope.tankMax="200";
-			$scope.tankMin="0";
-			$scope.tankHIHI=180;
-			$scope.tankHI=170;
-			$scope.tankLO=30;
-			$scope.tankLOLO=20;
 
-			$scope.tankValue11=10;
+		/* start - 自定义服务Service => 计算以10为底x的对数:MathCalc.log(x) */
+		app.service('MathCalc', function(){
+			this.log = function(a){
+				return Math.log(a)/Math.log(10);
+			};
+		});
+		/* end - 自定义服务Service => 计算以10为底x的对数:MathCalc.log(x) */
 
-			
-		async.map(pvs.ai,function(item,callback){ 
-			socket.on(item.pvname, function (data) {
-				if(item.pvname == "may:ai1"){
-					$scope.$apply(function(){  //手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.tankValue发生变化了。详见腾讯课堂教程《$scope》节
-						$scope.tankValue11=data*15+10;
-					})
-				}
-				// console.log(item.pvname); 
-				// console.log("data is "+data);
-				// console.log("$scope.tankValue11 is "+$scope.tankValue11);
-			 });
+		/* start - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
+		app.factory('SvgAttr', function(){
+			var factory = {};
+			factory.attr = function(id,attr,val){
+				document.getElementById(id).setAttribute(attr,val);//rgb(246,136,46)
+				return 0;
+			};
+			factory.textCont = function(id,text){
+				document.getElementById(id).textContent=text;//rgb(246,136,46)
+				return 0;
+			};
+			return factory;
+		});
+		/* end - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
+
+		/* start - factory - AddCtrl      <Vertical Bar> */
+		app.factory('AddCtrl', function(){
+			var factory = {};
+			/* start - creatSVG */
+			//size修改整个控件.取值要求：大于0（小于0时反转变化）
+			//backColor修改控件背景色；color修改控件填充色
+			//背景色/填充色输入要求为表示颜色的字符串，有四种表示方式：1. 三位十六进制数#f00; 2. 六位十六进制数#ff0000; 3. rgb(255,0,0)，括号是英文; 4. 表示颜色的单词,red.
+			//表示颜色的单词:参考<HTML颜色名> http://www.runoob.com/tags/html-colorname.html
+			//hihi,lolo,hi,lo: 取值范围：0-1。其中0表示0%，1表示100%.
+			factory.addBarCtrl = function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
+				var divDragBV=document.getElementById("svgDragBV");
+				var barCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				barCtrl.setAttribute("id","barCtrl");
+				barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
+				svgDragBV.appendChild(barCtrl);
+
+				var barCtrlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				barCtrlRect1.setAttribute("id","barCtrlRect1");
+				barCtrlRect1.setAttribute("x","65");
+				barCtrlRect1.setAttribute("y","17");
+				barCtrlRect1.setAttribute("width","51");
+				barCtrlRect1.setAttribute("height","201");
+				barCtrlRect1.setAttribute("fill",backColor);
+				barCtrlRect1.setAttribute("stroke","black");
+				barCtrlRect1.setAttribute("stroke-width","0.75");
+				barCtrl.appendChild(barCtrlRect1);
+
+				return "create a bar control successfully"
+			};
+
+			factory.addBarHCtl = function(Xpos){//BarH-此处的控件本该动态创建并可修改的=====
+				var svgDragBH=document.getElementById("svgDragBH");
+				var BarHCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				BarHCtl.setAttribute("id","BarHCtl");
+				svgDragBH.appendChild(BarHCtl);
 				
-		  }, function(err,results){
-		    callback(err,results); 
-		   //  console.log(results);
-		  });
+				var BarHCtlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				BarHCtlRect1.setAttribute("id","BarHCtlRect1");
+				BarHCtlRect1.setAttribute("x","9.5");
+				BarHCtlRect1.setAttribute("y","9.5");
+				BarHCtlRect1.setAttribute("width","401");
+				BarHCtlRect1.setAttribute("height","26");
+				BarHCtlRect1.setAttribute("fill","rgb(200,245,242)");
+				BarHCtlRect1.setAttribute("stroke","black");
+				BarHCtlRect1.setAttribute("stroke-width","0.75");
+				BarHCtl.appendChild(BarHCtlRect1);
+
+				return 0;
+			};
+
+			factory.addThermometerCtl = function(hei,temp){//BarH-此处的控件本该动态创建并可修改的=====
+				var svgDragTh=document.getElementById("svgDragTh");
+				var thermometerCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				thermometerCtl.setAttribute("id","thermometerCtl");
+				svgDragTh.appendChild(thermometerCtl);
+				
+				var thermometerCircle1=document.createElementNS("http://www.w3.org/2000/svg","circle");
+				thermometerCircle1.setAttribute("id","thermometerCircle1");
+				thermometerCircle1.setAttribute("cx","43.5");
+				thermometerCircle1.setAttribute("cy","209.4165");
+				thermometerCircle1.setAttribute("r","21");
+				thermometerCircle1.setAttribute("fill","rgb(255,30,32)");
+				thermometerCircle1.setAttribute("stroke","black");
+				thermometerCircle1.setAttribute("stroke-width","1");
+				thermometerCtl.appendChild(thermometerCircle1);
+
+				var thermometerCtlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect1.setAttribute("id","thermometerCtlRect1");
+				thermometerCtlRect1.setAttribute("x","35.5");
+				thermometerCtlRect1.setAttribute("y","40");
+				thermometerCtlRect1.setAttribute("width","16");
+				thermometerCtlRect1.setAttribute("height","150");
+				thermometerCtlRect1.setAttribute("rx","4");
+				thermometerCtlRect1.setAttribute("ry","4");
+				thermometerCtlRect1.setAttribute("fill","rgb(100,241,236)");
+				thermometerCtlRect1.setAttribute("stroke","black");
+				thermometerCtlRect1.setAttribute("stroke-width","1");
+				thermometerCtl.appendChild(thermometerCtlRect1);
+
+				var thermometerCtlRect2=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect2.setAttribute("id","thermometerCtlRect2");
+				thermometerCtlRect2.setAttribute("x","35.5");
+				thermometerCtlRect2.setAttribute("y","187.5");
+				thermometerCtlRect2.setAttribute("width","16");
+				thermometerCtlRect2.setAttribute("height","2.5");
+				thermometerCtlRect2.setAttribute("fill","rgb(84,230,226)");
+				thermometerCtlRect2.setAttribute("stroke","black");
+				thermometerCtlRect2.setAttribute("stroke-width","1");
+				thermometerCtl.appendChild(thermometerCtlRect2);
+
+				var thermometerCtlRect3=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect3.setAttribute("id","thermometerCtlRect3");
+				thermometerCtlRect3.setAttribute("x","36");
+				thermometerCtlRect3.setAttribute("y","187");
+				thermometerCtlRect3.setAttribute("width","15");
+				thermometerCtlRect3.setAttribute("height","4");
+				thermometerCtlRect3.setAttribute("fill","rgb(255,30,32)");
+				thermometerCtlRect3.setAttribute("stroke","none");
+				thermometerCtl.appendChild(thermometerCtlRect3);
+
+				var thermometerCtlRect4=document.createElementNS("http://www.w3.org/2000/svg","rect");
+				thermometerCtlRect4.setAttribute("id","thermometerCtlRect4");
+				thermometerCtlRect4.setAttribute("transform","matrix(1,0,0,-1,0,190)")
+				thermometerCtlRect4.setAttribute("x","36");
+				thermometerCtlRect4.setAttribute("y","0");
+				thermometerCtlRect4.setAttribute("width","15");
+				thermometerCtlRect4.setAttribute("height",hei*1.4);//显示值的红色矩柱100=>140
+				thermometerCtlRect4.setAttribute("fill","rgb(255,30,32)");
+				thermometerCtlRect4.setAttribute("stroke","none");
+				thermometerCtl.appendChild(thermometerCtlRect4);
+
+				var thermometerCtlPath1=document.createElementNS("http://www.w3.org/2000/svg","path");
+				thermometerCtlPath1.setAttribute("id","thermometerCtlPath1");
+				thermometerCtlPath1.setAttribute("fill","none");
+				thermometerCtlPath1.setAttribute("stroke","#333333");
+				thermometerCtlPath1.setAttribute("stroke-width","0.75");
+				thermometerCtlPath1.setAttribute("transform","matrix(1,0,0,-1,36,190)");
+				thermometerCtlPath1.setAttribute("d","M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4");
+				thermometerCtl.appendChild(thermometerCtlPath1);
+
+				var thermometerCtlText1=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText1.setAttribute("id","thermometerCtlText1");
+				thermometerCtlText1.setAttribute("x","25");
+				thermometerCtlText1.setAttribute("y","195");
+				thermometerCtlText1.setAttribute("font-size","12");
+				thermometerCtlText1.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText1.setAttribute("fill","#333333");
+				thermometerCtlText1.setAttribute("stroke","#333333");
+				thermometerCtlText1.setAttribute("stroke-width","0.25");
+				thermometerCtlText1.setAttribute("text-anchor","end");
+				thermometerCtlText1.textContent="0";
+				thermometerCtl.appendChild(thermometerCtlText1);
+
+				var thermometerCtlText2=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText2.setAttribute("id","thermometerCtlText2");
+				thermometerCtlText2.setAttribute("x","25");
+				thermometerCtlText2.setAttribute("y","125");
+				thermometerCtlText2.setAttribute("font-size","12");
+				thermometerCtlText2.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText2.setAttribute("fill","#333333");
+				thermometerCtlText2.setAttribute("stroke","#333333");
+				thermometerCtlText2.setAttribute("stroke-width","0.25");
+				thermometerCtlText2.setAttribute("text-anchor","end");
+				thermometerCtlText2.textContent="50";
+				thermometerCtl.appendChild(thermometerCtlText2);
+
+				var thermometerCtlText3=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText3.setAttribute("id","thermometerCtlText3");
+				thermometerCtlText3.setAttribute("x","25");
+				thermometerCtlText3.setAttribute("y","55");
+				thermometerCtlText3.setAttribute("font-size","12");
+				thermometerCtlText3.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText3.setAttribute("fill","#333333");
+				thermometerCtlText3.setAttribute("stroke","#333333");
+				thermometerCtlText3.setAttribute("stroke-width","0.25");
+				thermometerCtlText3.setAttribute("text-anchor","end");
+				thermometerCtlText3.textContent="100";
+				thermometerCtl.appendChild(thermometerCtlText3);
+
+				var thermometerCtlText4=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText4.setAttribute("id","thermometerCtlText4");
+				thermometerCtlText4.setAttribute("x","43.5");
+				thermometerCtlText4.setAttribute("y","213");
+				thermometerCtlText4.setAttribute("font-size","13");
+				thermometerCtlText4.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText4.setAttribute("fill","#ffffff");
+				thermometerCtlText4.setAttribute("stroke","#ffffff");
+				thermometerCtlText4.setAttribute("stroke-width","0.25");
+				thermometerCtlText4.setAttribute("text-anchor","middle");
+				thermometerCtlText4.textContent=temp;
+				thermometerCtl.appendChild(thermometerCtlText4);
+
+				return 0;
+			};
+			/* end - creatSVG */
+			return factory;
 		});
-	</script>
+		/* end - factory - AddCtrl      <Vertical Bar> */
 
+		/* start - 自定义服务Service =>  创建和修改svg元素*/
+		app.service('CtrlService',function(AddCtrl,SvgAttr){
+			this.addBarCtrl=function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
+				return AddCtrl.addBarCtrl( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo );
+			};
+			this.addBarHCtl=function(Xpos){
+				return AddCtrl.addBarHCtl(Xpos);
+			};
+			this.addThermometerCtl=function(hei,temp){
+				return AddCtrl.addThermometerCtl(hei,temp);
+			};
+			this.changeAttr=function(id,attr,val){
+				return SvgAttr.attr(id,attr,val);
+			};		
+		});
+		/* end - 自定义服务Service =>  创建和修改svg元素*/
+		
+		/* start - tankBarsCtrl */
+		app.controller('tankBarsCtrl', function ($scope, MathCalc, SvgAttr, CtrlService) {
+			$scope.calcTo100=100;
+			$scope.calcTo100P=51.2;
+			$scope.calcTo1000=1000;
+			$scope.calcTo100LOG=1;
+			$scope.calcTo1000LOG=1;
+			$scope.log=MathCalc.log(100);
+			$scope.attrName="size";
+			$scope.attrVal="1";
+			$scope.ctrlName="Thermometer";
+			$scope.ctrls=["Vertical Bar", "Horizontal Bar", "Thermometer", "Tank"];
+			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
+			$scope.maxVal=100;
+			$scope.minVal=0;
+			$scope.size=1;
+			$scope.backColor="rgb(250,250,230)";
+			$scope.color="rgb(255,56,56)";
+			$scope.hihi=90;
+			$scope.lolo=10;
+			$scope.hi=80;
+			$scope.lo=30;
 
+			//表示控件是否被创建的标志位
+			$scope.bCtrlFlag=false;
+			$scope.HbCtrlFlag=false;
+			$scope.ThCtrlFlag=false;
+
+			// CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
+			async.map(pvs.tankBars, function (item, callback) {
+				socket.on(item.pvname, function (data) {
+					$scope.$applyAsync(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
+						switch (item.pvname) {
+							case "may:calcTo100":
+								$scope.calcTo100=data;
+								break;
+							case "may:calcTo100P":
+								$scope.calcTo100P=data;
+								$scope.calcTo100LOG = (data>0 ? MathCalc.log(data) : 0);
+								break;
+							case "may:calcTo1000":
+								$scope.calcTo1000=data;
+								$scope.calcTo1000LOG = (data>0 ? MathCalc.log(data) : 0);
+								break;
+							default:
+								break;
+						}
+	
+				})
+				//***end of $scope.$apply***//
+
+					$scope.createCtl=function(){
+						switch($scope.ctrlName){//不同控件创建时变量以数组表示控件名，同一控件创建了多个时也是用数组表示rect、text等元素名。此工作待完成。=====
+							case "Tank" :
+								;
+								break;
+							case "Vertical Bar" :
+								CtrlService.addBarCtrl($scope.maxVal, $scope.minVal, $scope.size, $scope.backColor, $scope.color, $scope.hihi, $scope.lolo, $scope.hi, $scope.lo);
+								$scope.bCtrlFlag=true;
+								break;
+							case "Horizontal Bar" :
+								CtrlService.addBarHCtl($scope.calcTo100);
+								$scope.HbCtrlFlag=true;
+								break;
+							case "Thermometer" :
+								CtrlService.addThermometerCtl($scope.calcTo100,$scope.calcTo100);
+								$scope.ThCtrlFlag=true;
+								break;
+							default :
+								break;
+						}
+					}
+
+					$scope.updateEdit=function(){
+						switch($scope.attrName){
+							case "maxVal" :
+								$scope.maxVal=$scope.attrVal;
+								SvgAttr.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
+								SvgAttr.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
+								SvgAttr.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
+								SvgAttr.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1));
+								SvgAttr.textCont("barText6",($scope.maxVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
+								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText7","y",222-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText10","y",222-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText9","y",222-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								break;
+							case "minVal" :
+								$scope.minVal=$scope.attrVal;
+								SvgAttr.textCont("barText2",(($scope.maxVal-$scope.minVal)/5.0).toFixed(1));
+								SvgAttr.textCont("barText3",(($scope.maxVal-$scope.minVal)/5.0*2).toFixed(1));
+								SvgAttr.textCont("barText4",(($scope.maxVal-$scope.minVal)/5.0*3).toFixed(1));
+								SvgAttr.textCont("barText5",(($scope.maxVal-$scope.minVal)/5.0*4).toFixed(1));
+								SvgAttr.textCont("barText1",($scope.minVal-0).toFixed(1));   //不写上【减0（即-0）】会出错
+								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText7","y",222-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText10","y",222-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								CtrlService.changeAttr("barText9","y",222-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								break;
+							case "size" :
+								$scope.size=$scope.attrVal;
+								SvgAttr.attr("svgDragBV","width",170*$scope.size);
+								SvgAttr.attr("svgDragBV","height",230*$scope.size);
+								CtrlService.changeAttr("barCtrl","transform","matrix("+$scope.size+",0,0,"+$scope.size+",0,0)");
+								break;
+							case "backColor" :
+								$scope.backColor=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlRect1","fill",$scope.backColor);
+								break;
+							case "color" :
+								$scope.color=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlRect2","fill",$scope.color);
+								break;
+							case "HIHI" :
+								$scope.hihi=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barText8","y",222-($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								break;
+							case "LOLO" :
+								$scope.lolo=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath2","d","M50.5 "+($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hihi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barText7","y",222-($scope.lolo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								break;
+							case "HI" :
+								$scope.hi=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barText10","y",222-($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								break;
+							case "LO" :
+								$scope.lo=$scope.attrVal;
+								CtrlService.changeAttr("barCtrlPath3","d","M50.5 "+($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10 M50.5 "+($scope.hi-$scope.minVal)*200/($scope.maxVal-$scope.minVal)+"h10");
+								CtrlService.changeAttr("barText9","y",222-($scope.lo-$scope.minVal)*200/($scope.maxVal-$scope.minVal));
+								break;
+							default :
+								break;
+						}
+					}
+				});
+				//***end of socket.on***//
+			});
+			//***end of async.map***//
+			//需要绑定$scope但不需要脏检查的程序写在这里
+
+			}, function (err, results) {
+				callback(err, results);
+			});
+		/* end - tankBarsCtrl */
+
+	/* end - angularJS script */
+	
+</script>
 <script src="js/jquery.min.js"></script>
-<script src="js/tank1.js"></script>
 
 	<script>
 		function load(){
@@ -956,9 +1136,7 @@
 	<script>
 
 		jQuery(document).ready(function() {  
-			// console.log("开始");
-
-			
+			// console.log("开始");			
 		   App.init();
 
 		});
