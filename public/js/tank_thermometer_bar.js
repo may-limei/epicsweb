@@ -470,32 +470,6 @@
 				thermometerCtlText4.textContent=temp;
 				thermometerCtl.appendChild(thermometerCtlText4);
 
-
-
-
-
-
-			// 	<g id="thermometer1" transform="matrix(1,0,0,1,-10,0)">
-			// 	<circle cx="120" cy="575" r="21" fill="rgb(255,0,0)" stroke="black" stroke-width="1"></circle>
-			// 	<rect x="112" y="405.5835" rx="4" ry="4" width="16" height="150" fill="rgb(91,241,237)" stroke="black" stroke-width="1"></rect>
-			// 	
-			//<rect x="112" y="550.5835" width="16" height="5" fill="rgb(91,241,237)" stroke="black" stroke-width="1"></rect>
-			// 	<rect x="112.5" y="549.5835" width="15" height="2" fill="rgb(91,241,237)" stroke="none"></rect>
-			// 	<rect x="112.5" y="554.8" rx="4" ry="4" width="15" height="1.6" fill="rgb(255,0,0)" stroke="none"></rect>
-			// 	<g transform="translate(112.5,556.0835) scale(1,-1)">
-			// 		<!--显示值的红色矩柱100=>140--><rect x="0" y="0" width="15" height="{{calcTo100*1.4}}" fill="rgb(255,0,0)" stroke="none"></rect>
-			// 		<path d="M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4" fill="none" stroke="black" stroke-width="0.75" />
-			// 	</g>
-			// 	<text x="92" y="420" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">100</text>
-			// 	<text x="94" y="491" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">50</text>
-			// 	<text x="95" y="558" font-size="12" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">0</text>
-			// 	<!--圆圈里显示的数值--><text x="120" y="578" font-size="13" font-family="Microsoft YaHei UI" fill="#ffffff" stroke="#ffffff" stroke-width="0.25" text-anchor="middle">{{calcTo100}}</text>
-			// 	<text x="105" y="393" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="0.25" text-anchor="middle">°C</text>
-			// </g>
-
-
-
-
 				return 0;
 			};
 			/* end - creatSVG */
@@ -577,6 +551,20 @@
 						} else{
 							SvgAttr.attr("barbox5","stroke","none");
 							SvgAttr.attr("tankbox1","stroke","none");
+						}//------------
+						if($scope.calcTo100<=8.6311 ||$scope.calcTo100>=91.4882){
+							SvgAttr.attr("thermometerbox1","stroke","rgb(255,0,0)");
+						} else if($scope.calcTo100<=15.0596 ||$scope.calcTo100>=85.0596){
+							SvgAttr.attr("thermometerbox1","stroke","rgb(246,136,46)");
+						} else{
+							SvgAttr.attr("thermometerbox1","stroke","none");
+						}//------------
+						if($scope.calcTo100<=7.5 ||$scope.calcTo100>=92.5){
+							SvgAttr.attr("barbox2","stroke","rgb(255,0,0)");
+						} else if($scope.calcTo100<=20 ||$scope.calcTo100>=70){
+							SvgAttr.attr("barbox2","stroke","rgb(246,136,46)");
+						} else{
+							SvgAttr.attr("barbox2","stroke","none");
 						}
 
 					//判断pv数值以改变编辑区的控件的报警框颜色
