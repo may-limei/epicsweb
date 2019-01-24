@@ -348,7 +348,7 @@
 				return 0;
 			};
 
-			factory.addThermometerCtl = function(Ypos){//BarH-此处的控件本该动态创建并可修改的=====
+			factory.addThermometerCtl = function(hei,temp){//BarH-此处的控件本该动态创建并可修改的=====
 				var svgDragTh=document.getElementById("svgDragTh");
 				var thermometerCtl=document.createElementNS("http://www.w3.org/2000/svg","g");
 				thermometerCtl.setAttribute("id","thermometerCtl");
@@ -372,7 +372,7 @@
 				thermometerCtlRect1.setAttribute("height","150");
 				thermometerCtlRect1.setAttribute("rx","4");
 				thermometerCtlRect1.setAttribute("ry","4");
-				thermometerCtlRect1.setAttribute("fill","rgb(84,230,226)");
+				thermometerCtlRect1.setAttribute("fill","rgb(100,241,236)");
 				thermometerCtlRect1.setAttribute("stroke","black");
 				thermometerCtlRect1.setAttribute("stroke-width","1");
 				thermometerCtl.appendChild(thermometerCtlRect1);
@@ -404,11 +404,71 @@
 				thermometerCtlRect4.setAttribute("x","36");
 				thermometerCtlRect4.setAttribute("y","0");
 				thermometerCtlRect4.setAttribute("width","15");
-				thermometerCtlRect4.setAttribute("height",Ypos*1.4);//显示值的红色矩柱100=>140
+				thermometerCtlRect4.setAttribute("height",hei*1.4);//显示值的红色矩柱100=>140
 				thermometerCtlRect4.setAttribute("fill","rgb(255,30,32)");
 				thermometerCtlRect4.setAttribute("stroke","none");
 				thermometerCtl.appendChild(thermometerCtlRect4);
 
+				var thermometerCtlPath1=document.createElementNS("http://www.w3.org/2000/svg","path");
+				thermometerCtlPath1.setAttribute("id","thermometerCtlPath1");
+				thermometerCtlPath1.setAttribute("fill","none");
+				thermometerCtlPath1.setAttribute("stroke","#333333");
+				thermometerCtlPath1.setAttribute("stroke-width","0.75");
+				thermometerCtlPath1.setAttribute("transform","matrix(1,0,0,-1,36,190)");
+				thermometerCtlPath1.setAttribute("d","M0 1h-7 m7 69h-7 m7 70h-7 M0 14h-4 m4 14h-4 m4 14h-4 m4 14h-4 M0 84h-4 m4 14h-4 m4 14h-4 m4 14h-4");
+				thermometerCtl.appendChild(thermometerCtlPath1);
+
+				var thermometerCtlText1=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText1.setAttribute("id","thermometerCtlText1");
+				thermometerCtlText1.setAttribute("x","25");
+				thermometerCtlText1.setAttribute("y","195");
+				thermometerCtlText1.setAttribute("font-size","12");
+				thermometerCtlText1.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText1.setAttribute("fill","#333333");
+				thermometerCtlText1.setAttribute("stroke","#333333");
+				thermometerCtlText1.setAttribute("stroke-width","0.25");
+				thermometerCtlText1.setAttribute("text-anchor","end");
+				thermometerCtlText1.textContent="0";
+				thermometerCtl.appendChild(thermometerCtlText1);
+
+				var thermometerCtlText2=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText2.setAttribute("id","thermometerCtlText2");
+				thermometerCtlText2.setAttribute("x","25");
+				thermometerCtlText2.setAttribute("y","125");
+				thermometerCtlText2.setAttribute("font-size","12");
+				thermometerCtlText2.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText2.setAttribute("fill","#333333");
+				thermometerCtlText2.setAttribute("stroke","#333333");
+				thermometerCtlText2.setAttribute("stroke-width","0.25");
+				thermometerCtlText2.setAttribute("text-anchor","end");
+				thermometerCtlText2.textContent="50";
+				thermometerCtl.appendChild(thermometerCtlText2);
+
+				var thermometerCtlText3=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText3.setAttribute("id","thermometerCtlText3");
+				thermometerCtlText3.setAttribute("x","25");
+				thermometerCtlText3.setAttribute("y","55");
+				thermometerCtlText3.setAttribute("font-size","12");
+				thermometerCtlText3.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText3.setAttribute("fill","#333333");
+				thermometerCtlText3.setAttribute("stroke","#333333");
+				thermometerCtlText3.setAttribute("stroke-width","0.25");
+				thermometerCtlText3.setAttribute("text-anchor","end");
+				thermometerCtlText3.textContent="100";
+				thermometerCtl.appendChild(thermometerCtlText3);
+
+				var thermometerCtlText4=document.createElementNS("http://www.w3.org/2000/svg","text");
+				thermometerCtlText4.setAttribute("id","thermometerCtlText4");
+				thermometerCtlText4.setAttribute("x","43.5");
+				thermometerCtlText4.setAttribute("y","213");
+				thermometerCtlText4.setAttribute("font-size","13");
+				thermometerCtlText4.setAttribute("font-family","Microsoft YaHei UI");
+				thermometerCtlText4.setAttribute("fill","#ffffff");
+				thermometerCtlText4.setAttribute("stroke","#ffffff");
+				thermometerCtlText4.setAttribute("stroke-width","0.25");
+				thermometerCtlText4.setAttribute("text-anchor","middle");
+				thermometerCtlText4.textContent=temp;
+				thermometerCtl.appendChild(thermometerCtlText4);
 
 
 
@@ -451,8 +511,8 @@
 			this.addBarHCtl=function(Xpos){
 				return AddCtrl.addBarHCtl(Xpos);
 			};
-			this.addThermometerCtl=function(Ypos){
-				return AddCtrl.addThermometerCtl(Ypos);
+			this.addThermometerCtl=function(hei,temp){
+				return AddCtrl.addThermometerCtl(hei,temp);
 			};
 			this.changeAttr=function(id,attr,val){
 				return SvgAttr.attr(id,attr,val);
@@ -536,6 +596,7 @@
 					}
 					if($scope.ThCtrlFlag){
 						SvgAttr.attr("thermometerCtlRect4","height",$scope.calcTo100*1.4);
+						SvgAttr.textCont("thermometerCtlText4",$scope.calcTo100);
 					}
 				})
 				//***end of $scope.$apply***//
@@ -554,7 +615,7 @@
 								$scope.HbCtrlFlag=true;
 								break;
 							case "Thermometer" :
-								CtrlService.addThermometerCtl($scope.calcTo100);
+								CtrlService.addThermometerCtl($scope.calcTo100,$scope.calcTo100);
 								$scope.ThCtrlFlag=true;
 								break;
 							default :
