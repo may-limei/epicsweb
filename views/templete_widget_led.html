@@ -742,10 +742,6 @@ var drag = new Drag("divDragBV", {
 			$scope.hi=80;
 			$scope.lo=30;
 
-			//表示控件是否被创建的标志位
-			$scope.bCtrlFlag=false;
-			$scope.HbCtrlFlag=false;
-			$scope.ThCtrlFlag=false;
 
 			async.map(pvs.tankBars, function (item, callback) {
 				socket.on(item.pvname, function (data) {
