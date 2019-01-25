@@ -54,3 +54,11 @@ file db/dbExample2.db {
 file "db/tankBars.db" {
     { user = "may" }
 }
+
+file "db/leds.db" {
+    pattern { user, no, scan }
+        { "may", 0, "1 second" }
+        { "may", 1, "3 second" }
+        { "may", 2, "5 second" }
+        { "may", 3, "2 second" }
+}
