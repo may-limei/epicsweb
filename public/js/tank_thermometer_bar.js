@@ -1,4 +1,4 @@
-//以下是调用以上插件实现拖动
+//以下是调用插件实现拖动
 var drag = new Drag("divDragBV", {
     mxContainer: "svgArea",
     Handle: "svgDragBV",
@@ -74,12 +74,6 @@ var drag = new Drag("divDragTank", {
 
 		/* start - angularJS script */
 		var app = angular.module('myApp', []);
-		app.controller('myCtrl', function ($scope, $http) {
-			var myUrl = "http://47.100.41.42/epics_manual/manual?callback=JSON_CALLBACK";
-			$http.jsonp(myUrl).success(function (response) {
-				$scope.manual = response;
-			});
-		});
 
 		/* start - 自定义服务Service => 计算以10为底x的对数:MathCalc.log(x) */
 		app.service('MathCalc', function(){
