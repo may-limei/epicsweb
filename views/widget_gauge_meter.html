@@ -211,14 +211,19 @@
 
 						</li>
 
-						<li >
+						<li class="active">
+
 							<a href="widget_gauge_meter">
+
 							   Gauge/Meter </a>
+
 						</li>
 						
-						<li class="active">
+						<li>
 							<a href="widget_led">
-						    	LED</a>			
+												
+						    	LED</a>
+												
 						</li>
 												
 						<li>
@@ -562,71 +567,39 @@
 				<div class="row-fluid tankContainer" ng-controller="ledsCtrl" style="position:relative;">
 					<div class="span8 thumbnail" style="overflow:hidden; height:662px; background-color:aliceblue;">
 							<svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg">
-							<text x="100" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">LED控件用开/关来显示数字量0/1。</text>
-							<g ng-switch="valled[0]">
-								<circle ng-switch-when="0" cx="260" cy="140" r="25" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="1" cx="260" cy="140" r="25" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<rect ng-switch-when="0" x="227" y="213" width="66" height="40" fill="rgb(165,12,14)" stroke="#666666" stroke-width="2"></rect>
-								<rect ng-switch-when="1" x="227" y="213" width="66" height="40" fill="rgb(245,12,14)" stroke="#666666" stroke-width="2"></rect>
+							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">LED控件用开/关来显示数字量0/1。</text>
+							<g id="guage1">
+								<circle cx="200" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="100" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
-							<g ng-switch="valled[1]">
-								<image ng-switch-when="1" xlink:href="image/lamp1.png" x="215" y="370" width="77" height="103" />
-								<image ng-switch-when="0" xlink:href="image/lamp0.png" x="215" y="370" width="77" height="103" />
+							
+							<g id="guage2">
+								<circle cx="460" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="360" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
-							<g ng-switch="valled[2]">
-								<circle ng-switch-when="1" cx="460" cy="140" r="30" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="0" cx="460" cy="140" r="30" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<rect ng-switch-when="1" x="422" y="210" width="76" height="46" fill="rgb(30,79,239)" stroke="#666666" stroke-width="2"></rect>
-								<rect ng-switch-when="0" x="422" y="210" width="76" height="46" fill="rgb(30,212,239)" stroke="#666666" stroke-width="2"></rect>
-								<text ng-switch-when="0" x="460" y="145" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(239,158,30)" stroke="rgb(239,158,30)" stroke-width="0.5" text-anchor="middle">ON</text>
-								<text ng-switch-when="1" x="460" y="145" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(239,128,50)" stroke="rgb(239,128,50)" stroke-width="0.5" text-anchor="middle">OFF</text>
-								<text ng-switch-when="0" x="460" y="238" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(49,37,73)" stroke="rgb(49,37,73)" stroke-width="0.25" text-anchor="middle">ON</text>
-								<text ng-switch-when="1" x="460" y="238" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(49,57,33))" stroke="rgb(49,57,33)" stroke-width="0.25" text-anchor="middle">OFF</text>
+
+							<g id="guage3">
+								<circle cx="720" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="620" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
-							<g ng-switch="valled[3]" transform="matrix(1,0,0,1,-10,330)">
-								<path ng-switch-when="1" d="M460 56L512.3315 56L512.3315 76L490.3315 76A33 33 0 0 1 476.5 117.5788L489 139.2295L431 139.2295L443.5 117.5788A33 33 0 0 1 460 56Z" fill="rgb(245,0,0)" stroke="#333333" stroke-width="#333333" />
-								<path ng-switch-when="0" d="M460 56L512.3315 56L512.3315 76L490.3315 76A33 33 0 0 1 476.5 117.5788L489 139.2295L431 139.2295L443.5 117.5788A33 33 0 0 1 460 56Z" fill="rgb(11,191,15)" stroke="#333333" stroke-width="#333333" />
+
+							<g id="guage4">
+								<circle cx="980" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="880" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
-							<g transform="matrix(1,0,0,1,0,30)">
-								<circle cx="660" cy="140" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="175" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="210" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="245" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="280" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="315" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="350" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle cx="660" cy="385" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<!----><circle ng-if="valled4[0]" cx="660" cy="140" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[1]" cx="660" cy="175" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[2]" cx="660" cy="210" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[3]" cx="660" cy="245" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[4]" cx="660" cy="280" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[5]" cx="660" cy="315" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[6]" cx="660" cy="350" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[7]" cx="660" cy="385" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+
+							<g id="meter1">
+								<rect x="130" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
-							<g transform="matrix(1,0,0,1,580,40)">
-								<rect x="207" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="247" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="287" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="327" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="367" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="407" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="447" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect x="487" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
-								<!----><rect ng-if="valled5[0]" x="207" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[1]" x="247" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[2]" x="287" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[3]" x="327" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[4]" x="367" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[5]" x="407" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[6]" x="447" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[7]" x="487" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+
+							<g id="meter2">
+								<rect x="470" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
-							<g ng-switch="valled[1]" transform="matrix(1,0,0,1,670,0)">
-								<image ng-switch-when="1" xlink:href="image/lamp1.png" x="215" y="370" width="77" height="103" />
-								<image ng-switch-when="0" xlink:href="image/lamp0.png" x="215" y="370" width="77" height="103" />
+
+							<g id="meter3">
+								<rect x="790" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
 							</g>
+
 						</svg>
 					</div>
 
@@ -712,9 +685,8 @@ var drag = new Drag("divDragCled", {
 		var serverIP="10.10.33.102";
 		var socket = io.connect(serverIP+':80');
 		var pvs = {
-			leds:[
-				{ pvname: "may:led0" }, { pvname: "may:led1" }, { pvname: "may:led2" },
-				{ pvname: "may:led3" }, { pvname: "may:led4" }, { pvname: "may:led5" }]
+			tankBars:[
+				{ pvname: "may:calcTo100"}, { pvname: "may:calcTo100P"}, { pvname: "may:calcTo1000" }]
 		}
 
 		/* start - angularJS script */
@@ -810,8 +782,8 @@ var drag = new Drag("divDragCled", {
 		app.controller('ledsCtrl', function ($scope, SvgAttr, CtrlService, JsService) {
 			$scope.attrName="size";
 			$scope.attrVal="1";
-			$scope.ctrlName="LED-Lamp";
-			$scope.ctrls=["LED-Circle", "LED-Rectangle", "LED-Lamp", "LED-Other"];
+			$scope.ctrlName="Gauge";
+			$scope.ctrls=["Gauge", "Meter"];
 			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
 			$scope.maxVal=100;
 			$scope.minVal=0;
@@ -824,47 +796,22 @@ var drag = new Drag("divDragCled", {
 			$scope.lo=30;
 
 			//new scope
-			$scope.valled=[0,0,1,0,1,1];
-			$scope.valled4=[1,1,1,1,1,1,1,1];
-			$scope.valled5=[1,1,1,1,1,1,1,1];
+			$scope.calcTo100=0;
+			$scope.calcTo100P=0.0;
+			$scope.calcTo1000=0;
 
-			async.map(pvs.leds, function (item, callback) {
+			async.map(pvs.tankBars, function (item, callback) {
 				socket.on(item.pvname, function (data) {
 					$scope.$applyAsync(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
 						switch (item.pvname) {
-							case "may:led0":
-								$scope.valled[0]=data;
+							case "may:calcTo100":
+								$scope.calcTo100=data;
 								break;
-							case "may:led1":
-								$scope.valled[1]=data;
+							case "may:calcTo100P":
+								$scope.calcTo100P=data;
 								break;
-							case "may:led2":
-								$scope.valled[2]=data;
-								break;
-							case "may:led3":
-								$scope.valled[3]=data;
-								break;
-							case "may:led4":
-								$scope.valled[4]=data;
-								$scope.valled4[0]=JsService.charAt(data,0);
-								$scope.valled4[1]=JsService.charAt(data,1);
-								$scope.valled4[2]=JsService.charAt(data,2);
-								$scope.valled4[3]=JsService.charAt(data,3);
-								$scope.valled4[4]=JsService.charAt(data,4);
-								$scope.valled4[5]=JsService.charAt(data,5);
-								$scope.valled4[6]=JsService.charAt(data,6);
-								$scope.valled4[7]=JsService.charAt(data,7);
-								break;
-							case "may:led5":
-								$scope.valled[5]=data;
-								$scope.valled5[0]=JsService.charAt(data,0);
-								$scope.valled5[1]=JsService.charAt(data,1);
-								$scope.valled5[2]=JsService.charAt(data,2);
-								$scope.valled5[3]=JsService.charAt(data,3);
-								$scope.valled5[4]=JsService.charAt(data,4);
-								$scope.valled5[5]=JsService.charAt(data,5);
-								$scope.valled5[6]=JsService.charAt(data,6);
-								$scope.valled5[7]=JsService.charAt(data,7);
+							case "may:calcTo1000":
+								$scope.calcTo1000=data;
 								break;
 							default:
 								break;

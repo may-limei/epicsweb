@@ -22,5 +22,8 @@ router.get('/widget_tank_thermometer_bar', function(req, res, next) {
   res.render('widget_tank_thermometer_bar', { title: 'Widget Tank/Thermometer/Bar' });
 });
 
+router.get('/widget_gauge_meter', function(req, res, next) {
+  res.render('widget_gauge_meter', { title: 'Widget Gauge/Meter' });
+});
 
 module.exports = router;
