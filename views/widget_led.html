@@ -592,26 +592,6 @@
 								<path ng-switch-when="1" d="M460 56L512.3315 56L512.3315 76L490.3315 76A33 33 0 0 1 476.5 117.5788L489 139.2295L431 139.2295L443.5 117.5788A33 33 0 0 1 460 56Z" fill="rgb(245,0,0)" stroke="#333333" stroke-width="#333333" />
 								<path ng-switch-when="0" d="M460 56L512.3315 56L512.3315 76L490.3315 76A33 33 0 0 1 476.5 117.5788L489 139.2295L431 139.2295L443.5 117.5788A33 33 0 0 1 460 56Z" fill="rgb(11,191,15)" stroke="#333333" stroke-width="#333333" />
 							</g>
-							<!-- <g ng-switch="valled[4]" transform="matrix(1,0,0,1,0,30)">
-								<circle ng-switch-when="0" cx="660" cy="140" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="1" cx="660" cy="175" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="2" cx="660" cy="210" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="3" cx="660" cy="245" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="4" cx="660" cy="280" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="5" cx="660" cy="315" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="6" cx="660" cy="350" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="7" cx="660" cy="385" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-							</g>
-							<g ng-switch="valled[5]" transform="matrix(1,0,0,1,580,40)">
-								<rect ng-switch-when="0" x="207" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="1" x="247" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="2" x="287" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="3" x="327" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="4" x="367" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="5" x="407" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="6" x="447" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-switch-when="7" x="487" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-							</g> -->
 							<g transform="matrix(1,0,0,1,0,30)">
 								<circle cx="660" cy="140" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
 								<circle cx="660" cy="175" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
@@ -660,8 +640,8 @@
 							<text x="15" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>											
 						</svg>
 						<div id="svgArea" style="position:relative; top:0px; left:0px;">
-							<div id="divDragBV" style="position:absolute;">
-								<svg id="svgDragBV" width="170" height="230" style="cursor:move;" xmlns="http://www.w3.org/2000/svg">									
+							<div id="divDragCled" style="position:absolute;">
+								<svg id="svgDragCled" width="170" height="230" style="cursor:move;" xmlns="http://www.w3.org/2000/svg">									
 								</svg>
 							</div>
 							
@@ -714,9 +694,9 @@
 
 <script>
 //以下是调用插件实现拖动
-var drag = new Drag("divDragBV", {
+var drag = new Drag("divDragCled", {
     mxContainer: "svgArea",
-    Handle: "svgDragBV",
+    Handle: "svgDragCled",
     Limit: false,
     onStart: function() {
         // document.getElementById("idShow").innerHTML="开始拖放";
@@ -796,25 +776,27 @@ var drag = new Drag("divDragBV", {
 			//表示颜色的单词:参考<HTML颜色名> http://www.runoob.com/tags/html-colorname.html
 			//hihi,lolo,hi,lo: 取值范围：0-1。其中0表示0%，1表示100%.
 			factory.addBarCtrl = function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
-				var divDragBV=document.getElementById("svgDragBV");
-				var barCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
-				barCtrl.setAttribute("id","barCtrl");
-				barCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
-				svgDragBV.appendChild(barCtrl);
+				var divDragCled=document.getElementById("divDragCled");
+				var svgDragCled=document.getElementById("svgDragCled");
+				var CledCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				CledCtrl.setAttribute("id","CledCtrl");
+				// CledCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
+				svgDragCled.appendChild(CledCtrl);
 
-				var barCtrlRect1=document.createElementNS("http://www.w3.org/2000/svg","rect");
-				barCtrlRect1.setAttribute("id","barCtrlRect1");
-				barCtrlRect1.setAttribute("x","65");
-				barCtrlRect1.setAttribute("y","17");
-				barCtrlRect1.setAttribute("width","51");
-				barCtrlRect1.setAttribute("height","201");
-				barCtrlRect1.setAttribute("fill",backColor);
-				barCtrlRect1.setAttribute("stroke","black");
-				barCtrlRect1.setAttribute("stroke-width","0.75");
-				barCtrl.appendChild(barCtrlRect1);
+				var CledCtrlCir1=document.createElementNS("http://www.w3.org/2000/svg","circle");
+				CledCtrlCir1.setAttribute("id","CledCtrlCir1");
+				CledCtrlCir1.setAttribute("x","65");
+				CledCtrlCir1.setAttribute("y","17");
+				CledCtrlCir1.setAttribute("width","51");
+				CledCtrlCir1.setAttribute("height","201");
+				CledCtrlCir1.setAttribute("fill","yellow");
+				CledCtrlCir1.setAttribute("stroke","black");
+				CledCtrlCir1.setAttribute("stroke-width","0.75");
+				CledCtrl.appendChild(CledCtrlCir1);
 
 				return "create a bar control successfully"
 			};
+
 
 			/* end - creatSVG */
 			return factory;
@@ -831,15 +813,10 @@ var drag = new Drag("divDragBV", {
 		
 		/* start - ledsCtrl */
 		app.controller('ledsCtrl', function ($scope, SvgAttr, CtrlService, JsService) {
-			$scope.calcTo100=100;
-			$scope.calcTo100P=51.2;
-			$scope.calcTo1000=1000;
-			$scope.calcTo100LOG=1;
-			$scope.calcTo1000LOG=1;
 			$scope.attrName="size";
 			$scope.attrVal="1";
-			$scope.ctrlName="Thermometer";
-			$scope.ctrls=["Vertical Bar", "Horizontal Bar", "Thermometer", "Tank"];
+			$scope.ctrlName="LED-Lamp";
+			$scope.ctrls=["LED-Circle", "LED-Rectangle", "LED-Lamp", "LED-Other"];
 			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
 			$scope.maxVal=100;
 			$scope.minVal=0;
