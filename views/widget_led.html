@@ -569,10 +569,10 @@
 							<svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg">
 							<text x="100" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">LED控件用开/关来显示数字量0/1。</text>
 							<g ng-switch="valled[0]">
-								<circle ng-switch-when="1" cx="260" cy="140" r="25" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-switch-when="0" cx="260" cy="140" r="25" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
-								<rect ng-switch-when="1" x="227" y="213" width="66" height="40" fill="rgb(165,12,14)" stroke="#666666" stroke-width="2"></rect>
-								<rect ng-switch-when="0" x="227" y="213" width="66" height="40" fill="rgb(245,12,14)" stroke="#666666" stroke-width="2"></rect>
+								<circle ng-switch-when="0" cx="260" cy="140" r="25" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-switch-when="1" cx="260" cy="140" r="25" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<rect ng-switch-when="0" x="227" y="213" width="66" height="40" fill="rgb(165,12,14)" stroke="#666666" stroke-width="2"></rect>
+								<rect ng-switch-when="1" x="227" y="213" width="66" height="40" fill="rgb(245,12,14)" stroke="#666666" stroke-width="2"></rect>
 							</g>
 							<g ng-switch="valled[1]">
 								<image ng-switch-when="1" xlink:href="image/lamp1.png" x="215" y="370" width="77" height="103" />
@@ -613,24 +613,40 @@
 								<rect ng-switch-when="7" x="487" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
 							</g> -->
 							<g transform="matrix(1,0,0,1,0,30)">
-								<circle ng-if="valled4[0]" cx="660" cy="140" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[1]" cx="660" cy="175" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[2]" cx="660" cy="210" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[3]" cx="660" cy="245" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[4]" cx="660" cy="280" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[5]" cx="660" cy="315" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[6]" cx="660" cy="350" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
-								<circle ng-if="valled4[7]" cx="660" cy="385" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="140" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="175" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="210" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="245" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="280" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="315" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="350" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<circle cx="660" cy="385" r="15" fill="rgb(0,153,12)" stroke="#666666" stroke-width="2"/>
+								<!----><circle ng-if="valled4[0]" cx="660" cy="140" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[1]" cx="660" cy="175" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[2]" cx="660" cy="210" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[3]" cx="660" cy="245" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[4]" cx="660" cy="280" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[5]" cx="660" cy="315" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[6]" cx="660" cy="350" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
+								<circle ng-if="valled4[7]" cx="660" cy="385" r="15" fill="rgb(10,243,12)" stroke="#666666" stroke-width="2"/>
 							</g>
 							<g transform="matrix(1,0,0,1,580,40)">
-								<rect ng-if="valled5[0]" x="207" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[1]" x="247" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[2]" x="287" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[3]" x="327" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[4]" x="367" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[5]" x="407" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[6]" x="447" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
-								<rect ng-if="valled5[7]" x="487" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="207" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="247" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="287" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="327" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="367" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="407" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="447" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect x="487" y="213" width="32" height="26" fill="rgb(247,164,45)" stroke="#666666" stroke-width="1"></rect>
+								<!----><rect ng-if="valled5[0]" x="207" y="213" width="32" height="26" fill="rgb(247,217,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[1]" x="247" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[2]" x="287" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[3]" x="327" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[4]" x="367" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[5]" x="407" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[6]" x="447" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
+								<rect ng-if="valled5[7]" x="487" y="213" width="32" height="26" fill="rgb(247,247,45)" stroke="#666666" stroke-width="1"></rect>
 							</g>
 							<g ng-switch="valled[1]" transform="matrix(1,0,0,1,670,0)">
 								<image ng-switch-when="1" xlink:href="image/lamp1.png" x="215" y="370" width="77" height="103" />
@@ -682,7 +698,6 @@
 	<div class="footer">
 		<div class="footer-inner">
 			2017 &copy; TMSR 钍基熔盐堆核能系统.
-			console.log("$scope.valled[0]: "+$scope.valled[0]);
 		</div>
 	</div>
 	<!-- END FOOTER -->
@@ -751,30 +766,21 @@ var drag = new Drag("divDragBV", {
 			factory.mod = function(x,y){
 				return x%y;
 			};
-			factory.toString = function(str,num){
-				return str.toString(num);
+			factory.toString = function(val,num){
+				return val.toString(num);
 			};
-			factory.indexOf = function(val,ind){//取二进制表示的第ind位（最右边为第0位）
-				switch(ind) {
-					case "0" :
-						return (val & 1)>0 ? 1 : 0;
-					case "1" :
-						return (val & 2)>0 ? 1 : 0;
-					case "2" :
-						return (val & 4)>0 ? 1 : 0;
-					case "3" :
-						return (val & 8)>0 ? 1 : 0;
-					case "4" :
-						return (val & 16)>0 ? 1 : 0;
-					case "5" :
-						return (val & 32)>0 ? 1 : 0;
-					case "6" :
-						return (val & 64)>0 ? 1 : 0;
-					case "7" :
-						return (val & 128)>0 ? 1 : 0;
-					default :
-						break;
+			factory.charAt = function(str,ind){//取二进制表示的第ind位（最左边为第0位）
+				if (typeof str == "String" ) {
+					return str.charAt(ind);  //如果输入的是字符串，则返回字符串第ind位
+				} else {
+					var strstr=str.toString(2); //如果输入的是其他类型，则先转为8位二进制数(溢出的舍弃),然后返回转换为二进制表示后的第ind位
+					if (strstr.length < 8) {
+						if (ind<8-strstr.length) { return 0; } else { return parseInt(strstr.charAt(strstr.length-8+ind)); };
+					} else {
+						return parseInt(strstr.charAt(strstr.length-8+ind));
+					}
 				}
+				return "charAt err";
 			};
 			return factory;
 		});
@@ -868,34 +874,29 @@ var drag = new Drag("divDragBV", {
 								break;
 							case "may:led4":
 								$scope.valled[4]=data;
-								// $scope.valled[4]=JsService.toString(data,2);
-								$scope.valled4[0]=JsService.indexOf(data,0);
-								$scope.valled4[1]=JsService.indexOf(data,1);
-								$scope.valled4[2]=JsService.indexOf(data,2);
-								$scope.valled4[3]=JsService.indexOf(data,3);
-								$scope.valled4[4]=JsService.indexOf(data,4);
-								$scope.valled4[5]=JsService.indexOf(data,5);
-								$scope.valled4[6]=JsService.indexOf(data,6);
-								$scope.valled4[7]=JsService.indexOf(data,7);
+								$scope.valled4[0]=JsService.charAt(data,0);
+								$scope.valled4[1]=JsService.charAt(data,1);
+								$scope.valled4[2]=JsService.charAt(data,2);
+								$scope.valled4[3]=JsService.charAt(data,3);
+								$scope.valled4[4]=JsService.charAt(data,4);
+								$scope.valled4[5]=JsService.charAt(data,5);
+								$scope.valled4[6]=JsService.charAt(data,6);
+								$scope.valled4[7]=JsService.charAt(data,7);
 								break;
 							case "may:led5":
 								$scope.valled[5]=data;
-								// $scope.valled[5]=JsService.toString(data,2);
-								$scope.valled5[0]=JsService.indexOf(data,0);
-								$scope.valled5[1]=JsService.indexOf(data,1);
-								$scope.valled5[2]=JsService.indexOf(data,2);
-								$scope.valled5[3]=JsService.indexOf(data,3);
-								$scope.valled5[4]=JsService.indexOf(data,4);
-								$scope.valled5[5]=JsService.indexOf(data,5);
-								$scope.valled5[6]=JsService.indexOf(data,6);
-								$scope.valled5[7]=JsService.indexOf(data,7);
+								$scope.valled5[0]=JsService.charAt(data,0);
+								$scope.valled5[1]=JsService.charAt(data,1);
+								$scope.valled5[2]=JsService.charAt(data,2);
+								$scope.valled5[3]=JsService.charAt(data,3);
+								$scope.valled5[4]=JsService.charAt(data,4);
+								$scope.valled5[5]=JsService.charAt(data,5);
+								$scope.valled5[6]=JsService.charAt(data,6);
+								$scope.valled5[7]=JsService.charAt(data,7);
 								break;
 							default:
 								break;
 						}
-						// $scope.valled[4]=JsService.toString($scope.valled[4],2);
-						// $scope.valled[5]=JsService.toString($scope.valled[5],2);
-						console.log("$scope.valled4[4]"+$scope.valled4[4]);
 						
 
 				})
