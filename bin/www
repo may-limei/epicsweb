@@ -77,7 +77,7 @@ io.on('connection', function (socket) {
 
   // console.log(pvs);
   connect_pvs(pvs.bangs,function(err,results){
-      async.map(results,function(item,callback){
+      async.map(results,function(item){  //这里的item是results的各个元素，即一个个pv通道对象（new epics.Channel(...)创建的对象们）
         item.on("value", function(data) {
         // console.log('Value:',item.pvName,data);
         socket.emit(item.pvName, data);
@@ -87,7 +87,7 @@ io.on('connection', function (socket) {
   });
 
   connect_pvs_SEVR(pvs.bangs,function(err,results){
-      async.map(results,function(item,callback){
+      async.map(results,function(item){
         item.on("value", function(data) {
         console.log('Value:',item.pvName,data);
         socket.emit(item.pvName, data);
@@ -97,7 +97,7 @@ io.on('connection', function (socket) {
   });
 
   connect_pvs(pvs.bars,function(err,results){
-    async.map(results,function(item,callback){
+    async.map(results,function(item){
       item.on("value", function(data) {
       // console.log('Value:',item.pvName,data);
       socket.emit(item.pvName, data);
@@ -107,7 +107,7 @@ io.on('connection', function (socket) {
 });
 
 connect_pvs_SEVR(pvs.bars,function(err,results){
-    async.map(results,function(item,callback){
+    async.map(results,function(item){
       item.on("value", function(data) {
       console.log('Value:',item.pvName,data);
       socket.emit(item.pvName, data);
@@ -117,7 +117,7 @@ connect_pvs_SEVR(pvs.bars,function(err,results){
 });
 
 connect_pvs(pvs.tankBars,function(err,results){
-  async.map(results,function(item,callback){
+  async.map(results,function(item){
     item.on("value", function(data) {
     // console.log('Value:',item.pvName,data);
     socket.emit(item.pvName, data);
@@ -127,7 +127,7 @@ connect_pvs(pvs.tankBars,function(err,results){
 });
 
 connect_pvs_SEVR(pvs.tankBars,function(err,results){
-  async.map(results,function(item,callback){
+  async.map(results,function(item){
     item.on("value", function(data) {
     console.log('Value:',item.pvName,data);
     socket.emit(item.pvName, data);
@@ -137,7 +137,7 @@ connect_pvs_SEVR(pvs.tankBars,function(err,results){
 });
 
 connect_pvs(pvs.leds,function(err,results){
-  async.map(results,function(item,callback){
+  async.map(results,function(item){
     item.on("value", function(data) {
     // console.log('Value:',item.pvName,data);
     socket.emit(item.pvName, data);
@@ -147,7 +147,7 @@ connect_pvs(pvs.leds,function(err,results){
 });
 
 connect_pvs_SEVR(pvs.leds,function(err,results){
-  async.map(results,function(item,callback){
+  async.map(results,function(item){
     item.on("value", function(data) {
     console.log('Value:',item.pvName,data);
     socket.emit(item.pvName, data);
@@ -163,7 +163,7 @@ connect_pvs_SEVR(pvs.leds,function(err,results){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
   connect_pvs(pvs.ao,function(err,results){
-    async.map(results,function(item,callback){
+    async.map(results,function(item){
       item.on("value", function(data) {
       console.log('Value:',item.pvName,data);
       socket.emit(item.pvName, data);
@@ -173,7 +173,7 @@ connect_pvs_SEVR(pvs.leds,function(err,results){
   });
 
     connect_pvs_SEVR(pvs.ao,function(err,results){
-    async.map(results,function(item,callback){
+    async.map(results,function(item){
       item.on("value", function(data) {
       console.log('Value:',item.pvName,data);
       socket.emit(item.pvName, data);
@@ -188,7 +188,7 @@ connect_pvs_SEVR(pvs.leds,function(err,results){
  */
 
   connect_pvs(pvs.ao,function(err,results){
-    async.map(results,function(item,callback){
+    async.map(results,function(item){
       socket.on(item.pvName, function(data) {
       console.log('Value:',item.pvName,data);
       item.put(item.pvName, data);
@@ -279,7 +279,7 @@ var pv_bars=new Array();
 async= require('async');
 
 function connect_pvs(pvs,callback){
-    async.map(pvs, function(item, callback) {
+    async.map(pvs, function(item, callback) {  //这里的item是指pvs的各个元素，是自己定义的那个pvs（JSON对象）；callback就是上一行中的callback，在这里callback函数作为参数传入async.map，在callback(null，pv)这句调用
         // console.log(item.pvname+" is connect*");
        var pv = new epics.Channel(item.pvname);
        pv.connect(function(err) {
@@ -289,7 +289,7 @@ function connect_pvs(pvs,callback){
           console.log(item.pvname+" is connected*");
       });
     }, function(err,results){
-         callback(err,results); 
+         callback(err,results); //这里callback虽然没有作为参数传入本函数，但本函数也可执行callback函数（由于作用域链继承的关系）
   });
 };
 
