@@ -1132,7 +1132,7 @@
 
 			$scope.bang=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
 			$scope.bar=[218,170,190,230,140,254,244,180,146,192];
-			async.map(pvs.bangs, function (item, callback) {
+			async.map(pvs.bangs, function (item) {
 				socket.on(item.pvname, function (data) {
 					$scope.$apply(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
 						$scope.bang[parseInt(item.pvname.slice((item.pvname.indexOf(":")+5)))-1]=data.toFixed(3);
@@ -1144,9 +1144,9 @@
 					// console.log("bang1 data is "+$scope.bang[0]);
 				});
 			}, function (err, results) {
-				callback(err, results);
+				// callback(err, results);
 			});
-			async.map(pvs.bars, function (item, callback) {
+			async.map(pvs.bars, function (item) {
 				socket.on(item.pvname, function (data) {
 					$scope.$apply(function () {
 						$scope.bar[parseInt(item.pvname.slice((item.pvname.indexOf(":")+4)))-1]=data.toFixed(0);
@@ -1155,7 +1155,7 @@
 					console.log("$scope.bar is "+$scope.bar[0]);
 				});
 			}, function (err, results) {
-				callback(err, results);
+				// callback(err, results);
 			});
 			
 		});
