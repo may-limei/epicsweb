@@ -223,13 +223,15 @@
 		<!-- <div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl"> -->
 		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:black; overflow:hidden;" ng-controller="holeCtrl">
 			<div id="screenContainer" style="position:absolute; background-color:black; overflow:hidden;">
-				<svg  id="svgbox" width="1920" height="1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<rect x="0" y="0" width="480" height="1080" fill="black" stroke="#254061" />
-					<rect x="480" y="0" width="1440" height="1080" fill="black" stroke="#254061" />
+				<svg  id="svgbox" width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<!-- <rect x="0" y="0" width="480" height="860" fill="black" stroke="#254061" />
+					<rect x="480" y="0" width="1440" height="860" fill="black" stroke="#254061" /> -->
+					<rect x="0" y="0" width="480" height="860" fill="black" stroke="none" />
+					<rect x="480" y="0" width="1440" height="860" fill="black" stroke="none" />
 
-					<rect x="40" y="60" width="400" height="400" fill="none" stroke="white" />
-					<rect x="40" y="580" width="400" height="400" fill="none" stroke="white" />
-					<svg x="480" y="0" width="800" height="600" transform="matrix(1.8,0,0,1.8,-384,0)" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
+					<rect x="60" y="80" width="400" height="300" fill="none" stroke="white" />
+					<rect x="60" y="510" width="400" height="300" fill="none" stroke="white" />
+					<svg x="480" y="0" width="1440" height="860" transform="matrix(1.18,0,0,1.18,-210,-70)" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
 					<!-- <g x="480" y="0" width="800" height="600" transform="matrix(1,0,0,1,0,0)"> -->
 						<rect x="0" y="0" width="800" height="600" fill="black" stroke="none" />
 						<g transform="matrix(1.6,0,0,1.6,-245,-150)">
@@ -1420,8 +1422,6 @@
 	<!-- END CORE PLUGINS -->
 
 	<script>
-		console.log("11-window.innerWidth:"+window.innerWidth);
-		console.log("11-window.innerHeight:"+window.innerHeight);
 		document.getElementById("bodybox").style.width=(window.innerWidth-siderboxW).toString()+"px";
 		document.getElementById("bodybox").style.height=(window.innerHeight).toString()+"px";
 		var siderboxW=document.getElementById("siderbox").clientWidth;
@@ -1432,20 +1432,16 @@
 		// console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
 		// console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
 		var svgboxE=document.querySelector('#svgbox');
-		// var matrixStrH="matrix("+window.innerHeight/1080+",0,0,"+window.innerHeight/1080+",-"+(1-window.innerHeight/1080)*1920/2+",-"+(1-window.innerHeight/1080)*1080/2+")";  //an h suan
-		// var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*1080/2+")";  //an w suan
-		var matrixStrH="matrix("+window.innerHeight/1080+",0,0,"+window.innerHeight/1080+",0,0)";  //an h suan
-		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",0,0)";  //an w suan
-		console.log("window.innerWidth:"+window.innerWidth);
-		console.log("window.innerHeight:"+window.innerHeight);
-		if (window.innerWidth/window.innerHeight>1920/1080) {//an h suan
+		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
+		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
+		if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
 			svgboxE.setAttribute('transform',matrixStrH);
-			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/1080*screenContainerW)/2).toString()+"px";
-			console.log("an h suan: "+matrixStrH);
-		} else if (window.innerWidth/window.innerHeight<1920/1080) {//an w suan
+			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";
+			// console.log("an h suan: "+matrixStrH);
+		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
 			svgboxE.setAttribute('transform',matrixStrW);
-			document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
-			console.log("an w suan: "+matrixStrW);
+			// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
+			// console.log("an w suan: "+matrixStrW);
 		}
 	</script>
 
