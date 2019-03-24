@@ -224,16 +224,27 @@
 		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:black; overflow:hidden;" ng-controller="holeCtrl">
 			<div id="screenContainer" style="position:absolute; background-color:black; overflow:hidden;">
 				<svg  id="svgbox" width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<!-- <rect x="0" y="0" width="480" height="860" fill="black" stroke="#254061" />
-					<rect x="480" y="0" width="1440" height="860" fill="black" stroke="#254061" /> -->
-					<rect x="0" y="0" width="480" height="860" fill="black" stroke="none" />
-					<rect x="480" y="0" width="1440" height="860" fill="black" stroke="none" />
+					<!--  start - 黑色背景 -->
+						<!--左边图表区的背景--><rect x="0" y="0" width="480" height="860" fill="black" stroke="none" stroke="white" stroke-width="1" />
+						<!--右边装置区的背景--><rect x="480" y="0" width="1440" height="860" fill="black" stroke="none" stroke="white" stroke-width="1" />
+					<!-- end -  黑色背景 -->
 
-					<rect x="60" y="80" width="400" height="300" fill="none" stroke="white" />
-					<rect x="60" y="510" width="400" height="300" fill="none" stroke="white" />
-					<svg x="480" y="0" width="1440" height="860" transform="matrix(1.18,0,0,1.18,-210,-70)" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
-					<!-- <g x="480" y="0" width="800" height="600" transform="matrix(1,0,0,1,0,0)"> -->
-						<rect x="0" y="0" width="800" height="600" fill="black" stroke="none" />
+					<!--  start - 标题和导航 -->
+						<!--标题框--><rect x="25" y="25" width="438.5" height="63" fill="none" stroke="rgb(50,50,50)" stroke-width="3" />
+						<!--标题背景--><rect x="23.5" y="26.5" width="442" height="60" fill="black" stroke="none"/>
+						<!--标题--><text x="237.5" y="65" font-size="35" font-family="Microsoft YaHei UI" fill="#aaaaaa" stroke="#aaaaaa" stroke-width="1" text-anchor="middle">20kW&nbsp高温制氢试验装置</text>
+						<!--导航框1--><rect x="530" y="35" rx="3" ry="3" width="185" height="43" fill="rgb(30,30,30)" stroke="rgb(30,30,30)" stroke-width="3" />
+						<!--导航标题1--><text x="622.5" y="65" font-size="24" font-family="Microsoft YaHei UI" fill="#aaaaaa" stroke="#aaaaaa" stroke-width="1" text-anchor="middle">页面导航</text>
+						<!--导航框2--><rect x="722.5" y="35" rx="3" ry="3" width="185" height="43" fill="rgb(30,30,30)" stroke="rgb(30,30,30)" stroke-width="3" />
+						<!--导航标题2--><text x="815" y="65" font-size="24" font-family="Microsoft YaHei UI" fill="#aaaaaa" stroke="#aaaaaa" stroke-width="1" text-anchor="middle">制氢模块</text>
+						<!---circle cx=""-->
+
+
+					<!--  end - 标题和导航 -->
+
+					<!-- 左上方 echarts--><rect x="40" y="105" width="408.5" height="300" fill="none" stroke="white" />
+					<!-- 左下方 echarts--><rect x="40" y="425" width="408.5" height="300" fill="none" stroke="white" />
+					<!--装置图--><svg x="530" y="135" width="1320" height="800" transform="matrix(1,0,0,1,0,-120)" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
 						<g transform="matrix(1.6,0,0,1.6,-245,-150)">
 							<defs >
 							<clipPath id="clipId0" >
@@ -1384,11 +1395,6 @@
 							</g>
 						</g>
 					</svg>
-					<!-- </g> -->
-
-
-
-
 
 
 					<g id="headerTitle"><!--start of headerTitle-->
@@ -1398,6 +1404,15 @@
 						<image x="1650" y="3" width="25" height="25" xlink:href="image/clock.png" /> -->
 						<text id="clock" x="1685" y="21" font-size="16" font-family="Microsoft YaHei UI" fill="rgb(81,84,91)" stroke="rgb(81,84,91)" stroke-width="0.5"></text>
 					</g><!--end of headerTitle-->
+
+					<!-- start - 背景框 -->
+						<!-- 左边图表区的框 --><rect x="17.5" y="15" width="457.5" height="830" fill="none" stroke="rgb(50,50,50)" stroke-width="3" />
+						<!-- 右边装置区的框 --><rect x="480" y="15" width="1422.5" height="830" fill="none" stroke="rgb(50,50,50)" stroke-width="3" />
+						<!-- 右边装置图框 --><rect x="530" y="105" width="1320" height="650" fill="none" stroke="rgb(50,50,50)" stroke-width="3" />
+						<!-- 界面外框 --><rect x="5" y="5" width="1910" height="850" fill="none" stroke="white" stroke-width="2" />
+						<!--装置标题框--><rect x="550" y="90" rx="3" ry="3" width="100" height="30" fill="rgb(230,230,230)" stroke="rgb(230,230,230)" stroke-width="3" />
+						<!--装置标题--><text x="600" y="110" font-size="16" font-family="Microsoft YaHei UI" fill="#333333" stroke="#333333" stroke-width="1" text-anchor="middle">工艺流程图</text>
+					<!-- end - 背景框 -->
 				</svg>
 			</div>
 		</div>
