@@ -242,8 +242,8 @@
 
 					<!--  end - 背景/标题/导航 -->
 
-					<!-- 左上方 echarts--><rect x="40" y="105" width="408.5" height="310" fill="none" stroke="rgb(50,50,50)" />
-					<!-- 左下方 echarts--><rect x="40" y="445" width="408.5" height="310" fill="none" stroke="rgb(50,50,50)" />
+					<!-- 左上方 echarts--><rect id="echartsArea1" x="42" y="105" width="408.5" height="320" fill="none" stroke="rgb(30,30,30)" />
+					<!-- 左下方 echarts--><rect id="echartsArea2" x="42" y="435" width="408.5" height="320" fill="none" stroke="rgb(30,30,30)" />
 					<!--装置图--><svg x="530" y="135" width="1320" height="800" transform="matrix(1,0,0,1,0,-120)" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
 						<g transform="matrix(1.6,0,0,1.6,-245,-150)">
 							<defs >
@@ -1427,6 +1427,11 @@
 					<!-- end - 标题/背景 -->
 				</svg>
 			</div>
+			<!-- <div id="echartsContainer" style="position:absolute; top:100px; left:100px; height:200px;">
+				<div id="container" style="height:100%;"></div>
+			</div> -->
+			<div id="echartsContainer1"></div>
+			<div id="echartsContainer2"></div>
 		</div>
 		<!-- END PAGE -->
 	</div>
@@ -1585,6 +1590,119 @@
 	<script type="text/javascript">
 		var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-37564768-1']); _gaq.push(['_setDomainName', 'keenthemes.com']); _gaq.push(['_setAllowLinker', true]); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
 	</script>
+
+<!-- start - echarts -->
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+	<script type="text/javascript">
+
+		var echartsArea1=document.querySelector("#echartsArea1");
+		var echartsContainer1 = document.getElementById("echartsContainer1");
+		echartsContainer1.style.width=echartsArea1.getAttribute("width")+"px";
+		echartsContainer1.style.height=echartsArea1.getAttribute("height")+"px";
+		echartsContainer1.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";
+		echartsContainer1.style.top=parseFloat(echartsArea1.getAttribute("y"))+15+"px";
+
+		// var echartsArea2=document.querySelector("#echartsArea2");
+		// var echartsContainer2 = document.getElementById("echartsContainer2");
+		// echartsContainer2.style.width=echartsArea2.getAttribute("width")+"px";
+		// echartsContainer2.style.height=echartsArea2.getAttribute("height")+"px";
+		// echartsContainer2.style.left=parseFloat(echartsArea2.getAttribute("x"))+13+"px";
+		// echartsContainer2.style.top=parseFloat(echartsArea2.getAttribute("y"))+15+"px";
+
+		var echartsArea2=document.querySelector("#echartsArea2");
+		var echartsContainer2 = document.getElementById("echartsContainer2");
+		echartsContainer2.style.width=echartsArea1.getAttribute("width")+"px";
+		echartsContainer2.style.height=echartsArea1.getAttribute("height")+"px";
+		echartsContainer2.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";
+		echartsContainer2.style.top=parseFloat(echartsArea1.getAttribute("y"))+15+"px";
+		
+
+
+		var myChart1 = echarts.init(echartsContainer1);
+		var myChart2 = echarts.init(echartsContainer2);
+		var app = {};
+		option = null;
+		function randomData() {
+			now = new Date(+now + oneDay);
+			value = value + Math.random() * 21 - 10;
+			return {
+				name: now.toString(),
+				value: [
+					[now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+					Math.round(value)
+				]
+			}
+		}
+		
+		var data = [];
+		var now = +new Date(1997, 9, 3);
+		var oneDay = 24 * 3600 * 1000;
+		var value = Math.random() * 1000;
+		for (var i = 0; i < 1000; i++) {
+			data.push(randomData());
+		}
+		
+		option = {
+			title: {
+				text: '动态数据 + 时间坐标轴'
+			},
+			tooltip: {
+				trigger: 'axis',
+				formatter: function (params) {
+					params = params[0];
+					var date = new Date(params.name);
+					return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+				},
+				axisPointer: {
+					animation: false
+				}
+			},
+			xAxis: {
+				type: 'time',
+				splitLine: {
+					show: false
+				}
+			},
+			yAxis: {
+				type: 'value',
+				boundaryGap: [0, '100%'],
+				splitLine: {
+					show: false
+				}
+			},
+			series: [{
+				name: '模拟数据',
+				type: 'line',
+				showSymbol: false,
+				hoverAnimation: false,
+				data: data
+			}]
+		};
+		
+		setInterval(function () {
+		
+			for (var i = 0; i < 5; i++) {
+				data.shift();
+				data.push(randomData());
+			}
+		
+			myChart1.setOption({
+				series: [{
+					data: data
+				}]
+			});
+			myChart2.setOption({
+				series: [{
+					data: data
+				}]
+			});
+		}, 1000);;
+		if (option && typeof option === "object") {
+			myChart1.setOption(option, true);
+			myChart2.setOption(option, true);
+		}
+	</script>
+<!-- start - echarts -->
 
 </body>
 
