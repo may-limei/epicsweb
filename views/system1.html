@@ -1427,11 +1427,8 @@
 					<!-- end - 标题/背景 -->
 				</svg>
 			</div>
-			<!-- <div id="echartsContainer" style="position:absolute; top:100px; left:100px; height:200px;">
-				<div id="container" style="height:100%;"></div>
-			</div> -->
-			<div id="echartsContainer1"></div>
-			<div id="echartsContainer2"></div>
+			<div id="echartsContainer1"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
+			<div id="echartsContainer2"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
 		</div>
 		<!-- END PAGE -->
 	</div>
@@ -1598,26 +1595,17 @@
 		var echartsArea1=document.querySelector("#echartsArea1");
 		var echartsContainer1 = document.getElementById("echartsContainer1");
 		echartsContainer1.style.width=echartsArea1.getAttribute("width")+"px";
-		echartsContainer1.style.height=echartsArea1.getAttribute("height")+"px";
-		echartsContainer1.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";
-		echartsContainer1.style.top=parseFloat(echartsArea1.getAttribute("y"))+15+"px";
-
-		// var echartsArea2=document.querySelector("#echartsArea2");
-		// var echartsContainer2 = document.getElementById("echartsContainer2");
-		// echartsContainer2.style.width=echartsArea2.getAttribute("width")+"px";
-		// echartsContainer2.style.height=echartsArea2.getAttribute("height")+"px";
-		// echartsContainer2.style.left=parseFloat(echartsArea2.getAttribute("x"))+13+"px";
-		// echartsContainer2.style.top=parseFloat(echartsArea2.getAttribute("y"))+15+"px";
+		echartsContainer1.style.height=parseFloat(echartsArea1.getAttribute("height"))+10+"px";
+		echartsContainer1.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";  //注意relative定位时元素在文档流，left相对的是元素在static定位时的位置
+		echartsContainer1.style.top=parseFloat(echartsArea1.getAttribute("y"))+5+"px";  //注意relative定位时元素在文档流，top相对的是元素在static定位时的位置
 
 		var echartsArea2=document.querySelector("#echartsArea2");
 		var echartsContainer2 = document.getElementById("echartsContainer2");
-		echartsContainer2.style.width=echartsArea1.getAttribute("width")+"px";
-		echartsContainer2.style.height=echartsArea1.getAttribute("height")+"px";
-		echartsContainer2.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";
-		echartsContainer2.style.top=parseFloat(echartsArea1.getAttribute("y"))+15+"px";
+		echartsContainer2.style.width=echartsArea2.getAttribute("width")+"px";
+		echartsContainer2.style.height=parseFloat(echartsArea2.getAttribute("height"))+10+"px";
+		echartsContainer2.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";  //注意relative定位时元素在文档流，left相对的是元素在static定位时的位置这是为什么获取的时echatsArea1的x值的原因。
+		echartsContainer2.style.top=parseFloat(echartsArea1.getAttribute("y"))+10+"px";  //注意relative定位时元素在文档流，top相对的是元素在static定位时的位置。这是为什么获取的时echatsArea1的y值的原因。
 		
-
-
 		var myChart1 = echarts.init(echartsContainer1);
 		var myChart2 = echarts.init(echartsContainer2);
 		var app = {};
