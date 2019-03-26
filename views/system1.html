@@ -23,7 +23,6 @@
 	<meta content="" name="may" />
 
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
-	<link href="stylesheets/system0.css" rel="stylesheet" type="text/css" />
 	<link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 	<link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -32,6 +31,8 @@
 	<link href="media/css/style-responsive.css" rel="stylesheet" type="text/css" />
 	<link href="media/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
 	<link href="media/css/uniform.default.css" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/system0.css" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/flex.css" rel="stylesheet" type="text/css" />
 	<!-- END GLOBAL MANDATORY STYLES -->
 
 	<link rel="shortcut icon" href="media/image/favicon.ico" />
@@ -40,6 +41,7 @@
 	<script src="js/angular.min.js"></script>
 	<script src="socket.io/socket.io.js"></script>
 	<script src="bower_components/async/dist/async.js"></script>
+
 </head>
 <!-- END HEAD -->
 
@@ -220,17 +222,17 @@
 		<!-- END BEGIN HORIZONTAL MENU PAGE SIDEBAR -->
 
 		<!-- BEGIN PAGE -->
-		<div id="bodybox" class="page-content row-fluid" style="display:flex; justify-content:center; align-items:center; background-color:black; overflow:hidden; margin:1vh; padding:0.5vh; border:0.3vh solid rgb(50,50,50);" ng-controller="holeCtrl">
+		<div id="bodybox" class="page-content row-fluid flex-h" style="background-color:black; overflow:hidden; margin:0vh 1vh; padding:0vh 0.5vh; border:0.3vh solid rgb(50,50,50);" ng-controller="holeCtrl">
 			<!-- <div> -->
-				<div id="echartsDIV" style="background-color:#e02222;">
-					<div id="titleText" style="padding:0.3vh; background-color:black;">
-						<label style="height:6vh; line-height:6vh; font-size:3vh !important; font-weight:bold; color:rgb(170,170,170); display:flex; justify-content:center; align-items:center; border-bottom:0.3vh solid rgb(50,50,50); border-top:0.3vh solid rgb(50,50,50);">20kW&nbsp高温制氢试验装置</label>
+				<div id="echartsDIV" style="background-color:#e02222; border:0.01vh solid black; overflow:hidden;">
+					<div id="titleText" style="padding:0.3vh; background-color:aliceblue;">
+						<label style="text-align:center; height:6vh; line-height:6vh; overflow:hidden; font-size:3vh !important; font-weight:bold; color:rgb(170,170,170); border-bottom:0.3vh solid rgb(50,50,50); border-top:0.3vh solid rgb(50,50,50);">20kW&nbsp高温制氢试验装置</label>
 					</div>
-					<div id="echartsContainer1" style="padding:0.3vh;"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
-					<div id="echartsContainer2" style="padding:0.3vh;"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
-					<div id="tmsrImage" style="background-color:bisque; display:flex; justify-content:center;"><img src="image/sinap.png" style="height:6vh; padding:1vh;" /></div>
+					<div id="echartsContainer1" style="background-color:aqua"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
+					<div id="echartsContainer2" style="background-color:bisque"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
+					<div id="tmsrImage" class="flex-h flex-hc flex-vc" style="text-align:center; height:6vh; line-height:6vh; background-color:blue;"><img src="image/sinap.png" style="height:2.8vh; margin:0 auto;" /></div>
 				</div>
-				<div id="screenContainer" style="background-color:green; overflow:hidden;">
+				<div id="screenContainer" style="background-color:green; border:0.01vh solid black; overflow:hidden;">
 					123
 				</div>
 			<!-- </div> -->
@@ -249,30 +251,22 @@
 	var siderbox_offsetWidth=parseFloat(document.getElementById("siderbox").offsetWidth);
 	var titleText_offsetHeight=parseFloat(document.getElementById("titleText").offsetHeight);
 	var tmsrImage_offsetHeight=parseFloat(document.getElementById("tmsrImage").offsetHeight);
+	var bodybox_clientHeight=parseFloat(document.getElementById("bodybox").clientHeight);
 
 	document.getElementsByTagName("html")[0].style.overflow="hidden";
-	// document.getElementById("bodybox").style.width=(window_innerWidth-siderbox_offsetWidth)*99/100+"px";//总宽度大于屏幕宽度，因为没有考虑bodybox的border和padding和margin
-	document.getElementById("bodybox").style.width=(window_innerWidth-siderbox_offsetWidth)*99/100+"px";//总宽度大于屏幕宽度，因为没有考虑bodybox的border和padding和margin
-	document.getElementById("bodybox").style.height=window_innerHeight*97/100+"px";
+	document.getElementById("bodybox").style.width=(window_innerWidth-siderbox_offsetWidth)*99.9/100+"px";//总宽度大于屏幕宽度，因为没有考虑bodybox的border和padding和margin
+	document.getElementById("bodybox").style.height=window_innerHeight*98/100+"px";
 	document.getElementById("echartsDIV").style.width=parseFloat(document.getElementById("bodybox").style.width)/4+"px";
 	document.getElementById("screenContainer").style.width=parseFloat(document.getElementById("bodybox").style.width)/4*3+"px";
 
 	var echartsContainer1 = document.getElementById("echartsContainer1");
-	echartsContainer1.style.height=(window_innerHeight-titleText_offsetHeight-tmsrImage_offsetHeight)/2+"px";
-	// echartsContainer1.style.width=echartsArea1.getAttribute("width")+"px";
-	// echartsContainer1.style.height=parseFloat(echartsArea1.getAttribute("height"))+10+"px";
-	// echartsContainer1.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";  //注意relative定位时元素在文档流，left相对的是元素在static定位时的位置
-	// echartsContainer1.style.top=parseFloat(echartsArea1.getAttribute("y"))+5+"px";  //注意relative定位时元素在文档流，top相对的是元素在static定位时的位置
-
-	var echartsArea2=document.querySelector("#echartsArea2");
+	echartsContainer1.style.height=(parseFloat(document.getElementById("bodybox").style.height)-titleText_offsetHeight-tmsrImage_offsetHeight)/2+"px";
+	echartsContainer1.style.marginTop=(window_innerHeight-parseFloat(echartsContainer1.offsetHeight)*2-titleText_offsetHeight-tmsrImage_offsetHeight)/12+"px";
+	echartsContainer1.style.marginBottom=(window_innerHeight-parseFloat(echartsContainer1.offsetHeight)*2-titleText_offsetHeight-tmsrImage_offsetHeight)/12+"px";
 	var echartsContainer2 = document.getElementById("echartsContainer2");
-	// echartsContainer2.style.width="100%";
-	echartsContainer2.style.height=(window_innerHeight-titleText_offsetHeight-tmsrImage_offsetHeight)/2+"px";
-	// echartsContainer2.style.width=echartsArea2.getAttribute("width")+"px";
-	// echartsContainer2.style.height=parseFloat(echartsArea2.getAttribute("height"))+10+"px";
-	// echartsContainer2.style.left=parseFloat(echartsArea1.getAttribute("x"))+13+"px";  //注意relative定位时元素在文档流，left相对的是元素在static定位时的位置这是为什么获取的时echatsArea1的x值的原因。
-	// echartsContainer2.style.top=parseFloat(echartsArea1.getAttribute("y"))+10+"px";  //注意relative定位时元素在文档流，top相对的是元素在static定位时的位置。这是为什么获取的时echatsArea1的y值的原因。
-	
+	echartsContainer2.style.height=(parseFloat(document.getElementById("bodybox").style.height)-titleText_offsetHeight-tmsrImage_offsetHeight)/2+"px";
+	echartsContainer2.style.marginBottom=(window_innerHeight-parseFloat(echartsContainer1.offsetHeight)*2-titleText_offsetHeight-tmsrImage_offsetHeight)/12+"px";
+
 	var myChart1 = echarts.init(echartsContainer1);
 	var myChart2 = echarts.init(echartsContainer2);
 	var app = {};
@@ -385,19 +379,19 @@
 
 	<script>
 		//右下角时间
-		var clockT=document.getElementById("clock");
-		var y,mo,d,h,mi,s;
-		var clockInterval=setInterval(function clock(){
-			with(new Date) {
-				y=getYear()+1900;
-				mo=getMonth()+1;
-				d=getDate();
-				h=getHours(); h=(h<10?"0"+h:h);
-				mi=getMinutes(); mi=(mi<10?"0"+mi:mi);
-				s=getSeconds(); s=(s<10?"0"+s:s);
-				clockT.textContent=y+"年"+mo+"月"+d+"日  "+h+":"+mi+":"+s;
-			}
-		},1000);
+		// var clockT=document.getElementById("clock");
+		// var y,mo,d,h,mi,s;
+		// var clockInterval=setInterval(function clock(){
+		// 	with(new Date) {
+		// 		y=getYear()+1900;
+		// 		mo=getMonth()+1;
+		// 		d=getDate();
+		// 		h=getHours(); h=(h<10?"0"+h:h);
+		// 		mi=getMinutes(); mi=(mi<10?"0"+mi:mi);
+		// 		s=getSeconds(); s=(s<10?"0"+s:s);
+		// 		clockT.textContent=y+"年"+mo+"月"+d+"日  "+h+":"+mi+":"+s;
+		// 	}
+		// },1000);
 		
 		//socket模块和epics变量模块定义
 		var serverIP = "10.10.33.102";
