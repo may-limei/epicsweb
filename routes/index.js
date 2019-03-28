@@ -22,6 +22,10 @@ router.get('/system1', function(req, res, next) {
   res.render('system1', { title: 'system-1' });
 });
 
+router.get('/editor', function(req, res, next) {
+  res.render('editor', { title: 'editor' });
+});
+
 router.get('/widget_tank_thermometer_bar', function(req, res, next) {
   res.render('widget_tank_thermometer_bar', { title: 'Widget Tank/Thermometer/Bar' });
 });

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title><%= title %></title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="stylesheets/widget_tank.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+	<!-- END GLOBAL MANDATORY STYLES -->
+
+	<link rel="shortcut icon" href="media/image/favicon.ico" />
+	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="bower_components/async/dist/async.js"></script> 
+
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed ng-scope page-sidebar-closed" ng-app="myApp" onload="load()">
+
+	<!-- BEGIN HEADER -->
+
+	<div class="header navbar navbar-custom navbar-fixed-top">
+
+		<!-- BEGIN TOP NAVIGATION BAR -->
+
+		<div class="navbar-inner">
+
+			<div class="container-fluid">
+
+				<!-- BEGIN LOGO -->
+
+				<a class="brand" href="/">
+
+				<img src="media/image/logo.png" alt="logo" />
+
+				</a>
+				<!-- END LOGO -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+				<img src="media/image/menu-toggler.png" alt="" />
+
+				</a>          
+
+				<!-- END RESPONSIVE MENU TOGGLER -->            
+
+				<!-- BEGIN TOP NAVIGATION MENU -->              
+
+				<ul class="nav pull-right">
+
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+
+					<li class="dropdown user">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<img alt="" src="media/image/avatar1_small.jpg" />
+
+						<span class="username">user</span>
+
+						<i class="icon-angle-down"></i>
+
+						</a>
+
+						<ul class="dropdown-menu">
+							<li><a href="/comment"><i class="icon-comment"></i>留言板</a></li>
+
+						</ul>
+
+					</li>
+
+					<!-- END USER LOGIN DROPDOWN -->
+
+				</ul>
+
+				<!-- END TOP NAVIGATION MENU --> 
+
+			</div>
+
+		</div>
+
+		<!-- END TOP NAVIGATION BAR -->
+
+	</div>
+
+	<!-- END HEADER -->
+
+	<!-- BEGIN CONTAINER -->   
+
+	<div class="page-container row-fluid" >
+
+		<!-- BEGIN HORIZONTAL MENU PAGE SIDEBAR1 -->
+
+		<div class="page-sidebar nav-collapse collapse">
+
+			<ul class="page-sidebar-menu hidden-phone hidden-tablet">
+
+				<li>
+
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+					<div class="sidebar-toggler hidden-phone"></div>
+
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+				</li>
+
+				<li>
+
+					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+
+					<form class="sidebar-search">
+
+						<div class="input-box">
+
+							<a href="javascript:;" class="remove"></a>
+
+							<input type="text" placeholder="Search..." />            
+
+							<input type="button" class="submit" value=" " />
+
+						</div>
+
+					</form>
+
+					<!-- END RESPONSIVE QUICK SEARCH FORM -->
+
+				</li>
+
+				<li  >
+
+					<a href="javascript:;">
+
+					<i class="icon-cogs"></i> 
+
+					<span class="title"><span>概述</span>
+
+					<span class="selected "></span>
+
+					<span class="arrow open"></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li>
+
+							<a href="/system_structure">
+
+							 	系统结构                    </a>
+
+						</li>
+						<li >
+												
+							<a href="/control_system">
+												
+								控制系统 </a>				
+						</li>
+
+						
+						<li >
+						
+							<a href="/epics_manual">
+						
+								安装配置 </a>
+						
+						</li>
+					</ul>
+
+				</li>
+
+				<li class="active">
+
+					<a href="javascript:;">
+
+					<i class="icon-dashboard"></i> 
+
+					<span class="title">监视控件</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li>
+
+							<a href="/widget_tank">
+
+								Tank</a>
+
+						</li>
+
+						<li class="active">
+
+							<a href="widget_gauge_meter">
+
+							   Gauge/Meter </a>
+
+						</li>
+						
+						<li>
+							<a href="widget_led">
+												
+						    	LED</a>
+												
+						</li>
+												
+						<li>
+												
+							<a href="widget_tank_thermometer_bar">
+												
+								Tank/Thermometer/Bar</a>
+												
+						</li>
+						<li>
+						
+							<a href="portlet_draggable.html">
+						
+								Meter </a>
+						
+						</li>
+						<li>
+												
+							<a href="portlet_draggable.html">
+												
+						 		Guage </a>
+												
+							</li>
+
+					</ul>
+
+				</li>
+
+				<li >
+
+					<a href="javascript:;">
+
+					<i class="icon-puzzle-piece"></i> 
+
+					<span class="title">控制控件</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li >
+
+							<a href="TextInput.html">
+
+							TextInput                  </a>
+
+						</li>
+
+						<li >
+
+							<a href="maps_vector.html">
+
+							Vector Maps                   </a>
+
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li >
+
+					<a href="charts.html">
+
+					<i class="icon-film"></i> 
+
+					<span class="title">其它</span>
+
+					</a>
+
+				</li>
+
+				<li >
+
+					<a href="javascript:;">
+
+					<i class="icon-puzzle-piece"></i> 
+
+					<span class="title">系统应用</span>
+
+					<span class="arrow "></span>
+
+					</a>
+
+					<ul class="sub-menu">
+
+						<li >
+
+							<a href="TextInput.html">
+
+							智能监控                  </a>
+
+						</li>
+
+						<li >
+
+							<a href="maps_vector.html">
+
+							辐射监测                   </a>
+
+						</li>
+						<li >							
+							<a href="system0">
+							
+							综合实验平台               </a>
+							
+						</li>
+					</ul>
+
+				</li>
+				<li>
+				
+					<a href="/comment">
+					
+						<i class="icon-comment"></i>
+					
+						<span class="title">留言板</span>
+						<span class="badge" style="background-color: #e02222;padding: 2px 6px 2px 6px;-webkit-border-radius: 12px !important; -moz-border-radius: 12px !important; border-radius: 12px !important; text-shadow: none !important" >new</span>
+
+					</a>
+				
+				</li>
+			</ul>
+
+			<!--HORIZONTAL AND SIDEBAR MENU FOR MOBILE & TABLETS-->
+
+			<ul class="page-sidebar-menu visible-phone visible-tablet">
+
+
+				<li class="start active">
+
+					<a href="/">
+
+					概述
+
+					<span class="selected"></span>
+
+					<span class="arrow open"></span>
+
+					</a>
+
+                         <ul class="sub-menu">
+						<li >
+
+							<a href="/system_structure">
+
+							<i class="icon-cogs"></i> 
+
+							<span class="title" >系统结构</span>
+
+							<span class="arrow open"></span>
+
+							</a>
+
+						</li>
+						<li>
+
+							<a href="/control_system">
+		
+								<i class="icon-wrench"></i>
+		
+								<span class="title">控制系统</span>
+		
+								<span class="arrow open"></span>
+		
+							</a>
+		
+						</li>
+						<li>
+						
+							<a href="/epics_manual">
+
+								<i class="icon-wrench"></i> 
+						
+								<span class="title" >安装配置</span>
+
+								<span class="arrow open"></span>
+							
+							</a>
+						
+						</li>
+					</ul>
+                    </li>
+			</ul>
+
+		</div>
+
+		<!-- END BEGIN HORIZONTAL MENU PAGE SIDEBAR -->
+
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+		
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+		
+			<div id="portlet-config" class="modal hide">
+		
+				<div class="modal-header">
+		
+					<button data-dismiss="modal" class="close" type="button"></button>
+		
+					<h3>portlet Settings</h3>
+		
+				</div>
+		
+				<div class="modal-body">
+		
+					<p>Here will be a configuration form</p>
+		
+				</div>
+		
+			</div>
+		
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+		
+			<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+		
+				<!-- BEGIN PAGE HEADER-->
+		
+				<div class="row-fluid">
+		
+					<div class="span12">
+		
+						<!-- BEGIN STYLE CUSTOMIZER -->
+		
+						<div class="color-panel hidden-phone">
+		
+							<div class="color-mode-icons icon-color"></div>
+		
+							<div class="color-mode-icons icon-color-close"></div>
+		
+							<div class="color-mode">
+		
+								<p>THEME COLOR</p>
+		
+								<ul class="inline">
+		
+									<li class="color-white color-light" data-style="light"></li>
+		
+								</ul>
+		
+								<label>
+		
+									<span>Layout</span>
+		
+									<select class="layout-option m-wrap small">
+		
+										<option value="fluid" selected>Fluid</option>
+		
+										<option value="boxed">Boxed</option>
+		
+									</select>
+		
+								</label>
+		
+								<label>
+		
+									<span>Header</span>
+		
+									<select class="header-option m-wrap small">
+		
+										<option value="fixed" selected>Fixed</option>
+		
+										<option value="default">Default</option>
+		
+									</select>
+		
+								</label>
+		
+								<label>
+		
+									<span>Sidebar</span>
+		
+									<select class="sidebar-option m-wrap small">
+										<div class="span9" style="overflow:scroll;">
+										<option value="fixed">Fixed</option>
+		
+										<option value="default" selected>Default</option>
+		
+									</select>
+		
+								</label>
+		
+								<label>
+		
+									<span>Footer</span>
+		
+									<select class="footer-option m-wrap small">
+		
+										<option value="fixed">Fixed</option>
+		
+										<option value="default" selected>Default</option>
+		
+									</select>
+		
+								</label>
+		
+							</div>
+		
+						</div>
+		
+						<!-- END BEGIN STYLE CUSTOMIZER -->
+		
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+		
+						<h3 class="page-title">
+		
+							EPICS&nbsp控件
+							<small>Examples</small>
+		
+						</h3>
+		
+						<ul class="breadcrumb">
+		
+							<li>
+		
+								<i class="icon-home"></i>
+		
+								<a href="/">Home</a>
+		
+								<i class="icon-angle-right"></i>
+		
+							</li>
+		
+							<li>
+		
+								<a href="/widget_tank">Tank/Thermometer/Bar</a>
+		
+							</li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				
+				<div class="row-fluid tankContainer" ng-controller="ledsCtrl" style="position:relative;">
+					<div class="span8 thumbnail" style="overflow:hidden; height:662px; background-color:aliceblue;">
+							<svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg">
+							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">LED控件用开/关来显示数字量0/1。</text>
+							<g id="guage1">
+								<circle cx="200" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="100" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+								<circle cx="200" cy="200" r="10" fill="#cccccc" stroke="none" />
+								<path d="M194 130.4500L198 128.9859" fill="none" stroke="black" stroke-width="1" />
+							</g>
+							
+							<g id="guage2">
+								<circle cx="460" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="360" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+							</g>
+
+							<g id="guage3">
+								<circle cx="720" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="620" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+							</g>
+
+							<g id="guage4">
+								<circle cx="980" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
+								<rect x="880" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+							</g>
+
+							<g id="meter1">
+								<rect x="130" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+							</g>
+
+							<g id="meter2">
+								<rect x="470" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+							</g>
+
+							<g id="meter3">
+								<rect x="790" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
+							</g>
+
+						</svg>
+					</div>
+
+					<div id="idContainer" class="span4 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
+						<svg width="560px" height="80px" xmlns="http://www.w3.org/2000/svg">
+							<text x="15" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>											
+						</svg>
+						<div id="svgArea" style="position:relative; top:0px; left:0px;">
+							<div id="divDragCled" style="position:absolute;">
+								<svg id="svgDragCled" width="170" height="230" style="cursor:move;" xmlns="http://www.w3.org/2000/svg">									
+								</svg>
+							</div>
+							
+						</div>
+						<div style="position: absolute; width:560px; top:-5px; left:0px;">
+							<label style="position:absolute; top:60px; left:20px; font-weight:bold; color:#666666;">控件</label>
+							<select id="ctrlName" ng-model="ctrlName" ng-options="ctrl for ctrl in ctrls" style="position:absolute; top:55px; left:51px; color:#666666; height:30px; width:118px;" ></select>
+							<button ng-click="createCtl()" class="btn" style="position:absolute; top:53px; left:170px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
+							<label style="position:absolute; top:60px; left:226px; font-weight:bold; color:#666666;">属性</label>
+							<select ng-model="attrName" ng-options="attr for attr in attrs" style="position:absolute; top:55px; left:258px; color:#666666; height:30px; width:100px;" ></select>
+							<label style="position:absolute; top:60px; left:373px; font-weight:bold; color:#666666;">属性值</label>
+							<input type="text" value="0" ng-model="attrVal" placeholder="输入属性值" style="position:absolute; top:55px; left:419px; color:#666666; height:20px; width:90px;" />
+							<button ng-click="updateEdit()" class="btn" style="position:absolute; top:53px; left:524px; color:none; background-color:aliceblue;"><i class="icon-hand-left"></i></button>
+						</div>
+					</div>
+					<div style="position:absolute; bottom:8px; right:23px;" >
+						<p>绝对坐标：&nbsp&nbsp<span id="idShow">left:0;&nbsp top:0</span></p>
+					</div>
+				</div>
+				</div>
+	
+		</div>	
+		<!-- END PAGE CONTAINER-->
+		
+	</div>
+	<!-- END PAGE -->    
+
+			</div>
+		</div>
+	</div>
+	<!-- END CONTAINER -->
+					
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		<div class="footer-inner">
+			2017 &copy; TMSR 钍基熔盐堆核能系统.
+		</div>
+	</div>
+	<!-- END FOOTER -->
+
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<script src="media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="media/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- END CORE PLUGINS -->
+
+	<script src="js/drag-tank.js"></script>
+
+
+<script>
+//以下是调用插件实现拖动
+var drag = new Drag("divDragCled", {
+    mxContainer: "svgArea",
+    Handle: "svgDragCled",
+    Limit: false,
+    onStart: function() {
+        // document.getElementById("idShow").innerHTML="开始拖放";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onMove: function() {
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;
+    },
+    onStop: function() {
+        // document.getElementById("idShow").innerHTML = "结束移动";
+        document.getElementById("idShow").innerHTML = "left:" + this.Drag.offsetLeft + ";&nbsptop:" + this.Drag.offsetTop;  
+    }
+});
+
+//缺少屏幕自适应代码
+
+		//socket模块和epics变量模块定义
+		var serverIP="10.10.33.102";
+		var socket = io.connect(serverIP+':80');
+		var pvs = {
+			tankBars:[
+				{ pvname: "may:calcTo100"}, { pvname: "may:calcTo100P"}, { pvname: "may:calcTo1000" }]
+		}
+
+		/* start - angularJS script */
+		var app = angular.module('myApp', []);
+
+		/* start - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
+		app.factory('SvgAttr', function(){
+			var factory = {};
+			factory.attr = function(id,attr,val){
+				document.getElementById(id).setAttribute(attr,val);//rgb(246,136,46)
+				return 0;
+			};
+			factory.textCont = function(id,text){
+				document.getElementById(id).textContent=text;//rgb(246,136,46)
+				return 0;
+			};
+			return factory;
+		});
+		/* end - 自定义函数factory =>  修改指定id的svg元素的指定属性attr值val*/
+
+		/* start - 自定义函数factory =>  使用一些JS语法或函数*/
+		app.factory('JsService', function(){
+			var factory = {};
+			factory.mod = function(x,y){
+				return x%y;
+			};
+			factory.toString = function(val,num){
+				return val.toString(num);
+			};
+			factory.charAt = function(str,ind){//取二进制表示的第ind位（最左边为第0位）
+				if (typeof str == "String" ) {
+					return str.charAt(ind);  //如果输入的是字符串，则返回字符串第ind位
+				} else {
+					var strstr=str.toString(2); //如果输入的是其他类型，则先转为8位二进制数(溢出的舍弃),然后返回转换为二进制表示后的第ind位
+					if (strstr.length < 8) {
+						if (ind<8-strstr.length) { return 0; } else { return parseInt(strstr.charAt(strstr.length-8+ind)); };
+					} else {
+						return parseInt(strstr.charAt(strstr.length-8+ind));
+					}
+				}
+				return "charAt err";
+			};
+			return factory;
+		});
+		/* end - 自定义函数factory =>  使用一些JS语法或函数*/
+
+		/* start - factory - AddCtrl      <Vertical Bar> */
+		app.factory('AddCtrl', function(){
+			var factory = {};
+			/* start - creatSVG */
+			//size修改整个控件.取值要求：大于0（小于0时反转变化）
+			//backColor修改控件背景色；color修改控件填充色
+			//背景色/填充色输入要求为表示颜色的字符串，有四种表示方式：1. 三位十六进制数#f00; 2. 六位十六进制数#ff0000; 3. rgb(255,0,0)，括号是英文; 4. 表示颜色的单词,red.
+			//表示颜色的单词:参考<HTML颜色名> http://www.runoob.com/tags/html-colorname.html
+			//hihi,lolo,hi,lo: 取值范围：0-1。其中0表示0%，1表示100%.
+			factory.addBarCtrl = function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
+				var divDragCled=document.getElementById("divDragCled");
+				var svgDragCled=document.getElementById("svgDragCled");
+				var CledCtrl=document.createElementNS("http://www.w3.org/2000/svg","g");
+				CledCtrl.setAttribute("id","CledCtrl");
+				// CledCtrl.setAttribute("transform","matrix("+size+",0,0,"+size+",0,0)");
+				svgDragCled.appendChild(CledCtrl);
+
+				var CledCtrlCir1=document.createElementNS("http://www.w3.org/2000/svg","circle");
+				CledCtrlCir1.setAttribute("id","CledCtrlCir1");
+				CledCtrlCir1.setAttribute("x","65");
+				CledCtrlCir1.setAttribute("y","17");
+				CledCtrlCir1.setAttribute("width","51");
+				CledCtrlCir1.setAttribute("height","201");
+				CledCtrlCir1.setAttribute("fill","yellow");
+				CledCtrlCir1.setAttribute("stroke","black");
+				CledCtrlCir1.setAttribute("stroke-width","0.75");
+				CledCtrl.appendChild(CledCtrlCir1);
+
+				return "create a bar control successfully"
+			};
+
+
+			/* end - creatSVG */
+			return factory;
+		});
+		/* end - factory - AddCtrl      <Vertical Bar> */
+
+		/* start - 自定义服务Service =>  创建和修改svg元素*/
+		app.service('CtrlService',function(AddCtrl,SvgAttr){
+			this.addBarCtrl=function( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo ){
+				return AddCtrl.addBarCtrl( maxVal, minVal, size, backColor, color, hihi, lolo, hi, lo );
+			};
+		});
+		/* end - 自定义服务Service =>  创建和修改svg元素*/
+		
+		/* start - ledsCtrl */
+		app.controller('ledsCtrl', function ($scope, SvgAttr, CtrlService, JsService) {
+			$scope.attrName="size";
+			$scope.attrVal="1";
+			$scope.ctrlName="Gauge";
+			$scope.ctrls=["Gauge", "Meter"];
+			$scope.attrs=["maxVal", "minVal", "size", "backColor", "color", "HIHI", "LOLO", "HI", "LO"];
+			$scope.maxVal=100;
+			$scope.minVal=0;
+			$scope.size=1;
+			$scope.backColor="rgb(250,250,230)";
+			$scope.color="rgb(255,56,56)";
+			$scope.hihi=90;
+			$scope.lolo=10;
+			$scope.hi=80;
+			$scope.lo=30;
+
+			//new scope
+			$scope.calcTo100=0;
+			$scope.calcTo100P=0.0;
+			$scope.calcTo1000=0;
+
+			async.map(pvs.tankBars, function (item, callback) {
+				socket.on(item.pvname, function (data) {
+					$scope.$applyAsync(function () {	//手动出发脏检查。必须有这步才能自动通知angular的module和controller，$scope.bang发生变化了。详见腾讯课堂教程《$scope》节
+						switch (item.pvname) {
+							case "may:calcTo100":
+								$scope.calcTo100=data;
+								break;
+							case "may:calcTo100P":
+								$scope.calcTo100P=data;
+								break;
+							case "may:calcTo1000":
+								$scope.calcTo1000=data;
+								break;
+							default:
+								break;
+						}
+						
+
+				})
+				//***end of $scope.$apply***//
+			});
+			//***end of socket.on***//
+		});
+		//***end of async.map***//
+		//需要绑定$scope但不需要脏检查的程序写在这里
+
+		}, function (err, results) {
+			callback(err, results);
+	});
+	/* end - ledsCtrl */
+
+	/* end - angularJS script */
+	
+</script>
+<script src="js/jquery.min.js"></script>
+
+	<script>
+		function load(){
+			$(".manual").each(function () {
+				var content = $(this).text();
+				//  console.log(content);
+				$(this).html(content);
+				})
+				// console.log("结束");	
+			// window.status="Page is loaded"
+		}
+	</script>
+
+	<script src="media/js/app.js"></script>      
+	<script>
+			function jump(){
+				window.open("/comment/add",'','',true)
+			}
+	</script>
+	
+	<script>
+
+		jQuery(document).ready(function() {  
+			// console.log("开始");			
+		   App.init();
+
+		});
+
+	</script>
+
+	<!-- END JAVASCRIPTS -->
+
+<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
+</body>
+
+<!-- END BODY -->
+
+</html>
