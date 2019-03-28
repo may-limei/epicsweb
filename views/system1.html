@@ -224,18 +224,18 @@
 		<!-- BEGIN PAGE -->
 		<div id="bodybox" class="page-content row-fluid flex-h" style="background-color:black; overflow:hidden; margin:0vh 1vh; padding:0vh 0.5vh; border:0.3vh solid rgb(50,50,50);" ng-controller="holeCtrl">
 			<!-- <div> -->
-				<div id="echartsDIV" style="background-color:#e02222; border:0.01vh solid black; overflow:hidden;">
-					<div id="titleText" style="padding:0.3vh; background-color:aliceblue;">
+				<div id="echartsDIV" style="background-color:black; border:0.01vh solid black; overflow:hidden;">
+					<div id="titleText" style="padding:0.3vh; background-color:black;">
 						<label style="text-align:center; height:6vh; line-height:6vh; overflow:hidden; font-size:3vh !important; font-weight:bold; color:rgb(170,170,170); border-bottom:0.3vh solid rgb(50,50,50); border-top:0.3vh solid rgb(50,50,50);">20kW&nbsp高温制氢试验装置</label>
 					</div>
-					<div id="echartsContainer1" style="background-color:aqua"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
-					<div id="echartsContainer2" style="background-color:bisque"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
-					<div id="tmsrImage" class="flex-h flex-hc flex-vc" style="text-align:center; height:6vh; line-height:6vh; background-color:blue;"><img src="image/sinap.png" style="height:3.2vh; margin:0 auto;" /></div>
+					<div id="echartsContainer1" style="background-color:black"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
+					<div id="echartsContainer2" style="background-color:black"></div><!--position定位不能设置为relative之外的值，因为echarts中会用到-->
+					<div id="tmsrImage" class="flex-h flex-hc flex-vc" style="text-align:center; height:6vh; line-height:6vh; background-color:black;"><img src="image/sinap.png" style="height:3.2vh; margin:0 auto;" /></div>
 				</div>
-				<div id="screenContainer" style="background-color:green; border:0.01vh solid black; overflow:hidden;">
-					<div id="pageSelector" style="background-color:blueviolet"></div>
-					<div id="svgDiagram" class="flex-h flex-hc flex-vc" style="background-color:chocolate">
-						<!--装置图--><svg x="0" y="0" width="800" height="500" transform="matrix(1,0,0,1,0,0)" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
+				<div id="screenContainer" style="background-color:black; border:0.01vh solid rgb(50,50,50); overflow:hidden;">
+					<div id="pageSelector" style="background-color:black"></div>
+					<div id="diagramDiv" class="flex-h flex-hc flex-vc" style="background-color:black">
+						<!--装置图--><svg x="0" y="0" width="800" height="500" id="diagramSvg" transform="matrix(1,0,0,1,0,0)" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" fill-rule="evenodd" xml:space="preserve" >
 							<rect x="20" y="15" width="760" height="480" fill="none" stroke="rgb(50,50,50)" />
 							<rect x="34" y="5" rx="2" ry="2" width="72" height="20" fill="rgb(230,230,230)" stroke="rgb(230,230,230)" />
 							<text x="70" y="18" text-anchor="middle" font-family="sans-serif" font-size="10" stroke="#333333">工艺流程图</text>
@@ -1391,7 +1391,7 @@
 							</svg>
 					</div>
 
-					<div style="background-color:darkcyan">123</div>
+					<div style="background-color:black"></div>
 					
 				</div>
 			<!-- </div> -->
@@ -1427,10 +1427,26 @@
 	echartsContainer2.style.marginBottom=(window_innerHeight-parseFloat(echartsContainer1.offsetHeight)*2-titleText_offsetHeight-tmsrImage_offsetHeight)/12+"px";
 
 	document.getElementById("pageSelector").style.height=document.getElementById("titleText").offsetHeight+"px";
-	document.getElementById("svgDiagram").style.height=(parseFloat(document.getElementById("bodybox").style.height)-titleText_offsetHeight-tmsrImage_offsetHeight)+"px";
+	document.getElementById("diagramDiv").style.height=(parseFloat(document.getElementById("bodybox").style.height)-titleText_offsetHeight-tmsrImage_offsetHeight)+"px";
 
-
-
+//------------
+	var diagramDivW=parseFloat(document.getElementById("diagramDiv").clientWidth);
+	var diagramDivH=parseFloat(document.getElementById("diagramDiv").clientHeight);
+	var diagramSvg=document.querySelector('#diagramSvg');
+	var matrixStrH="matrix("+diagramDivH/500+",0,0,"+diagramDivH/500+",0,0)";  //an h suan
+	var matrixStrW="matrix("+diagramDivW/800+",0,0,"+diagramDivW/800+",0,0)";  //an w suan
+	if (diagramDivW/diagramDivH>800/500) {//an h suan
+		// console.log("an h suan: "+matrixStrH);
+		// diagramSvg.setAttribute('transform',matrixStrH);
+		diagramSvg.setAttribute('width',diagramDivH/500*800+"px");
+		diagramSvg.setAttribute('height',diagramDivH+"px");
+	} else if (window.innerWidth/window.innerHeight<800/500) {//an w suan
+		// console.log("an w suan: "+matrixStrW);
+		// diagramSvg.setAttribute('transform',matrixStrW);
+		diagramSvg.setAttribute('width',diagramDivW+"px");
+		diagramSvg.setAttribute('height',diagramDivW/800*500+"px");
+	}
+//------------
 
 	var myChart1 = echarts.init(echartsContainer1);
 	var myChart2 = echarts.init(echartsContainer2);

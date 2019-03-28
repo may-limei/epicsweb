@@ -535,8 +535,8 @@
 		
 						<h3 class="page-title">
 		
-							EPICS&nbsp控件
-							<small>Examples</small>
+							系统编辑区
+							<small>&nbspSystem Editor</small>
 		
 						</h3>
 		
@@ -554,7 +554,7 @@
 		
 							<li>
 		
-								<a href="/widget_tank">Tank/Thermometer/Bar</a>
+								<a href="/widget_tank">System Editor</a>
 		
 							</li>
 						</ul>
@@ -565,47 +565,7 @@
 				<!-- END PAGE HEADER-->
 				
 				<div class="row-fluid tankContainer" ng-controller="ledsCtrl" style="position:relative;">
-					<div class="span8 thumbnail" style="overflow:hidden; height:662px; background-color:aliceblue;">
-							<svg width="1202px" height="650px" xmlns="http://www.w3.org/2000/svg">
-							<text x="30" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">LED控件用开/关来显示数字量0/1。</text>
-							<g id="guage1">
-								<circle cx="200" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
-								<rect x="100" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-								<circle cx="200" cy="200" r="10" fill="#cccccc" stroke="none" />
-								<path d="M194 130.4500L198 128.9859" fill="none" stroke="black" stroke-width="1" />
-							</g>
-							
-							<g id="guage2">
-								<circle cx="460" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
-								<rect x="360" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-							</g>
-
-							<g id="guage3">
-								<circle cx="720" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
-								<rect x="620" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-							</g>
-
-							<g id="guage4">
-								<circle cx="980" cy="200" r="90" fill="white" stroke="#999999" stroke-width="1.5" />
-								<rect x="880" y="100" width="200" height="200" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-							</g>
-
-							<g id="meter1">
-								<rect x="130" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-							</g>
-
-							<g id="meter2">
-								<rect x="470" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-							</g>
-
-							<g id="meter3">
-								<rect x="790" y="400" width="260" height="140" fill="none" stroke="rgb(246,136,46)" stroke-width="3"></rect>
-							</g>
-
-						</svg>
-					</div>
-
-					<div id="idContainer" class="span4 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
+					<div id="idContainer" class="span12 thumbnail" style="position:relative; height:662px; overflow:scroll; background-color:aliceblue;">
 						<svg width="560px" height="80px" xmlns="http://www.w3.org/2000/svg">
 							<text x="15" y="28" font-size="16" font-family="Microsoft YaHei UI" fill="#666666" stroke="#666666" stroke-width="0.25">这里是编辑区/测试区。可以添加控件测试效果。</text>											
 						</svg>
@@ -628,7 +588,7 @@
 						</div>
 					</div>
 					<div style="position:absolute; bottom:8px; right:23px;" >
-						<p>绝对坐标：&nbsp&nbsp<span id="idShow">left:0;&nbsp top:0</span></p>
+						<p><span id="idShow" style="font-size:1.2em;">x:&nbsp0&nbsp,&nbsp&nbsp y:&nbsp0</span></p>
 					</div>
 				</div>
 				</div>
