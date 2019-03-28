@@ -223,7 +223,7 @@
 		<!-- <div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl"> -->
 		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:white; overflow:hidden;" ng-controller="holeCtrl">
 			<div id="screenContainer" style="position:absolute; background-color:white; overflow:hidden;">
-				<svg  id="svgbox" width="1920" height="860" viewBox="0 0 1920 860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<svg  id="svgbox" width="1920" height="860" viewBox="0 0 1920 860" preserveAspectRatio="xMinYMin meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="640" y="0" width="1280" height="860" fill="white" stroke="#254061" />
@@ -1019,29 +1019,32 @@
 	<!-- END CORE PLUGINS -->
 
 	<script>
+		var siderboxW=document.getElementById("siderbox").clientWidth;
 		document.getElementById("bodybox").style.width=(window.innerWidth-siderboxW).toString()+"px";
 		document.getElementById("bodybox").style.height=(window.innerHeight).toString()+"px";
-		var siderboxW=document.getElementById("siderbox").clientWidth;
 		var bodyboxW=document.getElementById("bodybox").clientWidth;
 		var bodyboxH=document.getElementById("bodybox").clientHeight;
-		var screenContainerW=document.getElementById("screenContainer").clientWidth;
-		var screenContainerH=document.getElementById("screenContainer").clientHeight;
 		var svgboxE=document.querySelector('#svgbox');
-		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
-		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
-		if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
+		svgboxE.setAttribute('width',bodyboxW+"px");  //方法1，设置width,height,viewBox,preserveAspectRatio(meet方式)，窗口尺寸变化时改变width和height为窗口尺寸即可。
+		svgboxE.setAttribute('height',bodyboxH+"px");  //方法1，设置width,height,viewBox,preserveAspectRatio(meet方式)，窗口尺寸变化时改变width和height为窗口尺寸即可。
+
+		// var screenContainerW=document.getElementById("screenContainer").clientWidth;
+		// var screenContainerH=document.getElementById("screenContainer").clientHeight;
+		// var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
+		// var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
+		// if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
 			// console.log("an h suan: "+matrixStrH);
-			svgboxE.setAttribute('transform',matrixStrH);
-			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";
-			// svgboxE.setAttribute('width',bodyboxH/860*1920+"px");
-			// svgboxE.setAttribute('height',bodyboxH+"px");
-		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
+			// svgboxE.setAttribute('transform',matrixStrH);  //方法3，设置width,height,matrix，窗口尺寸变化后计算缩放比例，然后修改matrix进行缩放。
+			// document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";  //方法3，设置width,height,matrix，窗口尺寸变化后计算缩放比例，然后修改matrix进行缩放。
+			// svgboxE.setAttribute('width',bodyboxH/860*1920+"px");  //方法2，设置width,height,viewBox，窗口尺寸变化后按比例计算新的width和height(不是窗口尺寸)。
+			// svgboxE.setAttribute('height',bodyboxH+"px");  //方法2，设置width,height,viewBox，窗口尺寸变化后按比例计算新的width和height(不是窗口尺寸)。
+		// } else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
 			// console.log("an w suan: "+matrixStrW);
-			svgboxE.setAttribute('transform',matrixStrW);
-			// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
-			// svgboxE.setAttribute('width',bodyboxW+"px");
-			// svgboxE.setAttribute('height',bodyboxW/1920*860+"px");
-		}
+			// svgboxE.setAttribute('transform',matrixStrW);  //方法3，设置width,height,matrix，窗口尺寸变化后计算缩放比例，然后修改matrix进行缩放。
+			// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";  //方法3，设置width,height,matrix，窗口尺寸变化后计算缩放比例，然后修改matrix进行缩放。
+			// svgboxE.setAttribute('width',bodyboxW+"px");  //方法2，设置width,height,viewBox，窗口尺寸变化后按比例计算新的width和height(不是窗口尺寸)。
+			// svgboxE.setAttribute('height',bodyboxW/1920*860+"px");  //方法2，设置width,height,viewBox，窗口尺寸变化后按比例计算新的width和height(不是窗口尺寸)。
+		// }
 	</script>
 
 	<script>
