@@ -223,7 +223,7 @@
 		<!-- <div class="page-content row-fluid" style="position:relative; min-height:860px; min-width:1920px;" ng-controller="holeCtrl"> -->
 		<div id="bodybox" class="page-content row-fluid" style="position:relative; background-color:white; overflow:hidden;" ng-controller="holeCtrl">
 			<div id="screenContainer" style="position:absolute; background-color:white; overflow:hidden;">
-				<svg  id="svgbox" width="1920" height="860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<svg  id="svgbox" width="1920" height="860" viewBox="0 0 1920 860" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<rect x="0" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="320" y="0" width="320" height="860" fill="white" stroke="#254061" />
 					<rect x="640" y="0" width="1280" height="860" fill="white" stroke="#254061" />
@@ -1026,19 +1026,21 @@
 		var bodyboxH=document.getElementById("bodybox").clientHeight;
 		var screenContainerW=document.getElementById("screenContainer").clientWidth;
 		var screenContainerH=document.getElementById("screenContainer").clientHeight;
-		// console.log("inW:"+window.innerWidth+"\n inH:"+window.innerHeight);
-		// console.log("bodyW:"+bodyboxW+"\n bodyH:"+bodyboxH);
 		var svgboxE=document.querySelector('#svgbox');
 		var matrixStrH="matrix("+window.innerHeight/860+",0,0,"+window.innerHeight/860+",-"+(1-window.innerHeight/860)*1920/2+",-"+(1-window.innerHeight/860)*860/2+")";  //an h suan
 		var matrixStrW="matrix("+(window.innerWidth)/1920+",0,0,"+(window.innerWidth)/1920+",-"+(1-window.innerWidth/1920)*1920/2+",-"+(1-window.innerWidth/1920)*860/2+")";  //an w suan
 		if (window.innerWidth/window.innerHeight>1920/860) {//an h suan
+			// console.log("an h suan: "+matrixStrH);
 			svgboxE.setAttribute('transform',matrixStrH);
 			document.getElementById("screenContainer").style.left=((bodyboxW-window.innerHeight/860*screenContainerW)/2).toString()+"px";
-			// console.log("an h suan: "+matrixStrH);
+			// svgboxE.setAttribute('width',bodyboxH/860*1920+"px");
+			// svgboxE.setAttribute('height',bodyboxH+"px");
 		} else if (window.innerWidth/window.innerHeight<1920/860) {//an w suan
+			// console.log("an w suan: "+matrixStrW);
 			svgboxE.setAttribute('transform',matrixStrW);
 			// document.getElementById("screenContainer").style.top=((bodyboxH-window.innerWidth/1920*screenContainerH)/2).toString()+"px";
-			// console.log("an w suan: "+matrixStrW);
+			// svgboxE.setAttribute('width',bodyboxW+"px");
+			// svgboxE.setAttribute('height',bodyboxW/1920*860+"px");
 		}
 	</script>
 
